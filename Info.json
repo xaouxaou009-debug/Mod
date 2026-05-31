@@ -1,0 +1,26 @@
+{
+  "LastRelease": null,
+  "LoadInfo": false,
+  "Name": "BlackMarket Sect",
+  "DisplayName": "BlackMarket Sect",
+  "GameVersion": 1.21,
+  "Version": "1.0",
+  "Desc": "ตลาดมืดแยกส่วน รวมไอเทม",
+  "Author": "เดินไปข้างหน้า",
+  "UIPackage": null,
+  "ID": "18446744072010575259",
+  "Flag": 824157,
+  "Tags": [
+    "Function",
+    "Usability",
+    "Integrated",
+    "ExcludeRealmsHeaven",
+    "Non-Chinese"
+  ],
+  "IncreasedDesc": "",
+  "IsInsideCreat": false,
+  "Previews": [],
+  "Dependencies": null,
+  "Url": "https://github.com/xaouxaou009-debug/Mod",
+  "VersionValue": 100.0
+}
