@@ -307,7 +307,7 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 		<Selections>
 <li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Property");</OKResult></li>
 <li><Display>เพิ่มความเร็วการทำงานรวมทั่วทั้งระบบ +100000</Display><OKResult>me:ModifierProperty("GlobalEfficiency",100000);me:TriggerStory("WorkProperty");</OKResult></li>
-<li><Display>ลดความเร็วการทำงานรวมทั่วทั้งระบบ -100000”</Display><OKResult>me:ModifierProperty("GlobalEfficiency",-100000);me:TriggerStory("WorkProperty");	</OKResult></li>
+<li><Display>ลดความเร็วการทำงานรวมทั่วทั้งระบบ -100000</Display><OKResult>me:ModifierProperty("GlobalEfficiency",-100000);me:TriggerStory("WorkProperty");	</OKResult></li>
 </Selections></Story>
 
 <!--经历点数加成-->
@@ -488,13 +488,13 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 <Story Name="XXSD"  Parent="BaseFillingStory">
 		<DisplayName>แก้ไขความเร็วในการเรียนรู้</DisplayName>
 		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
-<li><Display>ย้อนกลับ</</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
 <li><Display>ความเร็วในการเรียนรู้ +100</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",100);me:TriggerStory("XXSD");</OKResult></li>
-<li><Display>ความเร็วในการเรียนรู้ ++200</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",200);me:TriggerStory("XXSD");</OKResult></li>
-<li><Display>ความเร็วในการเรียนรู้ ++999</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",999);me:TriggerStory("XXSD");</OKResult></li>
-<li><Display>ความเร็วในการเรียนรู้ +-100</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-100);me:TriggerStory("XXSD");</OKResult></li>
-<li><Display>ความเร็วในการเรียนรู้ +-200</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-200);me:TriggerStory("XXSD");</OKResult></li>
-<li><Display>ความเร็วในการเรียนรู้ +-999</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-999);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ +200</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",200);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ +999</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",999);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ -100</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-100);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ -200</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-200);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ -999</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-999);me:TriggerStory("XXSD");</OKResult></li>
 		</Selections></Story>
 <!--噩梦发生几率-->
 <Story Name="EMFSJL"  Parent="BaseFillingStory">
