@@ -24,13 +24,13 @@ me:TriggerStory("Game_Modifier");</OKResult></li>
 
 <li><Display>เพิ่มพรสวรรค์การบำเพ็ญเซียนเต็มขั้นในคลิกเดียว</Display><OKResult>
 me:ModifierProperty("IntelligenceSkillEXPConstant",999);
-me:ModifierProperty("PotentialOfBasepracticeAddValue",100000);
-me:ModifierProperty("BasepracticeSpeedCoefficient",100000);
-me:ModifierProperty("DeepPracticeSpeedSpecialCoefficient",100000);
-me:ModifierProperty("MindStateBaseValue",100000);
-me:ModifierProperty("SpeedOfMindStateCoefficient",100000);
-me:ModifierProperty("SpeedOfMindStateCoefficientByMoods",-100000);
-me:ModifierProperty("InspirationCoefficient",100000);
+me:ModifierProperty("PotentialOfBasepracticeAddValue",1000);
+me:ModifierProperty("BasepracticeSpeedCoefficient",1000);
+me:ModifierProperty("DeepPracticeSpeedSpecialCoefficient",1000);
+me:ModifierProperty("MindStateBaseValue",1000);
+me:ModifierProperty("SpeedOfMindStateCoefficient",1000);
+me:ModifierProperty("SpeedOfMindStateCoefficientByMoods",-1000);
+me:ModifierProperty("InspirationCoefficient",1000);
 me:TriggerStory("Game_Modifier");</OKResult></li>
 
 <li><Display>ปรับอัตราสำเร็จคุณภาพระดับเทพของการหลอมอาวุธและปรุงโอสถ </Display><OKResult>
@@ -264,25 +264,26 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 
 
 <li><Display>สามเซียนล้างไขกระดูกโอสถ</Display><OKResult>me:AddModifier("Dan_SkillLvMax76");</OKResult></li>
-<li><Display>โอสถย่างเนื้อ</Display><OKResult>me:AddModifier("Dan_KaoRou76");</OKResult></li>
-<li><Display>โอสถลับ</Display><OKResult>me:AddModifier("Dan_MiMi76");</OKResult></li>
-<li><Display>โอสถลับขั้นสุดยอด</Display><OKResult>me:AddModifier("Dan_SuperMiMi76");</OKResult></li>
+<li><Display>ทดสอบม็อดยา</Display><OKResult>me:AddModifier("Item_LingOriginalWu");</OKResult></li>
+<li><Display>สุ่มเรียกอสูร</Display><OKResult>me:AddModifier("Dan_KaoRou76");</OKResult></li>
+<li><Display>เรียกโจรป่า</Display><OKResult>me:AddModifier("Dan_MiMi76");</OKResult></li>
+<li><Display>เลือกโจรป่าระดับสูง</Display><OKResult>me:AddModifier("Dan_SuperMiMi76");</OKResult></li>
 <li><Display>โอสถวิญญาณมหาศาล</Display><OKResult>me:AddModifier("Dan_YiLing76");</OKResult></li>
-<li><Display>โอสถพยาบาลหนึ่งนิ้ว</Display><OKResult>me:AddModifier("Dan_SuperRevive76");</OKResult></li>
-<li><Display>โอสถย่อกระดูก</Display><OKResult>me:AddModifier("Dan_BrokenNeck76");</OKResult></li>
+
+<li><Display>ทดสอบ</Display><OKResult>me:AddModifier("Dan_BrokenNeck76");</OKResult></li>
 <li>
   <Display>Mount Buzhou Stone</Display>
   <OKResult>me:AddItem("Item_ParasolWood", 1);</OKResult>
 </li>
-<li><Display>โอสถมงคล</Display><OKResult>me:AddModifier("Dan_XiangRui76");</OKResult></li>
+
 <li><Display>เรียกอสูร : เฟย</Display><OKResult>me:AddModifier("Dan_JiE76");</OKResult></li>
 <li><Display>เรียกอสูร : มังกรฟ้า</Display><OKResult>me:AddModifier("Dan_ChiHuo76");</OKResult></li>
 <li><Display>เรียกอสูร : นกฟีนิกซ์เพลิง</Display><OKResult>me:AddModifier("Dan_Huoji76");</OKResult></li>
 <li><Display>เรียกอสูร : มังกรไฟ</Display><OKResult>me:AddModifier("Dan_YuMu76");</OKResult></li>
 <li><Display>เปลียนฤดูเป็นปีเก็บเกี่ยวอุดมสมบูรณ์</Display><OKResult>me:AddModifier("Dan_HaHa76");</OKResult></li>
-<li><Display>โอสถไก่เจ้าเสน่ห์</Display><OKResult>me:AddModifier("Dan_CaiXuKun76");</OKResult></li>
+
 <li><Display>ขโมยของNPC</Display><OKResult>me:AddModifier("Dan_BaiYanLang76");</OKResult></li>
-<li><Display>นาวไป่จิน</Display><OKResult>me:AddModifier("Dan_NaoBaiJin76");</OKResult></li>
+
 <li><Display>ชุปชีวิตNPC</Display><OKResult>me:AddModifier("Modifier_YinYangShuangYu76");</OKResult></li>
 
 
@@ -1692,12 +1693,12 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 		</Selections></Story>
 
 	<Story Name="FightProperty"  Parent="BaseFillingStory">
-		<DisplayName>战斗属性修改</DisplayName>
-		<Desc>请选择想要修改的哪个属性</Desc>
+		<DisplayName>แก้ไขค่าคุณสมบัติการต่อสู้</DisplayName>
+		<Desc>กรุณาเลือกคุณสมบัติที่ต้องการแก้ไข</Desc>
 		<Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("Property");</OKResult></li>
-<li><Display>战斗命中</Display><OKResult>me:TriggerStory("ZDMZ");</OKResult></li>
-<li><Display>战斗闪避</Display><OKResult>me:TriggerStory("ZDSB");</OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Property");</OKResult></li>
+<li><Display>ความแม่นยำในการต่อสู้</Display><OKResult>me:TriggerStory("ZDMZ");</OKResult></li>
+<li><Display>การหลบหลีกในการต่อสู้</Display><OKResult>me:TriggerStory("ZDSB");</OKResult></li>
 <li><Display>护盾转化率装备附加值</Display><OKResult>me:TriggerStory("HDZHLZBFJZ");</OKResult></li>
 <li><Display>法宝数量</Display><OKResult>me:TriggerStory("FBSL");</OKResult></li>
 <li><Display>法宝回灵倍率</Display><OKResult>me:TriggerStory("FBHLBL");</OKResult></li>
@@ -1734,13 +1735,13 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 
 
 <Story Name="TQSJJJXG">
-		<DisplayName>天气时间季节修改</DisplayName>
-		<Desc>选一个吧。</Desc>		
+		<DisplayName>ปรับสภาพอากาศ/เวลา/ฤดูกาล</DisplayName>
+		<Desc>อากาศ + เวลา + ฤดูกาล</Desc>		
 		<Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
-<li><Display>天气修改</Display><OKResult>me:TriggerStory("BuildMode_ChangeWeather");</OKResult></li>
-<li><Display>时间修改</Display><OKResult>me:TriggerStory("BuildMode_ChangeTime");</OKResult></li>
-<li><Display>季节修改</Display><OKResult>me:TriggerStory("BuildMode_ChangeSeason");</OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
+<li><Display>วิชาควบคุมวัฏฤดู</Display><OKResult>me:TriggerStory("BuildMode_ChangeWeather");</OKResult></li>
+<li><Display>ควบคุมกาลเวลาแบบเซียน</Display><OKResult>me:TriggerStory("BuildMode_ChangeTime");</OKResult></li>
+<li><Display>วิชาควบคุมวัฏฤดู</Display><OKResult>me:TriggerStory("BuildMode_ChangeSeason");</OKResult></li>
 			
 				
 			
@@ -1749,81 +1750,81 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 
 
 <Story Name="BuildMode_ChangeTime">
-		<DisplayName>时间修改</DisplayName>
-		<Desc>需要将时间调整到什么时候呢。</Desc>		
+		<DisplayName>การปรับเวลา</DisplayName>
+		<Desc>ต้องการปรับเวลาเป็นช่วงไหน</Desc>		
 		<Kind>None</Kind>		
 		<Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("TQSJJJXG");</OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("TQSJJJXG");</OKResult></li>
 			<li>
-				<Display>早上</Display>
+				<Display>ตอนเช้า</Display>
 				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeTime(5)</OKResult>
 			</li>
 			<li>
-				<Display>正午</Display>
+				<Display>เที่ยงวัน</Display>
 				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeTime(11)</OKResult>
 			</li>
 			<li>
-				<Display>黄昏</Display>
+				<Display>ตอนเย็น</Display>
 				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeTime(17)</OKResult>
 			</li>
 			<li>
-				<Display>深夜</Display>
+				<Display>ตอนดึก</Display>
 				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeTime(1)</OKResult>
 			</li>
 			
 		</Selections>
 	</Story>	
 	<Story Name="BuildMode_ChangeSeason">
-		<DisplayName>季节修改</DisplayName>
-		<Desc>需要将季节调整到什么时候呢。</Desc>
+		<DisplayName>แก้ไขฤดูกาล</DisplayName>
+		<Desc>ต้องการพลิกเปลี่ยนกาลฤดูเป็นช่วงใด</Desc>
 			<Kind>None</Kind>	
 		<Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("TQSJJJXG");</OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("TQSJJJXG");</OKResult></li>
 			<li>
-				<Display>春</Display>
+				<Display>ฤดูใบไม้ผลิ</Display>
 				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeDay(14)</OKResult>
 			</li>
 			<li>
-				<Display>夏</Display>
+				<Display>ฤดูร้อน</Display>
 				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeDay(42)</OKResult>
 			</li>
 			<li>
-				<Display>秋</Display>
+				<Display>ฤดูใบไม้ร่วง</Display>
 				<OKResult>GameMain:GetMod("BuildModeHelper"):ChangeDay(75)</OKResult>
 			</li>
 			<li>
-				<Display>冬</Display>
+				<Display>ฤดูหนาว</Display>
 				<OKResult>GameMain:GetMod("BuildModeHelper"):ChangeDay(98)</OKResult>
 			</li>
 
 		</Selections>
 	</Story>	
 	<Story Name="BuildMode_ChangeWeather">
-		<DisplayName>天气修改</DisplayName>
-		<Desc>需要将天气改变成什么呢。</Desc>
+		<DisplayName>แก้ไขสภาพอากาศ</DisplayName>
+		<Desc>ต้องการแก้ไขสภาพอากาศแบบไหนเหรอ</Desc>
 				
 		<Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("TQSJJJXG");</OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("TQSJJJXG");</OKResult></li>
 			<li>
-				<Display>小雨/雪</Display>
+				<Display>ฝนตกเบาๆหิมะตกเบาๆ</Display>
 				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeWeather("LightRain")</OKResult>
 			</li>
 			<li>
-				<Display>大雨/雪</Display>
+				<Display>ฝนตกหนัก / หิมะตกหนัก</Display>
 				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeWeather("HeavyRain")</OKResult>
 			</li>					
 			<li>
-				<Display>尘暴</Display>
+				<Display>พายุธุลี</Display>
 				<OKResult>GameMain:GetMod("BuildModeHelper"):ChangeWeather("DustStorm")</OKResult>
 			</li>
 			<li>
-				<Display>永夜</Display>
+				<Display>กลางคืน</Display>
 				<OKResult>GameMain:GetMod("BuildModeHelper"):ChangeWeather("PermanentNight")</OKResult>
 			</li>
 			<li>
-				<Display>雷暴</Display>
+				<Display>พายุสายฟ้า</Display>
 				<OKResult>GameMain:GetMod("BuildModeHelper"):ChangeWeather("LightningStorm")</OKResult></li>		
-			<li><Display>清除所有天气</Display><OKResult>World.Weather:ClearAllWeather();  </OKResult></li></Selections></Story>	
+			<li><Display>ล้างสภาพอากาศทั้งหมด</Display><OKResult>World.Weather:ClearAllWeather();  </OKResult></li></Selections></Story>	
 
 
 
