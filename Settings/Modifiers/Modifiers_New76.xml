@@ -2,12 +2,12 @@
 
 
  <Modifier Name="QuanBu76" Type="Normal">
-		<DisplayName>一键加满</DisplayName>
+		<DisplayName>เติมเต็มในคลิกเดียว</DisplayName>
 	
 		<MaxStack>0</MaxStack>
 		<Duration>-1</Duration>
 		<Display>0</Display>
-		<Desc>永久增强机缘1点。</Desc>
+		<Desc>เพิ่มค่าโอกาสวาสนา 1 แต้มอย่างถาวร</Desc>
 		<BaseFive>10,10,10,10,10</BaseFive>
     <LuaClassName>modifier_fivebasedan</LuaClassName>
 		<Skills>
@@ -26,7 +26,7 @@
 		</Skills>
 	</Modifier>
   <Modifier Name="Dan_SkillLvMax76" Type="Normal">
-		<DisplayName>三圣洗髓丹</DisplayName>
+		<DisplayName>โอสถชำระไขกระดูกสามเซียน</DisplayName>
 		<Desc></Desc>
 		<MaxStack>0</MaxStack>
 		<Duration>-1</Duration>
