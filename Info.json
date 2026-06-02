@@ -1,17 +1,1 @@
-{
-  "Name":"Xiu_Gai_Qi_761152306",
-  "DisplayName":"游戏修改器自用版",
-  "GameVersion":1.268,
-  "Version":2.2,
-  "Desc":"[作者]\r\n    我住你家楼上\r\n[简介]\r\n目前只更新了战斗属性、更新神修属性、更新了加了天气时间季节、修炼相关属性 、更新角色相关属性 \n界面是套用秘闻制造机\n加入无限资源、了不起的制药桌子模拟器\n招一名测试工具人不付钱的加作者qq761152306\n增加一键式修改",
-  "Author":"761152306",
-  "UIPackage":"UI/Sample",
-  "ID":"3628818079",
-  "Flag":-443513471,
-  "Tags":["Gong","Esoterica","Elixir","Item","Equipment","Building","Function","Usability","Integrated","ExcludeRealmsHeaven"],
-  "IncreasedDesc":"1.1更新了战斗属性\n1.3更新神修属性\n1.4加了天气时间季节\n1.5增加修炼相关属性\n1.6把原本的建筑改为在角色身上的按钮\n1.7用了无限资源的代码忘记改代码名字尴尬\n1.8增加了了不起制药桌的一些按钮版功能\n2增加角色相关属性\n2.1增加一键式修改",
-  "IsInsideCreat":false,
-  "Previews":["F]4)XJ66IV5AGE3]8A6~2@5.png"],
-  "ParentModInfo":null,
-  "Url":"https://github.com/xaouxaou009-debug/Mod"
-}
+{"Name":"Xiu_Gai_Qi_761152306","DisplayName":"Mod : แก้ไขค่าตัวละคร","GameVersion":1.268,"Version":2.2,"Desc":"[ผู้พัฒนา]\r\n    我住你家楼上\r\n[ผู้ดัดแปลงลงมือถือ]\r\n xaouxaou009","Author":"761152306","UIPackage":"UI/Sample","ID":"3628818079","Flag":-443513471,"Tags":["Gong","Esoterica","Elixir","Item","Equipment","Building","Function","Usability","Integrated","ExcludeRealmsHeaven"],"IncreasedDesc":"เอิ่มมม","IsInsideCreat":false,"Previews":["F]4)XJ66IV5AGE3]8A6~2@5.png"],"ParentModInfo":null}
