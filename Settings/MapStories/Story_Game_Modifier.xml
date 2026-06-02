@@ -371,11 +371,11 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 <li><Display>อายุขัย+9999</Display><OKResult>me:ModifierProperty("MaxAge",9999);me:TriggerStory("ZDSM");</OKResult></li>
 <li><Display>อายุขัย-100</Display><OKResult>me:ModifierProperty("MaxAge",-100);me:TriggerStory("ZDSM");</OKResult></li>
 <li><Display>อายุขัย-200</Display><OKResult>me:ModifierProperty("MaxAge",-200);me:TriggerStory("ZDSM");</OKResult></li>
-<li><Displayอายุขัย-999</Display><OKResult>me:ModifierProperty("MaxAge",-999);me:TriggerStory("ZDSM");</OKResult></li>
+<li><Display>อายุขัย-999</Display><OKResult>me:ModifierProperty("MaxAge",-999);me:TriggerStory("ZDSM");</OKResult></li>
 		</Selections></Story>
 <!--寿元流逝速度-->
 <Story Name="SMLSSD"  Parent="BaseFillingStory">
-		<DisplayName>ปรับแต่งอัตราการเสื่อมของอายุ/พลังชีวิตตามอายุ</DisplayName>
+		<DisplayName>ปรับแต่งอัตราการเสื่อมของอายุ</DisplayName>
 		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
 <li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
 <li><Display>ความเร็วการไหลของอายุขัย+1</Display><OKResult>me:ModifierProperty("AgeCostSpeed",1);me:TriggerStory("SMLSSD");</OKResult></li>
