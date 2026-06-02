@@ -1,0 +1,250 @@
+<ModifierDefs><List>  
+
+
+ <Modifier Name="QuanBu76" Type="Normal">
+		<DisplayName>เติมเต็มในคลิกเดียว</DisplayName>
+	
+		<MaxStack>0</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<Desc>เพิ่มค่าโอกาสวาสนา 1 แต้มอย่างถาวร</Desc>
+		<BaseFive>10,10,10,10,10</BaseFive>
+    <LuaClassName>modifier_fivebasedan</LuaClassName>
+		<Skills>
+      <li Name="SocialContact" Level="20"/>
+      <li Name="Fight" Level="20"/>
+      <li Name="Farming" Level="20"/>
+      <li Name="Medicine" Level="20"/>
+      <li Name="Cooking" Level="20"/>
+      <li Name="Building" Level="20"/>
+      <li Name="Manual" Level="20"/>
+      <li Name="Mining" Level="20"/>
+      <li Name="Art" Level="20"/>
+    	<li Name="Qi" Level="20"/>
+			<li Name="DanQi" Level="20"/>
+      <li Name="DouFa" Level="20"/>
+		</Skills>
+	</Modifier>
+  <Modifier Name="Dan_SkillLvMax76" Type="Normal">
+		<DisplayName>โอสถชำระไขกระดูกสามเซียน</DisplayName>
+		<Desc></Desc>
+		<MaxStack>0</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<Skills>
+      <li Name="SocialContact" Level="20"/>
+      <li Name="Fight" Level="20"/>
+      <li Name="Farming" Level="20"/>
+      <li Name="Medicine" Level="20"/>
+      <li Name="Cooking" Level="20"/>
+      <li Name="Building" Level="20"/>
+      <li Name="Manual" Level="20"/>
+      <li Name="Mining" Level="20"/>
+      <li Name="Art" Level="20"/>
+    	<li Name="Qi" Level="20"/>
+			<li Name="DanQi" Level="20"/>
+      <li Name="DouFa" Level="20"/>
+		</Skills>
+	</Modifier>
+	<Modifier Name="Dan_KaoRou76" Type="Normal">
+		<DisplayName>烤肉丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_kaorou</LuaClassName>
+	</Modifier>  
+  <Modifier Name="Dan_MiMi76" Type="Normal">
+		<DisplayName>秘密丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_mimi</LuaClassName>
+	</Modifier> 
+  <Modifier Name="Dan_SuperMiMi76" Type="Normal">
+		<DisplayName>超级秘密丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_supermimi</LuaClassName>
+	</Modifier> 
+  <Modifier Name="Dan_YiLing76" Type="Normal">
+		<DisplayName>亿灵丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_yiling</LuaClassName>
+	</Modifier> 
+  <Modifier Name="Dan_SuperRevive76" Type="Normal">
+		<DisplayName>ยาเม็ดผิงอีจื่อ</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_superrevive</LuaClassName>
+	</Modifier>
+  <Modifier Name="Dan_BrokenNeck76" Type="Normal">
+		<DisplayName>缩骨丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_brokenneck</LuaClassName>
+	</Modifier> 
+  <Modifier Name="Dan_ChangeSex76" Type="Normal">
+		<DisplayName>造化万神洗身丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_changesex</LuaClassName>
+	</Modifier>
+  <Modifier Name="Dan_XiangRui76" Type="Normal">
+		<DisplayName>造化万神洗身丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_xiangrui</LuaClassName>
+	</Modifier>
+  <Modifier Name="Dan_JiE76" Type="Normal">
+		<DisplayName>造化万神洗身丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_jie</LuaClassName>
+	</Modifier>
+  <Modifier Name="Dan_ChiHuo76" Type="Normal">
+		<DisplayName>吃货丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>-1</Duration>
+		<Display>1</Display>
+    <LuaClassName>modifier_chihuo</LuaClassName>
+	</Modifier>
+  <Modifier Name="Dan_Huoji76" Type="Normal">
+		<DisplayName>火鸡丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>-1</Duration>
+		<Display>1</Display>
+    <LuaClassName>modifier_huoji</LuaClassName>
+	</Modifier>
+  <Modifier Name="Dan_YuMu76" Type="Normal">
+		<DisplayName>育母丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>-1</Duration>
+		<Display>1</Display>
+    <LuaClassName>modifier_yumu</LuaClassName>
+	</Modifier>
+  <Modifier Name="Dan_HaHa76" Type="Normal">
+		<DisplayName>稻花香里说丰年丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_haha</LuaClassName>
+	</Modifier>
+  <Modifier Name="Dan_CaiXuKun76" Type="Normal">
+		<DisplayName>鸡你太美丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_caixukun</LuaClassName>
+	</Modifier>
+  <Modifier Name="Dan_BaiYanLang76" Type="Normal">
+		<DisplayName>白眼狼丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_baiyanlang</LuaClassName>
+	</Modifier>
+  <Modifier Name="Dan_NaoBaiJin76" Type="Normal">
+		<DisplayName>脑白金</DisplayName>
+		<Desc></Desc>
+		<MaxStack>2</MaxStack>
+		<Duration>-1</Duration>
+		<Display>1</Display>
+    <LuaClassName>modifier_naobaijin</LuaClassName>
+	</Modifier>
+  <Modifier Name="Modifier_YinYangShuangYu76" Type="Normal">
+		<DisplayName>阴阳双鱼</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_yinyangshuangyu</LuaClassName>
+	</Modifier>
+  <Modifier Name="Dan_ZhongLi76" Type="Normal">
+		<DisplayName>重力丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_zhongli</LuaClassName>
+	</Modifier>
+  <Modifier Name="Dan_TiaoDaSheng76" Type="Normal">
+		<DisplayName>跳大绳丹</DisplayName>
+		<Desc></Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>1</Duration>
+		<Display>0</Display>
+    <LuaClassName>modifier_tiaodasheng</LuaClassName>
+	</Modifier>
+  
+  <Modifier Name="Dan_FiveBase176" Type="Normal">
+		<DisplayName>通天丸</DisplayName>
+		<Desc>永久增强神识1点。</Desc>
+		<MaxStack>0</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<BaseFive>1,0,0,0,0</BaseFive>
+    <LuaClassName>modifier_fivebasedan</LuaClassName>
+	</Modifier>  
+	<Modifier Name="Dan_FiveBase276" Type="Normal">
+		<DisplayName>纳地丸</DisplayName>
+		<Desc>永久增强根骨1点。</Desc>
+		<MaxStack>0</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<BaseFive>0,1,0,0,0</BaseFive>
+    <LuaClassName>modifier_fivebasedan</LuaClassName>
+	</Modifier>  
+	<Modifier Name="Dan_FiveBase376" Type="Normal">
+		<DisplayName>逸仙丸</DisplayName>
+		<Desc>永久增强魅力1点。</Desc>
+		<MaxStack>0</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<BaseFive>0,0,1,0,0</BaseFive>
+    <LuaClassName>modifier_fivebasedan</LuaClassName>
+	</Modifier>  
+	<Modifier Name="Dan_FiveBase476" Type="Normal">
+		<DisplayName>明通丸</DisplayName>
+		<Desc>永久增强悟性1点。</Desc>
+		<MaxStack>0</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<BaseFive>0,0,0,1,0</BaseFive>
+    <LuaClassName>modifier_fivebasedan</LuaClassName>
+	</Modifier>  
+	<Modifier Name="Dan_FiveBase576" Type="Normal">
+		<DisplayName>神佑丸</DisplayName>
+		<Desc>永久增强机缘1点。</Desc>
+		<MaxStack>0</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<BaseFive>0,0,0,0,1</BaseFive>
+    <LuaClassName>modifier_fivebasedan</LuaClassName>
+	</Modifier>
+  
+  
+
+</List></ModifierDefs>

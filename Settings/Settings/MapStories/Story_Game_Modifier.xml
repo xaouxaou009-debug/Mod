@@ -1,0 +1,1833 @@
+﻿<Stories><List>
+	<Story Name="Game_Modifier"  Parent="BaseFillingStory">
+		<DisplayName>ม็อดปรับแต่งตัวละครเกม </DisplayName>
+		<Desc>(หมายเหตุ : กดแค่ครั้งเดียว ถ้ากดหลายครั้งค่าจะติดลบ) เมนู1-9 เป็นเมนูการตั้งค่าด่วน ถ้ายังไม่จุใจเข้าไปตั้งเองได้ที เมนู(แก้ไขค่าสถานะ) แก้ได้ทุกอย่าง</Desc>
+		<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult></OKResult></li>
+<li><Display>เพิ่มค่าสเตตัสทั้ง 5ของตัวละคร</Display><OKResult>me:AddModifier("QuanBu76");</OKResult></li>
+
+<li><Display>ตัวละครตายยาก</Display><OKResult>
+me:ModifierProperty("RecoveryPower",999);
+me:ModifierProperty("MagicDamageRecoveryPowerAddV",9999);
+me:ModifierProperty("LingAbsorbSpeed",1000);
+me:ModifierProperty("NutritionToJingYuanK",1000);
+me:ModifierProperty("NutritionWaterAutoRecover",1000);
+me:TriggerStory("Game_Modifier");
+</OKResult></li>
+<li><Display>จัดการค่าใช้จ่ายทางโลกอัตโนมัติ</Display><OKResult>
+me:ModifierProperty("FatigueConsumeConstant",-10);
+me:ModifierProperty("WaterConsumeConstant",-10);
+me:ModifierProperty("HappyConsumeConstant",-10);
+me:ModifierProperty("NutritionConsumeConstant",-10);
+me:ModifierProperty("PracticeFoodConsumeConstant",-10);
+me:TriggerStory("Game_Modifier");</OKResult></li>
+
+<li><Display>เพิ่มพรสวรรค์การบำเพ็ญเซียนเต็มขั้นในคลิกเดียว</Display><OKResult>
+me:ModifierProperty("IntelligenceSkillEXPConstant",999);
+me:ModifierProperty("PotentialOfBasepracticeAddValue",1000);
+me:ModifierProperty("BasepracticeSpeedCoefficient",1000);
+me:ModifierProperty("DeepPracticeSpeedSpecialCoefficient",1000);
+me:ModifierProperty("MindStateBaseValue",1000);
+me:ModifierProperty("SpeedOfMindStateCoefficient",1000);
+me:ModifierProperty("SpeedOfMindStateCoefficientByMoods",-1000);
+me:ModifierProperty("InspirationCoefficient",1000);
+me:TriggerStory("Game_Modifier");</OKResult></li>
+
+<li><Display>ปรับอัตราสำเร็จคุณภาพระดับเทพของการหลอมอาวุธและปรุงโอสถ </Display><OKResult>
+me:ModifierProperty("FabaoMake_SpeedAddV",100000);
+me:ModifierProperty("FabaoMake_SuccessRateAddV",100000);
+me:ModifierProperty("FabaoMake_LingInheritRateAddV",100000);
+me:ModifierProperty("FabaoMake_QualityAddV",100000);
+me:ModifierProperty("FabaoMake_TwelveRateChance",100000);
+me:ModifierProperty("DanMake_Speed",100000);
+me:ModifierProperty("DanMake_SpeedAddV",100000);
+me:ModifierProperty("DanMake_SuccessRate",100000);
+me:ModifierProperty("DanMake_SuccessRateAddV",100000);
+me:TriggerStory("Game_Modifier");</OKResult></li>
+<li><Display>ปรุงโอสถได้จำนวน 100 เท่า</Display><OKResult>me:ModifierProperty("DanMake_YieldAddP",100);
+me:TriggerStory("Game_Modifier");</OKResult></li>
+<li><Display>ปรับค่าสถานะการต่อสู้ด้านพลังโจมตีและป้องกัน</Display><OKResult>
+me:ModifierProperty("NpcFight_BaseHitChance",1000);
+me:ModifierProperty("NpcFight_BaseDodgeChance",1000);
+me:ModifierProperty("NpcFight_ShieldConversionEquipAdd",1000);
+me:ModifierProperty("NpcFight_FabaoNum",5);
+me:ModifierProperty("NpcFight_FabaoLingRecoverK",1000);
+me:ModifierProperty("NpcFight_FabaoPowerAddP",1000);
+me:ModifierProperty("NpcFight_FabaoLingRecoverAddP",1000);
+me:ModifierProperty("NpcFight_FabaoMaxLingAddP",1000);
+me:ModifierProperty("NpcFight_FabaoRepelDistanceAddV",5);
+me:ModifierProperty("NpcFight_FabaoFlySpeedAddP",5);
+me:ModifierProperty("NpcFight_FabaoTurnSpeedAddP",5);
+me:ModifierProperty("NpcFight_FabaoRepelResistanceAddV",1000);
+me:ModifierProperty("NpcFight_FabaoTrailingLengthAddP",5);
+me:ModifierProperty("NpcFight_SpellPowerAddP",1000);
+me:ModifierProperty("NpcFight_ShieldConversionRate",1000);
+me:ModifierProperty("NpcFight_ShieldConversionRateAddP",1000);
+me:ModifierProperty("NpcFight_ShieldResistanceToJin",1000);
+me:ModifierProperty("NpcFight_ShieldResistanceToMu",1000);
+me:ModifierProperty("NpcFight_ShieldResistanceToShui",1000);
+me:ModifierProperty("NpcFight_ShieldResistanceToHuo",1000);
+me:ModifierProperty("NpcFight_ShieldResistanceToTu",1000);
+me:TriggerStory("Game_Modifier");</OKResult></li>
+<li><Display>ปรับแต้มประสบการณ์และค่าสถานะโบนัสการฝึกฝน</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",999);
+me:ModifierProperty("WorldMapFlySpeed",1000);
+me:ModifierProperty("WorldMapFlySpeedAddP",1000);
+me:ModifierProperty("ExperiencePrestigeAddP",1000);
+me:ModifierProperty("ExperienceFindSpeedAddV",1000);
+me:TriggerStory("Game_Modifier");
+</OKResult></li>
+
+<li><Display>ความเร็วทำงานพื้นฐานทั้งหมด +100000</Display><OKResult>me:ModifierProperty("GlobalEfficiency",100000);
+me:ModifierProperty("BaseWorkSpeed",999);me:TriggerStory("Game_Modifier");</OKResult></li>
+
+<li><Display>ลบโหมด ตายยาก</Display><OKResult>
+me:ModifierProperty("RecoveryPower",-999);
+me:ModifierProperty("MagicDamageRecoveryPowerAddV",-9999);
+me:ModifierProperty("LingAbsorbSpeed",-100000);
+me:ModifierProperty("NutritionToJingYuanK",-100000);
+me:ModifierProperty("NutritionWaterAutoRecover",-100000);
+me:TriggerStory("Game_Modifier");
+</OKResult></li>
+<li><Display>ลบโหมด จัดการค่าใช้จ่ายทางโลกอัตโนมัต
+(กดหลายครั้งค่าจะติดลบ)</Display><OKResult>
+me:ModifierProperty("FatigueConsumeConstant",10);
+me:ModifierProperty("WaterConsumeConstant",10);
+me:ModifierProperty("HappyConsumeConstant",10);
+me:ModifierProperty("NutritionConsumeConstant",10);
+me:ModifierProperty("PracticeFoodConsumeConstant",10);
+me:TriggerStory("Game_Modifier");</OKResult></li>
+
+<li><Display>ลบโหมด พรสวรรค์บำเพ็ญเซียนเต็มขั้น</Display><OKResult>
+me:ModifierProperty("IntelligenceSkillEXPConstant",-999);
+me:ModifierProperty("PotentialOfBasepracticeAddValue",-1000);
+me:ModifierProperty("BasepracticeSpeedCoefficient",-1000);
+me:ModifierProperty("DeepPracticeSpeedSpecialCoefficient",-1000);
+me:ModifierProperty("MindStateBaseValue",-1000);
+me:ModifierProperty("SpeedOfMindStateCoefficient",-1000);
+me:ModifierProperty("SpeedOfMindStateCoefficientByMoods",1000);
+me:ModifierProperty("InspirationCoefficient",-1000);
+me:TriggerStory("Game_Modifier");</OKResult></li>
+
+<li><Display>ลบการปรับอัตราสำเร็จคุณภาพระดับเทพของการหลอมอาวุธและปรุงโอสถ</Display><OKResult>
+me:ModifierProperty("FabaoMake_SpeedAddV",-100000);
+me:ModifierProperty("FabaoMake_SuccessRateAddV",-100000);
+me:ModifierProperty("FabaoMake_LingInheritRateAddV",-100000);
+me:ModifierProperty("FabaoMake_QualityAddV",-100000);
+me:ModifierProperty("FabaoMake_TwelveRateChance",-100000);
+me:ModifierProperty("DanMake_Speed",-100000);
+me:ModifierProperty("DanMake_SpeedAddV",-100000);
+me:ModifierProperty("DanMake_SuccessRate",-100000);
+me:ModifierProperty("DanMake_SuccessRateAddV",-100000);
+me:TriggerStory("Game_Modifier");</OKResult></li>
+<li><Display>ลบเอฟเฟกต์จำนวนการปรุงโอสถ x100 เท่า</Display><OKResult>me:ModifierProperty("DanMake_YieldAddP",-100);
+me:TriggerStory("Game_Modifier");</OKResult></li>
+<li><Display>ลบการปรับค่าสถานะการต่อสู้ด้านพลังโจมตีและป้องกัน</Display><OKResult>
+me:ModifierProperty("NpcFight_BaseHitChance",-1000);
+me:ModifierProperty("NpcFight_BaseDodgeChance",-1000);
+me:ModifierProperty("NpcFight_ShieldConversionEquipAdd",-1000);
+me:ModifierProperty("NpcFight_FabaoNum",-5);
+me:ModifierProperty("NpcFight_FabaoLingRecoverK",-1000);
+me:ModifierProperty("NpcFight_FabaoPowerAddP",-1000);
+me:ModifierProperty("NpcFight_FabaoLingRecoverAddP",-1000);
+me:ModifierProperty("NpcFight_FabaoMaxLingAddP",-1000);
+me:ModifierProperty("NpcFight_FabaoRepelDistanceAddV",-5);
+me:ModifierProperty("NpcFight_FabaoFlySpeedAddP",-5);
+me:ModifierProperty("NpcFight_FabaoTurnSpeedAddP",-5);
+me:ModifierProperty("NpcFight_FabaoRepelResistanceAddV",-1000);
+me:ModifierProperty("NpcFight_FabaoTrailingLengthAddP",-5);
+me:ModifierProperty("NpcFight_SpellPowerAddP",-1000);
+me:ModifierProperty("NpcFight_ShieldConversionRate",-1000);
+me:ModifierProperty("NpcFight_ShieldConversionRateAddP",-1000);
+me:ModifierProperty("NpcFight_ShieldResistanceToJin",-1000);
+me:ModifierProperty("NpcFight_ShieldResistanceToMu",-1000);
+me:ModifierProperty("NpcFight_ShieldResistanceToShui",-1000);
+me:ModifierProperty("NpcFight_ShieldResistanceToHuo",-1000);
+me:ModifierProperty("NpcFight_ShieldResistanceToTu",-1000);
+me:TriggerStory("Game_Modifier");</OKResult></li>
+<li><Display>ลบการปรับแต้มประสบการณ์และโบนัสค่าสถานะการฝึกฝน</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",-999);
+me:ModifierProperty("WorldMapFlySpeed",-1000);
+me:ModifierProperty("WorldMapFlySpeedAddP",-1000);
+me:ModifierProperty("ExperiencePrestigeAddP",-1000);
+me:ModifierProperty("ExperienceFindSpeedAddV",-1000);
+me:TriggerStory("Game_Modifier");
+</OKResult></li>
+<li><Display>ลบเอฟเฟกต์ความเร็วทำงานพื้นฐานทั้งหมด +1000</Display><OKResult>me:ModifierProperty("GlobalEfficiency",-100000);
+me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKResult></li>
+<li><Display>แก้ไขค่าสถานะ</Display><OKResult>me:TriggerStory("Property");</OKResult></li>
+<li><Display>แก้ไขสภาพอากาศ เวลา และฤดูกาล</Display><OKResult>me:TriggerStory("TQSJJJXG");</OKResult></li>
+<li><Display>ม็อดเสกของบางอย่าง</Display><OKResult>me:TriggerStory("LBQDZLZMNQ");</OKResult></li>			
+</Selections></Story>
+
+
+<Story Name="LBQDZLZMNQ"  Parent="BaseFillingStory">
+		<DisplayName>ม็อดเสริม</DisplayName>
+		<Desc>“ฟังก์ชันนี้ จะมั่วๆหน่อยรวมๆกันไป เวอร์ชั่นPcกับมือถือต่างกัน แต่จะพยามตัดที่ใช้ไม่ได้ออก”</Desc>
+		<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
+<li><Display>“หีบสมบัติคัมภีร์เซียน(สุ่ม)</Display><OKResult>
+				<![CDATA[	
+				story:RemoveBindItem();
+				local nR = me:RandomInt(1, 10);
+				if nR <= 5 then
+					me:AddMsg("หีบลับของ [NAME] เปล่งแสงสลัวออกมา ก่อนจะหลอมรวมเป็นคัมภีร์วิชาคุณภาพต่ำสุดแสนหยาบห่วย");world:UnlockRandomGong(1);
+				elseif nR <= 7 then
+					me:AddMsg("หีบลับของ [NAME] เปล่งแสงธรรมดาออกมา ก่อนจะหลอมรวมเป็นคัมภีร์วิชาที่แสนธรรมดาไร้ความโดดเด่น");world:UnlockRandomGong(2);
+        elseif nR <= 9 then
+					me:AddMsg("หีบลับของ [NAME] เปล่งแสงเจิดจ้าออกมา ก่อนจะหลอมรวมเป็นคัมภีร์วิชาที่แฝงไว้ด้วยความลึกล้ำ");world:UnlockRandomGong(3);
+        else
+          me:AddMsg("หีบลับของ [NAME] เปล่งแสงเจิดจ้าราวดวงอาทิตย์ ก่อนจะหลอมรวมเป็นคัมภีร์วิชาอันล้ำลึกเหนือหยั่ง");world:UnlockRandomGong(4);
+				end
+				]]>		
+				</OKResult></li>
+<li><Display>หีบหินโบราณ (สุ่ม)</Display><OKResult>
+				<![CDATA[	
+				story:RemoveBindItem();
+				local nR = me:RandomInt(1, 51); 
+				local tIL = {"Wood","Rock","Metal","Weapon"};
+				if nR <= 4 then
+					me:AddMsg("“[NAME] เปิดหีบหินออก และพบเข้ากับผังค่ายกลที่สูญหายไปนานเล่มหนึ่งอยู่ด้านใน”");me:DropEsotericFromCache(story.ItemCache4, 1);
+				elseif nR <= 8 then
+					me:AddMsg("“[NAME] เปิดหีบหินออก และพบว่าด้านในซ่อนวัสดุล้ำค่าจำนวนหนึ่งเอาไว้”");me:DropAwardItemFromCache(story.ItemCache3, 1);
+				elseif nR <= 12 then
+					me:AddMsg("“[NAME] เปิดหีบหินออก และพบว่าด้านในซ่อนสมบัติล้ำค่าโบราณชิ้นหนึ่งไว้ ซึ่งสามารถกดข่มฮวงจุ้ยได้”");me:DropRandomItem(tIL[world:RandomInt(1,#tIL+1)], 7, 11, true);
+				elseif nR <= 15 then
+					me:AddMsg("“[NAME] เปิดหีบหินออก และพบหนังสือเล่มหนึ่งอยู่ด้านในอย่างคาดไม่ถึง”");me:DropEsotericFromCache(story.ItemCache, 1);
+				elseif nR <= 18 then
+					me:AddMsg("“[NAME] เปิดหีบหินออก และพบวิชาอภินิหารบทหนึ่งอยู่ภายในอย่างไม่น่าเชื่อ”");me:DropEsotericFromCache(story.ItemCache2, 1);
+				elseif nR <= 21 then
+					me:AddMsg("“[NAME] เปิดหีบหินออก และพบคัมภีร์ลับเล่มหนึ่งอยู่ภายในอย่างไม่น่าเชื่อ”");me:DropRandomItem("Esoterica");
+        elseif nR <= 24 then  
+          if world:IsGongUnLocked("Gong_2_Mu") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีพุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้ความพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนาน”");me:UnLockGong("Gong_2_Mu");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบหนังสือเล่มหนึ่งอยู่ภายในอย่างคาดไม่ถึง”");me:DropEsotericFromCache(story.ItemCache, 1);
+					end
+        elseif nR <= 27 then  
+          if world:IsGongUnLocked("Gong_3_Jin") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("Gong_3_Jin");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบวิชาอภินิหารบทหนึ่งอยู่ภายในอย่างไม่น่าเชื่อ”");me:DropEsotericFromCache(story.ItemCache2, 1);
+					end
+        elseif nR <= 30 then  
+          if world:IsGongUnLocked("Gong_4_None") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("Gong_4_None");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบวัตถุดิบล้ำค่าจำนวนหนึ่งซ่อนอยู่ภายใน”");me:DropAwardItemFromCache(story.ItemCache3, 1);
+					end
+        elseif nR <= 33 then  
+          if world:IsGongUnLocked("Gong_6_Huo") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("Gong_6_Huo");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบสมบัติล้ำค่าสมัยโบราณชิ้นหนึ่งอยู่ภายใน ซึ่งสามารถกดข่มฮวงจุ้ยได้”");me:DropRandomItem(tIL[world:RandomInt(1,#tIL+1)], 7, 11, true);
+					end
+        elseif nR <= 36 then  
+          if world:IsGongUnLocked("Gong_7_Huo") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("Gong_7_Huo");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบผังค่ายกลที่สูญหายไปนานเล่มหนึ่งอยู่ภายใน”");me:DropEsotericFromCache(story.ItemCache4, 1);
+					end
+        elseif nR <= 39 then
+					if world:IsGongUnLocked("Gong_5_Tu") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("Gong_5_Tu");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบผังค่ายกลที่สูญหายไปนานเล่มหนึ่งอยู่ภายใน”");me:DropEsotericFromCache(story.ItemCache4, 1);
+					end
+        elseif nR <= 42 then  
+          if world:IsGongUnLocked("Gong_12_None") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("Gong_12_None");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบหนังสือเล่มหนึ่งอยู่ภายในอย่างคาดไม่ถึง”");me:DropEsotericFromCache(story.ItemCache, 1);
+					end
+        elseif nR <= 45 then  
+          if world:IsGongUnLocked("God_Gong_1") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("God_Gong_1");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบวิชาอภินิหารบทหนึ่งอยู่ภายในอย่างไม่น่าเชื่อ”");me:DropEsotericFromCache(story.ItemCache2, 1);
+					end
+        elseif nR <= 48 then  
+          if world:IsGongUnLocked("God_Gong_2") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("God_Gong_2");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบวัตถุดิบล้ำค่าจำนวนหนึ่งซ่อนอยู่ภายใน”");me:DropAwardItemFromCache(story.ItemCache3, 1);
+					end
+        elseif nR <= 51 then  
+          if world:IsGongUnLocked("God_Gong_3") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("God_Gong_3");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบสมบัติล้ำค่าสมัยโบราณชิ้นหนึ่งอยู่ภายใน ซึ่งสามารถกดข่มฮวงจุ้ยได้”");me:DropRandomItem(tIL[world:RandomInt(1,#tIL+1)], 7, 11, true);
+					end
+				end
+				]]>		
+				</OKResult></li>
+
+
+
+
+<li><Display>สามเซียนล้างไขกระดูกโอสถ</Display><OKResult>me:AddModifier("Dan_SkillLvMax76");</OKResult></li>
+<li><Display>ทดสอบม็อดยา</Display><OKResult>me:AddModifier("Item_LingOriginalWu");</OKResult></li>
+<li><Display>สุ่มเรียกอสูร</Display><OKResult>me:AddModifier("Dan_KaoRou76");</OKResult></li>
+<li><Display>เรียกโจรป่า</Display><OKResult>me:AddModifier("Dan_MiMi76");</OKResult></li>
+<li><Display>เลือกโจรป่าระดับสูง</Display><OKResult>me:AddModifier("Dan_SuperMiMi76");</OKResult></li>
+<li><Display>โอสถวิญญาณมหาศาล</Display><OKResult>me:AddModifier("Dan_YiLing76");</OKResult></li>
+
+<li><Display>ทดสอบ</Display><OKResult>me:AddModifier("Dan_BrokenNeck76");</OKResult></li>
+<li>
+  <Display>Mount Buzhou Stone</Display>
+  <OKResult>me:AddItem("Item_ParasolWood", 1);</OKResult>
+</li>
+
+<li><Display>เรียกอสูร : เฟย</Display><OKResult>me:AddModifier("Dan_JiE76");</OKResult></li>
+<li><Display>เรียกอสูร : มังกรฟ้า</Display><OKResult>me:AddModifier("Dan_ChiHuo76");</OKResult></li>
+<li><Display>เรียกอสูร : นกฟีนิกซ์เพลิง</Display><OKResult>me:AddModifier("Dan_Huoji76");</OKResult></li>
+<li><Display>เรียกอสูร : มังกรไฟ</Display><OKResult>me:AddModifier("Dan_YuMu76");</OKResult></li>
+<li><Display>เปลียนฤดูเป็นปีเก็บเกี่ยวอุดมสมบูรณ์</Display><OKResult>me:AddModifier("Dan_HaHa76");</OKResult></li>
+
+<li><Display>ขโมยของNPC</Display><OKResult>me:AddModifier("Dan_BaiYanLang76");</OKResult></li>
+
+<li><Display>ชุปชีวิตNPC</Display><OKResult>me:AddModifier("Modifier_YinYangShuangYu76");</OKResult></li>
+
+
+</Selections></Story>
+
+	<Story Name="Property"  Parent="BaseFillingStory">
+		<DisplayName>แก้ไขคุณสมบัติ</DisplayName>
+		<Desc>กรุณาเลือกประเภทคุณสมบัติที่ต้องการแก้ไข</Desc>
+		<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
+<li><Display>ปรับแต่งค่าพลังการต่อสู้</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>ปรับแต่งค่าสเตตัสการบำเพ็ญระดับเทพ/เซียนเทพ</Display><OKResult>me:TriggerStory("GodPraticeProperty");</OKResult></li>
+<li><Display>ปรับแต่งค่าการฝึกตน / ค่าสเตตัสการฝึกเซียน</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ปรับแต่งสเตตัสตัวละครทั้งหมดที่เกี่ยวข้อง</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ปรับแต่งค่าสเตตัสสายงาน/การทำกิจกรรม</Display><OKResult>me:TriggerStory("WorkProperty");</OKResult></li>
+</Selections></Story>
+
+<Story Name="WorkProperty"  Parent="BaseFillingStory">
+		<DisplayName>ปรับแต่งสเตตัสด้านการทำงาน/กิจกรรมงาน</DisplayName>
+		<Desc>กรุณาเลือกคุณสมบัติที่ต้องการปรับแต่ง</Desc>
+		<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Property");</OKResult></li>
+<li><Display>เพิ่มความเร็วการทำงานรวมทั่วทั้งระบบ +100000</Display><OKResult>me:ModifierProperty("GlobalEfficiency",100000);me:TriggerStory("WorkProperty");</OKResult></li>
+<li><Display>ลดความเร็วการทำงานรวมทั่วทั้งระบบ -100000</Display><OKResult>me:ModifierProperty("GlobalEfficiency",-100000);me:TriggerStory("WorkProperty");	</OKResult></li>
+</Selections></Story>
+
+<!--经历点数加成-->
+<Story Name="JLDSJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับแต่งอัตราเพิ่มแต้มประสบการณ์</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับ</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>โบนัสแต้มประสบการณ์ +100</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",100);me:TriggerStory("JLDSJC");</OKResult></li>
+<li><Display>โบนัสแต้มประสบการณ์ +200</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",200);me:TriggerStory("JLDSJC");</OKResult></li>
+<li><Display>โบนัสแต้มประสบการณ์ +999</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",999);me:TriggerStory("JLDSJC");</OKResult></li>
+<li><Display>โบนัสแต้มประสบการณ์ -100</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",-100);me:TriggerStory("JLDSJC");</OKResult></li>
+<li><Display>โบนัสแต้มประสบการณ์ -200</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",-200);me:TriggerStory("JLDSJC");</OKResult></li>
+<li><Display>โบนัสแต้มประสบการณ์ -999</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",-999);me:TriggerStory("JLDSJC");</OKResult></li>
+		</Selections></Story>
+
+<!--基础工作速度-->
+<Story Name="JCGZSD"  Parent="BaseFillingStory">
+		<DisplayName>ปรับแต่งความเร็วงานพื้นฐาน</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่ต้องการปรับ</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ความเร็วการทำงานพื้นฐาน+100</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",100);me:TriggerStory("JCGZSD");</OKResult></li>
+<li><Display>ความเร็วการทำงานพื้นฐาน+200</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",200);me:TriggerStory("JCGZSD");</OKResult></li>
+<li><Display>ความเร็วการทำงานพื้นฐาน+999</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",999);me:TriggerStory("JCGZSD");</OKResult></li>
+<li><Display>ความเร็วการทำงานพื้นฐาน-100</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",-100);me:TriggerStory("JCGZSD");</OKResult></li>
+<li><Display>ความเร็วการทำงานพื้นฐาน-200</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",-200);me:TriggerStory("JCGZSD");</OKResult></li>
+<li><Display>ความเร็วการทำงานพื้นฐาน-999</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("JCGZSD");</OKResult></li>
+		</Selections></Story>
+
+<!--心情基础值-->
+<Story Name="XQJCZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับแต่งค่าความสุข/อารมณ์พื้นฐาน</DisplayName>
+		<Desc>กรุณาเลือกสิ่งที่ต้องการแก้ไข</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>เพิ่มค่าพื้นฐานอารมณ์+100</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",100);me:TriggerStory("XQJCZ");</OKResult></li>
+<li><Display>เพิ่มค่าพื้นฐานอารมณ์+200</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",200);me:TriggerStory("XQJCZ");</OKResult></li>
+<li><Display>เพิ่มค่าพื้นฐานอารมณ์+999</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",999);me:TriggerStory("XQJCZ");</OKResult></li>
+<li><Display>ลดค่าพื้นฐานอารมณ์-100</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",-100);me:TriggerStory("XQJCZ");</OKResult></li>
+<li><Display>ลดค่าพื้นฐานอารมณ์-200</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",-200);me:TriggerStory("XQJCZ");</OKResult></li>
+<li><Display>ลดค่าพื้นฐานอารมณ์-999</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",-999);me:TriggerStory("XQJCZ");</OKResult></li>
+		</Selections></Story>
+		
+		<!--最大生命值-->
+<Story Name="ZDSMZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับแต่ง HP สูงสุด</DisplayName>
+		<Desc>กรุณาเลือกค่าที่ต้องการแก้ไข</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>เพิ่ม HP สูงสุด+100</Display><OKResult>me:ModifierProperty("MaxHp",100);me:TriggerStory("ZDSMZ");</OKResult></li>
+<li><Display>เพิ่ม HP สูงสุด+200</Display><OKResult>me:ModifierProperty("MaxHp",200);me:TriggerStory("ZDSMZ");</OKResult></li>
+<li><Display>เพิ่ม HP สูงสุด+999</Display><OKResult>me:ModifierProperty("MaxHp",999);me:TriggerStory("ZDSMZ");</OKResult></li>
+<li><Display>ลด HP สูงสุด-100</Display><OKResult>me:ModifierProperty("MaxHp",-100);me:TriggerStory("ZDSMZ");</OKResult></li>
+<li><Display>ลด HP สูงสุด-200</Display><OKResult>me:ModifierProperty("MaxHp",-200);me:TriggerStory("ZDSMZ");</OKResult></li>
+<li><Display>ลด HP สูงสุด-999</Display><OKResult>me:ModifierProperty("MaxHp",-999);me:TriggerStory("ZDSMZ");</OKResult></li>
+		</Selections></Story>
+<!--最大寿命-->
+<Story Name="ZDSM"  Parent="BaseFillingStory">
+		<DisplayName>ปรับแต่งอายุขัยสูงสุด</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อายุขัย+100</Display><OKResult>me:ModifierProperty("MaxAge",100);me:TriggerStory("ZDSM");</OKResult></li>
+<li><Display>อายุขัย+200</Display><OKResult>me:ModifierProperty("MaxAge",200);me:TriggerStory("ZDSM");</OKResult></li>
+<li><Display>อายุขัย+9999</Display><OKResult>me:ModifierProperty("MaxAge",9999);me:TriggerStory("ZDSM");</OKResult></li>
+<li><Display>อายุขัย-100</Display><OKResult>me:ModifierProperty("MaxAge",-100);me:TriggerStory("ZDSM");</OKResult></li>
+<li><Display>อายุขัย-200</Display><OKResult>me:ModifierProperty("MaxAge",-200);me:TriggerStory("ZDSM");</OKResult></li>
+<li><Display>อายุขัย-999</Display><OKResult>me:ModifierProperty("MaxAge",-999);me:TriggerStory("ZDSM");</OKResult></li>
+		</Selections></Story>
+<!--寿元流逝速度-->
+<Story Name="SMLSSD"  Parent="BaseFillingStory">
+		<DisplayName>ปรับแต่งอัตราการเสื่อมของอายุ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ความเร็วการไหลของอายุขัย+1</Display><OKResult>me:ModifierProperty("AgeCostSpeed",1);me:TriggerStory("SMLSSD");</OKResult></li>
+<li><Display>ความเร็วการไหลของอายุขัย+2</Display><OKResult>me:ModifierProperty("AgeCostSpeed",2);me:TriggerStory("SMLSSD");</OKResult></li>
+<li><Display>ความเร็วการไหลของอายุขัย+10</Display><OKResult>me:ModifierProperty("AgeCostSpeed",10);me:TriggerStory("SMLSSD");</OKResult></li>
+<li><Display>ความเร็วการไหลของอายุขัย-1</Display><OKResult>me:ModifierProperty("AgeCostSpeed",-1);me:TriggerStory("SMLSSD");</OKResult></li>
+<li><Display>ความเร็วการไหลของอายุขัย-2</Display><OKResult>me:ModifierProperty("AgeCostSpeed",-2);me:TriggerStory("SMLSSD");</OKResult></li>
+<li><Display>ความเร็วการไหลของอายุขัย-10</Display><OKResult>me:ModifierProperty("AgeCostSpeed",-10);me:TriggerStory("SMLSSD");</OKResult></li>
+		</Selections></Story>
+<!--感知范围-->
+<Story Name="GZFW"  Parent="BaseFillingStory">
+		<DisplayName>แก้ไขระยะการรับรู้</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ระยะการรับรู้+100</Display><OKResult>me:ModifierProperty("VisionRadius",100);me:TriggerStory("GZFW");</OKResult></li>
+<li><Display>ระยะการรับรู้+200</Display><OKResult>me:ModifierProperty("VisionRadius",200);me:TriggerStory("GZFW");</OKResult></li>
+<li><Display>ระยะการรับรู้+999</Display><OKResult>me:ModifierProperty("VisionRadius",999);me:TriggerStory("GZFW");</OKResult></li>
+<li><Display>ระยะการรับรู้-100</Display><OKResult>me:ModifierProperty("VisionRadius",-100);me:TriggerStory("GZFW");</OKResult></li>
+<li><Display>ระยะการรับรู้-200</Display><OKResult>me:ModifierProperty("VisionRadius",-200);me:TriggerStory("GZFW");</OKResult></li>
+<li><Display>ระยะการรับรู้-999</Display><OKResult>me:ModifierProperty("VisionRadius",-999);me:TriggerStory("GZFW");</OKResult></li>
+		</Selections></Story>
+<!--移动速度-->
+<Story Name="YDSD"  Parent="BaseFillingStory">
+		<DisplayName>ปรับค่าความเร็วการเคลื่อนที่</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ความเร็วเคลื่อนที่+10</Display><OKResult>me:ModifierProperty("MoveSpeed",10);me:TriggerStory("YDSD");</OKResult></li>
+<li><Display>ความเร็วเคลื่อนที่+20</Display><OKResult>me:ModifierProperty("MoveSpeed",20);me:TriggerStory("YDSD");</OKResult></li>
+<li><Display>ความเร็วเคลื่อนที่+100</Display><OKResult>me:ModifierProperty("MoveSpeed",100);me:TriggerStory("YDSD");</OKResult></li>
+<li><Display>ความเร็วเคลื่อนที่-10</Display><OKResult>me:ModifierProperty("MoveSpeed",-10);me:TriggerStory("YDSD");</OKResult></li>
+<li><Display>ความเร็วเคลื่อนที่-20</Display><OKResult>me:ModifierProperty("MoveSpeed",-20);me:TriggerStory("YDSD");</OKResult></li>
+<li><Display>ความเร็วเคลื่อนที่-100</Display><OKResult>me:ModifierProperty("MoveSpeed",-100);me:TriggerStory("YDSD");</OKResult></li>
+		</Selections></Story>
+		
+		<!--最低舒适温度-->
+<Story Name="ZDSSWD"  Parent="BaseFillingStory">
+		<DisplayName>แก้ไขอุณหภูมิความสบายขั้นต่ำ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อุณหภูมิความสบายขั้นต่ำ+100</Display><OKResult>me:ModifierProperty("ComfyTMin",100);me:TriggerStory("ZDSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายขั้นต่ำ+200</Display><OKResult>me:ModifierProperty("ComfyTMin",200);me:TriggerStory("ZDSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายขั้นต่ำ+999</Display><OKResult>me:ModifierProperty("ComfyTMin",999);me:TriggerStory("ZDSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายขั้นต่ำ-100</Display><OKResult>me:ModifierProperty("ComfyTMin",-100);me:TriggerStory("ZDSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายขั้นต่ำ-200</Display><OKResult>me:ModifierProperty("ComfyTMin",-200);me:TriggerStory("ZDSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายขั้นต่ำ-999</Display><OKResult>me:ModifierProperty("ComfyTMin",-999);me:TriggerStory("ZDSSWD");</OKResult></li>
+		</Selections></Story>
+<!--最高舒适温度-->
+<Story Name="ZGSSWD"  Parent="BaseFillingStory">
+		<DisplayName>แก้ไขอุณหภูมิความสบายสูงสุด</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อุณหภูมิความสบายสูงสุด+100</Display><OKResult>me:ModifierProperty("ComfyTMax",100);me:TriggerStory("ZGSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายสูงสุด+200</Display><OKResult>me:ModifierProperty("ComfyTMax",200);me:TriggerStory("ZGSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายสูงสุด999</Display><OKResult>me:ModifierProperty("ComfyTMax",999);me:TriggerStory("ZGSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายสูงสุด-100</Display><OKResult>me:ModifierProperty("ComfyTMax",-100);me:TriggerStory("ZGSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายสูงสุด-200</Display><OKResult>me:ModifierProperty("ComfyTMax",-200);me:TriggerStory("ZGSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายสูงสุด-999</Display><OKResult>me:ModifierProperty("ComfyTMax",-999);me:TriggerStory("ZGSSWD");</OKResult></li>
+		</Selections></Story>
+<!--最低极限温度-->
+<Story Name="ZDJXWD"  Parent="BaseFillingStory">
+		<DisplayName>แก้ไขอุณหภูมิขีดจำกัดต่ำสุดขั้นสุด</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดต่ำสุดขั้นสุด +100</Display><OKResult>me:ModifierProperty("ToleranceTMin",100);me:TriggerStory("ZDJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดต่ำสุดขั้นสุด +200</Display><OKResult>me:ModifierProperty("ToleranceTMin",200);me:TriggerStory("ZDJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดต่ำสุดขั้นสุด +999</Display><OKResult>me:ModifierProperty("ToleranceTMin",999);me:TriggerStory("ZDJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดต่ำสุดขั้นสุด -100</Display><OKResult>me:ModifierProperty("ToleranceTMin",-100);me:TriggerStory("ZDJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดต่ำสุดขั้นสุด -200</Display><OKResult>me:ModifierProperty("ToleranceTMin",-200);me:TriggerStory("ZDJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดต่ำสุดขั้นสุด -999</Display><OKResult>me:ModifierProperty("ToleranceTMin",-999);me:TriggerStory("ZDJXWD");</OKResult></li>
+		</Selections></Story>
+		
+		<!--最高极限温度-->
+<Story Name="ZGJXWD"  Parent="BaseFillingStory">
+		<DisplayName>แก้ไขอุณหภูมิขีดจำกัดสูงสุดขั้นสุด</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดสูงสุดขั้นสุด+100</Display><OKResult>me:ModifierProperty("ToleranceTMax",100);me:TriggerStory("ZGJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดสูงสุดขั้นสุด+200</Display><OKResult>me:ModifierProperty("ToleranceTMax",200);me:TriggerStory("ZGJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดสูงสุดขั้นสุด+999</Display><OKResult>me:ModifierProperty("ToleranceTMax",999);me:TriggerStory("ZGJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดสูงสุดขั้นสุด-100</Display><OKResult>me:ModifierProperty("ToleranceTMax",-100);me:TriggerStory("ZGJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดสูงสุดขั้นสุด-200</Display><OKResult>me:ModifierProperty("ToleranceTMax",-200);me:TriggerStory("ZGJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดสูงสุดขั้นสุด-999</Display><OKResult>me:ModifierProperty("ToleranceTMax",-999);me:TriggerStory("ZGJXWD");</OKResult></li>
+		</Selections></Story>
+<!--自然恢复力-->
+<Story Name="ZRHFL"  Parent="BaseFillingStory">
+		<DisplayName>ปรับค่าการฟื้นฟูร่างกายอัตโนมัติ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ความสามารถในการฟื้นฟูตัวเอง+100</Display><OKResult>me:ModifierProperty("RecoveryPower",100);me:TriggerStory("ZRHFL");</OKResult></li>
+<li><Display>ความสามารถในการฟื้นฟูตัวเอง+200</Display><OKResult>me:ModifierProperty("RecoveryPower",200);me:TriggerStory("ZRHFL");</OKResult></li>
+<li><Display>ความสามารถในการฟื้นฟูตัวเอง+999</Display><OKResult>me:ModifierProperty("RecoveryPower",999);me:TriggerStory("ZRHFL");</OKResult></li>
+<li><Display>ความสามารถในการฟื้นฟูตัวเอง-100</Display><OKResult>me:ModifierProperty("RecoveryPower",-100);me:TriggerStory("ZRHFL");</OKResult></li>
+<li><Display>ความสามารถในการฟื้นฟูตัวเอง-200</Display><OKResult>me:ModifierProperty("RecoveryPower",-200);me:TriggerStory("ZRHFL");</OKResult></li>
+<li><Display>ความสามารถในการฟื้นฟูตัวเอง-999</Display><OKResult>me:ModifierProperty("RecoveryPower",-999);me:TriggerStory("ZRHFL");</OKResult></li>
+		</Selections></Story>
+<!--疼痛极限-->
+<Story Name="TTJX"  Parent="BaseFillingStory">
+		<DisplayName>ปรับค่าความทนต่อความเจ็บปวดสูงสุด</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ระดับความทนต่อความเจ็บปวดสูงสุด+100</Display><OKResult>me:ModifierProperty("PainTolerance",100);me:TriggerStory("TTJX");</OKResult></li>
+<li><Display>ระดับความทนต่อความเจ็บปวดสูงสุด+200</Display><OKResult>me:ModifierProperty("PainTolerance",200);me:TriggerStory("TTJX");</OKResult></li>
+<li><Display>ระดับความทนต่อความเจ็บปวดสูงสุด+999</Display><OKResult>me:ModifierProperty("PainTolerance",999);me:TriggerStory("TTJX");</OKResult></li>
+<li><Display>ระดับความทนต่อความเจ็บปวดสูงสุด-100</Display><OKResult>me:ModifierProperty("PainTolerance",-100);me:TriggerStory("TTJX");</OKResult></li>
+<li><Display>ระดับความทนต่อความเจ็บปวดสูงสุด-200</Display><OKResult>me:ModifierProperty("PainTolerance",-200);me:TriggerStory("TTJX");</OKResult></li>
+<li><Display>ระดับความทนต่อความเจ็บปวดสูงสุด-999</Display><OKResult>me:ModifierProperty("PainTolerance",-999);me:TriggerStory("TTJX");</OKResult></li>
+		</Selections></Story>
+		
+		<!--学习速度-->
+<Story Name="XXSD"  Parent="BaseFillingStory">
+		<DisplayName>แก้ไขความเร็วในการเรียนรู้</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ +100</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",100);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ +200</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",200);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ +999</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",999);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ -100</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-100);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ -200</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-200);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ -999</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-999);me:TriggerStory("XXSD");</OKResult></li>
+		</Selections></Story>
+<!--噩梦发生几率-->
+<Story Name="EMFSJL"  Parent="BaseFillingStory">
+		<DisplayName>แก้ไขโอกาสการเกิดฝันร้าย</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันร้าย+0.1</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",0.1);me:TriggerStory("EMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันร้าย+0.2</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",0.2);me:TriggerStory("EMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันร้าย+1</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",1);me:TriggerStory("EMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันร้าย-0.1</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",-0.1);me:TriggerStory("EMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันร้าย-0.2</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",-0.2);me:TriggerStory("EMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันร้าย-1</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",-1);me:TriggerStory("EMFSJL");</OKResult></li>
+		</Selections></Story>
+
+<!--美梦发生几率-->
+<Story Name="MMFSJL"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโอกาสการเกิดฝันดี</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันดี+0.1</Display><OKResult>me:ModifierProperty("NiceDreamHappenPercent",0.1);me:TriggerStory("MMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันดี+0.2</Display><OKResult>me:ModifierProperty("NiceDreamHappenPercent",0.2);me:TriggerStory("MMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันดี+1</Display><OKResult>me:ModifierProperty("NiceDreamHappenPercent",1);me:TriggerStory("MMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันดี-0.1</Display><OKResult>me:ModifierProperty("NiceDreamHappenPercent",-0.1);me:TriggerStory("MMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันดี-0.2</Display><OKResult>me:ModifierProperty("NiceDreamHappenPercent",-0.2);me:TriggerStory("MMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันดี-1</Display><OKResult>me:ModifierProperty("NiceDreamHappenPercent",-1);me:TriggerStory("MMFSJL");</OKResult></li>
+		</Selections></Story>
+		<!--精力消耗速度-->
+<Story Name="JLXHSD"  Parent="BaseFillingStory">
+		<DisplayName>ปรับอัตราการใช้พลังงาน</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อัตราการใช้พลังงาน+1</Display><OKResult>me:ModifierProperty("FatigueConsumeConstant",1);me:TriggerStory("JLXHSD");</OKResult></li>
+<li><Display>อัตราการใช้พลังงาน+10</Display><OKResult>me:ModifierProperty("FatigueConsumeConstant",10);me:TriggerStory("JLXHSD");</OKResult></li>
+<li><Display>อัตราการใช้พลังงาน+9999</Display><OKResult>me:ModifierProperty("FatigueConsumeConstant",9999);me:TriggerStory("JLXHSD");</OKResult></li>
+<li><Display>อัตราการใช้พลังงาน-1</Display><OKResult>me:ModifierProperty("FatigueConsumeConstant",-1);me:TriggerStory("JLXHSD");</OKResult></li>
+<li><Display>อัตราการใช้พลังงาน-10</Display><OKResult>me:ModifierProperty("FatigueConsumeConstant",-10);me:TriggerStory("JLXHSD");</OKResult></li>
+<li><Display>อัตราการใช้พลังงาน-9999</Display><OKResult>me:ModifierProperty("FatigueConsumeConstant",-9999);me:TriggerStory("JLXHSD");</OKResult></li>
+		</Selections></Story>
+<!--精力补充加成-->
+<Story Name="JLBCJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสการฟื้นฟูพลังงาน</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูพลังงาน+1</Display><OKResult>me:ModifierProperty("FatigueRecoveryConstant",1);me:TriggerStory("JLBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูพลังงาน+10</Display><OKResult>me:ModifierProperty("FatigueRecoveryConstant",10);me:TriggerStory("JLBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูพลังงาน+9999</Display><OKResult>me:ModifierProperty("FatigueRecoveryConstant",9999);me:TriggerStory("JLBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูพลังงาน-1</Display><OKResult>me:ModifierProperty("FatigueRecoveryConstant",-1);me:TriggerStory("JLBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูพลังงาน-10</Display><OKResult>me:ModifierProperty("FatigueRecoveryConstant",-10);me:TriggerStory("JLBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูพลังงาน-9999</Display><OKResult>me:ModifierProperty("FatigueRecoveryConstant",-9999);me:TriggerStory("JLBCJC");</OKResult></li>
+		</Selections></Story>
+		<!--食物消耗速度-->
+<Story Name="SWXHSD"  Parent="BaseFillingStory">
+		<DisplayName>ปรับอัตราการบริโภคอาหาร</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อัตราการบริโภคอาหาร+1</Display><OKResult>me:ModifierProperty("NutritionConsumeConstant",1);me:TriggerStory("SWXHSD");</OKResult></li>
+<li><Display>อัตราการบริโภคอาหาร+10</Display><OKResult>me:ModifierProperty("NutritionConsumeConstant",10);me:TriggerStory("SWXHSD");</OKResult></li>
+<li><Display>อัตราการบริโภคอาหาร+9999</Display><OKResult>me:ModifierProperty("NutritionConsumeConstant",9999);me:TriggerStory("SWXHSD");</OKResult></li>
+<li><Display>อัตราการบริโภคอาหาร-1</Display><OKResult>me:ModifierProperty("NutritionConsumeConstant",-1);me:TriggerStory("SWXHSD");</OKResult></li>
+<li><Display>อัตราการบริโภคอาหาร-10</Display><OKResult>me:ModifierProperty("NutritionConsumeConstant",-10);me:TriggerStory("SWXHSD");</OKResult></li>
+<li><Display>อัตราการบริโภคอาหาร-9999</Display><OKResult>me:ModifierProperty("NutritionConsumeConstant",-9999);me:TriggerStory("SWXHSD");</OKResult></li>
+		</Selections></Story>
+<!--食物补充加成-->
+<Story Name="SWBCJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสการฟื้นฟูจากอาหาร</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูจากอาหาร+1</Display><OKResult>me:ModifierProperty("NutritionRecoveryConstant",1);me:TriggerStory("SWBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูจากอาหาร+10</Display><OKResult>me:ModifierProperty("NutritionRecoveryConstant",10);me:TriggerStory("SWBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูจากอาหาร+9999</Display><OKResult>me:ModifierProperty("NutritionRecoveryConstant",9999);me:TriggerStory("SWBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูจากอาหาร-1</Display><OKResult>me:ModifierProperty("NutritionRecoveryConstant",-1);me:TriggerStory("SWBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูจากอาหาร-10</Display><OKResult>me:ModifierProperty("NutritionRecoveryConstant",-10);me:TriggerStory("SWBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูจากอาหาร-9999</Display><OKResult>me:ModifierProperty("NutritionRecoveryConstant",-9999);me:TriggerStory("SWBCJC");</OKResult></li>
+		</Selections></Story>
+<!--饮水消耗速度-->
+<Story Name="YSXHSD"  Parent="BaseFillingStory">
+		<DisplayName>ปรับอัตราการบริโภคน้ำ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อัตราการบริโภคน้ำ+1</Display><OKResult>me:ModifierProperty("WaterConsumeConstant",1);me:TriggerStory("YSXHSD");</OKResult></li>
+<li><Display>อัตราการบริโภคน้ำ+10</Display><OKResult>me:ModifierProperty("WaterConsumeConstant",10);me:TriggerStory("YSXHSD");</OKResult></li>
+<li><Display>อัตราการบริโภคน้ำ+9999</Display><OKResult>me:ModifierProperty("WaterConsumeConstant",9999);me:TriggerStory("YSXHSD");</OKResult></li>
+<li><Display>อัตราการบริโภคน้ำ-1</Display><OKResult>me:ModifierProperty("WaterConsumeConstant",-1);me:TriggerStory("YSXHSD");</OKResult></li>
+<li><Display>อัตราการบริโภคน้ำ-10</Display><OKResult>me:ModifierProperty("WaterConsumeConstant",-10);me:TriggerStory("YSXHSD");</OKResult></li>
+<li><Display>อัตราการบริโภคน้ำ-9999</Display><OKResult>me:ModifierProperty("WaterConsumeConstant",-9999);me:TriggerStory("YSXHSD");</OKResult></li>
+		</Selections></Story>
+		<!--饮水补充加成-->
+<Story Name="YSBCJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสการฟื้นฟูจากการดื่มน้ำ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูจากการดื่มน้ำ+1</Display><OKResult>me:ModifierProperty("WaterRecoveryConstant",1);me:TriggerStory("YSBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูจากการดื่มน้ำ+10</Display><OKResult>me:ModifierProperty("WaterRecoveryConstant",10);me:TriggerStory("YSBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูจากการดื่มน้ำ+9999</Display><OKResult>me:ModifierProperty("WaterRecoveryConstant",9999);me:TriggerStory("YSBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูจากการดื่มน้ำ-1</Display><OKResult>me:ModifierProperty("WaterRecoveryConstant",-1);me:TriggerStory("YSBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูจากการดื่มน้ำ-10</Display><OKResult>me:ModifierProperty("WaterRecoveryConstant",-10);me:TriggerStory("YSBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูจากการดื่มน้ำ-9999</Display><OKResult>me:ModifierProperty("WaterRecoveryConstant",-9999);me:TriggerStory("YSBCJC");</OKResult></li>
+		</Selections></Story>
+<!--娱乐消耗速度-->
+<Story Name="YLXHSD"  Parent="BaseFillingStory">
+		<DisplayName>ปรับอัตราการใช้ความบันเทิง</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อัตราการใช้ความบันเทิง+1</Display><OKResult>me:ModifierProperty("HappyConsumeConstant",1);me:TriggerStory("YLXHSD");</OKResult></li>
+<li><Display>อัตราการใช้ความบันเทิง+10</Display><OKResult>me:ModifierProperty("HappyConsumeConstant",10);me:TriggerStory("YLXHSD");</OKResult></li>
+<li><Display>อัตราการใช้ความบันเทิง+9999</Display><OKResult>me:ModifierProperty("HappyConsumeConstant",9999);me:TriggerStory("YLXHSD");</OKResult></li>
+<li><Display>อัตราการใช้ความบันเทิง-1</Display><OKResult>me:ModifierProperty("HappyConsumeConstant",-1);me:TriggerStory("YLXHSD");</OKResult></li>
+<li><Display>อัตราการใช้ความบันเทิง-10</Display><OKResult>me:ModifierProperty("HappyConsumeConstant",-10);me:TriggerStory("YLXHSD");</OKResult></li>
+<li><Display>อัตราการใช้ความบันเทิง-9999</Display><OKResult>me:ModifierProperty("HappyConsumeConstant",-9999);me:TriggerStory("YLXHSD");</OKResult></li>
+		</Selections></Story>
+<!--娱乐补充加成-->
+<Story Name="YLBCJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสการฟื้นฟูความบันเทิง</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูความบันเทิง+1</Display><OKResult>me:ModifierProperty("HappyRecoveryConstant",1);me:TriggerStory("YLBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูความบันเทิง+10</Display><OKResult>me:ModifierProperty("HappyRecoveryConstant",10);me:TriggerStory("YLBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูความบันเทิง+9999</Display><OKResult>me:ModifierProperty("HappyRecoveryConstant",9999);me:TriggerStory("YLBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูความบันเทิง-1</Display><OKResult>me:ModifierProperty("HappyRecoveryConstant",-1);me:TriggerStory("YLBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูความบันเทิง-10</Display><OKResult>me:ModifierProperty("HappyRecoveryConstant",-10);me:TriggerStory("YLBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูความบันเทิง-9999</Display><OKResult>me:ModifierProperty("HappyRecoveryConstant",-9999);me:TriggerStory("YLBCJC");</OKResult></li>
+		</Selections></Story>
+<!--精元消耗速度-->
+<Story Name="JYXHSD"  Parent="BaseFillingStory">
+		<DisplayName>ปรับอัตราการใช้พลังปราณแท้</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อัตราการใช้พลังปราณแท้+1</Display><OKResult>me:ModifierProperty("PracticeFoodConsumeConstant",1);me:TriggerStory("JYXHSD");</OKResult></li>
+<li><Display>อัตราการใช้พลังปราณแท้+10</Display><OKResult>me:ModifierProperty("PracticeFoodConsumeConstant",10);me:TriggerStory("JYXHSD");</OKResult></li>
+<li><Display>อัตราการใช้พลังปราณแท้+9999</Display><OKResult>me:ModifierProperty("PracticeFoodConsumeConstant",9999);me:TriggerStory("JYXHSD");</OKResult></li>
+<li><Display>อัตราการใช้พลังปราณแท้-1</Display><OKResult>me:ModifierProperty("PracticeFoodConsumeConstant",-1);me:TriggerStory("JYXHSD");</OKResult></li>
+<li><Display>อัตราการใช้พลังปราณแท้-10</Display><OKResult>me:ModifierProperty("PracticeFoodConsumeConstant",-10);me:TriggerStory("JYXHSD");</OKResult></li>
+<li><Display>อัตราการใช้พลังปราณแท้-9999</Display><OKResult>me:ModifierProperty("PracticeFoodConsumeConstant",-9999);me:TriggerStory("JYXHSD");</OKResult></li>
+		</Selections></Story>
+<!--精元补充加成-->
+<Story Name="JYBCJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสการฟื้นฟูพลังปราณแท้</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูพลังปราณแท้+1</Display><OKResult>me:ModifierProperty("PracticeFoodRecoveryConstant",1);me:TriggerStory("JYBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูพลังปราณแท้+10</Display><OKResult>me:ModifierProperty("PracticeFoodRecoveryConstant",10);me:TriggerStory("JYBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูพลังปราณแท้+9999</Display><OKResult>me:ModifierProperty("PracticeFoodRecoveryConstant",9999);me:TriggerStory("JYBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูพลังปราณแท้-1</Display><OKResult>me:ModifierProperty("PracticeFoodRecoveryConstant",-1);me:TriggerStory("JYBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูพลังปราณแท้-10</Display><OKResult>me:ModifierProperty("PracticeFoodRecoveryConstant",-10);me:TriggerStory("JYBCJC");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูพลังปราณแท้-9999</Display><OKResult>me:ModifierProperty("PracticeFoodRecoveryConstant",-9999);me:TriggerStory("JYBCJC");</OKResult></li>
+		</Selections></Story>
+		
+		<!--内门伤自然恢复力加成-->
+<Story Name="NMSZRHFL"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสการฟื้นฟูบาดแผลภายใน</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูบาดแผลภายใน+1</Display><OKResult>me:ModifierProperty("MagicDamageRecoveryPowerAddV",1);me:TriggerStory("NMSZRHFL");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูบาดแผลภายใน+10</Display><OKResult>me:ModifierProperty("MagicDamageRecoveryPowerAddV",10);me:TriggerStory("NMSZRHFL");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูบาดแผลภายใน+9999</Display><OKResult>me:ModifierProperty("MagicDamageRecoveryPowerAddV",9999);me:TriggerStory("NMSZRHFL");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูบาดแผลภายใน-1</Display><OKResult>me:ModifierProperty("MagicDamageRecoveryPowerAddV",-1);me:TriggerStory("NMSZRHFL");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูบาดแผลภายใน-10</Display><OKResult>me:ModifierProperty("MagicDamageRecoveryPowerAddV",-10);me:TriggerStory("NMSZRHFL");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูบาดแผลภายใน-9999</Display><OKResult>me:ModifierProperty("MagicDamageRecoveryPowerAddV",-9999);me:TriggerStory("NMSZRHFL");</OKResult></li>
+		</Selections></Story>
+
+
+<Story Name="RoleProperty"  Parent="BaseFillingStory">
+		<DisplayName>ปรับค่าสถานะตัวละคร</DisplayName>
+		<Desc>โปรดเลือกค่าสถานะที่ต้องการแก้ไข</Desc>
+		<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Property");</OKResult></li>
+<li><Display>โบนัสคะแนนประสบการณ์</Display><OKResult>me:TriggerStory("JLDSJC");</OKResult></li>
+<li><Display>ความเร็วการทำงานพื้นฐาน</Display><OKResult>me:TriggerStory("JCGZSD");</OKResult></li>
+<li><Display>ค่าอารมณ์พื้นฐาน</Display><OKResult>me:TriggerStory("XQJCZ");</OKResult></li>
+<li><Display>พลังชีวิตสูงสุด</Display><OKResult>me:TriggerStory("ZDSMZ");</OKResult></li>
+<li><Display>อายุขัยสูงสุด</Display><OKResult>me:TriggerStory("ZDSM");</OKResult></li>
+<li><Display>ความเร็วการลดอายุขัย</Display><OKResult>me:TriggerStory("SMLSSD");</OKResult></li>
+<li><Display>ระยะการรับรู้</Display><OKResult>me:TriggerStory("GZFW");</OKResult></li>
+<li><Display>ความเร็วการเคลื่อนที่</Display><OKResult>me:TriggerStory("YDSD");</OKResult></li>
+<li><Display>อุณหภูมิสบายขั้นต่ำ</Display><OKResult>me:TriggerStory("ZDSSWD");</OKResult></li>
+<li><Display>อุณหภูมิสบายสูงสุด</Display><OKResult>me:TriggerStory("ZGSSWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดต่ำสุด</Display><OKResult>me:TriggerStory("ZDJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดสูงสุด</Display><OKResult>me:TriggerStory("ZGJXWD");</OKResult></li>
+<li><Display>การฟื้นฟูตามธรรมชาติ</Display><OKResult>me:TriggerStory("ZRHFL");</OKResult></li>
+<li><Display>ขีดจำกัดความเจ็บปวด</Display><OKResult>me:TriggerStory("TTJX");</OKResult></li>
+<li><Display>ความเร็วการเรียนรู้</Display><OKResult>me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันร้าย</Display><OKResult>me:TriggerStory("EMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันดี</Display><OKResult>me:TriggerStory("MMFSJL");</OKResult></li>
+
+
+<li><Display>อัตราการใช้พลังงาน</Display><OKResult>me:TriggerStory("JLXHSD");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูพลังงาน</Display><OKResult>me:TriggerStory("JLBCJC");</OKResult></li>
+<li><Display>อัตราการบริโภคอาหาร</Display><OKResult>me:TriggerStory("SWXHSD");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูจากอาหาร</Display><OKResult>me:TriggerStory("SWBCJC");</OKResult></li>
+<li><Display>อัตราการบริโภคน้ำ</Display><OKResult>me:TriggerStory("YSXHSD");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูจากการดื่มน้ำ</Display><OKResult>me:TriggerStory("YSBCJC");</OKResult></li>
+<li><Display>อัตราการใช้ความบันเทิง</Display><OKResult>me:TriggerStory("YLXHSD");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูความบันเทิง</Display><OKResult>me:TriggerStory("YLBCJC");</OKResult></li>
+<li><Display>อัตราการใช้พลังปราณแท้</Display><OKResult>me:TriggerStory("JYXHSD");</OKResult></li>
+<li><Display>โบนัสการฟื้นฟูพลังปราณแท้</Display><OKResult>me:TriggerStory("JYBCJC");</OKResult></li>
+<li><Display>การฟื้นฟูบาดแผลภายในตามธรรมชาติ</Display><OKResult>me:TriggerStory("NMSZRHFL");</OKResult></li>c
+</Selections></Story>
+
+
+
+
+<!--潜力加值-->
+<Story Name="QLJZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสศักยภาพ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสศักยภาพ+100</Display><OKResult>me:ModifierProperty("PotentialOfBasepracticeAddValue",100);me:TriggerStory("QLJZ");</OKResult></li>
+<li><Display>โบนัสศักยภาพ+10000</Display><OKResult>me:ModifierProperty("PotentialOfBasepracticeAddValue",10000);me:TriggerStory("QLJZ");</OKResult></li>
+<li><Display>โบนัสศักยภาพ+100000</Display><OKResult>me:ModifierProperty("PotentialOfBasepracticeAddValue",100000);me:TriggerStory("QLJZ");</OKResult></li>
+<li><Display>โบนัสศักยภาพ-100</Display><OKResult>me:ModifierProperty("PotentialOfBasepracticeAddValue",-100);me:TriggerStory("QLJZ");</OKResult></li>
+<li><Display>โบนัสศักยภาพ-10000</Display><OKResult>me:ModifierProperty("PotentialOfBasepracticeAddValue",-10000);me:TriggerStory("QLJZ");</OKResult></li>
+<li><Display>โบนัสศักยภาพ-100000</Display><OKResult>me:ModifierProperty("PotentialOfBasepracticeAddValue",-100000);me:TriggerStory("QLJZ");</OKResult></li>
+		</Selections></Story>
+
+<!--天谴加值-->
+<Story Name="TQJZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสบทลงทัณฑ์สวรรค์</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสบทลงทัณฑ์สวรรค์+100</Display><OKResult>me:ModifierProperty("GodPenaltyAddV",100);me:TriggerStory("TQJZ");</OKResult></li>
+<li><Display>โบนัสบทลงทัณฑ์สวรรค์+10000</Display><OKResult>me:ModifierProperty("GodPenaltyAddV",10000);me:TriggerStory("TQJZ");</OKResult></li>
+<li><Display>โบนัสบทลงทัณฑ์สวรรค์+100000</Display><OKResult>me:ModifierProperty("GodPenaltyAddV",100000);me:TriggerStory("TQJZ");</OKResult></li>
+<li><Display>โบนัสบทลงทัณฑ์สวรรค์-100</Display><OKResult>me:ModifierProperty("GodPenaltyAddV",-100);me:TriggerStory("TQJZ");</OKResult></li>
+<li><Display>โบนัสบทลงทัณฑ์สวรรค์-10000</Display><OKResult>me:ModifierProperty("GodPenaltyAddV",-10000);me:TriggerStory("TQJZ");</OKResult></li>
+<li><Display>โบนัสบทลงทัณฑ์สวรรค์-100000</Display><OKResult>me:ModifierProperty("GodPenaltyAddV",-100000);me:TriggerStory("TQJZ");</OKResult></li>
+		</Selections></Story>
+
+
+<!--鼎炉之限加值-->
+<Story Name="LDZXJZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสขีดจำกัดเตาหลอม</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสขีดจำกัดเตาหลอม+100</Display><OKResult>me:ModifierProperty("MaxAccumulativeLingAddV",100);me:TriggerStory("LDZXJZ");</OKResult></li>
+<li><Display>โบนัสขีดจำกัดเตาหลอม+10000</Display><OKResult>me:ModifierProperty("MaxAccumulativeLingAddV",10000);me:TriggerStory("LDZXJZ");</OKResult></li>
+<li><Display>โบนัสขีดจำกัดเตาหลอม+100000</Display><OKResult>me:ModifierProperty("MaxAccumulativeLingAddV",100000);me:TriggerStory("LDZXJZ");</OKResult></li>
+<li><Display>โบนัสขีดจำกัดเตาหลอม-100</Display><OKResult>me:ModifierProperty("MaxAccumulativeLingAddV",-100);me:TriggerStory("LDZXJZ");</OKResult></li>
+<li><Display>โบนัสขีดจำกัดเตาหลอม-10000</Display><OKResult>me:ModifierProperty("MaxAccumulativeLingAddV",-10000);me:TriggerStory("LDZXJZ");</OKResult></li>
+<li><Display>โบนัสขีดจำกัดเตาหลอม-100000</Display><OKResult>me:ModifierProperty("MaxAccumulativeLingAddV",-100000);me:TriggerStory("LDZXJZ");</OKResult></li>
+		</Selections></Story>
+
+<!--筑基速度加成-->
+<Story Name="ZJSDJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสความเร็วการสร้างรากฐาน</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสความเร็วการสร้างรากฐาน+100</Display><OKResult>me:ModifierProperty("BasepracticeSpeedCoefficient",100);me:TriggerStory("ZJSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการสร้างรากฐาน+10000</Display><OKResult>me:ModifierProperty("BasepracticeSpeedCoefficient",10000);me:TriggerStory("ZJSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการสร้างรากฐาน+100000</Display><OKResult>me:ModifierProperty("BasepracticeSpeedCoefficient",100000);me:TriggerStory("ZJSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการสร้างรากฐาน-100</Display><OKResult>me:ModifierProperty("BasepracticeSpeedCoefficient",-100);me:TriggerStory("ZJSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการสร้างรากฐาน-10000</Display><OKResult>me:ModifierProperty("BasepracticeSpeedCoefficient",-10000);me:TriggerStory("ZJSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการสร้างรากฐาน-100000</Display><OKResult>me:ModifierProperty("BasepracticeSpeedCoefficient",-100000);me:TriggerStory("ZJSDJC");</OKResult></li>
+		</Selections></Story>
+
+<!--修炼速度加成-->
+<Story Name="XLSDJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสความเร็วการบำเพ็ญ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสความเร็วการบำเพ็ญ+100</Display><OKResult>me:ModifierProperty("DeepPracticeSpeedSpecialCoefficient",100);me:TriggerStory("XLSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการบำเพ็ญ+10000</Display><OKResult>me:ModifierProperty("DeepPracticeSpeedSpecialCoefficient",10000);me:TriggerStory("XLSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการบำเพ็ญ+100000</Display><OKResult>me:ModifierProperty("DeepPracticeSpeedSpecialCoefficient",100000);me:TriggerStory("XLSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการบำเพ็ญ-100</Display><OKResult>me:ModifierProperty("DeepPracticeSpeedSpecialCoefficient",-100);me:TriggerStory("XLSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการบำเพ็ญ-10000</Display><OKResult>me:ModifierProperty("DeepPracticeSpeedSpecialCoefficient",-10000);me:TriggerStory("XLSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการบำเพ็ญ-100000</Display><OKResult>me:ModifierProperty("DeepPracticeSpeedSpecialCoefficient",-100000);me:TriggerStory("XLSDJC");</OKResult></li>
+		</Selections></Story>
+
+<!--心境的基础值-->
+<Story Name="XJDJCZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับค่าพื้นฐานของสภาวะจิต</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ค่าพื้นฐานของสภาวะจิต+100</Display><OKResult>me:ModifierProperty("MindStateBaseValue",100);me:TriggerStory("XJDJCZ");</OKResult></li>
+<li><Display>ค่าพื้นฐานของสภาวะจิต+10000</Display><OKResult>me:ModifierProperty("MindStateBaseValue",10000);me:TriggerStory("XJDJCZ");</OKResult></li>
+<li><Display>ค่าพื้นฐานของสภาวะจิต+100000</Display><OKResult>me:ModifierProperty("MindStateBaseValue",100000);me:TriggerStory("XJDJCZ");</OKResult></li>
+<li><Display>ค่าพื้นฐานของสภาวะจิต-100</Display><OKResult>me:ModifierProperty("MindStateBaseValue",-100);me:TriggerStory("XJDJCZ");</OKResult></li>
+<li><Display>ค่าพื้นฐานของสภาวะจิต-10000</Display><OKResult>me:ModifierProperty("MindStateBaseValue",-10000);me:TriggerStory("XJDJCZ");</OKResult></li>
+<li><Display>ค่าพื้นฐานของสภาวะจิต-100000</Display><OKResult>me:ModifierProperty("MindStateBaseValue",-100000);me:TriggerStory("XJDJCZ");</OKResult></li>
+		</Selections></Story>
+
+
+<!--心境稳定程度-->
+<Story Name="XJWDCD"  Parent="BaseFillingStory">
+		<DisplayName>ปรับความมั่นคงของสภาวะจิต</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ความมั่นคงของสภาวะจิต+100</Display><OKResult>me:ModifierProperty("SpeedOfMindStateCoefficient",100);me:TriggerStory("XJWDCD");</OKResult></li>
+<li><Display>ความมั่นคงของสภาวะจิต+10000</Display><OKResult>me:ModifierProperty("SpeedOfMindStateCoefficient",10000);me:TriggerStory("XJWDCD");</OKResult></li>
+<li><Display>ความมั่นคงของสภาวะจิต+100000</Display><OKResult>me:ModifierProperty("SpeedOfMindStateCoefficient",100000);me:TriggerStory("XJWDCD");</OKResult></li>
+<li><Display>ความมั่นคงของสภาวะจิต-100</Display><OKResult>me:ModifierProperty("SpeedOfMindStateCoefficient",-100);me:TriggerStory("XJWDCD");</OKResult></li>
+<li><Display>ความมั่นคงของสภาวะจิต-10000</Display><OKResult>me:ModifierProperty("SpeedOfMindStateCoefficient",-10000);me:TriggerStory("XJWDCD");</OKResult></li>
+<li><Display>ความมั่นคงของสภาวะจิต-100000</Display><OKResult>me:ModifierProperty("SpeedOfMindStateCoefficient",-100000);me:TriggerStory("XJWDCD");</OKResult></li>
+		</Selections></Story>
+
+<!--心情影响心境改变速度-->
+<Story Name="XQYXXJGBSD"  Parent="BaseFillingStory">
+		<DisplayName>ปรับผลกระทบของอารมณ์ต่อสภาวะจิต</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ผลกระทบของอารมณ์ต่อสภาวะจิต+100</Display><OKResult>me:ModifierProperty("SpeedOfMindStateCoefficientByMoods",100);me:TriggerStory("XQYXXJGBSD");</OKResult></li>
+<li><Display>ผลกระทบของอารมณ์ต่อสภาวะจิต+10000</Display><OKResult>me:ModifierProperty("SpeedOfMindStateCoefficientByMoods",10000);me:TriggerStory("XQYXXJGBSD");</OKResult></li>
+<li><Display>ผลกระทบของอารมณ์ต่อสภาวะจิต+100000</Display><OKResult>me:ModifierProperty("SpeedOfMindStateCoefficientByMoods",100000);me:TriggerStory("XQYXXJGBSD");</OKResult></li>
+<li><Display>ผลกระทบของอารมณ์ต่อสภาวะจิต-100</Display><OKResult>me:ModifierProperty("SpeedOfMindStateCoefficientByMoods",-100);me:TriggerStory("XQYXXJGBSD");</OKResult></li>
+<li><Display>ผลกระทบของอารมณ์ต่อสภาวะจิต-10000</Display><OKResult>me:ModifierProperty("SpeedOfMindStateCoefficientByMoods",-10000);me:TriggerStory("XQYXXJGBSD");</OKResult></li>
+<li><Display>ผลกระทบของอารมณ์ต่อสภาวะจิต-100000</Display><OKResult>me:ModifierProperty("SpeedOfMindStateCoefficientByMoods",-100000);me:TriggerStory("XQYXXJGBSD");</OKResult></li>
+		</Selections></Story>
+
+<!--领悟悟性倍率-->
+<Story Name="LWWXBL"  Parent="BaseFillingStory">
+		<DisplayName>ปรับตัวคูณความหยั่งรู้</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ตัวคูณความหยั่งรู้+100</Display><OKResult>me:ModifierProperty("InspirationCoefficient",100);me:TriggerStory("LWWXBL");</OKResult></li>
+<li><Display>ตัวคูณความหยั่งรู้+10000</Display><OKResult>me:ModifierProperty("InspirationCoefficient",10000);me:TriggerStory("LWWXBL");</OKResult></li>
+<li><Display>ตัวคูณความหยั่งรู้+100000</Display><OKResult>me:ModifierProperty("InspirationCoefficient",100000);me:TriggerStory("LWWXBL");</OKResult></li>
+<li><Display>ตัวคูณความหยั่งรู้-100</Display><OKResult>me:ModifierProperty("InspirationCoefficient",-100);me:TriggerStory("LWWXBL");</OKResult></li>
+<li><Display>ตัวคูณความหยั่งรู้-10000</Display><OKResult>me:ModifierProperty("InspirationCoefficient",-10000);me:TriggerStory("LWWXBL");</OKResult></li>
+<li><Display>ตัวคูณความหยั่งรู้-100000</Display><OKResult>me:ModifierProperty("InspirationCoefficient",-100000);me:TriggerStory("LWWXBL");</OKResult></li>
+		</Selections></Story>
+
+<!--灵气吸收速度加成-->
+<Story Name="LQXSSDJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสความเร็วการดูดซับลมปราณ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสความเร็วการดูดซับลมปราณ+100</Display><OKResult>me:ModifierProperty("LingAbsorbSpeed",100);me:TriggerStory("LQXSSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการดูดซับลมปราณ+10000</Display><OKResult>me:ModifierProperty("LingAbsorbSpeed",10000);me:TriggerStory("LQXSSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการดูดซับลมปราณ+100000</Display><OKResult>me:ModifierProperty("LingAbsorbSpeed",100000);me:TriggerStory("LQXSSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการดูดซับลมปราณ-100</Display><OKResult>me:ModifierProperty("LingAbsorbSpeed",-100);me:TriggerStory("LQXSSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการดูดซับลมปราณ-10000</Display><OKResult>me:ModifierProperty("LingAbsorbSpeed",-10000);me:TriggerStory("LQXSSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการดูดซับลมปราณ-100000</Display><OKResult>me:ModifierProperty("LingAbsorbSpeed",-100000);me:TriggerStory("LQXSSDJC");</OKResult></li>
+		</Selections></Story>
+
+<!--根本灵气(要改就直接最大，改不回去，固定值)-->
+<Story Name="GBLQ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับลมปราณพื้นฐาน</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ลมปราณพื้นฐาน+100</Display><OKResult>me:ModifierProperty("_SPECIAL_NOADD_NpcLingMaxValue",100);me:TriggerStory("GBLQ");</OKResult></li>
+<li><Display>ลมปราณพื้นฐาน+10000</Display><OKResult>me:ModifierProperty("_SPECIAL_NOADD_NpcLingMaxValue",10000);me:TriggerStory("GBLQ");</OKResult></li>
+<li><Display>ลมปราณพื้นฐาน+100000</Display><OKResult>me:ModifierProperty("_SPECIAL_NOADD_NpcLingMaxValue",100000);me:TriggerStory("GBLQ");</OKResult></li>
+<li><Display>ลมปราณพื้นฐาน-100</Display><OKResult>me:ModifierProperty("_SPECIAL_NOADD_NpcLingMaxValue",-100);me:TriggerStory("GBLQ");</OKResult></li>
+<li><Display>ลมปราณพื้นฐาน-10000</Display><OKResult>me:ModifierProperty("_SPECIAL_NOADD_NpcLingMaxValue",-10000);me:TriggerStory("GBLQ");</OKResult></li>
+<li><Display>ลมปราณพื้นฐาน-100000</Display><OKResult>me:ModifierProperty("_SPECIAL_NOADD_NpcLingMaxValue",-100000);me:TriggerStory("GBLQ");</OKResult></li>
+		</Selections></Story>
+
+<!--NPC灵气最大值(要改就直接最大，改不回去，固定值)-->
+<Story Name="NPCLQZDZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับพลังวิญญาณสูงสุดของ NPC</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>พลังวิญญาณสูงสุดของ NPC+100</Display><OKResult>me:ModifierProperty("NpcLingMaxValue",100);me:TriggerStory("NPCLQZDZ");</OKResult></li>
+<li><Display>พลังวิญญาณสูงสุดของ NPC+10000</Display><OKResult>me:ModifierProperty("NpcLingMaxValue",10000);me:TriggerStory("NPCLQZDZ");</OKResult></li>
+<li><Display>พลังวิญญาณสูงสุดของ NPC+100000</Display><OKResult>me:ModifierProperty("NpcLingMaxValue",100000);me:TriggerStory("NPCLQZDZ");</OKResult></li>
+<li><Display>พลังวิญญาณสูงสุดของ NPC-100</Display><OKResult>me:ModifierProperty("NpcLingMaxValue",-100);me:TriggerStory("NPCLQZDZ");</OKResult></li>
+<li><Display>พลังวิญญาณสูงสุดของ NPC-10000</Display><OKResult>me:ModifierProperty("NpcLingMaxValue",-10000);me:TriggerStory("NPCLQZDZ");</OKResult></li>
+<li><Display>พลังวิญญาณสูงสุดของ NPC-100000</Display><OKResult>me:ModifierProperty("NpcLingMaxValue",-100000);me:TriggerStory("NPCLQZDZ");</OKResult></li>
+		</Selections></Story>
+
+<!--法宝炼制速度加值-->
+<Story Name="FBLZSDJZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสความเร็วการหลอมอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสความเร็วการหลอมอาวุธวิเศษ+100</Display><OKResult>me:ModifierProperty("FabaoMake_SpeedAddV",100);me:TriggerStory("FBLZSDJZ");</OKResult></li>
+<li><Display>โบนัสความเร็วการหลอมอาวุธวิเศษ+10000</Display><OKResult>me:ModifierProperty("FabaoMake_SpeedAddV",10000);me:TriggerStory("FBLZSDJZ");</OKResult></li>
+<li><Display>โบนัสความเร็วการหลอมอาวุธวิเศษ+100000</Display><OKResult>me:ModifierProperty("FabaoMake_SpeedAddV",100000);me:TriggerStory("FBLZSDJZ");</OKResult></li>
+<li><Display>โบนัสความเร็วการหลอมอาวุธวิเศษ-100</Display><OKResult>me:ModifierProperty("FabaoMake_SpeedAddV",-100);me:TriggerStory("FBLZSDJZ");</OKResult></li>
+<li><Display>โบนัสความเร็วการหลอมอาวุธวิเศษ-10000</Display><OKResult>me:ModifierProperty("FabaoMake_SpeedAddV",-10000);me:TriggerStory("FBLZSDJZ");</OKResult></li>
+<li><Display>โบนัสความเร็วการหลอมอาวุธวิเศษ-100000</Display><OKResult>me:ModifierProperty("FabaoMake_SpeedAddV",-100000);me:TriggerStory("FBLZSDJZ");</OKResult></li>
+		</Selections></Story>
+
+<!--法宝炼制成功率加值-->
+<Story Name="FBLZCGLJZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสอัตราสำเร็จการหลอมอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสอัตราสำเร็จการหลอมอาวุธวิเศษ+100</Display><OKResult>me:ModifierProperty("FabaoMake_SuccessRateAddV",100);me:TriggerStory("FBLZCGLJZ");</OKResult></li>
+<li><Display>โบนัสอัตราสำเร็จการหลอมอาวุธวิเศษ+10000</Display><OKResult>me:ModifierProperty("FabaoMake_SuccessRateAddV",10000);me:TriggerStory("FBLZCGLJZ");</OKResult></li>
+<li><Display>โบนัสอัตราสำเร็จการหลอมอาวุธวิเศษ+100000</Display><OKResult>me:ModifierProperty("FabaoMake_SuccessRateAddV",100000);me:TriggerStory("FBLZCGLJZ");</OKResult></li>
+<li><Display>โบนัสอัตราสำเร็จการหลอมอาวุธวิเศษ-100</Display><OKResult>me:ModifierProperty("FabaoMake_SuccessRateAddV",-100);me:TriggerStory("FBLZCGLJZ");</OKResult></li>
+<li><Display>โบนัสอัตราสำเร็จการหลอมอาวุธวิเศษ-10000</Display><OKResult>me:ModifierProperty("FabaoMake_SuccessRateAddV",-10000);me:TriggerStory("FBLZCGLJZ");</OKResult></li>
+<li><Display>โบนัสอัตราสำเร็จการหลอมอาวุธวิเศษ-100000</Display><OKResult>me:ModifierProperty("FabaoMake_SuccessRateAddV",-100000);me:TriggerStory("FBLZCGLJZ");</OKResult></li>
+		</Selections></Story>
+
+<!--法宝炼制品阶加成-->
+<Story Name="FBLZPJJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสระดับขั้นอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสระดับขั้นอาวุธวิเศษ+100</Display><OKResult>me:ModifierProperty("FabaoMake_LingInheritRateAddV",100);me:TriggerStory("FBLZPJJC");</OKResult></li>
+<li><Display>โบนัสระดับขั้นอาวุธวิเศษ+10000</Display><OKResult>me:ModifierProperty("FabaoMake_LingInheritRateAddV",10000);me:TriggerStory("FBLZPJJC");</OKResult></li>
+<li><Display>โบนัสระดับขั้นอาวุธวิเศษ+100000</Display><OKResult>me:ModifierProperty("FabaoMake_LingInheritRateAddV",100000);me:TriggerStory("FBLZPJJC");</OKResult></li>
+<li><Display>โบนัสระดับขั้นอาวุธวิเศษ-100</Display><OKResult>me:ModifierProperty("FabaoMake_LingInheritRateAddV",-100);me:TriggerStory("FBLZPJJC");</OKResult></li>
+<li><Display>โบนัสระดับขั้นอาวุธวิเศษ-10000</Display><OKResult>me:ModifierProperty("FabaoMake_LingInheritRateAddV",-10000);me:TriggerStory("FBLZPJJC");</OKResult></li>
+<li><Display>โบนัสระดับขั้นอาวุธวิเศษ-100000</Display><OKResult>me:ModifierProperty("FabaoMake_LingInheritRateAddV",-100000);me:TriggerStory("FBLZPJJC");</OKResult></li>
+		</Selections></Story>
+
+<!--法宝炼制品质加值-->
+<Story Name="FBLZPZJZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสคุณภาพอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสคุณภาพอาวุธวิเศษ+100</Display><OKResult>me:ModifierProperty("FabaoMake_QualityAddV",100);me:TriggerStory("FBLZPZJZ");</OKResult></li>
+<li><Display>โบนัสคุณภาพอาวุธวิเศษ+10000</Display><OKResult>me:ModifierProperty("FabaoMake_QualityAddV",10000);me:TriggerStory("FBLZPZJZ");</OKResult></li>
+<li><Display>โบนัสคุณภาพอาวุธวิเศษ+100000</Display><OKResult>me:ModifierProperty("FabaoMake_QualityAddV",100000);me:TriggerStory("FBLZPZJZ");</OKResult></li>
+<li><Display>โบนัสคุณภาพอาวุธวิเศษ-100</Display><OKResult>me:ModifierProperty("FabaoMake_QualityAddV",-100);me:TriggerStory("FBLZPZJZ");</OKResult></li>
+<li><Display>โบนัสคุณภาพอาวุธวิเศษ-10000</Display><OKResult>me:ModifierProperty("FabaoMake_QualityAddV",-10000);me:TriggerStory("FBLZPZJZ");</OKResult></li>
+<li><Display>โบนัสคุณภาพอาวุธวิเศษ-100000</Display><OKResult>me:ModifierProperty("FabaoMake_QualityAddV",-100000);me:TriggerStory("FBLZPZJZ");</OKResult></li>
+		</Selections></Story>
+
+<!--神器炼成基础几率(改不回去)-->
+<Story Name="SQLCJCJL"  Parent="BaseFillingStory">
+		<DisplayName>ปรับอัตราสำเร็จพื้นฐานการสร้างศาสตราเทพ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>อัตราสำเร็จพื้นฐานการสร้างศาสตราเทพ+100</Display><OKResult>me:ModifierProperty("FabaoMake_TwelveRateChance",100);me:TriggerStory("SQLCJCJL");</OKResult></li>
+<li><Display>อัตราสำเร็จพื้นฐานการสร้างศาสตราเทพ+10000</Display><OKResult>me:ModifierProperty("FabaoMake_TwelveRateChance",10000);me:TriggerStory("SQLCJCJL");</OKResult></li>
+<li><Display>อัตราสำเร็จพื้นฐานการสร้างศาสตราเทพ+100000</Display><OKResult>me:ModifierProperty("FabaoMake_TwelveRateChance",100000);me:TriggerStory("SQLCJCJL");</OKResult></li>
+<li><Display>อัตราสำเร็จพื้นฐานการสร้างศาสตราเทพ-100</Display><OKResult>me:ModifierProperty("FabaoMake_TwelveRateChance",-100);me:TriggerStory("SQLCJCJL");</OKResult></li>
+<li><Display>อัตราสำเร็จพื้นฐานการสร้างศาสตราเทพ-10000</Display><OKResult>me:ModifierProperty("FabaoMake_TwelveRateChance",-10000);me:TriggerStory("SQLCJCJL");</OKResult></li>
+<li><Display>อัตราสำเร็จพื้นฐานการสร้างศาสตราเทพ-100000</Display><OKResult>me:ModifierProperty("FabaoMake_TwelveRateChance",-100000);me:TriggerStory("SQLCJCJL");</OKResult></li>
+		</Selections></Story>
+
+<!--丹药炼制速度(改不回去)-->
+<Story Name="DYLZSD"  Parent="BaseFillingStory">
+		<DisplayName>ปรับความเร็วการหลอมโอสถ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ความเร็วการหลอมโอสถ+100</Display><OKResult>me:ModifierProperty("DanMake_Speed",100);me:TriggerStory("DYLZSD");</OKResult></li>
+<li><Display>ความเร็วการหลอมโอสถ+10000</Display><OKResult>me:ModifierProperty("DanMake_Speed",10000);me:TriggerStory("DYLZSD");</OKResult></li>
+<li><Display>ความเร็วการหลอมโอสถ+100000</Display><OKResult>me:ModifierProperty("DanMake_Speed",100000);me:TriggerStory("DYLZSD");</OKResult></li>
+<li><Display>ความเร็วการหลอมโอสถ-100</Display><OKResult>me:ModifierProperty("DanMake_Speed",-100);me:TriggerStory("DYLZSD");</OKResult></li>
+<li><Display>ความเร็วการหลอมโอสถ-10000</Display><OKResult>me:ModifierProperty("DanMake_Speed",-10000);me:TriggerStory("DYLZSD");</OKResult></li>
+<li><Display>ความเร็วการหลอมโอสถ-100000</Display><OKResult>me:ModifierProperty("DanMake_Speed",-100000);me:TriggerStory("DYLZSD");</OKResult></li>
+		</Selections></Story>
+
+<!--丹药炼制速度加值-->
+<Story Name="DYLZSDJZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสความเร็วการหลอมโอสถ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสความเร็วการหลอมโอสถ+100</Display><OKResult>me:ModifierProperty("DanMake_SpeedAddV",100);me:TriggerStory("DYLZSDJZ");</OKResult></li>
+<li><Display>โบนัสความเร็วการหลอมโอสถ+10000</Display><OKResult>me:ModifierProperty("DanMake_SpeedAddV",10000);me:TriggerStory("DYLZSDJZ");</OKResult></li>
+<li><Display>โบนัสความเร็วการหลอมโอสถ+100000</Display><OKResult>me:ModifierProperty("DanMake_SpeedAddV",100000);me:TriggerStory("DYLZSDJZ");</OKResult></li>
+<li><Display>โบนัสความเร็วการหลอมโอสถ-100</Display><OKResult>me:ModifierProperty("DanMake_SpeedAddV",-100);me:TriggerStory("DYLZSDJZ");</OKResult></li>
+<li><Display>โบนัสความเร็วการหลอมโอสถ-10000</Display><OKResult>me:ModifierProperty("DanMake_SpeedAddV",-10000);me:TriggerStory("DYLZSDJZ");</OKResult></li>
+<li><Display>โบนัสความเร็วการหลอมโอสถ-100000</Display><OKResult>me:ModifierProperty("DanMake_SpeedAddV",-100000);me:TriggerStory("DYLZSDJZ");</OKResult></li>
+		</Selections></Story>
+
+<!--炼丹技能炼制成功率(改不回去)-->
+<Story Name="LDJNLZCGL"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสอัตราสำเร็จจากทักษะปรุงโอสถ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสอัตราสำเร็จจากทักษะปรุงโอสถ+100</Display><OKResult>me:ModifierProperty("DanMake_SuccessRate",100);me:TriggerStory("LDJNLZCGL");</OKResult></li>
+<li><Display>โบนัสอัตราสำเร็จจากทักษะปรุงโอสถ+10000</Display><OKResult>me:ModifierProperty("DanMake_SuccessRate",10000);me:TriggerStory("LDJNLZCGL");</OKResult></li>
+<li><Display>โบนัสอัตราสำเร็จจากทักษะปรุงโอสถ+100000</Display><OKResult>me:ModifierProperty("DanMake_SuccessRate",100000);me:TriggerStory("LDJNLZCGL");</OKResult></li>
+<li><Display>โบนัสอัตราสำเร็จจากทักษะปรุงโอสถ-100</Display><OKResult>me:ModifierProperty("DanMake_SuccessRate",-100);me:TriggerStory("LDJNLZCGL");</OKResult></li>
+<li><Display>โบนัสอัตราสำเร็จจากทักษะปรุงโอสถ-10000</Display><OKResult>me:ModifierProperty("DanMake_SuccessRate",-10000);me:TriggerStory("LDJNLZCGL");</OKResult></li>
+<li><Display>โบนัสอัตราสำเร็จจากทักษะปรุงโอสถ-100000</Display><OKResult>me:ModifierProperty("DanMake_SuccessRate",-100000);me:TriggerStory("LDJNLZCGL");</OKResult></li>
+		</Selections></Story>
+
+<!--丹药炼制成功率加值-->
+<Story Name="DYLZCGLJZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสอัตราความสำเร็จในการหลอมโอสถ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสอัตราความสำเร็จในการหลอมโอสถ+100</Display><OKResult>me:ModifierProperty("DanMake_SuccessRateAddV",100);me:TriggerStory("DYLZCGLJZ");</OKResult></li>
+<li><Display>โบนัสอัตราความสำเร็จในการหลอมโอสถ+10000</Display><OKResult>me:ModifierProperty("DanMake_SuccessRateAddV",10000);me:TriggerStory("DYLZCGLJZ");</OKResult></li>
+<li><Display>โบนัสอัตราความสำเร็จในการหลอมโอสถ+100000</Display><OKResult>me:ModifierProperty("DanMake_SuccessRateAddV",100000);me:TriggerStory("DYLZCGLJZ");</OKResult></li>
+<li><Display>โบนัสอัตราความสำเร็จในการหลอมโอสถ-100</Display><OKResult>me:ModifierProperty("DanMake_SuccessRateAddV",-100);me:TriggerStory("DYLZCGLJZ");</OKResult></li>
+<li><Display>โบนัสอัตราความสำเร็จในการหลอมโอสถ-10000</Display><OKResult>me:ModifierProperty("DanMake_SuccessRateAddV",-10000);me:TriggerStory("DYLZCGLJZ");</OKResult></li>
+<li><Display>โบนัสอัตราความสำเร็จในการหลอมโอสถ-100000</Display><OKResult>me:ModifierProperty("DanMake_SuccessRateAddV",-100000);me:TriggerStory("DYLZCGLJZ");</OKResult></li>
+		</Selections></Story>
+
+<!--炼丹技能炼制产量加成-->
+<Story Name="LDJNLZCLJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสปริมาณการผลิตโอสถจากทักษะปรุงโอสถ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสปริมาณการผลิตโอสถจากทักษะปรุงโอสถ+100</Display><OKResult>me:ModifierProperty("DanMake_Yield",100);me:TriggerStory("LDJNLZCLJC");</OKResult></li>
+<li><Display>โบนัสปริมาณการผลิตโอสถจากทักษะปรุงโอสถ+10000</Display><OKResult>me:ModifierProperty("DanMake_Yield",10000);me:TriggerStory("LDJNLZCLJC");</OKResult></li>
+<li><Display>โบนัสปริมาณการผลิตโอสถจากทักษะปรุงโอสถ+100000</Display><OKResult>me:ModifierProperty("DanMake_Yield",100000);me:TriggerStory("LDJNLZCLJC");</OKResult></li>
+<li><Display>โบนัสปริมาณการผลิตโอสถจากทักษะปรุงโอสถ-100</Display><OKResult>me:ModifierProperty("DanMake_Yield",-100);me:TriggerStory("LDJNLZCLJC");</OKResult></li>
+<li><Display>โบนัสปริมาณการผลิตโอสถจากทักษะปรุงโอสถ-10000</Display><OKResult>me:ModifierProperty("DanMake_Yield",-10000);me:TriggerStory("LDJNLZCLJC");</OKResult></li>
+<li><Display>โบนัสปริมาณการผลิตโอสถจากทักษะปรุงโอสถ-100000</Display><OKResult>me:ModifierProperty("DanMake_Yield",-100000);me:TriggerStory("LDJNLZCLJC");</OKResult></li>
+		</Selections></Story>
+
+<!--丹药炼制产量加值-->
+<Story Name="DYLZCLJZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสปริมาณการผลิตโอสถ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสปริมาณการผลิตโอสถ+100</Display><OKResult>me:ModifierProperty("DanMake_YieldAddP",100);me:TriggerStory("DYLZCLJZ");</OKResult></li>
+<li><Display>โบนัสปริมาณการผลิตโอสถ+10000</Display><OKResult>me:ModifierProperty("DanMake_YieldAddP",10000);me:TriggerStory("DYLZCLJZ");</OKResult></li>
+<li><Display>โบนัสปริมาณการผลิตโอสถ+100000</Display><OKResult>me:ModifierProperty("DanMake_YieldAddP",100000);me:TriggerStory("DYLZCLJZ");</OKResult></li>
+<li><Display>โบนัสปริมาณการผลิตโอสถ-100</Display><OKResult>me:ModifierProperty("DanMake_YieldAddP",-100);me:TriggerStory("DYLZCLJZ");</OKResult></li>
+<li><Display>โบนัสปริมาณการผลิตโอสถ-10000</Display><OKResult>me:ModifierProperty("DanMake_YieldAddP",-10000);me:TriggerStory("DYLZCLJZ");</OKResult></li>
+<li><Display>โบนัสปริมาณการผลิตโอสถ-100000</Display><OKResult>me:ModifierProperty("DanMake_YieldAddP",-100000);me:TriggerStory("DYLZCLJZ");</OKResult></li>
+		</Selections></Story>
+
+<!--瓶颈突破概率加成系数-->
+<Story Name="PJTPGLJCXS"  Parent="BaseFillingStory">
+		<DisplayName>ปรับตัวคูณโอกาสทะลวงคอขวด</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ตัวคูณโอกาสทะลวงคอขวด+100</Display><OKResult>me:ModifierProperty("PracticeRateAddPFromDan",100);me:TriggerStory("PJTPGLJCXS");</OKResult></li>
+<li><Display>ตัวคูณโอกาสทะลวงคอขวด+10000</Display><OKResult>me:ModifierProperty("PracticeRateAddPFromDan",10000);me:TriggerStory("PJTPGLJCXS");</OKResult></li>
+<li><Display>ตัวคูณโอกาสทะลวงคอขวด+100000</Display><OKResult>me:ModifierProperty("PracticeRateAddPFromDan",100000);me:TriggerStory("PJTPGLJCXS");</OKResult></li>
+<li><Display>ตัวคูณโอกาสทะลวงคอขวด-100</Display><OKResult>me:ModifierProperty("PracticeRateAddPFromDan",-100);me:TriggerStory("PJTPGLJCXS");</OKResult></li>
+<li><Display>ตัวคูณโอกาสทะลวงคอขวด-10000</Display><OKResult>me:ModifierProperty("PracticeRateAddPFromDan",-10000);me:TriggerStory("PJTPGLJCXS");</OKResult></li>
+<li><Display>ตัวคูณโอกาสทะลวงคอขวด-100000</Display><OKResult>me:ModifierProperty("PracticeRateAddPFromDan",-100000);me:TriggerStory("PJTPGLJCXS");</OKResult></li>
+		</Selections></Story>
+
+<!--历练飞行速度(改不回去)-->
+<Story Name="LLFXSD"  Parent="BaseFillingStory">
+		<DisplayName>ปรับความเร็วการบินผจญภัย</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ความเร็วการบินผจญภัย+100</Display><OKResult>me:ModifierProperty("WorldMapFlySpeed",100);me:TriggerStory("LLFXSD");</OKResult></li>
+<li><Display>ความเร็วการบินผจญภัย+10000</Display><OKResult>me:ModifierProperty("WorldMapFlySpeed",10000);me:TriggerStory("LLFXSD");</OKResult></li>
+<li><Display>ความเร็วการบินผจญภัย+100000</Display><OKResult>me:ModifierProperty("WorldMapFlySpeed",100000);me:TriggerStory("LLFXSD");</OKResult></li>
+<li><Display>ความเร็วการบินผจญภัย-100</Display><OKResult>me:ModifierProperty("WorldMapFlySpeed",-100);me:TriggerStory("LLFXSD");</OKResult></li>
+<li><Display>ความเร็วการบินผจญภัย-10000</Display><OKResult>me:ModifierProperty("WorldMapFlySpeed",-10000);me:TriggerStory("LLFXSD");</OKResult></li>
+<li><Display>ความเร็วการบินผจญภัย-100000</Display><OKResult>me:ModifierProperty("WorldMapFlySpeed",-100000);me:TriggerStory("LLFXSD");</OKResult></li>
+		</Selections></Story>
+
+
+<!--历练飞行速度加成-->
+<Story Name="LLFXSDJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสความเร็วการบินระหว่างออกผจญภัย</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>โบนัสความเร็วการบินระหว่างออกผจญภัย+100</Display><OKResult>me:ModifierProperty("WorldMapFlySpeedAddP",100);me:TriggerStory("LLFXSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการบินระหว่างออกผจญภัย+10000</Display><OKResult>me:ModifierProperty("WorldMapFlySpeedAddP",10000);me:TriggerStory("LLFXSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการบินระหว่างออกผจญภัย+100000</Display><OKResult>me:ModifierProperty("WorldMapFlySpeedAddP",100000);me:TriggerStory("LLFXSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการบินระหว่างออกผจญภัย-100</Display><OKResult>me:ModifierProperty("WorldMapFlySpeedAddP",-100);me:TriggerStory("LLFXSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการบินระหว่างออกผจญภัย-10000</Display><OKResult>me:ModifierProperty("WorldMapFlySpeedAddP",-10000);me:TriggerStory("LLFXSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการบินระหว่างออกผจญภัย-100000</Display><OKResult>me:ModifierProperty("WorldMapFlySpeedAddP",-100000);me:TriggerStory("LLFXSDJC");</OKResult></li>
+		</Selections></Story>
+
+<!--历练型瓶颈时间放大系数(改不回去)-->
+<Story Name="LLXPJSJFDXS"  Parent="BaseFillingStory">
+		<DisplayName>ปรับตัวคูณเวลาคอขวดจากการผจญภัย</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ตัวคูณเวลาคอขวดจากการผจญภัย+100</Display><OKResult>me:ModifierProperty("ExperienceNeckTimeCostCoefficient",100);me:TriggerStory("LLXPJSJFDXS");</OKResult></li>
+<li><Display>ตัวคูณเวลาคอขวดจากการผจญภัย+10000</Display><OKResult>me:ModifierProperty("ExperienceNeckTimeCostCoefficient",10000);me:TriggerStory("LLXPJSJFDXS");</OKResult></li>
+<li><Display>ตัวคูณเวลาคอขวดจากการผจญภัย+100000</Display><OKResult>me:ModifierProperty("ExperienceNeckTimeCostCoefficient",100000);me:TriggerStory("LLXPJSJFDXS");</OKResult></li>
+<li><Display>ตัวคูณเวลาคอขวดจากการผจญภัย-100</Display><OKResult>me:ModifierProperty("ExperienceNeckTimeCostCoefficient",-100);me:TriggerStory("LLXPJSJFDXS");</OKResult></li>
+<li><Display>ตัวคูณเวลาคอขวดจากการผจญภัย-10000</Display><OKResult>me:ModifierProperty("ExperienceNeckTimeCostCoefficient",-10000);me:TriggerStory("LLXPJSJFDXS");</OKResult></li>
+<li><Display>ตัวคูณเวลาคอขวดจากการผจญภัย-100000</Display><OKResult>me:ModifierProperty("ExperienceNeckTimeCostCoefficient",-100000);me:TriggerStory("LLXPJSJFDXS");</OKResult></li>
+		</Selections></Story>
+
+<!--瓶颈倒计时推迟时间-->
+<Story Name="PJDJSTCSJ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับระยะเวลาหน่วงก่อนคอขวดเริ่มนับถอยหลัง</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ระยะเวลาหน่วงก่อนคอขวดเริ่มนับถอยหลัง+100</Display><OKResult>me:ModifierProperty("NeckCountdownAddV",100);me:TriggerStory("PJDJSTCSJ");</OKResult></li>
+<li><Display>ระยะเวลาหน่วงก่อนคอขวดเริ่มนับถอยหลัง+10000</Display><OKResult>me:ModifierProperty("NeckCountdownAddV",10000);me:TriggerStory("PJDJSTCSJ");</OKResult></li>
+<li><Display>ระยะเวลาหน่วงก่อนคอขวดเริ่มนับถอยหลัง+100000</Display><OKResult>me:ModifierProperty("NeckCountdownAddV",100000);me:TriggerStory("PJDJSTCSJ");</OKResult></li>
+<li><Display>ระยะเวลาหน่วงก่อนคอขวดเริ่มนับถอยหลัง-100</Display><OKResult>me:ModifierProperty("NeckCountdownAddV",-100);me:TriggerStory("PJDJSTCSJ");</OKResult></li>
+<li><Display>ระยะเวลาหน่วงก่อนคอขวดเริ่มนับถอยหลัง-10000</Display><OKResult>me:ModifierProperty("NeckCountdownAddV",-10000);me:TriggerStory("PJDJSTCSJ");</OKResult></li>
+<li><Display>ระยะเวลาหน่วงก่อนคอขวดเริ่มนับถอยหลัง-100000</Display><OKResult>me:ModifierProperty("NeckCountdownAddV",-100000);me:TriggerStory("PJDJSTCSJ");</OKResult></li>
+		</Selections></Story>
+
+<!--秘籍数量限制(改不回去)-->
+<Story Name="MJSLXZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับจำนวนคัมภีร์ลับสูงสุด</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>จำนวนคัมภีร์ลับสูงสุด+100</Display><OKResult>me:ModifierProperty("EsotericaNum",100);me:TriggerStory("MJSLXZ");</OKResult></li>
+<li><Display>จำนวนคัมภีร์ลับสูงสุด+10000</Display><OKResult>me:ModifierProperty("EsotericaNum",10000);me:TriggerStory("MJSLXZ");</OKResult></li>
+<li><Display>จำนวนคัมภีร์ลับสูงสุด+100000</Display><OKResult>me:ModifierProperty("EsotericaNum",100000);me:TriggerStory("MJSLXZ");</OKResult></li>
+<li><Display>จำนวนคัมภีร์ลับสูงสุด-100</Display><OKResult>me:ModifierProperty("EsotericaNum",-100);me:TriggerStory("MJSLXZ");</OKResult></li>
+<li><Display>จำนวนคัมภีร์ลับสูงสุด-10000</Display><OKResult>me:ModifierProperty("EsotericaNum",-10000);me:TriggerStory("MJSLXZ");</OKResult></li>
+<li><Display>จำนวนคัมภีร์ลับสูงสุด-100000</Display><OKResult>me:ModifierProperty("EsotericaNum",-100000);me:TriggerStory("MJSLXZ");</OKResult></li>
+		</Selections></Story>
+
+<!--真实道行的附加值-->
+<Story Name="ZSDHDFJZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับค่าพลังบำเพ็ญแท้เพิ่มเติม</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ค่าพลังบำเพ็ญแท้เพิ่มเติม+100</Display><OKResult>me:ModifierProperty("AbilityLvAddV",100);me:TriggerStory("ZSDHDFJZ");</OKResult></li>
+<li><Display>ค่าพลังบำเพ็ญแท้เพิ่มเติม+10000</Display><OKResult>me:ModifierProperty("AbilityLvAddV",10000);me:TriggerStory("ZSDHDFJZ");</OKResult></li>
+<li><Display>ค่าพลังบำเพ็ญแท้เพิ่มเติม+100000</Display><OKResult>me:ModifierProperty("AbilityLvAddV",100000);me:TriggerStory("ZSDHDFJZ");</OKResult></li>
+<li><Display>ค่าพลังบำเพ็ญแท้เพิ่มเติม-100</Display><OKResult>me:ModifierProperty("AbilityLvAddV",-100);me:TriggerStory("ZSDHDFJZ");</OKResult></li>
+<li><Display>ค่าพลังบำเพ็ญแท้เพิ่มเติม-10000</Display><OKResult>me:ModifierProperty("AbilityLvAddV",-10000);me:TriggerStory("ZSDHDFJZ");</OKResult></li>
+<li><Display>ค่าพลังบำเพ็ญแท้เพิ่มเติม-100000</Display><OKResult>me:ModifierProperty("AbilityLvAddV",-100000);me:TriggerStory("ZSDHDFJZ");</OKResult></li>
+		</Selections></Story>
+
+<!--历练声望放大系数-->
+<Story Name="LLSFFDXS"  Parent="BaseFillingStory">
+		<DisplayName>ปรับตัวคูณชื่อเสียงการผจญภัย</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ตัวคูณชื่อเสียงการผจญภัย+100</Display><OKResult>me:ModifierProperty("ExperiencePrestigeAddP",100);me:TriggerStory("LLSFFDXS");</OKResult></li>
+<li><Display>ตัวคูณชื่อเสียงการผจญภัย+10000</Display><OKResult>me:ModifierProperty("ExperiencePrestigeAddP",10000);me:TriggerStory("LLSFFDXS");</OKResult></li>
+<li><Display>ตัวคูณชื่อเสียงการผจญภัย+100000</Display><OKResult>me:ModifierProperty("ExperiencePrestigeAddP",100000);me:TriggerStory("LLSFFDXS");</OKResult></li>
+<li><Display>ตัวคูณชื่อเสียงการผจญภัย-100</Display><OKResult>me:ModifierProperty("ExperiencePrestigeAddP",-100);me:TriggerStory("LLSFFDXS");</OKResult></li>
+<li><Display>ตัวคูณชื่อเสียงการผจญภัย-10000</Display><OKResult>me:ModifierProperty("ExperiencePrestigeAddP",-10000);me:TriggerStory("LLSFFDXS");</OKResult></li>
+<li><Display>ตัวคูณชื่อเสียงการผจญภัย-100000</Display><OKResult>me:ModifierProperty("ExperiencePrestigeAddP",-100000);me:TriggerStory("LLSFFDXS");</OKResult></li>
+		</Selections></Story>
+
+
+<!--历练探索速度-->
+<Story Name="LLTSSD"  Parent="BaseFillingStory">
+		<DisplayName>ปรับความเร็วการสำรวจผจญภัย</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ความเร็วการสำรวจผจญภัย+100</Display><OKResult>me:ModifierProperty("ExperienceFindSpeedAddV",100);me:TriggerStory("LLTSSD");</OKResult></li>
+<li><Display>ความเร็วการสำรวจผจญภัย+10000</Display><OKResult>me:ModifierProperty("ExperienceFindSpeedAddV",10000);me:TriggerStory("LLTSSD");</OKResult></li>
+<li><Display>ความเร็วการสำรวจผจญภัย+100000</Display><OKResult>me:ModifierProperty("ExperienceFindSpeedAddV",100000);me:TriggerStory("LLTSSD");</OKResult></li>
+<li><Display>ความเร็วการสำรวจผจญภัย-100</Display><OKResult>me:ModifierProperty("ExperienceFindSpeedAddV",-100);me:TriggerStory("LLTSSD");</OKResult></li>
+<li><Display>ความเร็วการสำรวจผจญภัย-10000</Display><OKResult>me:ModifierProperty("ExperienceFindSpeedAddV",-10000);me:TriggerStory("LLTSSD");</OKResult></li>
+<li><Display>ความเร็วการสำรวจผจญภัย-100000</Display><OKResult>me:ModifierProperty("ExperienceFindSpeedAddV",-100000);me:TriggerStory("LLTSSD");</OKResult></li>
+		</Selections></Story>
+<!--精元获得率(改不回去)-->
+<Story Name="JYHQL"  Parent="BaseFillingStory">
+		<DisplayName>ปรับอัตราการได้รับพลังปราณแท้</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>อัตราการได้รับพลังปราณแท้+100</Display><OKResult>me:ModifierProperty("NutritionToJingYuanK",100);me:TriggerStory("JYHQL");</OKResult></li>
+<li><Display>อัตราการได้รับพลังปราณแท้+10000</Display><OKResult>me:ModifierProperty("NutritionToJingYuanK",10000);me:TriggerStory("JYHQL");</OKResult></li>
+<li><Display>อัตราการได้รับพลังปราณแท้+100000</Display><OKResult>me:ModifierProperty("NutritionToJingYuanK",100000);me:TriggerStory("JYHQL");</OKResult></li>
+<li><Display>อัตราการได้รับพลังปราณแท้-100</Display><OKResult>me:ModifierProperty("NutritionToJingYuanK",-100);me:TriggerStory("JYHQL");</OKResult></li>
+<li><Display>อัตราการได้รับพลังปราณแท้-10000</Display><OKResult>me:ModifierProperty("NutritionToJingYuanK",-10000);me:TriggerStory("JYHQL");</OKResult></li>
+<li><Display>อัตราการได้รับพลังปราณแท้-100000</Display><OKResult>me:ModifierProperty("NutritionToJingYuanK",-100000);me:TriggerStory("JYHQL");</OKResult></li>
+		</Selections></Story>
+
+<!--饮气效率(改不回去)-->
+<Story Name="YQXL"  Parent="BaseFillingStory">
+		<DisplayName>ปรับประสิทธิภาพการดูดซับลมปราณ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ประสิทธิภาพการดูดซับลมปราณ+100</Display><OKResult>me:ModifierProperty("NutritionWaterAutoRecover",100);me:TriggerStory("YQXL");</OKResult></li>
+<li><Display>ประสิทธิภาพการดูดซับลมปราณ+10000</Display><OKResult>me:ModifierProperty("NutritionWaterAutoRecover",10000);me:TriggerStory("YQXL");</OKResult></li>
+<li><Display>ประสิทธิภาพการดูดซับลมปราณ+100000</Display><OKResult>me:ModifierProperty("NutritionWaterAutoRecover",100000);me:TriggerStory("YQXL");</OKResult></li>
+<li><Display>ประสิทธิภาพการดูดซับลมปราณ-100</Display><OKResult>me:ModifierProperty("NutritionWaterAutoRecover",-100);me:TriggerStory("YQXL");</OKResult></li>
+<li><Display>ประสิทธิภาพการดูดซับลมปราณ-10000</Display><OKResult>me:ModifierProperty("NutritionWaterAutoRecover",-10000);me:TriggerStory("YQXL");</OKResult></li>
+<li><Display>ประสิทธิภาพการดูดซับลมปราณ-100000</Display><OKResult>me:ModifierProperty("NutritionWaterAutoRecover",-100000);me:TriggerStory("YQXL");</OKResult></li>
+		</Selections></Story>
+
+
+<Story Name="PracticeProperty"  Parent="BaseFillingStory">
+		<DisplayName>ปรับค่าสถานะการบำเพ็ญ</DisplayName>
+		<Desc>โปรดเลือกค่าสถานะที่ต้องการปรับ</Desc>
+		<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Property");</OKResult></li>
+<li><Display>โบนัสศักยภาพ</Display><OKResult>me:TriggerStory("QLJZ");</OKResult></li>
+<li><Display>โบนัสทัณฑ์สวรรค์</Display><OKResult>me:TriggerStory("TQJZ");</OKResult></li>
+<li><Display>โบนัสขีดจำกัดเตาหลอม</Display><OKResult>me:TriggerStory("LDZXJZ");</OKResult></li>
+<li><Display>โบนัสความเร็วขั้นสร้างรากฐาน</Display><OKResult>me:TriggerStory("ZJSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการบำเพ็ญ</Display><OKResult>me:TriggerStory("XLSDJC");</OKResult></li>
+<li><Display>ค่าพื้นฐานของสภาวะจิต</Display><OKResult>me:TriggerStory("XJDJCZ");</OKResult></li>
+<li><Display>ระดับความมั่นคงของสภาวะจิต</Display><OKResult>me:TriggerStory("XJWDCD");</OKResult></li>
+<li><Display>ผลกระทบของอารมณ์ต่อสภาวะจิต</Display><OKResult>me:TriggerStory("XQYXXJGBSD");</OKResult></li>
+<li><Display>ตัวคูณความหยั่งรู้</Display><OKResult>me:TriggerStory("LWWXBL");</OKResult></li>
+<li><Display>โบนัสความเร็วการดูดซับลมปราณ</Display><OKResult>me:TriggerStory("LQXSSDJC");</OKResult></li>
+<li><Display>พลังวิญญาณพื้นฐาน (ปรับเป็นค่าสูงสุดโดยตรง, ค่าคงที่)</Display><OKResult>me:TriggerStory("GBLQ");</OKResult></li>
+<li><Display>พลังวิญญาณสูงสุดของ NPC (ค่าสูงสุดคงที่)</Display><OKResult>me:TriggerStory("NPCLQZDZ");</OKResult></li>
+<li><Display>โบนัสความเร็วการหลอมอาวุธวิเศษ</Display><OKResult>me:TriggerStory("FBLZSDJZ");</OKResult></li>
+<li><Display>โบนัสอัตราสำเร็จการหลอมอาวุธวิเศษ</Display><OKResult>me:TriggerStory("FBLZCGLJZ");</OKResult></li>
+<li><Display>โบนัสระดับขั้นอาวุธวิเศษ</Display><OKResult>me:TriggerStory("FBLZPJJC");</OKResult></li>
+<li><Display>โบนัสคุณภาพอาวุธวิเศษ</Display><OKResult>me:TriggerStory("FBLZPZJZ");</OKResult></li>
+<li><Display>อัตราสำเร็จพื้นฐานการสร้างศาสตราเทพ (แก้กลับไม่ได้)</Display><OKResult>me:TriggerStory("SQLCJCJL");</OKResult></li>
+<li><Display>ความเร็วการหลอมโอสถ (แก้กลับไม่ได้)</Display><OKResult>me:TriggerStory("DYLZSD");</OKResult></li>
+<li><Display>บนัสความเร็วการหลอมโอสถ</Display><OKResult>me:TriggerStory("DYLZSDJZ");</OKResult></li>
+<li><Display>อัตราสำเร็จจากทักษะปรุงโอสถ (แก้กลับไม่ได้)</Display><OKResult>me:TriggerStory("LDJNLZCGL");</OKResult></li>
+<li><Display>โบนัสอัตราสำเร็จการหลอมโอสถ</Display><OKResult>me:TriggerStory("DYLZCGLJZ");</OKResult></li>
+<li><Display>โบนัสปริมาณการผลิตโอสถจากทักษะปรุงโอสถ</Display><OKResult>me:TriggerStory("LDJNLZCLJC");</OKResult></li>
+<li><Display>โบนัสปริมาณการผลิตโอสถ</Display><OKResult>me:TriggerStory("DYLZCLJZ");</OKResult></li>
+<li><Display>ตัวคูณโอกาสทะลวงคอขวด</Display><OKResult>me:TriggerStory("PJTPGLJCXS");</OKResult></li>
+<li><Display>ความเร็วการบินผจญภัย (แก้กลับไม่ได้)</Display><OKResult>me:TriggerStory("LLFXSD");</OKResult></li>
+<li><Display>โบนัสความเร็วการบินผจญภัย</Display><OKResult>me:TriggerStory("LLFXSDJC");</OKResult></li>
+<li><Display>ตัวคูณระยะเวลาคอขวดจากการผจญภัย (แก้กลับไม่ได้)</Display><OKResult>me:TriggerStory("LLXPJSJFDXS");</OKResult></li>
+<li><Display>ระยะเวลาหน่วงก่อนเริ่มนับถอยหลังคอขวด</Display><OKResult>me:TriggerStory("PJDJSTCSJ");</OKResult></li>
+
+<li><Display>จำนวนคัมภีร์ลับสูงสุด (แก้กลับไม่ได้)</Display><OKResult>me:TriggerStory("MJSLXZ");</OKResult></li>
+<li><Display>ค่าพลังบำเพ็ญแท้เพิ่มเติม</Display><OKResult>me:TriggerStory("ZSDHDFJZ");</OKResult></li>
+<li><Display>ตัวคูณชื่อเสียงการผจญภัย</Display><OKResult>me:TriggerStory("LLSFFDXS");</OKResult></li>
+<li><Display>ความเร็วการสำรวจผจญภัย</Display><OKResult>me:TriggerStory("LLTSSD");</OKResult></li>
+<li><Display>อัตราการได้รับพลังปราณแท้ (แก้กลับไม่ได้)</Display><OKResult>me:TriggerStory("JYHQL");</OKResult></li>
+<li><Display>ประสิทธิภาพการดูดซับลมปราณ (แก้กลับไม่ได้)</Display><OKResult>me:TriggerStory("YQXL");</OKResult></li>
+</Selections></Story>
+
+<!--信仰转灵气系数-->
+<Story Name="XYZLQXS"  Parent="BaseFillingStory">
+		<DisplayName>ปรับตัวคูณการแปลงศรัทธาเป็นพลังวิญญาณ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("GodPraticeProperty");</OKResult></li>
+<li><Display>ตัวคูณการแปลงศรัทธาเป็นพลังวิญญาณ+100</Display><OKResult>me:ModifierProperty("GodPractice_LingConvert",100);me:TriggerStory("XYZLQXS");</OKResult></li>
+<li><Display>ตัวคูณการแปลงศรัทธาเป็นพลังวิญญาณ+10000</Display><OKResult>me:ModifierProperty("GodPractice_LingConvert",10000);me:TriggerStory("XYZLQXS");</OKResult></li>
+<li><Display>ตัวคูณการแปลงศรัทธาเป็นพลังวิญญาณ+100000</Display><OKResult>me:ModifierProperty("GodPractice_LingConvert",100000);me:TriggerStory("XYZLQXS");</OKResult></li>
+<li><Display>ตัวคูณการแปลงศรัทธาเป็นพลังวิญญาณ-100</Display><OKResult>me:ModifierProperty("GodPractice_LingConvert",-100);me:TriggerStory("XYZLQXS");</OKResult></li>
+<li><Display>ตัวคูณการแปลงศรัทธาเป็นพลังวิญญาณ-10000</Display><OKResult>me:ModifierProperty("GodPractice_LingConvert",-10000);me:TriggerStory("XYZLQXS");</OKResult></li>
+<li><Display>ตัวคูณการแปลงศรัทธาเป็นพลังวิญญาณ-100000</Display><OKResult>me:ModifierProperty("GodPractice_LingConvert",-100000);me:TriggerStory("XYZLQXS");</OKResult></li>
+		</Selections></Story>
+
+<!--神民上限-->
+<Story Name="SMSX"  Parent="BaseFillingStory">
+		<DisplayName>ปรับจำนวนผู้ศรัทธาสูงสุด</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("GodPraticeProperty");</OKResult></li>
+<li><Display>จำนวนผู้ศรัทธาสูงสุด+100</Display><OKResult>me:ModifierProperty("GodCity_MaxResident",100);me:TriggerStory("SMSX");</OKResult></li>
+<li><Display>จำนวนผู้ศรัทธาสูงสุด+10000</Display><OKResult>me:ModifierProperty("GodCity_MaxResident",10000);me:TriggerStory("SMSX");</OKResult></li>
+<li><Display>จำนวนผู้ศรัทธาสูงสุด+100000</Display><OKResult>me:ModifierProperty("GodCity_MaxResident",100000);me:TriggerStory("SMSX");</OKResult></li>
+<li><Display>จำนวนผู้ศรัทธาสูงสุด-100</Display><OKResult>me:ModifierProperty("GodCity_MaxResident",-100);me:TriggerStory("SMSX");</OKResult></li>
+<li><Display>จำนวนผู้ศรัทธาสูงสุด-10000</Display><OKResult>me:ModifierProperty("GodCity_MaxResident",-10000);me:TriggerStory("SMSX");</OKResult></li>
+<li><Display>จำนวนผู้ศรัทธาสูงสุด-100000</Display><OKResult>me:ModifierProperty("GodCity_MaxResident",-100000);me:TriggerStory("SMSX");</OKResult></li>
+		</Selections></Story>
+
+<!--核心信徒上限-->
+<Story Name="HXXTSX"  Parent="BaseFillingStory">
+		<DisplayName>ปรับขีดจำกัดจำนวนศิษย์ศรัทธาหลัก</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("GodPraticeProperty");</OKResult></li>
+<li><Display>ขีดจำกัดจำนวนศิษย์ศรัทธาหลัก+1</Display><OKResult>me:ModifierProperty("GodCity_MaxCoreBeliever",1);me:TriggerStory("HXXTSX");</OKResult></li>
+<li><Display>ขีดจำกัดจำนวนศิษย์ศรัทธาหลัก+2</Display><OKResult>me:ModifierProperty("GodCity_MaxCoreBeliever",2);me:TriggerStory("HXXTSX");</OKResult></li>
+<li><Display>ขีดจำกัดจำนวนศิษย์ศรัทธาหลัก+100000</Display><OKResult>me:ModifierProperty("GodCity_MaxCoreBeliever",100000);me:TriggerStory("HXXTSX");</OKResult></li>
+<li><Display>ขีดจำกัดจำนวนศิษย์ศรัทธาหลัก-1</Display><OKResult>me:ModifierProperty("GodCity_MaxCoreBeliever",-1);me:TriggerStory("HXXTSX");</OKResult></li>
+<li><Display>ขีดจำกัดจำนวนศิษย์ศรัทธาหลัก-2</Display><OKResult>me:ModifierProperty("GodCity_MaxCoreBeliever",-2);me:TriggerStory("HXXTSX");</OKResult></li>
+<li><Display>ขีดจำกัดจำนวนศิษย์ศรัทธาหลัก-100000</Display><OKResult>me:ModifierProperty("GodCity_MaxCoreBeliever",-100000);me:TriggerStory("HXXTSX");</OKResult></li>
+		</Selections></Story>
+
+<!--神国天劫调整值-->
+<Story Name="SGTJTZZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับค่าทัณฑ์สวรรค์ของอาณาจักรเทพ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("GodPraticeProperty");</OKResult></li>
+<li><Display>ค่าทัณฑ์สวรรค์ของอาณาจักรเทพ+0.1</Display><OKResult>me:ModifierProperty("GodCity_ThunderAddion",0.1);me:TriggerStory("SGTJTZZ");</OKResult></li>
+<li><Display>ค่าทัณฑ์สวรรค์ของอาณาจักรเทพ+0.2</Display><OKResult>me:ModifierProperty("GodCity_ThunderAddion",0.2);me:TriggerStory("SGTJTZZ");</OKResult></li>
+<li><Display>ค่าทัณฑ์สวรรค์ของอาณาจักรเทพ+100000</Display><OKResult>me:ModifierProperty("GodCity_ThunderAddion",100000);me:TriggerStory("SGTJTZZ");</OKResult></li>
+<li><Display>ค่าทัณฑ์สวรรค์ของอาณาจักรเทพ-0.1</Display><OKResult>me:ModifierProperty("GodCity_ThunderAddion",-0.1);me:TriggerStory("SGTJTZZ");</OKResult></li>
+<li><Display>ค่าทัณฑ์สวรรค์ของอาณาจักรเทพ-0.2</Display><OKResult>me:ModifierProperty("GodCity_ThunderAddion",-0.2);me:TriggerStory("SGTJTZZ");</OKResult></li>
+<li><Display>ค่าทัณฑ์สวรรค์ของอาณาจักรเทพ-100000</Display><OKResult>me:ModifierProperty("GodCity_ThunderAddion",-100000);me:TriggerStory("SGTJTZZ");</OKResult></li>
+		</Selections></Story>
+
+<!--神国信仰获取增幅系数-->
+<Story Name="SGXYHQZFXS"  Parent="BaseFillingStory">
+		<DisplayName>ปรับตัวคูณโบนัสการได้รับศรัทธาของอาณาจักรเทพ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("GodPraticeProperty");</OKResult></li>
+<li><Display>ตัวคูณโบนัสการได้รับศรัทธาของอาณาจักรเทพ+1</Display><OKResult>me:ModifierProperty("GodCity_PracticeEffect",1);me:TriggerStory("SGXYHQZFXS");</OKResult></li>
+<li><Display>ตัวคูณโบนัสการได้รับศรัทธาของอาณาจักรเทพ+2</Display><OKResult>me:ModifierProperty("GodCity_PracticeEffect",2);me:TriggerStory("SGXYHQZFXS");</OKResult></li>
+<li><Display>ตัวคูณโบนัสการได้รับศรัทธาของอาณาจักรเทพ+100000</Display><OKResult>me:ModifierProperty("GodCity_PracticeEffect",100000);me:TriggerStory("SGXYHQZFXS");</OKResult></li>
+<li><Display>ตัวคูณโบนัสการได้รับศรัทธาของอาณาจักรเทพ-1</Display><OKResult>me:ModifierProperty("GodCity_PracticeEffect",-1);me:TriggerStory("SGXYHQZFXS");</OKResult></li>
+<li><Display>ตัวคูณโบนัสการได้รับศรัทธาของอาณาจักรเทพ-2</Display><OKResult>me:ModifierProperty("GodCity_PracticeEffect",-2);me:TriggerStory("SGXYHQZFXS");</OKResult></li>
+<li><Display>ตัวคูณโบนัสการได้รับศรัทธาของอาณาจักรเทพ-100000</Display><OKResult>me:ModifierProperty("GodCity_PracticeEffect",-100000);me:TriggerStory("SGXYHQZFXS");</OKResult></li>
+		</Selections></Story>
+
+<!--神国护法数值增幅系数-->
+<Story Name="SGHFSZZFXS"  Parent="BaseFillingStory">
+		<DisplayName>ปรับตัวคูณค่าสถานะผู้พิทักษ์เทพ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("GodPraticeProperty");</OKResult></li>
+<li><Display>ตัวคูณค่าสถานะผู้พิทักษ์เทพ+1</Display><OKResult>me:ModifierProperty("GodCity_GuardEffect",1);me:TriggerStory("SGHFSZZFXS");</OKResult></li>
+<li><Display>ตัวคูณค่าสถานะผู้พิทักษ์เทพ+2</Display><OKResult>me:ModifierProperty("GodCity_GuardEffect",2);me:TriggerStory("SGHFSZZFXS");</OKResult></li>
+<li><Display>ตัวคูณค่าสถานะผู้พิทักษ์เทพ+100000</Display><OKResult>me:ModifierProperty("GodCity_GuardEffect",100000);me:TriggerStory("SGHFSZZFXS");</OKResult></li>
+<li><Display>ตัวคูณค่าสถานะผู้พิทักษ์เทพ-1</Display><OKResult>me:ModifierProperty("GodCity_GuardEffect",-1);me:TriggerStory("SGHFSZZFXS");</OKResult></li>
+<li><Display>ตัวคูณค่าสถานะผู้พิทักษ์เทพ-2</Display><OKResult>me:ModifierProperty("GodCity_GuardEffect",-2);me:TriggerStory("SGHFSZZFXS");</OKResult></li>
+<li><Display>ตัวคูณค่าสถานะผู้พิทักษ์เทพ-100000</Display><OKResult>me:ModifierProperty("GodCity_GuardEffect",-100000);me:TriggerStory("SGHFSZZFXS");</OKResult></li>
+		</Selections></Story>
+
+<!--神性加值-->
+<Story Name="SXJZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสความเป็นเทพ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("GodPraticeProperty");</OKResult></li>
+<li><Display>โบนัสความเป็นเทพ+10</Display><OKResult>me:ModifierProperty("GodPractice_GodPowerAddV",10);me:TriggerStory("SXJZ");</OKResult></li>
+<li><Display>โบนัสความเป็นเทพ+20</Display><OKResult>me:ModifierProperty("GodPractice_GodPowerAddV",20);me:TriggerStory("SXJZ");</OKResult></li>
+<li><Display>โบนัสความเป็นเทพ+100000</Display><OKResult>me:ModifierProperty("GodPractice_GodPowerAddV",100000);me:TriggerStory("SXJZ");</OKResult></li>
+<li><Display>โบนัสความเป็นเทพ-10</Display><OKResult>me:ModifierProperty("GodPractice_GodPowerAddV",-10);me:TriggerStory("SXJZ");</OKResult></li>
+<li><Display>โบนัสความเป็นเทพ-20</Display><OKResult>me:ModifierProperty("GodPractice_GodPowerAddV",-20);me:TriggerStory("SXJZ");</OKResult></li>
+<li><Display>โบนัสความเป็นเทพ-100000</Display><OKResult>me:ModifierProperty("GodPractice_GodPowerAddV",-100000);me:TriggerStory("SXJZ");</OKResult></li>
+		</Selections></Story>
+
+
+<Story Name="GodPraticeProperty"  Parent="BaseFillingStory">
+		<DisplayName>ปรับค่าสถานะการบำเพ็ญเทพ</DisplayName>
+		<Desc>เลือกค่าสถานะที่ต้องการปรับ</Desc>
+		<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Property");</OKResult></li>
+<li><Display>อัตราแปลงศรัทธาเป็นพลังวิญญาณ</Display><OKResult>me:TriggerStory("XYZLQXS");</OKResult></li>
+<li><Display>จำนวนผู้ศรัทธาสูงสุด</Display><OKResult>me:TriggerStory("SMSX");</OKResult></li>			
+<li><Display>ขีดจำกัดผู้ศรัทธาหลักสูงสุด</Display><OKResult>me:TriggerStory("HXXTSX");</OKResult></li>
+<li><Display>ค่าทัณฑ์สวรรค์ของอาณาจักรเทพ</Display><OKResult>me:TriggerStory("SGTJTZZ");</OKResult></li>
+<li><Display>ตัวคูณโบนัสการได้รับศรัทธาของอาณาจักรเทพ</Display><OKResult>me:TriggerStory("SGXYHQZFXS");</OKResult></li>
+<li><Display>ตัวคูณโบนัสค่าสถานะผู้พิทักษ์อาณาจักรเทพ</Display><OKResult>me:TriggerStory("SGHFSZZFXS");</OKResult></li>
+<li><Display>โบนัสความเป็นเทพ</Display><OKResult>me:TriggerStory("SXJZ");</OKResult></li>					
+		</Selections>
+	</Story>
+
+
+
+
+
+<!--战斗命中-->
+<Story Name="ZDMZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับค่าพลังโจมตีแม่นยำ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>ค่าพลังโจมตีแม่นยำ+100</Display><OKResult>me:ModifierProperty("NpcFight_BaseHitChance",100);me:TriggerStory("ZDMZ");</OKResult></li>
+<li><Display>ค่าพลังโจมตีแม่นยำ+10000</Display><OKResult>me:ModifierProperty("NpcFight_BaseHitChance",10000);me:TriggerStory("ZDMZ");</OKResult></li>
+<li><Display>ค่าพลังโจมตีแม่นยำ+100000</Display><OKResult>me:ModifierProperty("NpcFight_BaseHitChance",100000);me:TriggerStory("ZDMZ");</OKResult></li>
+<li><Display>ค่าพลังโจมตีแม่นยำ-100</Display><OKResult>me:ModifierProperty("NpcFight_BaseHitChance",-100);me:TriggerStory("ZDMZ");</OKResult></li>
+<li><Display>ค่าพลังโจมตีแม่นยำ-10000</Display><OKResult>me:ModifierProperty("NpcFight_BaseHitChance",-10000);me:TriggerStory("ZDMZ");</OKResult></li>
+<li><Display>ค่าพลังโจมตีแม่นยำ-100000</Display><OKResult>me:ModifierProperty("NpcFight_BaseHitChance",-100000);me:TriggerStory("ZDMZ");</OKResult></li>
+
+		</Selections></Story>
+
+<!--战斗闪避-->
+<Story Name="ZDSB"  Parent="BaseFillingStory">
+		<DisplayName>ปรับค่าหลบหลีก</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>ค่าหลบหลีก+100</Display><OKResult>me:ModifierProperty("NpcFight_BaseDodgeChance",100);me:TriggerStory("ZDSB");</OKResult></li>
+<li><Display>ค่าหลบหลีก+10000</Display><OKResult>me:ModifierProperty("NpcFight_BaseDodgeChance",10000);me:TriggerStory("ZDSB");</OKResult></li>
+<li><Display>ค่าหลบหลีก+100000</Display><OKResult>me:ModifierProperty("NpcFight_BaseDodgeChance",100000);me:TriggerStory("ZDSB");</OKResult></li>
+<li><Display>ค่าหลบหลีก-100</Display><OKResult>me:ModifierProperty("NpcFight_BaseDodgeChance",-100);me:TriggerStory("ZDSB");</OKResult></li>
+<li><Display>ค่าหลบหลีก-10000</Display><OKResult>me:ModifierProperty("NpcFight_BaseDodgeChance",-10000);me:TriggerStory("ZDSB");</OKResult></li>
+<li><Display>ค่าหลบหลีก-100000</Display><OKResult>me:ModifierProperty("NpcFight_BaseDodgeChance",-100000);me:TriggerStory("ZDSB");</OKResult></li>
+
+		</Selections></Story>
+
+<!--护盾转化率装备附加值-->
+<Story Name="HDZHLZBFJZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสอุปกรณ์ต่ออัตราแปลงโล่</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>โบนัสอุปกรณ์ต่ออัตราแปลงโล่+100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionEquipAdd",100);me:TriggerStory("HDZHLZBFJZ");</OKResult></li>
+<li><Display>โบนัสอุปกรณ์ต่ออัตราแปลงโล่+10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionEquipAdd",10000);me:TriggerStory("HDZHLZBFJZ");</OKResult></li>
+<li><Display>โบนัสอุปกรณ์ต่ออัตราแปลงโล่+100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionEquipAdd",100000);me:TriggerStory("HDZHLZBFJZ");</OKResult></li>
+<li><Display>โบนัสอุปกรณ์ต่ออัตราแปลงโล่-100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionEquipAdd",-100);me:TriggerStory("HDZHLZBFJZ");</OKResult></li>
+<li><Display>โบนัสอุปกรณ์ต่ออัตราแปลงโล่-10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionEquipAdd",-10000);me:TriggerStory("HDZHLZBFJZ");</OKResult></li>
+<li><Display>โบนัสอุปกรณ์ต่ออัตราแปลงโล่-100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionEquipAdd",-100000);me:TriggerStory("HDZHLZBFJZ");</OKResult></li>
+
+		</Selections></Story>
+
+<!--法宝数量-->
+<Story Name="FBSL"  Parent="BaseFillingStory">
+		<DisplayName>ปรับจำนวนอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>จำนวนอาวุธวิเศษ+1</Display><OKResult>me:ModifierProperty("NpcFight_FabaoNum",1);me:TriggerStory("FBSL");</OKResult></li>
+<li><Display>จำนวนอาวุธวิเศษ+2</Display><OKResult>me:ModifierProperty("NpcFight_FabaoNum",2);me:TriggerStory("FBSL");</OKResult></li>
+<li><Display>จำนวนอาวุธวิเศษ+3</Display><OKResult>me:ModifierProperty("NpcFight_FabaoNum",3);me:TriggerStory("FBSL");</OKResult></li>
+<li><Display>จำนวนอาวุธวิเศษ+4</Display><OKResult>me:ModifierProperty("NpcFight_FabaoNum",4);me:TriggerStory("FBSL");</OKResult></li>
+<li><Display>จำนวนอาวุธวิเศษ+5</Display><OKResult>me:ModifierProperty("NpcFight_FabaoNum",5);me:TriggerStory("FBSL");</OKResult></li>
+<li><Display>จำนวนอาวุธวิเศษ-1</Display><OKResult>me:ModifierProperty("NpcFight_FabaoNum",-1);me:TriggerStory("FBSL");</OKResult></li>
+<li><Display>จำนวนอาวุธวิเศษ-2</Display><OKResult>me:ModifierProperty("NpcFight_FabaoNum",-2);me:TriggerStory("FBSL");</OKResult></li>
+<li><Display>จำนวนอาวุธวิเศษ-3</Display><OKResult>me:ModifierProperty("NpcFight_FabaoNum",-3);me:TriggerStory("FBSL");</OKResult></li>
+<li><Display>จำนวนอาวุธวิเศษ-4</Display><OKResult>me:ModifierProperty("NpcFight_FabaoNum",-4);me:TriggerStory("FBSL");</OKResult></li>
+<li><Display>จำนวนอาวุธวิเศษ-5</Display><OKResult>me:ModifierProperty("NpcFight_FabaoNum",-5);me:TriggerStory("FBSL");</OKResult></li>
+
+</Selections></Story>
+
+
+
+<!--法宝回灵倍率-->
+<Story Name="FBHLBL"  Parent="BaseFillingStory">
+		<DisplayName>ปรับตัวคูณฟื้นฟูพลังวิญญาณของอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>ตัวคูณฟื้นฟูพลังวิญญาณของอาวุธวิเศษ+100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoLingRecoverK",100);me:TriggerStory("FBHLBL");</OKResult></li>
+<li><Display>ตัวคูณฟื้นฟูพลังวิญญาณของอาวุธวิเศษ+10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoLingRecoverK",10000);me:TriggerStory("FBHLBL");</OKResult></li>
+<li><Display>ตัวคูณฟื้นฟูพลังวิญญาณของอาวุธวิเศษ+100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoLingRecoverK",100000);me:TriggerStory("FBHLBL");</OKResult></li>
+<li><Display>ตัวคูณฟื้นฟูพลังวิญญาณของอาวุธวิเศษ-100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoLingRecoverK",-100);me:TriggerStory("FBHLBL");</OKResult></li>
+<li><Display>ตัวคูณฟื้นฟูพลังวิญญาณของอาวุธวิเศษ-10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoLingRecoverK",-10000);me:TriggerStory("FBHLBL");</OKResult></li>
+<li><Display>ตัวคูณฟื้นฟูพลังวิญญาณของอาวุธวิเศษ-100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoLingRecoverK",-100000);me:TriggerStory("FBHLBL");</OKResult></li>
+</Selections></Story>
+
+<!--法宝威力加成-->
+<Story Name="FBWLJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสพลังอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>โบนัสพลังอาวุธวิเศษ+100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoPowerAddP",100);me:TriggerStory("FBWLJC");</OKResult></li>
+<li><Display>โบนัสพลังอาวุธวิเศษ+10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoPowerAddP",10000);me:TriggerStory("FBWLJC");</OKResult></li>
+<li><Display>โบนัสพลังอาวุธวิเศษ+100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoPowerAddP",100000);me:TriggerStory("FBWLJC");</OKResult></li>
+<li><Display>โบนัสพลังอาวุธวิเศษ-100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoPowerAddP",-100);me:TriggerStory("FBWLJC");</OKResult></li>
+<li><Display>โบนัสพลังอาวุธวิเศษ-10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoPowerAddP",-10000);me:TriggerStory("FBWLJC");</OKResult></li>
+<li><Display>โบนัสพลังอาวุธวิเศษ-100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoPowerAddP",-100000);me:TriggerStory("FBWLJC");</OKResult></li>
+</Selections></Story>
+
+
+<!--法宝灵气恢复速度加成-->
+<Story Name="FBLQHFSDJZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสฟื้นฟูพลังวิญญาณของอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>โบนัสฟื้นฟูพลังวิญญาณของอาวุธวิเศษ+100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoLingRecoverAddP",100);me:TriggerStory("FBLQHFSDJZ");</OKResult></li>
+<li><Display>โบนัสฟื้นฟูพลังวิญญาณของอาวุธวิเศษ+10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoLingRecoverAddP",10000);me:TriggerStory("FBLQHFSDJZ");</OKResult></li>
+<li><Display>โบนัสฟื้นฟูพลังวิญญาณของอาวุธวิเศษ+100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoLingRecoverAddP",100000);me:TriggerStory("FBLQHFSDJZ");</OKResult></li>
+<li><Display>โบนัสฟื้นฟูพลังวิญญาณของอาวุธวิเศษ-100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoLingRecoverAddP",-100);me:TriggerStory("FBLQHFSDJZ");</OKResult></li>
+<li><Display>โบนัสฟื้นฟูพลังวิญญาณของอาวุธวิเศษ-10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoLingRecoverAddP",-10000);me:TriggerStory("FBLQHFSDJZ");</OKResult></li>
+<li><Display>โบนัสฟื้นฟูพลังวิญญาณของอาวุธวิเศษ-100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoLingRecoverAddP",-100000);me:TriggerStory("FBLQHFSDJZ");</OKResult></li>
+</Selections></Story>
+
+
+<!--法宝攻击间隔加成-->
+<Story Name="FBGJJGJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสความเร็วโจมตีของอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>โบนัสความเร็วโจมตีของอาวุธวิเศษ+100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoCoolDownAddP",100);me:TriggerStory("FBGJJGJC");</OKResult></li>
+<li><Display>โบนัสความเร็วโจมตีของอาวุธวิเศษ+10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoCoolDownAddP",10000);me:TriggerStory("FBGJJGJC");</OKResult></li>
+<li><Display>โบนัสความเร็วโจมตีของอาวุธวิเศษ+100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoCoolDownAddP",100000);me:TriggerStory("FBGJJGJC");</OKResult></li>
+<li><Display>โบนัสความเร็วโจมตีของอาวุธวิเศษ-100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoCoolDownAddP",-100);me:TriggerStory("FBGJJGJC");</OKResult></li>
+<li><Display>โบนัสความเร็วโจมตีของอาวุธวิเศษ-10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoCoolDownAddP",-10000);me:TriggerStory("FBGJJGJC");</OKResult></li>
+<li><Display>โบนัสความเร็วโจมตีของอาวุธวิเศษ-100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoCoolDownAddP",-100000);me:TriggerStory("FBGJJGJC");</OKResult></li>
+</Selections></Story>
+
+
+<!--法宝灵气最大值加成-->
+<Story Name="FBLQZDZJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสพลังวิญญาณสูงสุดอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>โบนัสพลังวิญญาณสูงสุดอาวุธวิเศษ+100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoMaxLingAddP",100);me:TriggerStory("FBLQZDZJC");</OKResult></li>
+<li><Display>โบนัสพลังวิญญาณสูงสุดอาวุธวิเศษ+10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoMaxLingAddP",10000);me:TriggerStory("FBLQZDZJC");</OKResult></li>
+<li><Display>โบนัสพลังวิญญาณสูงสุดอาวุธวิเศษ+100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoMaxLingAddP",100000);me:TriggerStory("FBLQZDZJC");</OKResult></li>
+<li><Display>โบนัสพลังวิญญาณสูงสุดอาวุธวิเศษ-100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoMaxLingAddP",-100);me:TriggerStory("FBLQZDZJC");</OKResult></li>
+<li><Display>โบนัสพลังวิญญาณสูงสุดอาวุธวิเศษ-10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoMaxLingAddP",-10000);me:TriggerStory("FBLQZDZJC");</OKResult></li>
+<li><Display>โบนัสพลังวิญญาณสูงสุดอาวุธวิเศษ-100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoMaxLingAddP",-100000);me:TriggerStory("FBLQZDZJC");</OKResult></li>
+</Selections></Story>
+
+<!--法宝击退距离加成-->
+<Story Name="FBJTJLJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสระยะกระเด็นของอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>โบนัสระยะกระเด็นของอาวุธวิเศษ+100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoRepelDistanceAddV",100);me:TriggerStory("FBJTJLJC");</OKResult></li>
+<li><Display>โบนัสระยะกระเด็นของอาวุธวิเศษ+10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoRepelDistanceAddV",10000);me:TriggerStory("FBJTJLJC");</OKResult></li>
+<li><Display>โบนัสระยะกระเด็นของอาวุธวิเศษ+100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoRepelDistanceAddV",100000);me:TriggerStory("FBJTJLJC");</OKResult></li>
+<li><Display>โบนัสระยะกระเด็นของอาวุธวิเศษ-100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoRepelDistanceAddV",-100);me:TriggerStory("FBJTJLJC");</OKResult></li>
+<li><Display>โบนัสระยะกระเด็นของอาวุธวิเศษ-10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoRepelDistanceAddV",-10000);me:TriggerStory("FBJTJLJC");</OKResult></li>
+<li><Display>โบนัสระยะกระเด็นของอาวุธวิเศษ-100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoRepelDistanceAddV",-100000);me:TriggerStory("FBJTJLJC");</OKResult></li>
+</Selections></Story>
+
+
+<!--法宝飞行速度加成-->
+<Story Name="FBFXSUJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสความเร็วเคลื่อนที่ของอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>โบนัสความเร็วเคลื่อนที่ของอาวุธวิเศษ+100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoFlySpeedAddP",100);me:TriggerStory("FBFXSUJC");</OKResult></li>
+<li><Display>โบนัสความเร็วเคลื่อนที่ของอาวุธวิเศษ+10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoFlySpeedAddP",10000);me:TriggerStory("FBFXSUJC");</OKResult></li>
+<li><Display>โบนัสความเร็วเคลื่อนที่ของอาวุธวิเศษ+100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoFlySpeedAddP",100000);me:TriggerStory("FBFXSUJC");</OKResult></li>
+<li><Display>โบนัสความเร็วเคลื่อนที่ของอาวุธวิเศษ-100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoFlySpeedAddP",-100);me:TriggerStory("FBFXSUJC");</OKResult></li>
+<li><Display>โบนัสความเร็วเคลื่อนที่ของอาวุธวิเศษ-10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoFlySpeedAddP",-10000);me:TriggerStory("FBFXSUJC");</OKResult></li>
+<li><Display>โบนัสความเร็วเคลื่อนที่ของอาวุธวิเศษ-100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoFlySpeedAddP",-100000);me:TriggerStory("FBFXSUJC");</OKResult></li>
+
+		</Selections></Story>
+
+<!--法宝转向速度加成-->
+<Story Name="FBZXSDJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสความเร็วการเลี้ยวของอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>โบนัสความเร็วการเลี้ยวของอาวุธวิเศษ+100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoTurnSpeedAddP",100);me:TriggerStory("FBZXSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการเลี้ยวของอาวุธวิเศษ+10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoTurnSpeedAddP",10000);me:TriggerStory("FBZXSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการเลี้ยวของอาวุธวิเศษ+100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoTurnSpeedAddP",100000);me:TriggerStory("FBZXSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการเลี้ยวของอาวุธวิเศษ-100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoTurnSpeedAddP",-100);me:TriggerStory("FBZXSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการเลี้ยวของอาวุธวิเศษ-10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoTurnSpeedAddP",-10000);me:TriggerStory("FBZXSDJC");</OKResult></li>
+<li><Display>โบนัสความเร็วการเลี้ยวของอาวุธวิเศษ-100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoTurnSpeedAddP",-100000);me:TriggerStory("FBZXSDJC");</OKResult></li>
+
+		</Selections></Story>
+
+<!--法宝击退距离抗性-->
+<Story Name="FBJTJLKX"  Parent="BaseFillingStory">
+		<DisplayName>ปรับค่าต้านทานการกระเด็นจากอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>ค่าต้านทานการกระเด็นจากอาวุธวิเศษ+100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoRepelResistanceAddV",100);me:TriggerStory("FBJTJLKX");</OKResult></li>
+<li><Display>ค่าต้านทานการกระเด็นจากอาวุธวิเศษ+10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoRepelResistanceAddV",10000);me:TriggerStory("FBJTJLKX");</OKResult></li>
+<li><Display>ค่าต้านทานการกระเด็นจากอาวุธวิเศษ+100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoRepelResistanceAddV",100000);me:TriggerStory("FBJTJLKX");</OKResult></li>
+<li><Display>ค่าต้านทานการกระเด็นจากอาวุธวิเศษ-100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoRepelResistanceAddV",-100);me:TriggerStory("FBJTJLKX");</OKResult></li>
+<li><Display>ค่าต้านทานการกระเด็นจากอาวุธวิเศษ-10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoRepelResistanceAddV",-10000);me:TriggerStory("FBJTJLKX");</OKResult></li>
+<li><Display>ค่าต้านทานการกระเด็นจากอาวุธวิเศษ-100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoRepelResistanceAddV",-100000);me:TriggerStory("FBJTJLKX");</OKResult></li>
+
+		</Selections></Story>
+
+
+<!--法宝拖尾长度加成-->
+<Story Name="FBTWCDJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสความยาวหางอาวุธวิเศษ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>โบนัสความยาวหางอาวุธวิเศษ+100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoTrailingLengthAddP",100);me:TriggerStory("FBTWCDJC");</OKResult></li>
+<li><Display>โบนัสความยาวหางอาวุธวิเศษ+10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoTrailingLengthAddP",10000);me:TriggerStory("FBTWCDJC");</OKResult></li>
+<li><Display>โบนัสความยาวหางอาวุธวิเศษ+100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoTrailingLengthAddP",100000);me:TriggerStory("FBTWCDJC");</OKResult></li>
+<li><Display>โบนัสความยาวหางอาวุธวิเศษ-100</Display><OKResult>me:ModifierProperty("NpcFight_FabaoTrailingLengthAddP",-100);me:TriggerStory("FBTWCDJC");</OKResult></li>
+<li><Display>โบนัสความยาวหางอาวุธวิเศษ-10000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoTrailingLengthAddP",-10000);me:TriggerStory("FBTWCDJC");</OKResult></li>
+<li><Display>โบนัสความยาวหางอาวุธวิเศษ-100000</Display><OKResult>me:ModifierProperty("NpcFight_FabaoTrailingLengthAddP",-100000);me:TriggerStory("FBTWCDJC");</OKResult></li>
+
+		</Selections></Story>
+
+<!--术法灵气消耗加成-->
+<Story Name="SFLQXHJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสการใช้พลังวิญญาณของวิชา</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>โบนัสการใช้พลังวิญญาณของวิชา+100</Display><OKResult>me:ModifierProperty("NpcFight_SpellLingCostAddP",100);me:TriggerStory("SFLQXHJC");</OKResult></li>
+<li><Display>โบนัสการใช้พลังวิญญาณของวิชา+10000</Display><OKResult>me:ModifierProperty("NpcFight_SpellLingCostAddP",10000);me:TriggerStory("SFLQXHJC");</OKResult></li>
+<li><Display>โบนัสการใช้พลังวิญญาณของวิชา+100000</Display><OKResult>me:ModifierProperty("NpcFight_SpellLingCostAddP",100000);me:TriggerStory("SFLQXHJC");</OKResult></li>
+<li><Display>โบนัสการใช้พลังวิญญาณของวิชา-100</Display><OKResult>me:ModifierProperty("NpcFight_SpellLingCostAddP",-100);me:TriggerStory("SFLQXHJC");</OKResult></li>
+<li><Display>โบนัสการใช้พลังวิญญาณของวิชา-10000</Display><OKResult>me:ModifierProperty("NpcFight_SpellLingCostAddP",-10000);me:TriggerStory("SFLQXHJC");</OKResult></li>
+<li><Display>โบนัสการใช้พลังวิญญาณของวิชา-100000</Display><OKResult>me:ModifierProperty("NpcFight_SpellLingCostAddP",-100000);me:TriggerStory("SFLQXHJC");</OKResult></li>
+
+		</Selections></Story>
+
+<!--术法吟唱时间加成-->
+<Story Name="SFYCSJJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสระยะเวลาร่ายคาถา</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>โบนัสระยะเวลาร่ายคาถา+100</Display><OKResult>me:ModifierProperty("NpcFight_SpellCastTimeAddP",100);me:TriggerStory("SFYCSJJC");</OKResult></li>
+<li><Display>โบนัสระยะเวลาร่ายคาถา+10000</Display><OKResult>me:ModifierProperty("NpcFight_SpellCastTimeAddP",10000);me:TriggerStory("SFYCSJJC");</OKResult></li>
+<li><Display>โบนัสระยะเวลาร่ายคาถา+100000</Display><OKResult>me:ModifierProperty("NpcFight_SpellCastTimeAddP",100000);me:TriggerStory("SFYCSJJC");</OKResult></li>
+<li><Display>โบนัสระยะเวลาร่ายคาถา-100</Display><OKResult>me:ModifierProperty("NpcFight_SpellCastTimeAddP",-100);me:TriggerStory("SFYCSJJC");</OKResult></li>
+<li><Display>โบนัสระยะเวลาร่ายคาถา-10000</Display><OKResult>me:ModifierProperty("NpcFight_SpellCastTimeAddP",-10000);me:TriggerStory("SFYCSJJC");</OKResult></li>
+<li><Display>โบนัสระยะเวลาร่ายคาถา-100000</Display><OKResult>me:ModifierProperty("NpcFight_SpellCastTimeAddP",-100000);me:TriggerStory("SFYCSJJC");</OKResult></li>
+
+		</Selections></Story>
+
+<!--术法伤害加成-->
+<Story Name="SFSSJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับพลังโจมตีของวิชา</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>พลังโจมตีของวิชา+100</Display><OKResult>me:ModifierProperty("NpcFight_SpellPowerAddP",100);me:TriggerStory("SFSSJC");</OKResult></li>
+<li><Display>พลังโจมตีของวิชา+10000</Display><OKResult>me:ModifierProperty("NpcFight_SpellPowerAddP",10000);me:TriggerStory("SFSSJC");</OKResult></li>
+<li><Display>พลังโจมตีของวิชา+100000</Display><OKResult>me:ModifierProperty("NpcFight_SpellPowerAddP",100000);me:TriggerStory("SFSSJC");</OKResult></li>
+<li><Display>พลังโจมตีของวิชา-100</Display><OKResult>me:ModifierProperty("NpcFight_SpellPowerAddP",-100);me:TriggerStory("SFSSJC");</OKResult></li>
+<li><Display>พลังโจมตีของวิชา-10000</Display><OKResult>me:ModifierProperty("NpcFight_SpellPowerAddP",-10000);me:TriggerStory("SFSSJC");</OKResult></li>
+<li><Display>พลังโจมตีของวิชา-100000</Display><OKResult>me:ModifierProperty("NpcFight_SpellPowerAddP",-100000);me:TriggerStory("SFSSJC");</OKResult></li>
+
+		</Selections></Story>
+
+
+<!--术法冷却时间加成-->
+<Story Name="SFLQSJJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสคูลดาวน์ของวิชา</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>โบนัสคูลดาวน์ของวิชา+100</Display><OKResult>me:ModifierProperty("NpcFight_SpellCoolDownAddP",100);me:TriggerStory("SFLQSJJC");</OKResult></li>
+<li><Display>โบนัสคูลดาวน์ของวิชา+10000</Display><OKResult>me:ModifierProperty("NpcFight_SpellCoolDownAddP",10000);me:TriggerStory("SFLQSJJC");</OKResult></li>
+<li><Display>โบนัสคูลดาวน์ของวิชา+100000</Display><OKResult>me:ModifierProperty("NpcFight_SpellCoolDownAddP",100000);me:TriggerStory("SFLQSJJC");</OKResult></li>
+<li><Display>โบนัสคูลดาวน์ของวิชา-100</Display><OKResult>me:ModifierProperty("NpcFight_SpellCoolDownAddP",-100);me:TriggerStory("SFLQSJJC");</OKResult></li>
+<li><Display>โบนัสคูลดาวน์ของวิชา-10000</Display><OKResult>me:ModifierProperty("NpcFight_SpellCoolDownAddP",-10000);me:TriggerStory("SFLQSJJC");</OKResult></li>
+<li><Display>โบนัสคูลดาวน์ของวิชา-100000</Display><OKResult>me:ModifierProperty("NpcFight_SpellCoolDownAddP",-100000);me:TriggerStory("SFLQSJJC");</OKResult></li>
+
+		</Selections></Story>
+
+<!--护盾强度加值-->
+<Story Name="HDQDJZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับโบนัสความแข็งแกร่งโล่พลัง</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>โบนัสความแข็งแกร่งโล่พลัง+100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionRate",100);me:TriggerStory("HDQDJZ");</OKResult></li>
+<li><Display>โบนัสความแข็งแกร่งโล่พลัง+10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionRate",10000);me:TriggerStory("HDQDJZ");</OKResult></li>
+<li><Display>โบนัสความแข็งแกร่งโล่พลัง+100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionRate",100000);me:TriggerStory("HDQDJZ");</OKResult></li>
+<li><Display>โบนัสความแข็งแกร่งโล่พลัง-100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionRate",-100);me:TriggerStory("HDQDJZ");</OKResult></li>
+<li><Display>โบนัสความแข็งแกร่งโล่พลัง-10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionRate",-10000);me:TriggerStory("HDQDJZ");</OKResult></li>
+<li><Display>โบนัสความแข็งแกร่งโล่พลัง-100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionRate",-100000);me:TriggerStory("HDQDJZ");</OKResult></li>
+
+		</Selections></Story>
+
+<!--护盾强度加成-->
+<Story Name="HDQDJC"  Parent="BaseFillingStory">
+		<DisplayName>ปรับตัวคูณความแข็งแกร่งของโล่พลัง</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>ตัวคูณความแข็งแกร่งของโล่พลัง+100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionRateAddP",100);me:TriggerStory("HDQDJC");</OKResult></li>
+<li><Display>ตัวคูณความแข็งแกร่งของโล่พลัง+10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionRateAddP",10000);me:TriggerStory("HDQDJC");</OKResult></li>
+<li><Display>ตัวคูณความแข็งแกร่งของโล่พลัง+100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionRateAddP",100000);me:TriggerStory("HDQDJC");</OKResult></li>
+<li><Display>ตัวคูณความแข็งแกร่งของโล่พลัง-100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionRateAddP",-100);me:TriggerStory("HDQDJC");</OKResult></li>
+<li><Display>ตัวคูณความแข็งแกร่งของโล่พลัง-10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionRateAddP",-10000);me:TriggerStory("HDQDJC");</OKResult></li>
+<li><Display>ตัวคูณความแข็งแกร่งของโล่พลัง-100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldConversionRateAddP",-100000);me:TriggerStory("HDQDJC");</OKResult></li>
+
+		</Selections></Story>
+
+<!--阵法规模-->
+<Story Name="ZFGM"  Parent="BaseFillingStory">
+		<DisplayName>ปรับขนาดพื้นที่ค่ายกล</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>ขนาดพื้นที่ค่ายกล+100</Display><OKResult>me:ModifierProperty("NpcFight_ZhenKeyPointNum",100);me:TriggerStory("ZFGM");</OKResult></li>
+<li><Display>ขนาดพื้นที่ค่ายกล+10000</Display><OKResult>me:ModifierProperty("NpcFight_ZhenKeyPointNum",10000);me:TriggerStory("ZFGM");</OKResult></li>
+<li><Display>ขนาดพื้นที่ค่ายกล+100000</Display><OKResult>me:ModifierProperty("NpcFight_ZhenKeyPointNum",100000);me:TriggerStory("ZFGM");</OKResult></li>
+<li><Display>ขนาดพื้นที่ค่ายกล-100</Display><OKResult>me:ModifierProperty("NpcFight_ZhenKeyPointNum",-100);me:TriggerStory("ZFGM");</OKResult></li>
+<li><Display>ขนาดพื้นที่ค่ายกล-10000</Display><OKResult>me:ModifierProperty("NpcFight_ZhenKeyPointNum",-10000);me:TriggerStory("ZFGM");</OKResult></li>
+<li><Display>ขนาดพื้นที่ค่ายกล-100000</Display><OKResult>me:ModifierProperty("NpcFight_ZhenKeyPointNum",-100000);me:TriggerStory("ZFGM");</OKResult></li>
+
+		</Selections></Story>
+
+<!--阵法负荷能力-->
+<Story Name="ZFFHNL"  Parent="BaseFillingStory">
+		<DisplayName>ปรับความจุค่ายกล</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>ความจุค่ายกล+100</Display><OKResult>me:ModifierProperty("NpcFight_ZhenEnginePower",100);me:TriggerStory("ZFFHNL");</OKResult></li>
+<li><Display>ความจุค่ายกล+10000</Display><OKResult>me:ModifierProperty("NpcFight_ZhenEnginePower",10000);me:TriggerStory("ZFFHNL");</OKResult></li>
+<li><Display>ความจุค่ายกล+100000</Display><OKResult>me:ModifierProperty("NpcFight_ZhenEnginePower",100000);me:TriggerStory("ZFFHNL");</OKResult></li>
+<li><Display>ความจุค่ายกล-100</Display><OKResult>me:ModifierProperty("NpcFight_ZhenEnginePower",-100);me:TriggerStory("ZFFHNL");</OKResult></li>
+<li><Display>ความจุค่ายกล-10000</Display><OKResult>me:ModifierProperty("NpcFight_ZhenEnginePower",-10000);me:TriggerStory("ZFFHNL");</OKResult></li>
+<li><Display>ความจุค่ายกล-100000</Display><OKResult>me:ModifierProperty("NpcFight_ZhenEnginePower",-100000);me:TriggerStory("ZFFHNL");</OKResult></li>
+
+		</Selections></Story>
+
+<!--潜行值-->
+<Story Name="QXZ"  Parent="BaseFillingStory">
+		<DisplayName>ปรับค่าพรางตัว</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>ค่าพรางตัว+100</Display><OKResult>me:ModifierProperty("NpcFight_SneakValue",100);me:TriggerStory("QXZ");</OKResult></li>
+<li><Display>ค่าพรางตัว+10000</Display><OKResult>me:ModifierProperty("NpcFight_SneakValue",10000);me:TriggerStory("QXZ");</OKResult></li>
+<li><Display>ค่าพรางตัว+100000</Display><OKResult>me:ModifierProperty("NpcFight_SneakValue",100000);me:TriggerStory("QXZ");</OKResult></li>
+<li><Display>ค่าพรางตัว-100</Display><OKResult>me:ModifierProperty("NpcFight_SneakValue",-100);me:TriggerStory("QXZ");</OKResult></li>
+<li><Display>ค่าพรางตัว-10000</Display><OKResult>me:ModifierProperty("NpcFight_SneakValue",-10000);me:TriggerStory("QXZ");</OKResult></li>
+<li><Display>ค่าพรางตัว-100000</Display><OKResult>me:ModifierProperty("NpcFight_SneakValue",-100000);me:TriggerStory("QXZ");</OKResult></li>
+
+		</Selections></Story>
+
+<!--金属性伤害减免-->
+<Story Name="JSXSHJM"  Parent="BaseFillingStory">
+		<DisplayName>ปรับการลดความเสียหายธาตุทอง</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>ปรับการลดความเสียหายธาตุทอง+100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToJin",100);me:TriggerStory("JSXSHJM");</OKResult></li>
+<li><Display>ปรับการลดความเสียหายธาตุทอง+10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToJin",10000);me:TriggerStory("JSXSHJM");</OKResult></li>
+<li><Display>ปรับการลดความเสียหายธาตุทอง+100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToJin",100000);me:TriggerStory("JSXSHJM");</OKResult></li>
+<li><Display>ปรับการลดความเสียหายธาตุทอง-100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToJin",-100);me:TriggerStory("JSXSHJM");</OKResult></li>
+<li><Display>ปรับการลดความเสียหายธาตุทอง-10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToJin",-10000);me:TriggerStory("JSXSHJM");</OKResult></li>
+<li><Display>ปรับการลดความเสียหายธาตุทอง-100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToJin",-100000);me:TriggerStory("JSXSHJM");</OKResult></li>
+
+		</Selections></Story>
+
+<!--木属性伤害减免-->
+<Story Name="MSXSHJM"  Parent="BaseFillingStory">
+		<DisplayName>ปรับการลดความเสียหายธาตุไม้</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุไม้+100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToMu",100);me:TriggerStory("MSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุไม้+10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToMu",10000);me:TriggerStory("MSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุไม้+100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToMu",100000);me:TriggerStory("MSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุไม้-100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToMu",-100);me:TriggerStory("MSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุไม้-10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToMu",-10000);me:TriggerStory("MSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุไม้-100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToMu",-100000);me:TriggerStory("MSXSHJM");</OKResult></li>
+</Selections></Story>
+
+<!--水属性伤害减免-->
+<Story Name="SSXSHJM"  Parent="BaseFillingStory">
+		<DisplayName>ปรับการลดความเสียหายธาตุน้ำ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุน้ำ+100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToShui",100);me:TriggerStory("SSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุน้ำ+10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToShui",10000);me:TriggerStory("SSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุน้ำ+100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToShui",100000);me:TriggerStory("SSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุน้ำ-100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToShui",-100);me:TriggerStory("SSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุน้ำ-10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToShui",-10000);me:TriggerStory("SSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุน้ำ-100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToShui",-100000);me:TriggerStory("SSXSHJM");</OKResult></li>
+
+		</Selections></Story>
+
+<!--火属性伤害减免-->
+<Story Name="HSXSHJM"  Parent="BaseFillingStory">
+		<DisplayName>ปรับการลดความเสียหายธาตุไฟ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุไฟ+100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToHuo",100);me:TriggerStory("HSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุไฟ+10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToHuo",10000);me:TriggerStory("HSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุไฟ+100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToHuo",100000);me:TriggerStory("HSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุไฟ-100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToHuo",-100);me:TriggerStory("HSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุไฟ-10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToHuo",-10000);me:TriggerStory("HSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุไฟ-100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToHuo",-100000);me:TriggerStory("HSXSHJM");</OKResult></li>
+
+		</Selections></Story>
+
+<!--土属性伤害减免-->
+<Story Name="TSXSHJM"  Parent="BaseFillingStory">
+		<DisplayName>ปรับการลดความเสียหายธาตุดิน</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุดิน+100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToTu",100);me:TriggerStory("TSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุดิน+10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToTu",10000);me:TriggerStory("TSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุดิน+100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToTu",100000);me:TriggerStory("TSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุดิน-100</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToTu",-100);me:TriggerStory("TSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุดิน-10000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToTu",-10000);me:TriggerStory("TSXSHJM");</OKResult></li>
+<li><Display>การลดความเสียหายธาตุดิน-100000</Display><OKResult>me:ModifierProperty("NpcFight_ShieldResistanceToTu",-100000);me:TriggerStory("TSXSHJM");</OKResult></li>
+
+		</Selections></Story>
+
+	<Story Name="FightProperty"  Parent="BaseFillingStory">
+		<DisplayName>แก้ไขค่าคุณสมบัติการต่อสู้</DisplayName>
+		<Desc>กรุณาเลือกคุณสมบัติที่ต้องการแก้ไข</Desc>
+		<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Property");</OKResult></li>
+<li><Display>ความแม่นยำในการต่อสู้</Display><OKResult>me:TriggerStory("ZDMZ");</OKResult></li>
+<li><Display>การหลบหลีกในการต่อสู้</Display><OKResult>me:TriggerStory("ZDSB");</OKResult></li>
+<li><Display>ค่าพิเศษที่เพิ่มจากอุปกรณ์ในอัตราการแปลงโล่ป้องกัน</Display><OKResult>me:TriggerStory("HDZHLZBFJZ");</OKResult></li>
+<li><Display>จำนวนอาวุธวิเศษ</Display><OKResult>me:TriggerStory("FBSL");</OKResult></li>
+<li><Display>การฟื้นฟูพลังวิญญาณของอาวุธวิเศษ</Display><OKResult>me:TriggerStory("FBHLBL");</OKResult></li>
+<li><Display>เพิ่มความแรง/พลังของไอเทมวิเศษ</Display><OKResult>me:TriggerStory("FBWLJC");</OKResult></li>	
+<li><Display>เพิ่มความเร็วการฟื้นฟูปราณของอาวุธวิเศษ</Display><OKResult>me:TriggerStory("FBLQHFSDJZ");</OKResult></li>
+<li><Display>ปรับลด/เพิ่ม เวลาหน่วงระหว่างการโจมตีของอาวุธวิเศษ</Display><OKResult>me:TriggerStory("FBGJJGJC");</OKResult></li>
+<li><Display>เพิ่มค่าพลังปรานอาวุธวิเศษ”</Display><OKResult>me:TriggerStory("FBLQZDZJC");</OKResult></li>
+<li><Display>เพิ่มระยะการผลักศัตรูให้กระเด็นเมื่อถูกอาวุธวิเศษโจมตี</Display><OKResult>me:TriggerStory("FBJTJLJC");</OKResult></li>	
+<li><Display>เพิ่มความเร็วการเคลื่อนที่/พุ่งของอาวุธวิเศษ</Display><OKResult>me:TriggerStory("FBFXSUJC");</OKResult></li>
+<li><Display>เพิ่มความไวในการเปลี่ยนทิศทาง/หันของอาวุธวิเศษ</Display><OKResult>me:TriggerStory("FBZXSDJC");</OKResult></li>
+<li><Display>ลดระยะการถูกผลักกระเด็นเมื่อโดนอาวุธวิเศษโจมตี</Display><OKResult>me:TriggerStory("FBJTJLKX");</OKResult></li>	
+<li><Display>เพิ่มความยาวเอฟเฟกต์ล่องรอย/แสงตามหลังของอาวุธวิเศษ</Display><OKResult>me:TriggerStory("FBTWCDJC");</OKResult></li>
+<li><Display>เพิ่ม/ลด อัตราการใช้ปราณของสกิลเวท”</Display><OKResult>me:TriggerStory("SFLQXHJC");</OKResult></li>
+<li><Display>ปรับเวลาร่ายสกิลเวท</Display><OKResult>me:TriggerStory("SFYCSJJC");</OKResult></li>
+<li><Display>เพิ่มพลังโจมตีจากสกิลเวท</Display><OKResult>me:TriggerStory("SFSSJC");</OKResult></li>
+<li><Display>โบนัสเวลาคูลดาวน์ของสกิลเวทย์</Display><OKResult>me:TriggerStory("SFLQSJJC");</OKResult></li>
+<li><Display>เพิ่มความหนา/พลังของชิลด์ (โล่ป้องกัน)</Display><OKResult>me:TriggerStory("HDQDJZ");</OKResult></li>
+<li><Display>โบนัสความแข็งแกร่งของโล่ป้องกัน</Display><OKResult>me:TriggerStory("HDQDJC");</OKResult></li>	
+<li><Display>ขนาดของพื้นที่ค่ายกล</Display><OKResult>me:TriggerStory("ZFGM");</OKResult></li>		
+<li><Display>ความสามารถในการรองรับภาระของค่ายกล</Display><OKResult>me:TriggerStory("ZFFHNL");</OKResult></li>
+<li><Display>เพิ่มค่าการลอบเร้น</Display><OKResult>me:TriggerStory("QXZ");</OKResult></li>			
+<li><Display>ลดความเสียหายจากธาตุทอง</Display><OKResult>me:TriggerStory("JSXSHJM");</OKResult></li>
+<li><Display>ลดความเสียหายจากธาตุไม้</Display><OKResult>me:TriggerStory("MSXSHJM");</OKResult></li>
+<li><Display>ลดความเสียหายจากธาตุน้ำ</Display><OKResult>me:TriggerStory("SSXSHJM");</OKResult></li>
+<li><Display>ลดความเสียหายจากธาตุไฟ</Display><OKResult>me:TriggerStory("HSXSHJM");</OKResult></li>
+<li><Display>ลดความเสียหายจากธาตุดิน</Display><OKResult>me:TriggerStory("TSXSHJM");</OKResult></li>
+
+		</Selections>
+	</Story>
+
+
+
+
+
+
+<Story Name="TQSJJJXG">
+		<DisplayName>ปรับสภาพอากาศ/เวลา/ฤดูกาล</DisplayName>
+		<Desc>อากาศ + เวลา + ฤดูกาล</Desc>		
+		<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
+<li><Display>วิชาควบคุมวัฏฤดู</Display><OKResult>me:TriggerStory("BuildMode_ChangeWeather");</OKResult></li>
+<li><Display>ควบคุมกาลเวลาแบบเซียน</Display><OKResult>me:TriggerStory("BuildMode_ChangeTime");</OKResult></li>
+<li><Display>วิชาควบคุมวัฏฤดู</Display><OKResult>me:TriggerStory("BuildMode_ChangeSeason");</OKResult></li>
+			
+				
+			
+		</Selections>
+	</Story>	
+
+
+<Story Name="BuildMode_ChangeTime">
+		<DisplayName>การปรับเวลา</DisplayName>
+		<Desc>ต้องการปรับเวลาเป็นช่วงไหน</Desc>		
+		<Kind>None</Kind>		
+		<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("TQSJJJXG");</OKResult></li>
+			<li>
+				<Display>ตอนเช้า</Display>
+				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeTime(5)</OKResult>
+			</li>
+			<li>
+				<Display>เที่ยงวัน</Display>
+				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeTime(11)</OKResult>
+			</li>
+			<li>
+				<Display>ตอนเย็น</Display>
+				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeTime(17)</OKResult>
+			</li>
+			<li>
+				<Display>ตอนดึก</Display>
+				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeTime(1)</OKResult>
+			</li>
+			
+		</Selections>
+	</Story>	
+	<Story Name="BuildMode_ChangeSeason">
+		<DisplayName>แก้ไขฤดูกาล</DisplayName>
+		<Desc>ต้องการพลิกเปลี่ยนกาลฤดูเป็นช่วงใด</Desc>
+			<Kind>None</Kind>	
+		<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("TQSJJJXG");</OKResult></li>
+			<li>
+				<Display>ฤดูใบไม้ผลิ</Display>
+				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeDay(14)</OKResult>
+			</li>
+			<li>
+				<Display>ฤดูร้อน</Display>
+				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeDay(42)</OKResult>
+			</li>
+			<li>
+				<Display>ฤดูใบไม้ร่วง</Display>
+				<OKResult>GameMain:GetMod("BuildModeHelper"):ChangeDay(75)</OKResult>
+			</li>
+			<li>
+				<Display>ฤดูหนาว</Display>
+				<OKResult>GameMain:GetMod("BuildModeHelper"):ChangeDay(98)</OKResult>
+			</li>
+
+		</Selections>
+	</Story>	
+	<Story Name="BuildMode_ChangeWeather">
+		<DisplayName>แก้ไขสภาพอากาศ</DisplayName>
+		<Desc>ต้องการแก้ไขสภาพอากาศแบบไหนเหรอ</Desc>
+				
+		<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("TQSJJJXG");</OKResult></li>
+			<li>
+				<Display>ฝนตกเบาๆหิมะตกเบาๆ</Display>
+				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeWeather("LightRain")</OKResult>
+			</li>
+			<li>
+				<Display>ฝนตกหนัก / หิมะตกหนัก</Display>
+				<OKResult> GameMain:GetMod("BuildModeHelper"):ChangeWeather("HeavyRain")</OKResult>
+			</li>					
+			<li>
+				<Display>พายุธุลี</Display>
+				<OKResult>GameMain:GetMod("BuildModeHelper"):ChangeWeather("DustStorm")</OKResult>
+			</li>
+			<li>
+				<Display>กลางคืน</Display>
+				<OKResult>GameMain:GetMod("BuildModeHelper"):ChangeWeather("PermanentNight")</OKResult>
+			</li>
+			<li>
+				<Display>พายุสายฟ้า</Display>
+				<OKResult>GameMain:GetMod("BuildModeHelper"):ChangeWeather("LightningStorm")</OKResult></li>		
+			<li><Display>ล้างสภาพอากาศทั้งหมด</Display><OKResult>World.Weather:ClearAllWeather();  </OKResult></li></Selections></Story>	
+
+
+
+	
+	
+</List></Stories>

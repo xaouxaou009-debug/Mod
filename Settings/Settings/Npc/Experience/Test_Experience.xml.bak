@@ -1,0 +1,8 @@
+﻿<Experiences><List>
+	<Experience Name="ExperiencesMod76" Group="G3">
+		<DisplayName>好友不要太多</DisplayName>
+		<Desc>你进入太一门后，结交了10个的道友。灭门之夜，他们与你一起逃出门派。\n\n\n[size=10]初始[color=#D06508]弟子栏位[/color]增加10！[/size]</Desc>
+		<Point>5</Point>
+		<NpcSlot>10</NpcSlot>
+	</Experience>
+</List></Experiences>
