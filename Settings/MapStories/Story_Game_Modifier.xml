@@ -293,220 +293,220 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 		<DisplayName>แก้ไขคุณสมบัติ</DisplayName>
 		<Desc>กรุณาเลือกประเภทคุณสมบัติที่ต้องการแก้ไข</Desc>
 		<Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
-<li><Display>战斗属性修改</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
-<li><Display>神修属性修改</Display><OKResult>me:TriggerStory("GodPraticeProperty");</OKResult></li>
-<li><Display>修炼属性修改</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
-<li><Display>角色属性相关修改</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>工作属性相关修改</Display><OKResult>me:TriggerStory("WorkProperty");</OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
+<li><Display>ปรับแต่งค่าพลังการต่อสู้</Display><OKResult>me:TriggerStory("FightProperty");</OKResult></li>
+<li><Display>ปรับแต่งค่าสเตตัสการบำเพ็ญระดับเทพ/เซียนเทพ</Display><OKResult>me:TriggerStory("GodPraticeProperty");</OKResult></li>
+<li><Display>ปรับแต่งค่าการฝึกตน / ค่าสเตตัสการฝึกเซียน</Display><OKResult>me:TriggerStory("PracticeProperty");</OKResult></li>
+<li><Display>ปรับแต่งสเตตัสตัวละครทั้งหมดที่เกี่ยวข้อง</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ปรับแต่งค่าสเตตัสสายงาน/การทำกิจกรรม</Display><OKResult>me:TriggerStory("WorkProperty");</OKResult></li>
 </Selections></Story>
 
 <Story Name="WorkProperty"  Parent="BaseFillingStory">
-		<DisplayName>工作属性相关修改</DisplayName>
-		<Desc>请选择想要修改的哪个属性</Desc>
+		<DisplayName>ปรับแต่งสเตตัสด้านการทำงาน/กิจกรรมงาน</DisplayName>
+		<Desc>กรุณาเลือกคุณสมบัติที่ต้องการปรับแต่ง</Desc>
 		<Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("Property");</OKResult></li>
-<li><Display>全局工作速度+100000</Display><OKResult>me:ModifierProperty("GlobalEfficiency",100000);me:TriggerStory("WorkProperty");</OKResult></li>
-<li><Display>全局工作速度-100000</Display><OKResult>me:ModifierProperty("GlobalEfficiency",-100000);me:TriggerStory("WorkProperty");	</OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Property");</OKResult></li>
+<li><Display>เพิ่มความเร็วการทำงานรวมทั่วทั้งระบบ +100000</Display><OKResult>me:ModifierProperty("GlobalEfficiency",100000);me:TriggerStory("WorkProperty");</OKResult></li>
+<li><Display>ลดความเร็วการทำงานรวมทั่วทั้งระบบ -100000”</Display><OKResult>me:ModifierProperty("GlobalEfficiency",-100000);me:TriggerStory("WorkProperty");	</OKResult></li>
 </Selections></Story>
 
 <!--经历点数加成-->
 <Story Name="JLDSJC"  Parent="BaseFillingStory">
-		<DisplayName>经历点数加成修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>经历点数加成+100</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",100);me:TriggerStory("JLDSJC");</OKResult></li>
-<li><Display>经历点数加成+200</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",200);me:TriggerStory("JLDSJC");</OKResult></li>
-<li><Display>经历点数加成+999</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",999);me:TriggerStory("JLDSJC");</OKResult></li>
-<li><Display>经历点数加成-100</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",-100);me:TriggerStory("JLDSJC");</OKResult></li>
-<li><Display>经历点数加成-200</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",-200);me:TriggerStory("JLDSJC");</OKResult></li>
-<li><Display>经历点数加成-999</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",-999);me:TriggerStory("JLDSJC");</OKResult></li>
+		<DisplayName>ปรับแต่งอัตราเพิ่มแต้มประสบการณ์</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับ</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>โบนัสแต้มประสบการณ์ +100</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",100);me:TriggerStory("JLDSJC");</OKResult></li>
+<li><Display>โบนัสแต้มประสบการณ์ +200</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",200);me:TriggerStory("JLDSJC");</OKResult></li>
+<li><Display>โบนัสแต้มประสบการณ์ +999</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",999);me:TriggerStory("JLDSJC");</OKResult></li>
+<li><Display>โบนัสแต้มประสบการณ์ -100</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",-100);me:TriggerStory("JLDSJC");</OKResult></li>
+<li><Display>โบนัสแต้มประสบการณ์ -200</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",-200);me:TriggerStory("JLDSJC");</OKResult></li>
+<li><Display>โบนัสแต้มประสบการณ์ -999</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",-999);me:TriggerStory("JLDSJC");</OKResult></li>
 		</Selections></Story>
 
 <!--基础工作速度-->
 <Story Name="JCGZSD"  Parent="BaseFillingStory">
-		<DisplayName>基础工作速度修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>基础工作速度+100</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",100);me:TriggerStory("JCGZSD");</OKResult></li>
-<li><Display>基础工作速度+200</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",200);me:TriggerStory("JCGZSD");</OKResult></li>
-<li><Display>基础工作速度+999</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",999);me:TriggerStory("JCGZSD");</OKResult></li>
-<li><Display>基础工作速度-100</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",-100);me:TriggerStory("JCGZSD");</OKResult></li>
-<li><Display>基础工作速度-200</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",-200);me:TriggerStory("JCGZSD");</OKResult></li>
-<li><Display>基础工作速度-999</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("JCGZSD");</OKResult></li>
+		<DisplayName>ปรับแต่งความเร็วงานพื้นฐาน</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่ต้องการปรับ</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ความเร็วการทำงานพื้นฐาน+100</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",100);me:TriggerStory("JCGZSD");</OKResult></li>
+<li><Display>ความเร็วการทำงานพื้นฐาน+200</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",200);me:TriggerStory("JCGZSD");</OKResult></li>
+<li><Display>ความเร็วการทำงานพื้นฐาน+999</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",999);me:TriggerStory("JCGZSD");</OKResult></li>
+<li><Display>ความเร็วการทำงานพื้นฐาน-100</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",-100);me:TriggerStory("JCGZSD");</OKResult></li>
+<li><Display>ความเร็วการทำงานพื้นฐาน-200</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",-200);me:TriggerStory("JCGZSD");</OKResult></li>
+<li><Display>ความเร็วการทำงานพื้นฐาน-999</Display><OKResult>me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("JCGZSD");</OKResult></li>
 		</Selections></Story>
 
 <!--心情基础值-->
 <Story Name="XQJCZ"  Parent="BaseFillingStory">
-		<DisplayName>心情基础值修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>心情基础值+100</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",100);me:TriggerStory("XQJCZ");</OKResult></li>
-<li><Display>心情基础值+200</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",200);me:TriggerStory("XQJCZ");</OKResult></li>
-<li><Display>心情基础值+999</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",999);me:TriggerStory("XQJCZ");</OKResult></li>
-<li><Display>心情基础值-100</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",-100);me:TriggerStory("XQJCZ");</OKResult></li>
-<li><Display>心情基础值-200</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",-200);me:TriggerStory("XQJCZ");</OKResult></li>
-<li><Display>心情基础值-999</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",-999);me:TriggerStory("XQJCZ");</OKResult></li>
+		<DisplayName>ปรับแต่งค่าความสุข/อารมณ์พื้นฐาน</DisplayName>
+		<Desc>กรุณาเลือกสิ่งที่ต้องการแก้ไข</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>เพิ่มค่าพื้นฐานอารมณ์+100</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",100);me:TriggerStory("XQJCZ");</OKResult></li>
+<li><Display>เพิ่มค่าพื้นฐานอารมณ์+200</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",200);me:TriggerStory("XQJCZ");</OKResult></li>
+<li><Display>เพิ่มค่าพื้นฐานอารมณ์+999</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",999);me:TriggerStory("XQJCZ");</OKResult></li>
+<li><Display>ลดค่าพื้นฐานอารมณ์-100</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",-100);me:TriggerStory("XQJCZ");</OKResult></li>
+<li><Display>ลดค่าพื้นฐานอารมณ์-200</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",-200);me:TriggerStory("XQJCZ");</OKResult></li>
+<li><Display>ลดค่าพื้นฐานอารมณ์-999</Display><OKResult>me:ModifierProperty("BaseEmotionAddV",-999);me:TriggerStory("XQJCZ");</OKResult></li>
 		</Selections></Story>
 		
 		<!--最大生命值-->
 <Story Name="ZDSMZ"  Parent="BaseFillingStory">
-		<DisplayName>最大生命值修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>最大生命值+100</Display><OKResult>me:ModifierProperty("MaxHp",100);me:TriggerStory("ZDSMZ");</OKResult></li>
-<li><Display>最大生命值+200</Display><OKResult>me:ModifierProperty("MaxHp",200);me:TriggerStory("ZDSMZ");</OKResult></li>
-<li><Display>最大生命值+999</Display><OKResult>me:ModifierProperty("MaxHp",999);me:TriggerStory("ZDSMZ");</OKResult></li>
-<li><Display>最大生命值-100</Display><OKResult>me:ModifierProperty("MaxHp",-100);me:TriggerStory("ZDSMZ");</OKResult></li>
-<li><Display>最大生命值-200</Display><OKResult>me:ModifierProperty("MaxHp",-200);me:TriggerStory("ZDSMZ");</OKResult></li>
-<li><Display>最大生命值-999</Display><OKResult>me:ModifierProperty("MaxHp",-999);me:TriggerStory("ZDSMZ");</OKResult></li>
+		<DisplayName>ปรับแต่ง HP สูงสุด</DisplayName>
+		<Desc>กรุณาเลือกค่าที่ต้องการแก้ไข</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>เพิ่ม HP สูงสุด+100</Display><OKResult>me:ModifierProperty("MaxHp",100);me:TriggerStory("ZDSMZ");</OKResult></li>
+<li><Display>เพิ่ม HP สูงสุด+200</Display><OKResult>me:ModifierProperty("MaxHp",200);me:TriggerStory("ZDSMZ");</OKResult></li>
+<li><Display>เพิ่ม HP สูงสุด+999</Display><OKResult>me:ModifierProperty("MaxHp",999);me:TriggerStory("ZDSMZ");</OKResult></li>
+<li><Display>ลด HP สูงสุด-100</Display><OKResult>me:ModifierProperty("MaxHp",-100);me:TriggerStory("ZDSMZ");</OKResult></li>
+<li><Display>ลด HP สูงสุด-200</Display><OKResult>me:ModifierProperty("MaxHp",-200);me:TriggerStory("ZDSMZ");</OKResult></li>
+<li><Display>ลด HP สูงสุด-999</Display><OKResult>me:ModifierProperty("MaxHp",-999);me:TriggerStory("ZDSMZ");</OKResult></li>
 		</Selections></Story>
 <!--最大寿命-->
 <Story Name="ZDSM"  Parent="BaseFillingStory">
-		<DisplayName>最大寿命修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>最大寿命+100</Display><OKResult>me:ModifierProperty("MaxAge",100);me:TriggerStory("ZDSM");</OKResult></li>
-<li><Display>最大寿命+200</Display><OKResult>me:ModifierProperty("MaxAge",200);me:TriggerStory("ZDSM");</OKResult></li>
-<li><Display>最大寿命+9999</Display><OKResult>me:ModifierProperty("MaxAge",9999);me:TriggerStory("ZDSM");</OKResult></li>
-<li><Display>最大寿命-100</Display><OKResult>me:ModifierProperty("MaxAge",-100);me:TriggerStory("ZDSM");</OKResult></li>
-<li><Display>最大寿命-200</Display><OKResult>me:ModifierProperty("MaxAge",-200);me:TriggerStory("ZDSM");</OKResult></li>
-<li><Display>最大寿命-999</Display><OKResult>me:ModifierProperty("MaxAge",-999);me:TriggerStory("ZDSM");</OKResult></li>
+		<DisplayName>ปรับแต่งอายุขัยสูงสุด</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อายุขัย+100</Display><OKResult>me:ModifierProperty("MaxAge",100);me:TriggerStory("ZDSM");</OKResult></li>
+<li><Display>อายุขัย+200</Display><OKResult>me:ModifierProperty("MaxAge",200);me:TriggerStory("ZDSM");</OKResult></li>
+<li><Display>อายุขัย+9999</Display><OKResult>me:ModifierProperty("MaxAge",9999);me:TriggerStory("ZDSM");</OKResult></li>
+<li><Display>อายุขัย-100</Display><OKResult>me:ModifierProperty("MaxAge",-100);me:TriggerStory("ZDSM");</OKResult></li>
+<li><Display>อายุขัย-200</Display><OKResult>me:ModifierProperty("MaxAge",-200);me:TriggerStory("ZDSM");</OKResult></li>
+<li><Displayอายุขัย-999</Display><OKResult>me:ModifierProperty("MaxAge",-999);me:TriggerStory("ZDSM");</OKResult></li>
 		</Selections></Story>
 <!--寿元流逝速度-->
 <Story Name="SMLSSD"  Parent="BaseFillingStory">
-		<DisplayName>寿元流逝速度修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>寿元流逝速度+1</Display><OKResult>me:ModifierProperty("AgeCostSpeed",1);me:TriggerStory("SMLSSD");</OKResult></li>
-<li><Display>寿元流逝速度+2</Display><OKResult>me:ModifierProperty("AgeCostSpeed",2);me:TriggerStory("SMLSSD");</OKResult></li>
-<li><Display>寿元流逝速度+10</Display><OKResult>me:ModifierProperty("AgeCostSpeed",10);me:TriggerStory("SMLSSD");</OKResult></li>
-<li><Display>寿元流逝速度-1</Display><OKResult>me:ModifierProperty("AgeCostSpeed",-1);me:TriggerStory("SMLSSD");</OKResult></li>
-<li><Display>寿元流逝速度-2</Display><OKResult>me:ModifierProperty("AgeCostSpeed",-2);me:TriggerStory("SMLSSD");</OKResult></li>
-<li><Display>寿元流逝速度-10</Display><OKResult>me:ModifierProperty("AgeCostSpeed",-10);me:TriggerStory("SMLSSD");</OKResult></li>
+		<DisplayName>ปรับแต่งอัตราการเสื่อมของอายุ/พลังชีวิตตามอายุ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ความเร็วการไหลของอายุขัย+1</Display><OKResult>me:ModifierProperty("AgeCostSpeed",1);me:TriggerStory("SMLSSD");</OKResult></li>
+<li><Display>ความเร็วการไหลของอายุขัย+2</Display><OKResult>me:ModifierProperty("AgeCostSpeed",2);me:TriggerStory("SMLSSD");</OKResult></li>
+<li><Display>ความเร็วการไหลของอายุขัย+10</Display><OKResult>me:ModifierProperty("AgeCostSpeed",10);me:TriggerStory("SMLSSD");</OKResult></li>
+<li><Display>ความเร็วการไหลของอายุขัย-1</Display><OKResult>me:ModifierProperty("AgeCostSpeed",-1);me:TriggerStory("SMLSSD");</OKResult></li>
+<li><Display>ความเร็วการไหลของอายุขัย-2</Display><OKResult>me:ModifierProperty("AgeCostSpeed",-2);me:TriggerStory("SMLSSD");</OKResult></li>
+<li><Display>ความเร็วการไหลของอายุขัย-10</Display><OKResult>me:ModifierProperty("AgeCostSpeed",-10);me:TriggerStory("SMLSSD");</OKResult></li>
 		</Selections></Story>
 <!--感知范围-->
 <Story Name="GZFW"  Parent="BaseFillingStory">
-		<DisplayName>感知范围修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>感知范围+100</Display><OKResult>me:ModifierProperty("VisionRadius",100);me:TriggerStory("GZFW");</OKResult></li>
-<li><Display>感知范围+200</Display><OKResult>me:ModifierProperty("VisionRadius",200);me:TriggerStory("GZFW");</OKResult></li>
-<li><Display>感知范围+999</Display><OKResult>me:ModifierProperty("VisionRadius",999);me:TriggerStory("GZFW");</OKResult></li>
-<li><Display>感知范围-100</Display><OKResult>me:ModifierProperty("VisionRadius",-100);me:TriggerStory("GZFW");</OKResult></li>
-<li><Display>感知范围-200</Display><OKResult>me:ModifierProperty("VisionRadius",-200);me:TriggerStory("GZFW");</OKResult></li>
-<li><Display>感知范围-999</Display><OKResult>me:ModifierProperty("VisionRadius",-999);me:TriggerStory("GZFW");</OKResult></li>
+		<DisplayName>แก้ไขระยะการรับรู้</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ระยะการรับรู้+100</Display><OKResult>me:ModifierProperty("VisionRadius",100);me:TriggerStory("GZFW");</OKResult></li>
+<li><Display>ระยะการรับรู้+200</Display><OKResult>me:ModifierProperty("VisionRadius",200);me:TriggerStory("GZFW");</OKResult></li>
+<li><Display>ระยะการรับรู้+999</Display><OKResult>me:ModifierProperty("VisionRadius",999);me:TriggerStory("GZFW");</OKResult></li>
+<li><Display>ระยะการรับรู้-100</Display><OKResult>me:ModifierProperty("VisionRadius",-100);me:TriggerStory("GZFW");</OKResult></li>
+<li><Display>ระยะการรับรู้-200</Display><OKResult>me:ModifierProperty("VisionRadius",-200);me:TriggerStory("GZFW");</OKResult></li>
+<li><Display>ระยะการรับรู้-999</Display><OKResult>me:ModifierProperty("VisionRadius",-999);me:TriggerStory("GZFW");</OKResult></li>
 		</Selections></Story>
 <!--移动速度-->
 <Story Name="YDSD"  Parent="BaseFillingStory">
-		<DisplayName>移动速度修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>移动速度+10</Display><OKResult>me:ModifierProperty("MoveSpeed",10);me:TriggerStory("YDSD");</OKResult></li>
-<li><Display>移动速度+20</Display><OKResult>me:ModifierProperty("MoveSpeed",20);me:TriggerStory("YDSD");</OKResult></li>
-<li><Display>移动速度+100</Display><OKResult>me:ModifierProperty("MoveSpeed",100);me:TriggerStory("YDSD");</OKResult></li>
-<li><Display>移动速度-10</Display><OKResult>me:ModifierProperty("MoveSpeed",-10);me:TriggerStory("YDSD");</OKResult></li>
-<li><Display>移动速度-20</Display><OKResult>me:ModifierProperty("MoveSpeed",-20);me:TriggerStory("YDSD");</OKResult></li>
-<li><Display>移动速度-100</Display><OKResult>me:ModifierProperty("MoveSpeed",-100);me:TriggerStory("YDSD");</OKResult></li>
+		<DisplayName>ปรับค่าความเร็วการเคลื่อนที่</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ความเร็วเคลื่อนที่+10</Display><OKResult>me:ModifierProperty("MoveSpeed",10);me:TriggerStory("YDSD");</OKResult></li>
+<li><Display>ความเร็วเคลื่อนที่+20</Display><OKResult>me:ModifierProperty("MoveSpeed",20);me:TriggerStory("YDSD");</OKResult></li>
+<li><Display>ความเร็วเคลื่อนที่+100</Display><OKResult>me:ModifierProperty("MoveSpeed",100);me:TriggerStory("YDSD");</OKResult></li>
+<li><Display>ความเร็วเคลื่อนที่-10</Display><OKResult>me:ModifierProperty("MoveSpeed",-10);me:TriggerStory("YDSD");</OKResult></li>
+<li><Display>ความเร็วเคลื่อนที่-20</Display><OKResult>me:ModifierProperty("MoveSpeed",-20);me:TriggerStory("YDSD");</OKResult></li>
+<li><Display>ความเร็วเคลื่อนที่-100</Display><OKResult>me:ModifierProperty("MoveSpeed",-100);me:TriggerStory("YDSD");</OKResult></li>
 		</Selections></Story>
 		
 		<!--最低舒适温度-->
 <Story Name="ZDSSWD"  Parent="BaseFillingStory">
-		<DisplayName>最低舒适温度修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>最低舒适温度+100</Display><OKResult>me:ModifierProperty("ComfyTMin",100);me:TriggerStory("ZDSSWD");</OKResult></li>
-<li><Display>最低舒适温度+200</Display><OKResult>me:ModifierProperty("ComfyTMin",200);me:TriggerStory("ZDSSWD");</OKResult></li>
-<li><Display>最低舒适温度+999</Display><OKResult>me:ModifierProperty("ComfyTMin",999);me:TriggerStory("ZDSSWD");</OKResult></li>
-<li><Display>最低舒适温度-100</Display><OKResult>me:ModifierProperty("ComfyTMin",-100);me:TriggerStory("ZDSSWD");</OKResult></li>
-<li><Display>最低舒适温度-200</Display><OKResult>me:ModifierProperty("ComfyTMin",-200);me:TriggerStory("ZDSSWD");</OKResult></li>
-<li><Display>最低舒适温度-999</Display><OKResult>me:ModifierProperty("ComfyTMin",-999);me:TriggerStory("ZDSSWD");</OKResult></li>
+		<DisplayName>แก้ไขอุณหภูมิความสบายขั้นต่ำ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อุณหภูมิความสบายขั้นต่ำ+100</Display><OKResult>me:ModifierProperty("ComfyTMin",100);me:TriggerStory("ZDSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายขั้นต่ำ+200</Display><OKResult>me:ModifierProperty("ComfyTMin",200);me:TriggerStory("ZDSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายขั้นต่ำ+999</Display><OKResult>me:ModifierProperty("ComfyTMin",999);me:TriggerStory("ZDSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายขั้นต่ำ-100</Display><OKResult>me:ModifierProperty("ComfyTMin",-100);me:TriggerStory("ZDSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายขั้นต่ำ-200</Display><OKResult>me:ModifierProperty("ComfyTMin",-200);me:TriggerStory("ZDSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายขั้นต่ำ-999</Display><OKResult>me:ModifierProperty("ComfyTMin",-999);me:TriggerStory("ZDSSWD");</OKResult></li>
 		</Selections></Story>
 <!--最高舒适温度-->
 <Story Name="ZGSSWD"  Parent="BaseFillingStory">
-		<DisplayName>最高舒适温度修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>最高舒适温度+100</Display><OKResult>me:ModifierProperty("ComfyTMax",100);me:TriggerStory("ZGSSWD");</OKResult></li>
-<li><Display>最高舒适温度+200</Display><OKResult>me:ModifierProperty("ComfyTMax",200);me:TriggerStory("ZGSSWD");</OKResult></li>
-<li><Display>最高舒适温度+999</Display><OKResult>me:ModifierProperty("ComfyTMax",999);me:TriggerStory("ZGSSWD");</OKResult></li>
-<li><Display>最高舒适温度-100</Display><OKResult>me:ModifierProperty("ComfyTMax",-100);me:TriggerStory("ZGSSWD");</OKResult></li>
-<li><Display>最高舒适温度-200</Display><OKResult>me:ModifierProperty("ComfyTMax",-200);me:TriggerStory("ZGSSWD");</OKResult></li>
-<li><Display>最高舒适温度-999</Display><OKResult>me:ModifierProperty("ComfyTMax",-999);me:TriggerStory("ZGSSWD");</OKResult></li>
+		<DisplayName>แก้ไขอุณหภูมิความสบายสูงสุด</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อุณหภูมิความสบายสูงสุด+100</Display><OKResult>me:ModifierProperty("ComfyTMax",100);me:TriggerStory("ZGSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายสูงสุด+200</Display><OKResult>me:ModifierProperty("ComfyTMax",200);me:TriggerStory("ZGSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายสูงสุด999</Display><OKResult>me:ModifierProperty("ComfyTMax",999);me:TriggerStory("ZGSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายสูงสุด-100</Display><OKResult>me:ModifierProperty("ComfyTMax",-100);me:TriggerStory("ZGSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายสูงสุด-200</Display><OKResult>me:ModifierProperty("ComfyTMax",-200);me:TriggerStory("ZGSSWD");</OKResult></li>
+<li><Display>อุณหภูมิความสบายสูงสุด-999</Display><OKResult>me:ModifierProperty("ComfyTMax",-999);me:TriggerStory("ZGSSWD");</OKResult></li>
 		</Selections></Story>
 <!--最低极限温度-->
 <Story Name="ZDJXWD"  Parent="BaseFillingStory">
-		<DisplayName>最低极限温度修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>最低极限温度+100</Display><OKResult>me:ModifierProperty("ToleranceTMin",100);me:TriggerStory("ZDJXWD");</OKResult></li>
-<li><Display>最低极限温度+200</Display><OKResult>me:ModifierProperty("ToleranceTMin",200);me:TriggerStory("ZDJXWD");</OKResult></li>
-<li><Display>最低极限温度+999</Display><OKResult>me:ModifierProperty("ToleranceTMin",999);me:TriggerStory("ZDJXWD");</OKResult></li>
-<li><Display>最低极限温度-100</Display><OKResult>me:ModifierProperty("ToleranceTMin",-100);me:TriggerStory("ZDJXWD");</OKResult></li>
-<li><Display>最低极限温度-200</Display><OKResult>me:ModifierProperty("ToleranceTMin",-200);me:TriggerStory("ZDJXWD");</OKResult></li>
-<li><Display>最低极限温度-999</Display><OKResult>me:ModifierProperty("ToleranceTMin",-999);me:TriggerStory("ZDJXWD");</OKResult></li>
+		<DisplayName>แก้ไขอุณหภูมิขีดจำกัดต่ำสุดขั้นสุด</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดต่ำสุดขั้นสุด +100</Display><OKResult>me:ModifierProperty("ToleranceTMin",100);me:TriggerStory("ZDJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดต่ำสุดขั้นสุด +200</Display><OKResult>me:ModifierProperty("ToleranceTMin",200);me:TriggerStory("ZDJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดต่ำสุดขั้นสุด +999</Display><OKResult>me:ModifierProperty("ToleranceTMin",999);me:TriggerStory("ZDJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดต่ำสุดขั้นสุด -100</Display><OKResult>me:ModifierProperty("ToleranceTMin",-100);me:TriggerStory("ZDJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดต่ำสุดขั้นสุด -200</Display><OKResult>me:ModifierProperty("ToleranceTMin",-200);me:TriggerStory("ZDJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดต่ำสุดขั้นสุด -999</Display><OKResult>me:ModifierProperty("ToleranceTMin",-999);me:TriggerStory("ZDJXWD");</OKResult></li>
 		</Selections></Story>
 		
 		<!--最高极限温度-->
 <Story Name="ZGJXWD"  Parent="BaseFillingStory">
-		<DisplayName>最高极限温度修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>最高极限温度+100</Display><OKResult>me:ModifierProperty("ToleranceTMax",100);me:TriggerStory("ZGJXWD");</OKResult></li>
-<li><Display>最高极限温度+200</Display><OKResult>me:ModifierProperty("ToleranceTMax",200);me:TriggerStory("ZGJXWD");</OKResult></li>
-<li><Display>最高极限温度+999</Display><OKResult>me:ModifierProperty("ToleranceTMax",999);me:TriggerStory("ZGJXWD");</OKResult></li>
-<li><Display>最高极限温度-100</Display><OKResult>me:ModifierProperty("ToleranceTMax",-100);me:TriggerStory("ZGJXWD");</OKResult></li>
-<li><Display>最高极限温度-200</Display><OKResult>me:ModifierProperty("ToleranceTMax",-200);me:TriggerStory("ZGJXWD");</OKResult></li>
-<li><Display>最高极限温度-999</Display><OKResult>me:ModifierProperty("ToleranceTMax",-999);me:TriggerStory("ZGJXWD");</OKResult></li>
+		<DisplayName>แก้ไขอุณหภูมิขีดจำกัดสูงสุดขั้นสุด</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดสูงสุดขั้นสุด+100</Display><OKResult>me:ModifierProperty("ToleranceTMax",100);me:TriggerStory("ZGJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดสูงสุดขั้นสุด+200</Display><OKResult>me:ModifierProperty("ToleranceTMax",200);me:TriggerStory("ZGJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดสูงสุดขั้นสุด+999</Display><OKResult>me:ModifierProperty("ToleranceTMax",999);me:TriggerStory("ZGJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดสูงสุดขั้นสุด-100</Display><OKResult>me:ModifierProperty("ToleranceTMax",-100);me:TriggerStory("ZGJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดสูงสุดขั้นสุด-200</Display><OKResult>me:ModifierProperty("ToleranceTMax",-200);me:TriggerStory("ZGJXWD");</OKResult></li>
+<li><Display>อุณหภูมิขีดจำกัดสูงสุดขั้นสุด-999</Display><OKResult>me:ModifierProperty("ToleranceTMax",-999);me:TriggerStory("ZGJXWD");</OKResult></li>
 		</Selections></Story>
 <!--自然恢复力-->
 <Story Name="ZRHFL"  Parent="BaseFillingStory">
-		<DisplayName>自然恢复力修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>自然恢复力+100</Display><OKResult>me:ModifierProperty("RecoveryPower",100);me:TriggerStory("ZRHFL");</OKResult></li>
-<li><Display>自然恢复力+200</Display><OKResult>me:ModifierProperty("RecoveryPower",200);me:TriggerStory("ZRHFL");</OKResult></li>
-<li><Display>自然恢复力+999</Display><OKResult>me:ModifierProperty("RecoveryPower",999);me:TriggerStory("ZRHFL");</OKResult></li>
-<li><Display>自然恢复力-100</Display><OKResult>me:ModifierProperty("RecoveryPower",-100);me:TriggerStory("ZRHFL");</OKResult></li>
-<li><Display>自然恢复力-200</Display><OKResult>me:ModifierProperty("RecoveryPower",-200);me:TriggerStory("ZRHFL");</OKResult></li>
-<li><Display>自然恢复力-999</Display><OKResult>me:ModifierProperty("RecoveryPower",-999);me:TriggerStory("ZRHFL");</OKResult></li>
+		<DisplayName>ปรับค่าการฟื้นฟูร่างกายอัตโนมัติ</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ความสามารถในการฟื้นฟูตัวเอง+100</Display><OKResult>me:ModifierProperty("RecoveryPower",100);me:TriggerStory("ZRHFL");</OKResult></li>
+<li><Display>ความสามารถในการฟื้นฟูตัวเอง+200</Display><OKResult>me:ModifierProperty("RecoveryPower",200);me:TriggerStory("ZRHFL");</OKResult></li>
+<li><Display>ความสามารถในการฟื้นฟูตัวเอง+999</Display><OKResult>me:ModifierProperty("RecoveryPower",999);me:TriggerStory("ZRHFL");</OKResult></li>
+<li><Display>ความสามารถในการฟื้นฟูตัวเอง-100</Display><OKResult>me:ModifierProperty("RecoveryPower",-100);me:TriggerStory("ZRHFL");</OKResult></li>
+<li><Display>ความสามารถในการฟื้นฟูตัวเอง-200</Display><OKResult>me:ModifierProperty("RecoveryPower",-200);me:TriggerStory("ZRHFL");</OKResult></li>
+<li><Display>ความสามารถในการฟื้นฟูตัวเอง-999</Display><OKResult>me:ModifierProperty("RecoveryPower",-999);me:TriggerStory("ZRHFL");</OKResult></li>
 		</Selections></Story>
 <!--疼痛极限-->
 <Story Name="TTJX"  Parent="BaseFillingStory">
-		<DisplayName>疼痛极限修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>疼痛极限+100</Display><OKResult>me:ModifierProperty("PainTolerance",100);me:TriggerStory("TTJX");</OKResult></li>
-<li><Display>疼痛极限+200</Display><OKResult>me:ModifierProperty("PainTolerance",200);me:TriggerStory("TTJX");</OKResult></li>
-<li><Display>疼痛极限+999</Display><OKResult>me:ModifierProperty("PainTolerance",999);me:TriggerStory("TTJX");</OKResult></li>
-<li><Display>疼痛极限-100</Display><OKResult>me:ModifierProperty("PainTolerance",-100);me:TriggerStory("TTJX");</OKResult></li>
-<li><Display>疼痛极限-200</Display><OKResult>me:ModifierProperty("PainTolerance",-200);me:TriggerStory("TTJX");</OKResult></li>
-<li><Display>疼痛极限-999</Display><OKResult>me:ModifierProperty("PainTolerance",-999);me:TriggerStory("TTJX");</OKResult></li>
+		<DisplayName>ปรับค่าความทนต่อความเจ็บปวดสูงสุด</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ระดับความทนต่อความเจ็บปวดสูงสุด+100</Display><OKResult>me:ModifierProperty("PainTolerance",100);me:TriggerStory("TTJX");</OKResult></li>
+<li><Display>ระดับความทนต่อความเจ็บปวดสูงสุด+200</Display><OKResult>me:ModifierProperty("PainTolerance",200);me:TriggerStory("TTJX");</OKResult></li>
+<li><Display>ระดับความทนต่อความเจ็บปวดสูงสุด+999</Display><OKResult>me:ModifierProperty("PainTolerance",999);me:TriggerStory("TTJX");</OKResult></li>
+<li><Display>ระดับความทนต่อความเจ็บปวดสูงสุด-100</Display><OKResult>me:ModifierProperty("PainTolerance",-100);me:TriggerStory("TTJX");</OKResult></li>
+<li><Display>ระดับความทนต่อความเจ็บปวดสูงสุด-200</Display><OKResult>me:ModifierProperty("PainTolerance",-200);me:TriggerStory("TTJX");</OKResult></li>
+<li><Display>ระดับความทนต่อความเจ็บปวดสูงสุด-999</Display><OKResult>me:ModifierProperty("PainTolerance",-999);me:TriggerStory("TTJX");</OKResult></li>
 		</Selections></Story>
 		
 		<!--学习速度-->
 <Story Name="XXSD"  Parent="BaseFillingStory">
-		<DisplayName>学习速度修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>学习速度+100</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",100);me:TriggerStory("XXSD");</OKResult></li>
-<li><Display>学习速度+200</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",200);me:TriggerStory("XXSD");</OKResult></li>
-<li><Display>学习速度+999</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",999);me:TriggerStory("XXSD");</OKResult></li>
-<li><Display>学习速度-100</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-100);me:TriggerStory("XXSD");</OKResult></li>
-<li><Display>学习速度-200</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-200);me:TriggerStory("XXSD");</OKResult></li>
-<li><Display>学习速度-999</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-999);me:TriggerStory("XXSD");</OKResult></li>
+		<DisplayName>แก้ไขความเร็วในการเรียนรู้</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ +100</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",100);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ ++200</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",200);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ ++999</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",999);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ +-100</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-100);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ +-200</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-200);me:TriggerStory("XXSD");</OKResult></li>
+<li><Display>ความเร็วในการเรียนรู้ +-999</Display><OKResult>me:ModifierProperty("IntelligenceSkillEXPConstant",-999);me:TriggerStory("XXSD");</OKResult></li>
 		</Selections></Story>
 <!--噩梦发生几率-->
 <Story Name="EMFSJL"  Parent="BaseFillingStory">
-		<DisplayName>噩梦发生几率修改</DisplayName>
-		<Desc>请选择修改数值</Desc><Selections>
-<li><Display>返回</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
-<li><Display>噩梦发生几率+0.1</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",0.1);me:TriggerStory("EMFSJL");</OKResult></li>
-<li><Display>噩梦发生几率+0.2</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",0.2);me:TriggerStory("EMFSJL");</OKResult></li>
-<li><Display>噩梦发生几率+1</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",1);me:TriggerStory("EMFSJL");</OKResult></li>
-<li><Display>噩梦发生几率-0.1</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",-0.1);me:TriggerStory("EMFSJL");</OKResult></li>
-<li><Display>噩梦发生几率-0.2</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",-0.2);me:TriggerStory("EMFSJL");</OKResult></li>
-<li><Display>噩梦发生几率-1</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",-1);me:TriggerStory("EMFSJL");</OKResult></li>
+		<DisplayName>แก้ไขโอกาสการเกิดฝันร้าย</DisplayName>
+		<Desc>กรุณาเลือกตัวเลขที่จะปรับแต่ง</Desc><Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("RoleProperty");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันร้าย+0.1</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",0.1);me:TriggerStory("EMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันร้าย+0.2</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",0.2);me:TriggerStory("EMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันร้าย+1</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",1);me:TriggerStory("EMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันร้าย-0.1</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",-0.1);me:TriggerStory("EMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันร้าย-0.2</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",-0.2);me:TriggerStory("EMFSJL");</OKResult></li>
+<li><Display>โอกาสการเกิดฝันร้าย-1</Display><OKResult>me:ModifierProperty("NightmareHappenPercent",-1);me:TriggerStory("EMFSJL");</OKResult></li>
 		</Selections></Story>
 
 <!--美梦发生几率-->
