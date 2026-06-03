@@ -37,10 +37,10 @@ function Xiu_Gai_Qi_76115:AddBtn2Item(evt, thing, objs)
 	print("thing ~= nil ",thing ~= nil);
 	print("thing.ThingType == g_emThingType.Item ",thing.ThingType == g_emThingType.Item);
 	if thing ~= nil and thing.ThingType == g_emThingType.Item then 
-		thing:RemoveBtnData("เพิ่มเป็นสองเท่า");
+		thing:RemoveBtnData("คูน×2");
 		thing:AddBtnData(
-			"翻倍", 
-			"res/Sprs/ui/icon_flag", 
+			"คูน×2", 
+			"res/Sprs/ui/icon_hand", 
 			"GameMain:GetMod('Xiu_Gai_Qi_76115'):MultiItems(bind)", 
 			"使物品的堆叠数量翻倍（超出堆叠上限的部分在读档后消失，可以重新翻倍一遍）", 
 			nil
@@ -111,11 +111,13 @@ function Xiu_Gai_Qi_76115:AddBtn2Npc(evt, thing, objs)
 
 
 function Xiu_Gai_Qi_76115:MultiItems(item)
-	iCount = item.Count;
-	if iCount >= 3000 then	--存盘的时候会被修正，和物品的最大堆叠数量取min
-		return;
-	end
-	item:ChangeCount(iCount*2)
+
+    local count = item.Count
+
+    print("Count =", count)
+
+    item:ChangeCount(count * 2)
+
 end
 
 function Xiu_Gai_Qi_76115:YouCuiItems(item)
