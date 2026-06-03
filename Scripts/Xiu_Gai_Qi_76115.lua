@@ -9,10 +9,7 @@ function Xiu_Gai_Qi_76115:OnEnter()
 	local Event = GameMain:GetMod("_Event");
 	Event:RegisterEvent(g_emEvent.SelectItem,  
 	function(evt, item, objs) 
-		if item ~= self.last_item then
-			self.last_item = item
-			self:AddBtn2Item(evt, item, objs); 
-		end
+		self:AddBtn2Item(evt, item, objs); 
 	end, "Xiu_Gai_Qi_76115");
 		Event:RegisterEvent(g_emEvent.SelectNpc,  
 	function(evt, npc, objs) 
@@ -37,14 +34,16 @@ function Xiu_Gai_Qi_76115:AddBtn2Item(evt, thing, objs)
 	print("thing ~= nil ",thing ~= nil);
 	print("thing.ThingType == g_emThingType.Item ",thing.ThingType == g_emThingType.Item);
 	if thing ~= nil and thing.ThingType == g_emThingType.Item then 
+
 		thing:RemoveBtnData("คูน×2");
 		thing:AddBtnData(
 			"คูน×2", 
 			"res/Sprs/ui/icon_hand", 
 			"GameMain:GetMod('Xiu_Gai_Qi_76115'):MultiItems(bind)", 
-			"使物品的堆叠数量翻倍（超出堆叠上限的部分在读档后消失，可以重新翻倍一遍）", 
+			"เพิ่มไอเทมคูนx2", 
 			nil
 		);
+		thing:RemoveBtnData("幽淬");
 		thing:RemoveBtnData("หลอมอสูร");
 		thing:AddBtnData(
 			"หลอมอสูร", 
@@ -53,6 +52,7 @@ function Xiu_Gai_Qi_76115:AddBtn2Item(evt, thing, objs)
 			"ยกระดับคุณภาพไอเทมขึ้น 1 ขั้น โดยสำเร็จแน่นอน", 
 			nil
 		);
+		thing:RemoveBtnData("灵淬");
 		thing:RemoveBtnData("หลอมจิต");
 		thing:AddBtnData(
 			"หลอมจิต", 
@@ -95,12 +95,12 @@ function Xiu_Gai_Qi_76115:AddBtn2Npc(evt, thing, objs)
 	print("thing ~= nil ",thing ~= nil);
 	print("thing.ThingType == g_emThingType.Npc ",thing.ThingType == g_emThingType.Npc);
 	if thing ~= nil and thing.ThingType == g_emThingType.Npc then 
-		thing:RemoveBtnData("修改");
+		thing:RemoveBtnData("ปรับค่า");
 		thing:AddBtnData(
-			"修改", 
+			"ปรับค่า", 
 			"res/Sprs/ui/icon_flag", 
 			"GameMain:GetMod('Xiu_Gai_Qi_76115'):GenGai(bind)", 
-			"修改属性", 
+			"ปรับค่าตัวละคร", 
 			nil
 		);
 
