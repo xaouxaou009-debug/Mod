@@ -155,8 +155,164 @@ me:TriggerStory("Game_Modifier");
 me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKResult></li>
 <li><Display>แก้ไขค่าสถานะ</Display><OKResult>me:TriggerStory("Property");</OKResult></li>
 <li><Display>แก้ไขสภาพอากาศ เวลา และฤดูกาล</Display><OKResult>me:TriggerStory("TQSJJJXG");</OKResult></li>
-<li><Display>ม็อดเสกของบางอย่าง</Display><OKResult>me:TriggerStory("LBQDZLZMNQ");</OKResult></li>			
+<li><Display>ม็อดเสกของบางอย่าง</Display><OKResult>me:TriggerStory("LBQDZLZMNQ");</OKResult></li>	
+<li><Display>เสกของ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>		
 </Selections></Story>
+
+
+<Story Name="ItemShop76" Parent="BaseFillingStory">
+<DisplayName>เมนูเสกของ</DisplayName>
+<Desc>เลือกหมวดของที่ต้องการเสก</Desc>
+<Selections>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
+<li><Display>เสกทรัพยากร</Display><OKResult>me:TriggerStory("ItemShopResource76");</OKResult></li>
+
+
+<li><Display>เสกอาหาร / วัตถุดิบ</Display><OKResult>me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>อุปกรณ์</Display><OKResult>me:TriggerStory("ItemShopDan82");</OKResult></li>
+<li><Display>โอสถ</Display><OKResult>me:TriggerStory("ItemShopDan76");</OKResult></li>
+<li><Display>ยารักษา</Display><OKResult>me:TriggerStory("ItemShopDan81");</OKResult></li>
+<li><Display>ยันต์</Display><OKResult>me:TriggerStory("ItemShopDan80");</OKResult></li>
+<li><Display>วัตถุดิบ</Display><OKResult>me:TriggerStory("ItemShopDan79");</OKResult></li>
+<li><Display>สมบัติทั่วไป</Display><OKResult>me:TriggerStory("ItemShopDan77");</OKResult></li>
+<li><Display>อื่นๆ</Display><OKResult>me:TriggerStory("ItemShopDan78");</OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="ItemShopResource76" Parent="BaseFillingStory">
+<DisplayName>เสกทรัพยากร</DisplayName>
+<Desc>เลือกทรัพยากรที่ต้องการ</Desc>
+<Selections>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
+
+<li><Display>ทดสอบ</Display><OKResult>me:DropAwardItem("Item_BodyPractice_TaiXu",5);me:TriggerStory("ItemShopResource76");</OKResult></li>
+
+
+
+
+
+
+
+
+<li><Display>หินวิญญาณ x999</Display><OKResult>me:DropAwardItem("Item_LingStone",999);me:TriggerStory("ItemShopResource76");</OKResult></li>
+
+<li><Display>ผลึกวิญญาณ x999</Display><OKResult>me:DropAwardItem("Item_LingCrystal",999);me:TriggerStory("ItemShopResource76");</OKResult></li>
+<li><Display>ฝ้าย x999</Display><OKResult>me:DropAwardItem("Item_Cotton",999);me:TriggerStory("ItemShopResource76");</OKResult></li>
+<li><Display>ข้าวสาลี x999</Display><OKResult>me:DropAwardItem("Item_Wheat",999);me:TriggerStory("ItemShopResource76");</OKResult></li>
+<li><Display>เกล็ดขาว</Display><OKResult>me:DropAwardItem("Item_BossZhuLong_BaiLin",1);me:TriggerStory("ItemShopResource76");</OKResult></li>
+<li><Display>เกล็ดดำ</Display><OKResult>me:DropAwardItem("Item_BossZhuLong_HeiLin",1);me:TriggerStory("ItemShopResource76");</OKResult></li>
+<li><Display>ผนึกหยินหยาง</Display><OKResult>me:DropAwardItem("Item_BossZhuLong_Eye",1);me:TriggerStory("ItemShopResource76");</OKResult></li>
+<li><Display>เกล็ดมังกรเทียน</Display><OKResult>me:DropAwardItem("Item_BossZhuLong_TianLin",1);me:TriggerStory("ItemShopResource76");</OKResult></li>
+
+<li><Display>เนื้อปฐมกาล</Display><OKResult>me:DropAwardItem("Item_BossZhuLong_Meat",1);me:TriggerStory("ItemShopResource76");</OKResult></li>
+<li><Display>หยกหงส์เพลิงโบราณ</Display><OKResult>me:DropAwardItem("Item_BossFeng_FengYin",1);me:TriggerStory("ItemShopResource76");</OKResult></li>
+<li><Display>หยกโบราณ</Display><OKResult>me:DropAwardItem("Item_BossZhuLong_FengYin",1);me:TriggerStory("ItemShopResource76");</OKResult></li>
+<li><Display>ทดสอบ9</Display><OKResult>me:DropAwardItem("Item_Boss_Fenghuangneidan",1);me:TriggerStory("ItemShopResource76");</OKResult></li>
+<li><Display>ทดสอบ10</Display><OKResult>me:DropAwardItem("Item_Boss_Jiaowangci",1);me:TriggerStory("ItemShopResource76");</OKResult></li>
+
+</Selections>
+</Story>
+
+<Story Name="ItemShopFood76" Parent="BaseFillingStory">
+<DisplayName>เสกอาหาร / วัตถุดิบ</DisplayName>
+<Desc>เลือกอาหารหรือวัตถุดิบ</Desc>
+<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
+<li><Display>ผลไม้ x999</Display><OKResult>me:DropAwardItem("Item_Fruit",999);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>รากบัว x999</Display><OKResult>me:DropAwardItem("Item_Lotusroot",999);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>ลูกแพร์ x999</Display><OKResult>me:DropAwardItem("Item_Pear",999);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>กระดูกหงส์เพลิง</Display><OKResult>me:DropAwardItem("Item_BossFeng_Gu",5);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>หยกหงส์เพลิง</Display><OKResult>me:DropAwardItem("Item_BossFeng_HongYu",5);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>เนื้อหงส์เพลิง</Display><OKResult>me:DropAwardItem("Item_BossFeng_Meat",5);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>เกล็ดมังกร</Display><OKResult>me:DropAwardItem("Item_DragonScale",5);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>เขามังกรวารี</Display><OKResult>me:DropAwardItem("Item_BossLong_Jiao",5);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>กงเล็บมังกรวารี</Display><OKResult>me:DropAwardItem("Item_BossLong_Zhua",5);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>เกล็ดเขามังกรวารี</Display><OKResult>me:DropAwardItem("Item_BossLong_Lin",5);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>เกล็ดย้อนมังกรวารี</Display><OKResult>me:DropAwardItem("Item_BossLong_NiLin",5);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>ชีพจรมังกรมังกรวารี</Display><OKResult>me:DropAwardItem("Item_BossLong_Jing",5);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>เนื้อมังกรวารี</Display><OKResult>me:DropAwardItem("Item_BossLong_Meat",5);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>ขนหงส์เหล็กกล้า</Display><OKResult>me:DropAwardItem("Item_BossFeng_GangYu",5);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>ขนหงส์ดับสูญ</Display><OKResult>me:DropAwardItem("Item_BossFeng_TouYu",5);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>ขนหงส์เพลิง</Display><OKResult>me:DropAwardItem("Item_BossFeng_HuoYu",5);me:TriggerStory("ItemShopFood76");</OKResult></li>
+<li><Display>แก่นหงส์เพลิง</Display><OKResult>me:DropAwardItem("Item_Boss_Fenghuangneidan",5);me:TriggerStory("ItemShopFood76");</OKResult></li>
+
+
+
+</Selections>
+</Story>
+
+<Story Name="ItemShopDan76" Parent="BaseFillingStory">
+<DisplayName>เสกโอสถ</DisplayName>
+<Desc>เลือกโอสถที่ต้องการ</Desc>
+<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
+<li><Display>โอสถพื้นฐาน</Display><OKResult>me:DropAwardItem("Item_BodyPracticeBase",999);me:TriggerStory("ItemShopDan76");</OKResult></li>
+<li><Display>โอสถห้าจักรพรรดิ x99</Display><OKResult>me:DropAwardItem("Item_WuHuangDan",99);me:TriggerStory("ItemShopDan76");</OKResult></li>
+<li><Display>เมนูโอสถพิเศษ</Display><OKResult>me:TriggerStory("ItemShopDan77");</OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="ItemShopDan79" Parent="BaseFillingStory">
+<DisplayName>วัตถุดิบ</DisplayName>
+<Desc>เลือกวัตถุดิบ</Desc>
+<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
+<li><Display>หยกโกลาหลแห่งโชคชะตา</Display><OKResult>me:DropAwardItem("Item_BossZhuLong_LongYu",1);me:TriggerStory("ItemShopDan77");</OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="ItemShopDan80" Parent="BaseFillingStory">
+<DisplayName>ยันต์</DisplayName>
+<Desc>เลือกสมบัติ</Desc>
+<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
+<li><Display>หยกโกลาหลแห่งโชคชะตา</Display><OKResult>me:DropAwardItem("Item_BossZhuLong_LongYu",1);me:TriggerStory("ItemShopDan77");</OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="ItemShopDan77" Parent="BaseFillingStory">
+<DisplayName>สมบัติทั่วไป</DisplayName>
+<Desc>เลือกสมบัติ</Desc>
+<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
+<li><Display>หยกโกลาหลแห่งโชคชะตา</Display><OKResult>me:DropAwardItem("Item_BossZhuLong_LongYu",1);me:TriggerStory("ItemShopDan77");</OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="ItemShopDan78" Parent="BaseFillingStory">
+<DisplayName>อื่นๆ</DisplayName>
+<Desc>เลือกสมบัติ</Desc>
+<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
+<li><Display>หยกโกลาหลแห่งโชคชะตา</Display><OKResult>me:DropAwardItem("Item_BossZhuLong_LongYu",1);me:TriggerStory("ItemShopDan77");</OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="ItemShopDan81" Parent="BaseFillingStory">
+<DisplayName>สมบัติทั่วไป</DisplayName>
+<Desc>เลือกสมบัติ</Desc>
+<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
+<li><Display>หยกโกลาหลแห่งโชคชะตา</Display><OKResult>me:DropAwardItem("Item_BossZhuLong_LongYu",1);me:TriggerStory("ItemShopDan77");</OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="ItemShopDan82" Parent="BaseFillingStory">
+<DisplayName>อุปกรณ์</DisplayName>
+<Desc>เลือกสมบัติ</Desc>
+<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
+<li><Display>หยกโกลาหลแห่งโชคชะตา</Display><OKResult>me:DropAwardItem("Item_BossZhuLong_LongYu",1);me:TriggerStory("ItemShopDan77");</OKResult></li>
+</Selections>
+</Story>
+
+
+
+
+
+
 
 
 <Story Name="LBQDZLZMNQ"  Parent="BaseFillingStory">
@@ -264,17 +420,90 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 
 
 <li><Display>สามเซียนล้างไขกระดูกโอสถ</Display><OKResult>me:AddModifier("Dan_SkillLvMax76");</OKResult></li>
-<li><Display>ทดสอบม็อดยา</Display><OKResult>me:AddModifier("Item_LingOriginalWu");</OKResult></li>
+<li><Display>สุ่มคัมภีร์ระดับสูง 1 เล่ม</Display><OKResult>
+world:UnlockRandomGong(4);
+me:AddMsg("ปลดล็อกคัมภีร์ระดับสูง 1 เล่มแล้ว");
+me:TriggerStory("LBQDZLZMNQ");
+</OKResult></li>
+<li><Display>สุ่มคัมภีร์ระดับสูง 5 เล่ม</Display><OKResult>
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+me:AddMsg("ปลดล็อกคัมภีร์ระดับสูง 5 เล่มแล้ว");
+me:TriggerStory("LBQDZLZMNQ");
+</OKResult></li>
+<li><Display>สุ่มคัมภีร์ระดับสูง 10 เล่ม</Display><OKResult>
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+me:AddMsg("ปลดล็อกคัมภีร์ระดับสูง 10 เล่มแล้ว");
+me:TriggerStory("LBQDZLZMNQ");
+</OKResult></li>
+<li><Display>ปลดล็อกคัมภีร์หลักชุดที่ 1</Display><OKResult>
+me:UnLockGong("Gong_2_Mu");
+me:UnLockGong("Gong_3_Jin");
+me:UnLockGong("Gong_4_None");
+me:UnLockGong("Gong_5_Tu");
+me:TriggerStory("LBQDZLZMNQ");
+</OKResult></li>
+<li><Display>ปลดล็อกคัมภีร์เทพ</Display><OKResult>
+me:UnLockGong("God_Gong_1");
+me:UnLockGong("God_Gong_2");
+me:UnLockGong("God_Gong_3");
+me:TriggerStory("LBQDZLZMNQ");
+</OKResult></li>
+<li><Display>ปลดล็อกคัมภีร์เทพ 20 เล่ม</Display><OKResult>
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+world:UnlockRandomGong(4);
+me:AddMsg("ปลดล็อกคัมภีร์ระดับเทพ 20 เล่ม");
+me:TriggerStory("LBQDZLZMNQ");
+</OKResult></li>
+<li><Display>เสกหนังสือทั่วไป 1 เล่ม</Display><OKResult>
+me:DropEsotericFromCache(story.ItemCache, 1);
+me:TriggerStory("LBQDZLZMNQ");
+</OKResult></li>
+<li><Display>เสกวิชาอภินิหาร 1 เล่ม</Display><OKResult>
+me:DropEsotericFromCache(story.ItemCache2, 1);
+me:TriggerStory("LBQDZLZMNQ");
+</OKResult></li>
+<li><Display>เสกผังค่ายกล 1 เล่ม</Display><OKResult>
+me:DropEsotericFromCache(story.ItemCache4, 1);
+me:TriggerStory("LBQDZLZMNQ");
+</OKResult></li>
 <li><Display>สุ่มเรียกอสูร</Display><OKResult>me:AddModifier("Dan_KaoRou76");</OKResult></li>
 <li><Display>เรียกโจรป่า</Display><OKResult>me:AddModifier("Dan_MiMi76");</OKResult></li>
 <li><Display>เลือกโจรป่าระดับสูง</Display><OKResult>me:AddModifier("Dan_SuperMiMi76");</OKResult></li>
 <li><Display>โอสถวิญญาณมหาศาล</Display><OKResult>me:AddModifier("Dan_YiLing76");</OKResult></li>
 
 <li><Display>ทดสอบ</Display><OKResult>me:AddModifier("Dan_BrokenNeck76");</OKResult></li>
-<li>
-  <Display>Mount Buzhou Stone</Display>
-  <OKResult>me:AddItem("Item_ParasolWood", 1);</OKResult>
-</li>
+<li><Display>เสกฝ้าย x1000</Display><OKResult>me:DropAwardItem("Item_Cotton",1000);</OKResult></li>
 
 <li><Display>เรียกอสูร : เฟย</Display><OKResult>me:AddModifier("Dan_JiE76");</OKResult></li>
 <li><Display>เรียกอสูร : มังกรฟ้า</Display><OKResult>me:AddModifier("Dan_ChiHuo76");</OKResult></li>
