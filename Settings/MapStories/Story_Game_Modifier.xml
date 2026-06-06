@@ -1,18 +1,248 @@
 ﻿<Stories><List>
 	<Story Name="Game_Modifier"  Parent="BaseFillingStory">
-		<DisplayName>ม็อดปรับแต่งตัวละครเกม </DisplayName>
-		<Desc>(หมายเหตุ : กดแค่ครั้งเดียว ถ้ากดหลายครั้งค่าจะติดลบ) เมนู1-9 เป็นเมนูการตั้งค่าด่วน ถ้ายังไม่จุใจเข้าไปตั้งเองได้ที เมนู(แก้ไขค่าสถานะ) แก้ได้ทุกอย่าง</Desc>
+		<DisplayName>ม็อดปรับแต่งเกม </DisplayName>
+		<Desc>เลือกรายการที่ต้องการ</Desc>
 		<Selections>
-<li><Display>ย้อนกลับ</Display><OKResult></OKResult></li>
 <li><Display>เพิ่มค่าสเตตัสทั้ง 5ของตัวละคร</Display><OKResult>me:AddModifier("QuanBu76");</OKResult></li>
+<li><Display>การตั้งค่าตัวละครแบบด่วน</Display><OKResult>me:TriggerStory("xaou_xaou1");</OKResult></li>
+<li><Display>ลบการตั้งค่าตัวละครแบบด่วน</Display><OKResult>me:TriggerStory("xaou_xaou2");</OKResult></li>
+<li><Display>แก้ไขสภาพอากาศ เวลา และฤดูกาล</Display><OKResult>me:TriggerStory("TQSJJJXG");</OKResult></li>
+<li><Display>แก้ไขค่าสถานะตัวละคร</Display><OKResult>me:TriggerStory("Property");</OKResult></li>
+<li><Display>ปลดล็อกวิชาบ่มเพาะสายหลักทั้งหมด</Display><OKResult>me:TriggerStory("GongShop76");</OKResult></li>
+<li><Display>หนังสือคัมภีร์</Display><OKResult>me:TriggerStory("xaou_xaou99");</OKResult></li>
+<li><Display>เสกของ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
+<li><Display>เรียกอสูร/บอส</Display><OKResult>me:TriggerStory("LBQDZLZMNQ");</OKResult></li>
+</Selections></Story>
 
+<Story Name="xaou_xaou99" Parent="BaseFillingStory">
+<DisplayName></DisplayName>
+<Desc>เลือกรายการที่ต้องการ </Desc>
+<Selections>
+<li><Display>ทักษะอาวุธวิเศษ</Display><OKResult>me:TriggerStory("BookAll76");</OKResult></li>
+<li><Display>ปราณเวท</Display><OKResult>me:TriggerStory("xaou_xaou101");</OKResult></li>
+<li><Display>การป้องกัน</Display><OKResult>me:TriggerStory("xaou_xaou102");</OKResult></li>
+<li><Display>หลอมโอสถ</Display><OKResult>me:TriggerStory("xaou_xaou103");</OKResult></li>
+<li><Display>หลอมอาวุธวิเศษ</Display><OKResult>me:TriggerStory("xaou_xaou104");</OKResult></li>
+<li><Display>บ่มเพาะ</Display><OKResult>me:TriggerStory("xaou_xaou105");</OKResult></li>
+<li><Display>อื่นๆ</Display><OKResult>me:TriggerStory("xaou_xaou106");</OKResult></li>
+<li><Display>เวทสังหาร</Display><OKResult>me:TriggerStory("xaou_xaou107");</OKResult></li>
+
+</Selections>
+</Story>
+
+
+
+<Story Name="BookAll76" Parent="BaseFillingStory">
+<DisplayName>รับคัมภีร์ทั้งหมด</DisplayName>
+<Desc>รับคัมภีร์ทั้งหมดจากไฟล์ Esoterica_Book</Desc>
+
+<ItemCache1><li><ThingDef>DanFang_1</ThingDef><Rate>100</Rate></li></ItemCache1>
+<ItemCache2><li><ThingDef>DanFang_2</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>DanFang_3</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>DanFang_4</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>DanFang_5</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>DanFang_6</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>DanFang_7</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>DanFang_8</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>DanFang_9</ThingDef><Rate>100</Rate></li></ItemCache9>
+
+<ItemCache10><li><ThingDef>YouJi_1_2</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>YouJi_1_3</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>YouJi_2_1</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>YouJi_2_2</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>YouJi_2_3</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>YouJi_2_4</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>YouJi_2_5</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>YouJi_2_6</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>YouJi_2_7</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>YouJi_3</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>YouJi_4_1</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>YouJi_4_2</ThingDef><Rate>100</Rate></li></ItemCache21>
+<ItemCache22><li><ThingDef>YouJi_4_3</ThingDef><Rate>100</Rate></li></ItemCache22>
+<ItemCache23><li><ThingDef>YouJi_5</ThingDef><Rate>100</Rate></li></ItemCache23>
+<ItemCache24><li><ThingDef>YouJi_6_1</ThingDef><Rate>100</Rate></li></ItemCache24>
+<ItemCache25><li><ThingDef>YouJi_6_3</ThingDef><Rate>100</Rate></li></ItemCache25>
+<ItemCache26><li><ThingDef>YouJi_6_4</ThingDef><Rate>100</Rate></li></ItemCache26>
+
+<ItemCache27><li><ThingDef>YaoGuai_Bible</ThingDef><Rate>100</Rate></li></ItemCache27>
+<ItemCache28><li><ThingDef>Emotion_Bible</ThingDef><Rate>100</Rate></li></ItemCache28>
+<ItemCache29><li><ThingDef>NanGongYiCe</ThingDef><Rate>100</Rate></li></ItemCache29>
+<ItemCache30><li><ThingDef>QunXianLu_2</ThingDef><Rate>100</Rate></li></ItemCache30>
+<ItemCache31><li><ThingDef>QunXianLu_3</ThingDef><Rate>100</Rate></li></ItemCache31>
+<ItemCache32><li><ThingDef>ShangGuYiWen_1</ThingDef><Rate>100</Rate></li></ItemCache32>
+<ItemCache33><li><ThingDef>ShangGuYiWen_2</ThingDef><Rate>100</Rate></li></ItemCache33>
+
+<Selections>
+<li><Display>รับคัมภีร์ทั้งหมด 33 เล่ม</Display><OKResult>
+me:DropEsotericFromCache(story.ItemCache1,1);
+me:DropEsotericFromCache(story.ItemCache2,1);
+me:DropEsotericFromCache(story.ItemCache3,1);
+me:DropEsotericFromCache(story.ItemCache4,1);
+me:DropEsotericFromCache(story.ItemCache5,1);
+me:DropEsotericFromCache(story.ItemCache6,1);
+me:DropEsotericFromCache(story.ItemCache7,1);
+me:DropEsotericFromCache(story.ItemCache8,1);
+me:DropEsotericFromCache(story.ItemCache9,1);
+me:DropEsotericFromCache(story.ItemCache10,1);
+me:DropEsotericFromCache(story.ItemCache11,1);
+me:DropEsotericFromCache(story.ItemCache12,1);
+me:DropEsotericFromCache(story.ItemCache13,1);
+me:DropEsotericFromCache(story.ItemCache14,1);
+me:DropEsotericFromCache(story.ItemCache15,1);
+me:DropEsotericFromCache(story.ItemCache16,1);
+me:DropEsotericFromCache(story.ItemCache17,1);
+me:DropEsotericFromCache(story.ItemCache18,1);
+me:DropEsotericFromCache(story.ItemCache19,1);
+me:DropEsotericFromCache(story.ItemCache20,1);
+me:DropEsotericFromCache(story.ItemCache21,1);
+me:DropEsotericFromCache(story.ItemCache22,1);
+me:DropEsotericFromCache(story.ItemCache23,1);
+me:DropEsotericFromCache(story.ItemCache24,1);
+me:DropEsotericFromCache(story.ItemCache25,1);
+me:DropEsotericFromCache(story.ItemCache26,1);
+me:DropEsotericFromCache(story.ItemCache27,1);
+me:DropEsotericFromCache(story.ItemCache28,1);
+me:DropEsotericFromCache(story.ItemCache29,1);
+me:DropEsotericFromCache(story.ItemCache30,1);
+me:DropEsotericFromCache(story.ItemCache31,1);
+me:DropEsotericFromCache(story.ItemCache32,1);
+me:DropEsotericFromCache(story.ItemCache33,1);
+me:TriggerStory("BookAll76");
+</OKResult></li>
+
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="xaou_xaou100" Parent="BaseFillingStory">
+<DisplayName>การตั้งค่าตัวละครแบบด่วน</DisplayName>
+<Desc>เลือกรายการที่ต้องการ </Desc>
+<Selections>
+
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
+
+
+</Selections>
+</Story>
+
+
+
+
+
+
+
+
+<Story Name="xaou_xaou101" Parent="BaseFillingStory">
+<DisplayName>ปราณเวท</DisplayName>
+<Desc>เลือกรายการที่ต้องการ </Desc>
+
+<ItemCache1><li><ThingDef>FightSkillEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache1>
+<ItemCache2><li><ThingDef>FightSkillEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>FightSkillEsoterica_3</ThingDef><Rate>100</Rate></li></ItemCache3>
+<Selections>
+<li><Display>รับคัมภีร์โอสถ 1-3</Display><OKResult>
+me:DropEsotericFromCache(story.ItemCache1,1);
+me:DropEsotericFromCache(story.ItemCache2,1);
+me:DropEsotericFromCache(story.ItemCache3,1);
+</OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="xaou_xaou102" Parent="BaseFillingStory">
+<DisplayName>การตั้งค่าตัวละครแบบด่วน</DisplayName>
+<Desc>เลือกรายการที่ต้องการ </Desc>
+<Selections>
+
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
+
+
+</Selections>
+</Story>
+
+<Story Name="xaou_xaou103" Parent="BaseFillingStory">
+<DisplayName>การตั้งค่าตัวละครแบบด่วน</DisplayName>
+<Desc>เลือกรายการที่ต้องการ </Desc>
+<Selections>
+
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
+
+
+</Selections>
+</Story>
+
+<Story Name="xaou_xaou104" Parent="BaseFillingStory">
+<DisplayName>การตั้งค่าตัวละครแบบด่วน</DisplayName>
+<Desc>เลือกรายการที่ต้องการ </Desc>
+<Selections>
+
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
+
+
+</Selections>
+</Story>
+
+<Story Name="xaou_xaou105" Parent="BaseFillingStory">
+<DisplayName>การตั้งค่าตัวละครแบบด่วน</DisplayName>
+<Desc>เลือกรายการที่ต้องการ </Desc>
+<Selections>
+
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
+
+
+</Selections>
+</Story>
+
+<Story Name="xaou_xaou106" Parent="BaseFillingStory">
+<DisplayName>การตั้งค่าตัวละครแบบด่วน</DisplayName>
+<Desc>เลือกรายการที่ต้องการ </Desc>
+<Selections>
+
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
+
+
+</Selections>
+</Story>
+
+<Story Name="xaou_xaou107" Parent="BaseFillingStory">
+<DisplayName>การตั้งค่าตัวละครแบบด่วน</DisplayName>
+<Desc>เลือกรายการที่ต้องการ </Desc>
+<Selections>
+
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
+
+
+</Selections>
+</Story>
+
+
+
+
+
+
+
+
+<Story Name="xaou_xaou1" Parent="BaseFillingStory">
+<DisplayName>การตั้งค่าตัวละครแบบด่วน</DisplayName>
+<Desc>เลือกรายการที่ต้องการ </Desc>
+<Selections>
+
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
 <li><Display>ตัวละครตายยาก</Display><OKResult>
 me:ModifierProperty("RecoveryPower",999);
 me:ModifierProperty("MagicDamageRecoveryPowerAddV",9999);
 me:ModifierProperty("LingAbsorbSpeed",1000);
 me:ModifierProperty("NutritionToJingYuanK",1000);
 me:ModifierProperty("NutritionWaterAutoRecover",1000);
-me:TriggerStory("Game_Modifier");
+me:TriggerStory("xaou_xaou1");
 </OKResult></li>
 <li><Display>จัดการค่าใช้จ่ายทางโลกอัตโนมัติ</Display><OKResult>
 me:ModifierProperty("FatigueConsumeConstant",-10);
@@ -20,7 +250,7 @@ me:ModifierProperty("WaterConsumeConstant",-10);
 me:ModifierProperty("HappyConsumeConstant",-10);
 me:ModifierProperty("NutritionConsumeConstant",-10);
 me:ModifierProperty("PracticeFoodConsumeConstant",-10);
-me:TriggerStory("Game_Modifier");</OKResult></li>
+me:TriggerStory("xaou_xaou1");</OKResult></li>
 
 <li><Display>เพิ่มพรสวรรค์การบำเพ็ญเซียนเต็มขั้นในคลิกเดียว</Display><OKResult>
 me:ModifierProperty("IntelligenceSkillEXPConstant",999);
@@ -31,7 +261,7 @@ me:ModifierProperty("MindStateBaseValue",1000);
 me:ModifierProperty("SpeedOfMindStateCoefficient",1000);
 me:ModifierProperty("SpeedOfMindStateCoefficientByMoods",-1000);
 me:ModifierProperty("InspirationCoefficient",1000);
-me:TriggerStory("Game_Modifier");</OKResult></li>
+me:TriggerStory("xaou_xaou1");</OKResult></li>
 
 <li><Display>ปรับอัตราสำเร็จคุณภาพระดับเทพของการหลอมอาวุธและปรุงโอสถ </Display><OKResult>
 me:ModifierProperty("FabaoMake_SpeedAddV",100000);
@@ -43,9 +273,9 @@ me:ModifierProperty("DanMake_Speed",100000);
 me:ModifierProperty("DanMake_SpeedAddV",100000);
 me:ModifierProperty("DanMake_SuccessRate",100000);
 me:ModifierProperty("DanMake_SuccessRateAddV",100000);
-me:TriggerStory("Game_Modifier");</OKResult></li>
+me:TriggerStory("xaou_xaou1");</OKResult></li>
 <li><Display>ปรุงโอสถได้จำนวน 100 เท่า</Display><OKResult>me:ModifierProperty("DanMake_YieldAddP",100);
-me:TriggerStory("Game_Modifier");</OKResult></li>
+me:TriggerStory("xaou_xaou1");</OKResult></li>
 <li><Display>ปรับค่าสถานะการต่อสู้ด้านพลังโจมตีและป้องกัน</Display><OKResult>
 me:ModifierProperty("NpcFight_BaseHitChance",1000);
 me:ModifierProperty("NpcFight_BaseDodgeChance",1000);
@@ -68,25 +298,36 @@ me:ModifierProperty("NpcFight_ShieldResistanceToMu",1000);
 me:ModifierProperty("NpcFight_ShieldResistanceToShui",1000);
 me:ModifierProperty("NpcFight_ShieldResistanceToHuo",1000);
 me:ModifierProperty("NpcFight_ShieldResistanceToTu",1000);
-me:TriggerStory("Game_Modifier");</OKResult></li>
+me:TriggerStory("xaou_xaou1");</OKResult></li>
 <li><Display>ปรับแต้มประสบการณ์และค่าสถานะโบนัสการฝึกฝน</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",999);
 me:ModifierProperty("WorldMapFlySpeed",1000);
 me:ModifierProperty("WorldMapFlySpeedAddP",1000);
 me:ModifierProperty("ExperiencePrestigeAddP",1000);
 me:ModifierProperty("ExperienceFindSpeedAddV",1000);
-me:TriggerStory("Game_Modifier");
+me:TriggerStory("xaou_xaou1");
 </OKResult></li>
-
 <li><Display>ความเร็วทำงานพื้นฐานทั้งหมด +100000</Display><OKResult>me:ModifierProperty("GlobalEfficiency",100000);
-me:ModifierProperty("BaseWorkSpeed",999);me:TriggerStory("Game_Modifier");</OKResult></li>
+me:ModifierProperty("BaseWorkSpeed",999);me:TriggerStory("xaou_xaou1");</OKResult></li>
 
+</Selections>
+</Story>
+
+
+
+
+<Story Name="xaou_xaou2" Parent="BaseFillingStory">
+<DisplayName>ลบเมนูการตั้งค่าตัวละครแบบด่วน</DisplayName>
+<Desc>เลือกรายการที่ต้องการ </Desc>
+<Selections>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
 <li><Display>ลบโหมด ตายยาก</Display><OKResult>
 me:ModifierProperty("RecoveryPower",-999);
 me:ModifierProperty("MagicDamageRecoveryPowerAddV",-9999);
 me:ModifierProperty("LingAbsorbSpeed",-100000);
 me:ModifierProperty("NutritionToJingYuanK",-100000);
 me:ModifierProperty("NutritionWaterAutoRecover",-100000);
-me:TriggerStory("Game_Modifier");
+me:TriggerStory("xaou_xaou2");
 </OKResult></li>
 <li><Display>ลบโหมด จัดการค่าใช้จ่ายทางโลกอัตโนมัต
 (กดหลายครั้งค่าจะติดลบ)</Display><OKResult>
@@ -95,7 +336,7 @@ me:ModifierProperty("WaterConsumeConstant",10);
 me:ModifierProperty("HappyConsumeConstant",10);
 me:ModifierProperty("NutritionConsumeConstant",10);
 me:ModifierProperty("PracticeFoodConsumeConstant",10);
-me:TriggerStory("Game_Modifier");</OKResult></li>
+me:TriggerStory("xaou_xaou2");</OKResult></li>
 
 <li><Display>ลบโหมด พรสวรรค์บำเพ็ญเซียนเต็มขั้น</Display><OKResult>
 me:ModifierProperty("IntelligenceSkillEXPConstant",-999);
@@ -106,7 +347,7 @@ me:ModifierProperty("MindStateBaseValue",-1000);
 me:ModifierProperty("SpeedOfMindStateCoefficient",-1000);
 me:ModifierProperty("SpeedOfMindStateCoefficientByMoods",1000);
 me:ModifierProperty("InspirationCoefficient",-1000);
-me:TriggerStory("Game_Modifier");</OKResult></li>
+me:TriggerStory("xaou_xaou2");</OKResult></li>
 
 <li><Display>ลบการปรับอัตราสำเร็จคุณภาพระดับเทพของการหลอมอาวุธและปรุงโอสถ</Display><OKResult>
 me:ModifierProperty("FabaoMake_SpeedAddV",-100000);
@@ -118,9 +359,9 @@ me:ModifierProperty("DanMake_Speed",-100000);
 me:ModifierProperty("DanMake_SpeedAddV",-100000);
 me:ModifierProperty("DanMake_SuccessRate",-100000);
 me:ModifierProperty("DanMake_SuccessRateAddV",-100000);
-me:TriggerStory("Game_Modifier");</OKResult></li>
+me:TriggerStory("xaou_xaou2");</OKResult></li>
 <li><Display>ลบเอฟเฟกต์จำนวนการปรุงโอสถ x100 เท่า</Display><OKResult>me:ModifierProperty("DanMake_YieldAddP",-100);
-me:TriggerStory("Game_Modifier");</OKResult></li>
+me:TriggerStory("xaou_xaou2");</OKResult></li>
 <li><Display>ลบการปรับค่าสถานะการต่อสู้ด้านพลังโจมตีและป้องกัน</Display><OKResult>
 me:ModifierProperty("NpcFight_BaseHitChance",-1000);
 me:ModifierProperty("NpcFight_BaseDodgeChance",-1000);
@@ -143,25 +384,27 @@ me:ModifierProperty("NpcFight_ShieldResistanceToMu",-1000);
 me:ModifierProperty("NpcFight_ShieldResistanceToShui",-1000);
 me:ModifierProperty("NpcFight_ShieldResistanceToHuo",-1000);
 me:ModifierProperty("NpcFight_ShieldResistanceToTu",-1000);
-me:TriggerStory("Game_Modifier");</OKResult></li>
+me:TriggerStory("xaou_xaou2");</OKResult></li>
 <li><Display>ลบการปรับแต้มประสบการณ์และโบนัสค่าสถานะการฝึกฝน</Display><OKResult>me:ModifierProperty("LeadExperienceAddtion",-999);
 me:ModifierProperty("WorldMapFlySpeed",-1000);
 me:ModifierProperty("WorldMapFlySpeedAddP",-1000);
 me:ModifierProperty("ExperiencePrestigeAddP",-1000);
 me:ModifierProperty("ExperienceFindSpeedAddV",-1000);
-me:TriggerStory("Game_Modifier");
+me:TriggerStory("xaou_xaou2");
 </OKResult></li>
 <li><Display>ลบเอฟเฟกต์ความเร็วทำงานพื้นฐานทั้งหมด +1000</Display><OKResult>me:ModifierProperty("GlobalEfficiency",-100000);
-me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKResult></li>
-<li><Display>แก้ไขค่าสถานะ</Display><OKResult>me:TriggerStory("Property");</OKResult></li>
-<li><Display>แก้ไขสภาพอากาศ เวลา และฤดูกาล</Display><OKResult>me:TriggerStory("TQSJJJXG");</OKResult></li>
-<li><Display>ม็อดเสกของบางอย่าง</Display><OKResult>me:TriggerStory("LBQDZLZMNQ");</OKResult></li>	
-<li><Display>เสกของ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>		
-</Selections></Story>
+me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("xaou_xaou2");</OKResult></li>
+</Selections>
+</Story>
 
 
 
----(5/6/69)~1---
+
+
+
+
+
+---(5/6/69)~2---
 
 
 
@@ -172,6 +415,8 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 <Selections>
 <li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
 <li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("Game_Modifier");</OKResult></li>
+
+
 <li><Display>เสกทรัพยากร</Display><OKResult>me:TriggerStory("ItemShopResource76");</OKResult></li>
 <li><Display>อาหาร / วัตถุดิบ</Display><OKResult>me:TriggerStory("ItemShopFood76");</OKResult></li>
 <li><Display>อุปกรณ์</Display><OKResult>me:TriggerStory("ItemShopDan82");</OKResult></li>
@@ -186,24 +431,56 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 </Selections>
 </Story>
 
+
+
+
 <Story Name="ItemShopResource76" Parent="BaseFillingStory">
-<DisplayName>เสกทรัพยากร</DisplayName>
+<DisplayName>สำหรับทดสอบ</DisplayName>
 <Desc>เลือกทรัพยากรที่ต้องการ </Desc>
 <Selections>
 <li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
 <li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
 
-
-
-<li><Display>ทดสอบ1</Display><OKResult>me:DropAwardItem("ItemBase",1);me:TriggerStory("ItemShopResource76");</OKResult></li>
-
-
-
-
-
 </Selections>
 </Story>
 
+<Story Name="GongShop76" Parent="BaseFillingStory">
+<DisplayName>ปลดล็อกวิชาบ่มเพาะ</DisplayName>
+<Desc>เลือกวิชาที่ต้องการ </Desc>
+<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
+<li><Display>ปลดล็อกวิชาสายหลักทั้งหมด</Display>
+<OKResult>
+me:UnLockGong("Gong_1_Shui");
+me:UnLockGong("Gong_2_Mu");
+me:UnLockGong("Gong_3_Jin");
+me:UnLockGong("Gong_4_None");
+me:UnLockGong("Gong_5_Tu");
+me:UnLockGong("Gong_6_Huo");
+me:UnLockGong("Gong_7_Huo");
+me:UnLockGong("Gong_8_Jin");
+me:UnLockGong("Gong_9_Mu");
+me:UnLockGong("Gong_10_Huo");
+me:UnLockGong("Gong_11_Tu");
+me:UnLockGong("Gong_12_None");
+me:UnLockGong("Gong_13_None");
+me:UnLockGong("Gong_DaNeng");
+me:UnLockGong("Gong_LingShou");
+me:UnLockGong("Gong_LOST");
+me:UnLockGong("Gong_YaoShou");
+me:UnLockGong("God_Gong_1");
+me:UnLockGong("God_Gong_2");
+me:UnLockGong("God_Gong_3");
+me:UnLockGong("Body_Gong_1");
+me:UnLockGong("Body_Gong_2");
+me:UnLockGong("Body_Gong_3");
+me:UnLockGong("Body_Gong_5");
+me:TriggerStory("Game_Modifier");
+</OKResult>
+</li>
+
+</Selections>
+</Story>
 --หมวดหมู่อาหารและวัตถุดิบ--
 
 <Story Name="ItemShopFood76" Parent="BaseFillingStory">
@@ -270,7 +547,6 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 <li><Display>ปลาคาร์พราตรี</Display><OKResult>me:DropAwardItem("Fish_SkyFish",1);me:TriggerStory("ItemShopFood76");</OKResult></li>
 <li><Display>ปูทองคำ</Display><OKResult>me:DropAwardItem("Fish_SkyCrab",1);me:TriggerStory("ItemShopFood76");</OKResult></li>
 <li><Display>ผลอำพัน</Display><OKResult>me:DropAwardItem("Item_Fruit",1);me:TriggerStory("ItemShopFood76");</OKResult></li>
-
 <li><Display>ขนมปัง</Display><OKResult>me:DropAwardItem("Item_Cake",1);me:TriggerStory("ItemShopFood76");</OKResult></li>
 <li><Display>เนื้อตากแห้ง</Display><OKResult>me:DropAwardItem("Item_Jerky",1);me:TriggerStory("ItemShopFood76");</OKResult></li>
 <li><Display>ผลอำพันตากแห้งตระกุลหลี</Display><OKResult>me:DropAwardItem("Item_PreservedFruit",1);me:TriggerStory("ItemShopFood76");</OKResult></li>
@@ -293,7 +569,6 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 <li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
 <li><Display>โอสถแทนปราณ</Display><OKResult>me:DropAwardItem("Item_Dan_WuQiNoHunger2",1);me:TriggerStory("ItemShopDan76");</OKResult></li>
 <li><Display>โอสถสามแกน</Display><OKResult>me:DropAwardItem("Item_Dan_SanHuaHuangJing",1);me:TriggerStory("ItemShopDan76");</OKResult></li>
-
 <li><Display>โอสถบ่มปราณ</Display><OKResult>me:DropAwardItem("Item_BasePracticeDrug",1);me:TriggerStory("ItemShopDan76");</OKResult></li>
 <li><Display>โอสถพลังกาย</Display><OKResult>me:DropAwardItem("Item_Dan_JingYuan",1);me:TriggerStory("ItemShopDan76");</OKResult></li>
 <li><Display>โอสถโสม</Display><OKResult>me:DropAwardItem("Item_Dan_JingYuan2",1);me:TriggerStory("ItemShopDan76");</OKResult></li>
@@ -477,6 +752,8 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 </Selections>
 </Story>
 
+--หมวดหมู่ยันต์/ค่ายกล/วิชาบ่มเพาะ--
+
 <Story Name="ItemShopDan80" Parent="BaseFillingStory">
 <DisplayName>ยันต์/ค่ายกล/วิชาบ่มเพาะ</DisplayName>
 <Desc>เลือกสมบัติ</Desc>
@@ -634,6 +911,8 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 </Selections>
 </Story>
 
+--หมวดหมู่อื่นๆ--
+
 <Story Name="ItemShopDan78" Parent="BaseFillingStory">
 <DisplayName>อื่นๆ</DisplayName>
 <Desc>เลือกสมบัติ</Desc>
@@ -746,7 +1025,6 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 <li><Display>สมุดกวี</Display><OKResult>me:DropAwardItem("Item_FunPoem",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
 <li><Display>บันทึกดนตรี</Display><OKResult>me:DropAwardItem("Item_FunMusic",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
 <li><Display>บันทึกหมากล้อม</Display><OKResult>me:DropAwardItem("Item_FunChess",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
-<li><Display>LeftoverMaterialBase</Display><OKResult>me:DropAwardItem("LeftoverMaterialBase",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
 <li><Display>วัสดุจากต่างโลก1</Display><OKResult>me:DropAwardItem("Item_Other_Portia_1",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
 <li><Display>วัสดุจากต่างโลก2</Display><OKResult>me:DropAwardItem("Item_Other_Portia_2",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
 <li><Display>วัสดุจากต่างโลก3</Display><OKResult>me:DropAwardItem("Item_Other_Portia_3",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
@@ -783,14 +1061,10 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 <li><Display>วัสดุจากต่างโลก34</Display><OKResult>me:DropAwardItem("Item_Other_Portia_34",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
 <li><Display>วัสดุจากต่างโลก35</Display><OKResult>me:DropAwardItem("Item_Other_Portia_35",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
 <li><Display>วัสดุจากต่างโลก36</Display><OKResult>me:DropAwardItem("Item_Other_Portia_36",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
-<li><Display>ClothBase</Display><OKResult>me:DropAwardItem("ClothBase",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
-<li><Display>LeatherBase</Display><OKResult>me:DropAwardItem("LeatherBase",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
-<li><Display>ฐานโลหะบล็อก</Display><OKResult>me:DropAwardItem("MetalBlockBase",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
 
 <li><Display>แก่นเนื้อ</Display><OKResult>me:DropAwardItem("MeatBase",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
 <li><Display>หัวใจแห่งดาบ</Display><OKResult>me:DropAwardItem("Item_Wonder_ShuShanJianChi",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
 <li><Display>หินวิญญาณเฉียนคุน</Display><OKResult>me:DropAwardItem("Item_Wonder_QianKunLingJing",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
-<li><Display>WoodBase</Display><OKResult>me:DropAwardItem("WoodBase",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
 <li><Display>ดวงใจแห่งอินทมิฬ</Display><OKResult>me:DropAwardItem("Item_Wonder_XuanYinShengQuan",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
 
 <li><Display>หัวใจหยกวิญญาณ</Display><OKResult>me:DropAwardItem("Item_Wonder_LingYuFeng",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
@@ -810,6 +1084,8 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 <li><Display>แก่นหงส์เพลิง</Display><OKResult>me:DropAwardItem("Item_Boss_Fenghuangneidan",1);me:TriggerStory("ItemShopDan78");</OKResult></li>
 </Selections>
 </Story>
+
+--หมวดหมู่ยารักษา--
 
 <Story Name="ItemShopDan81" Parent="BaseFillingStory">
 <DisplayName>ยารักษา</DisplayName>
@@ -842,8 +1118,10 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 </Selections>
 </Story>
 
+--หมวดหมู่อุปรณ์--
+
 <Story Name="ItemShopDan82" Parent="BaseFillingStory">
-<DisplayName>อุปกรณ์  หมายเหตุ : พวกอุปกรณ์อาวุธมันอาจจะสุ่มไอเทมที่ใช้ในการทำ</DisplayName>
+<DisplayName>อุปกรณ์  หมายเหตุ : พวกอุปกรณ์อาวุธมันจะสุ่มไอเทมที่ใช้ในการทำ</DisplayName>
 <Desc>เลือกสมบัติ</Desc>
 <Selections>
 <li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
@@ -953,8 +1231,16 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("Game_Modifier");</OKR
 <li><Display>ไม่รู้จัก</Display><OKResult>me:DropAwardItem("Item_SPStuffCategories_1",1);me:TriggerStory("ItemShopDan90");</OKResult></li>
 <li><Display>MetalBase</Display><OKResult>me:DropAwardItem("MetalBase",1);me:TriggerStory("ItemShopDan90");</OKResult></li>
 <li><Display>ทัณฑ์เมฆาสวรรค์</Display><OKResult>me:DropAwardItem("JieCloud",1);me:TriggerStory("ItemShopDan90");</OKResult></li>
+<li><Display>LeatherBase</Display><OKResult>me:DropAwardItem("LeatherBase",1);me:TriggerStory("ItemShopDan90");</OKResult></li>
+<li><Display>ฐานโลหะบล็อก</Display><OKResult>me:DropAwardItem("MetalBlockBase",1);me:TriggerStory("ItemShopDan90");</OKResult></li>
+<li><Display>WoodBase</Display><OKResult>me:DropAwardItem("WoodBase",1);me:TriggerStory("ItemShopDan90");</OKResult></li>
+<li><Display>LeftoverMaterialBase</Display><OKResult>me:DropAwardItem("LeftoverMaterialBase",1);me:TriggerStory("ItemShopDan90");</OKResult></li>
+<li><Display>ClothBase</Display><OKResult>me:DropAwardItem("ClothBase",1);me:TriggerStory("ItemShopDan90");</OKResult></li>
+
 </Selections>
 </Story>
+
+--หมวดหมู่อาวุธฝักไข่--
 
 <Story Name="ItemShopDan85" Parent="BaseFillingStory">
 <DisplayName>อุปกรณ์ฟักไข่</DisplayName>
