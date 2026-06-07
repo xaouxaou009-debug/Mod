@@ -1,4 +1,6 @@
-﻿<Stories><List>
+﻿###เช็คไฟล์ว่าอัพโหลดลงกิจฮับหรือยัง1###
+
+<Stories><List>
 	<Story Name="Game_Modifier"  Parent="BaseFillingStory">
 		<DisplayName>ม็อดปรับแต่งเกม </DisplayName>
 		<Desc>เลือกรายการที่ต้องการ</Desc>
@@ -18,8 +20,8 @@
 <DisplayName></DisplayName>
 <Desc>เลือกรายการที่ต้องการ </Desc>
 <Selections>
-<li><Display>ทักษะอาวุธวิเศษ</Display><OKResult>me:TriggerStory("BookAll76");</OKResult></li>
-<li><Display>ปราณเวท</Display><OKResult>me:TriggerStory("xaou_xaou101");</OKResult></li>
+<li><Display>คัมภีร์ชุดที่ 1</Display><OKResult>me:TriggerStory("xaou_xaou500");</OKResult></li>
+<li><Display>คัมภีร์ชุดที่ 2</Display><OKResult>me:TriggerStory("xaou_xaou501");</OKResult></li>
 <li><Display>การป้องกัน</Display><OKResult>me:TriggerStory("xaou_xaou102");</OKResult></li>
 <li><Display>หลอมโอสถ</Display><OKResult>me:TriggerStory("xaou_xaou103");</OKResult></li>
 <li><Display>หลอมอาวุธวิเศษ</Display><OKResult>me:TriggerStory("xaou_xaou104");</OKResult></li>
@@ -32,49 +34,33 @@
 
 
 
-<Story Name="BookAll76" Parent="BaseFillingStory">
-<DisplayName>รับคัมภีร์ทั้งหมด</DisplayName>
-<Desc>รับคัมภีร์ทั้งหมดจากไฟล์ Esoterica_Book</Desc>
+<Story Name="xaou_xaou500" Parent="BaseFillingStory">
+<DisplayName>รับคัมภีร์20เล่มชุดที่1</DisplayName>
+<Desc>รับคัมภีร์</Desc>
 
-<ItemCache1><li><ThingDef>DanFang_1</ThingDef><Rate>100</Rate></li></ItemCache1>
-<ItemCache2><li><ThingDef>DanFang_2</ThingDef><Rate>100</Rate></li></ItemCache2>
-<ItemCache3><li><ThingDef>DanFang_3</ThingDef><Rate>100</Rate></li></ItemCache3>
-<ItemCache4><li><ThingDef>DanFang_4</ThingDef><Rate>100</Rate></li></ItemCache4>
-<ItemCache5><li><ThingDef>DanFang_5</ThingDef><Rate>100</Rate></li></ItemCache5>
-<ItemCache6><li><ThingDef>DanFang_6</ThingDef><Rate>100</Rate></li></ItemCache6>
-<ItemCache7><li><ThingDef>DanFang_7</ThingDef><Rate>100</Rate></li></ItemCache7>
-<ItemCache8><li><ThingDef>DanFang_8</ThingDef><Rate>100</Rate></li></ItemCache8>
-<ItemCache9><li><ThingDef>DanFang_9</ThingDef><Rate>100</Rate></li></ItemCache9>
-
-<ItemCache10><li><ThingDef>YouJi_1_2</ThingDef><Rate>100</Rate></li></ItemCache10>
-<ItemCache11><li><ThingDef>YouJi_1_3</ThingDef><Rate>100</Rate></li></ItemCache11>
-<ItemCache12><li><ThingDef>YouJi_2_1</ThingDef><Rate>100</Rate></li></ItemCache12>
-<ItemCache13><li><ThingDef>YouJi_2_2</ThingDef><Rate>100</Rate></li></ItemCache13>
-<ItemCache14><li><ThingDef>YouJi_2_3</ThingDef><Rate>100</Rate></li></ItemCache14>
-<ItemCache15><li><ThingDef>YouJi_2_4</ThingDef><Rate>100</Rate></li></ItemCache15>
-<ItemCache16><li><ThingDef>YouJi_2_5</ThingDef><Rate>100</Rate></li></ItemCache16>
-<ItemCache17><li><ThingDef>YouJi_2_6</ThingDef><Rate>100</Rate></li></ItemCache17>
-<ItemCache18><li><ThingDef>YouJi_2_7</ThingDef><Rate>100</Rate></li></ItemCache18>
-<ItemCache19><li><ThingDef>YouJi_3</ThingDef><Rate>100</Rate></li></ItemCache19>
-<ItemCache20><li><ThingDef>YouJi_4_1</ThingDef><Rate>100</Rate></li></ItemCache20>
-<ItemCache21><li><ThingDef>YouJi_4_2</ThingDef><Rate>100</Rate></li></ItemCache21>
-<ItemCache22><li><ThingDef>YouJi_4_3</ThingDef><Rate>100</Rate></li></ItemCache22>
-<ItemCache23><li><ThingDef>YouJi_5</ThingDef><Rate>100</Rate></li></ItemCache23>
-<ItemCache24><li><ThingDef>YouJi_6_1</ThingDef><Rate>100</Rate></li></ItemCache24>
-<ItemCache25><li><ThingDef>YouJi_6_3</ThingDef><Rate>100</Rate></li></ItemCache25>
-<ItemCache26><li><ThingDef>YouJi_6_4</ThingDef><Rate>100</Rate></li></ItemCache26>
-
-<ItemCache27><li><ThingDef>YaoGuai_Bible</ThingDef><Rate>100</Rate></li></ItemCache27>
-<ItemCache28><li><ThingDef>Emotion_Bible</ThingDef><Rate>100</Rate></li></ItemCache28>
-<ItemCache29><li><ThingDef>NanGongYiCe</ThingDef><Rate>100</Rate></li></ItemCache29>
-<ItemCache30><li><ThingDef>QunXianLu_2</ThingDef><Rate>100</Rate></li></ItemCache30>
-<ItemCache31><li><ThingDef>QunXianLu_3</ThingDef><Rate>100</Rate></li></ItemCache31>
-<ItemCache32><li><ThingDef>ShangGuYiWen_1</ThingDef><Rate>100</Rate></li></ItemCache32>
-<ItemCache33><li><ThingDef>ShangGuYiWen_2</ThingDef><Rate>100</Rate></li></ItemCache33>
-
+<ItemCache2><li><ThingDef>DanFang_1</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>DanFang_2</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>DanFang_3</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>DanFang_4</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>DanFang_5</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>DanFang_6</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>DanFang_7</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>DanFang_8</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>DanFang_9</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>YouJi_1_2</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>YouJi_1_3</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>YouJi_2_1</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>YouJi_2_2</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>YouJi_2_3</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>YouJi_2_4</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>YouJi_2_5</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>YouJi_2_6</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>YouJi_2_7</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>YouJi_3</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>YouJi_4_1</ThingDef><Rate>100</Rate></li></ItemCache21>
 <Selections>
-<li><Display>รับคัมภีร์ทั้งหมด 33 เล่ม</Display><OKResult>
-me:DropEsotericFromCache(story.ItemCache1,1);
+<li><Display>รับคัมภีร์ 5 เล่ม</Display><OKResult>
+
 me:DropEsotericFromCache(story.ItemCache2,1);
 me:DropEsotericFromCache(story.ItemCache3,1);
 me:DropEsotericFromCache(story.ItemCache4,1);
@@ -95,18 +81,8 @@ me:DropEsotericFromCache(story.ItemCache18,1);
 me:DropEsotericFromCache(story.ItemCache19,1);
 me:DropEsotericFromCache(story.ItemCache20,1);
 me:DropEsotericFromCache(story.ItemCache21,1);
-me:DropEsotericFromCache(story.ItemCache22,1);
-me:DropEsotericFromCache(story.ItemCache23,1);
-me:DropEsotericFromCache(story.ItemCache24,1);
-me:DropEsotericFromCache(story.ItemCache25,1);
-me:DropEsotericFromCache(story.ItemCache26,1);
-me:DropEsotericFromCache(story.ItemCache27,1);
-me:DropEsotericFromCache(story.ItemCache28,1);
-me:DropEsotericFromCache(story.ItemCache29,1);
-me:DropEsotericFromCache(story.ItemCache30,1);
-me:DropEsotericFromCache(story.ItemCache31,1);
-me:DropEsotericFromCache(story.ItemCache32,1);
-me:DropEsotericFromCache(story.ItemCache33,1);
+
+
 me:TriggerStory("BookAll76");
 </OKResult></li>
 
@@ -114,6 +90,48 @@ me:TriggerStory("BookAll76");
 <li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
 </Selections>
 </Story>
+
+<Story Name="xaou_xaou501" Parent="BaseFillingStory">
+<DisplayName>รับคัมภีร์20 เล่มชุดที่ 2</DisplayName>
+<Desc>รับคัมภีร์</Desc>
+
+<ItemCache2><li><ThingDef>Gong13_Esoterica_28</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong13_Esoterica_29</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong13_Esoterica_30</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong13_Esoterica_31</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>God2_Dan</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>God2_Fabao</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong1_Esoterica_1</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong1_Esoterica_2</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong1_Esoterica_3</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong1_Esoterica_4</ThingDef><Rate>100</Rate></li></ItemCache11>
+
+<Selections>
+<li><Display>รับคัมภีร์ 5 เล่ม</Display><OKResult>
+
+me:DropEsotericFromCache(story.ItemCache2,1);
+me:DropEsotericFromCache(story.ItemCache3,1);
+me:DropEsotericFromCache(story.ItemCache4,1);
+me:DropEsotericFromCache(story.ItemCache5,1);
+me:DropEsotericFromCache(story.ItemCache6,1);
+me:DropEsotericFromCache(story.ItemCache7,1);
+me:DropEsotericFromCache(story.ItemCache8,1);
+me:DropEsotericFromCache(story.ItemCache9,1);
+me:DropEsotericFromCache(story.ItemCache10,1);
+me:DropEsotericFromCache(story.ItemCache11,1);
+
+
+me:TriggerStory("BookAll76");
+</OKResult></li>
+
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>    
+
+
+
+
 
 <Story Name="xaou_xaou100" Parent="BaseFillingStory">
 <DisplayName>การตั้งค่าตัวละครแบบด่วน</DisplayName>
