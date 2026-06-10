@@ -1,0 +1,1446 @@
+<Stories><List>
+
+<Story Name="BookShop_Auto_Main" Parent="BaseFillingStory">
+<DisplayName>📚 คลังคัมภีร์</DisplayName>
+<Desc>เลือกหมวดคัมภีร์ที่ต้องการรับ</Desc>
+<Kind>None</Kind>
+<Selections>
+<li><Display>💊 ตำราโอสถ (19 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>⚔ วิชาบ่มเพาะ (50 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>⬆ ตำราเลื่อนวิชา (116 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>☯ DLC บู๊ตึ้ง (34 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>🌀 ทักษะ/เคล็ดวิชา (24 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>✨ วิชาเวท (58 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>✨ วิชาเวทพิเศษ (5 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Magic2_1");</OKResult></li>
+<li><Display>🧿 ค่ายกล (38 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>🗡 อาวุธวิเศษ (43 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>💎 สมบัติลับ (11 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_MiBao_1");</OKResult></li>
+<li><Display>🛡 การป้องกัน (2 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Barrier_1");</OKResult></li>
+<li><Display>🔥 หลอมสร้าง (8 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Refining_1");</OKResult></li>
+<li><Display>📜 ยันต์/อาคม (6 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Spell_1");</OKResult></li>
+<li><Display>🌿 วิชาหลิงจือ (10 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_LingZhi_1");</OKResult></li>
+<li><Display>📖 หนังสือ/บันทึก (22 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📚 คัมภีร์อื่น ๆ (15 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📦 อื่น ๆ (42 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+
+</Selections>
+</Story>
+
+<Story Name="GongShop76" Parent="BaseFillingStory">
+<DisplayName>ปลดล็อกวิชาบ่มเพาะ</DisplayName>
+<Desc>เลือกวิชาที่ต้องการ </Desc>
+<Selections>
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop76");</OKResult></li>
+<li><Display>ปลดล็อกวิชาสายหลักทั้งหมด</Display>
+<OKResult>
+me:UnLockGong("Gong_1_Shui");
+me:UnLockGong("Gong_2_Mu");
+me:UnLockGong("Gong_3_Jin");
+me:UnLockGong("Gong_4_None");
+me:UnLockGong("Gong_5_Tu");
+me:UnLockGong("Gong_6_Huo");
+me:UnLockGong("Gong_7_Huo");
+me:UnLockGong("Gong_8_Jin");
+me:UnLockGong("Gong_9_Mu");
+me:UnLockGong("Gong_10_Huo");
+me:UnLockGong("Gong_11_Tu");
+me:UnLockGong("Gong_12_None");
+me:UnLockGong("Gong_13_None");
+me:UnLockGong("Gong_DaNeng");
+me:UnLockGong("Gong_LingShou");
+me:UnLockGong("Gong_LOST");
+me:UnLockGong("Gong_YaoShou");
+me:UnLockGong("God_Gong_1");
+me:UnLockGong("God_Gong_2");
+me:UnLockGong("God_Gong_3");
+me:UnLockGong("Body_Gong_1");
+me:UnLockGong("Body_Gong_2");
+me:UnLockGong("Body_Gong_3");
+me:UnLockGong("Body_Gong_5");
+me:TriggerStory("BookShop_Auto_Main");
+</OKResult>
+</li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Dan_1" Parent="BaseFillingStory">
+<DisplayName>💊 ตำราโอสถ หน้า 1/1</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>DanFang_4</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>DanFang_8</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>DanFang_3</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>YaoGuai_Bible</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Emotion_Bible</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>DanFang_6</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>DanFang_5</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>DanFang_7</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>DanFang_2</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>DanFang_1</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>DanFang_9</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>God2_Dan</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong6_Esoterica_6</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong6_Esoterica_8</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong6_Esoterica_5</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Gong6_Esoterica_10</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Gong6_Esoterica_4</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Gong6_Esoterica_9</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Gong6_Esoterica_11</ThingDef><Rate>100</Rate></li></ItemCache20>
+<Selections>
+<li><Display>📖 คัมภีร์โอสถไท่ซ่าง (ฉบับขาด)</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 ตำราชิงฟ้า</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 ตำรายาห้าจักรพรรดิ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 ตำราโอสถ: ท่วงทำนองของสัตว์ป่า</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 ตำราโอสถ: ท่วงทำนองเหมื่นอารมณ์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 ตำราโอสถ: แห่งชีวิต</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 สูตรญาณแห่งโชคชะตา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 สูตรเซียนหลบทัณฑ์สวรรค์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 สูตรเซียนโลกมนุษย์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 เคล็ดตำราโอสถแท้</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 เคล็ดลับสู่แดนลี้ลับ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 โอสถเทพเต๋าสวรรค์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 คัมภีร์โอสถไท่ซ่าง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 ตำราโอสถ: เก้าวิถีโอสถ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 ตำราโอสถ: ร้อยวิถี</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 🔥 ตำราโอสถ: ต้นตำหรับโอสถ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 🔥 ตำราโอสถ: หลอมกลั่นพริบตา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 🔥 ตำราโอสถ: 速炼法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>📖 🔥 เทพหลอมวิชา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_Dan_1");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>✕ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Gong_1" Parent="BaseFillingStory">
+<DisplayName>⚔ วิชาบ่มเพาะ หน้า 1/3</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong4_Esoterica_5</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong4_Esoterica_2</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Other_Esoterica_JiuHua</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong8_Esoterica_12</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong8_Esoterica_13</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong8_Esoterica_11</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong5_Esoterica_5</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong5_Esoterica_2</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong5_Esoterica_12</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong11_Esoterica_9</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Gong11_Esoterica_15</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Gong5_Esoterica_1</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong5_Esoterica_10</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong5_Esoterica_4</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong11_Esoterica_6</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Gong5_Esoterica_3</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Gong5_Esoterica_11</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Gong5_Esoterica_9</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Gong5_Esoterica_8</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Other_Esoterica_ChiLianYuan1</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 คัมภีร์วิชา: 万法归藏</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 คัมภีร์วิชา: 和光同尘</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ตำราล้ำค่ามังกรหงส์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⚙ คัมภีร์วิชา: 劫心咒</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⚙ คัมภีร์วิชา: 星斗之眼</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⚙ คัมภีร์วิชา: 洞心咒</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์วิชา: 九幽返照</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์วิชา: 五感之蚀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์วิชา: 偷天</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์วิชา: 厚德篇</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์วิชา: 地母玄经</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์วิชา: 形容之蚀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์วิชา: 欺天</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์วิชา: 气运之蚀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์วิชา: 灵视神观</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์วิชา: 神智之蚀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์วิชา: 窃天</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์วิชา: 蛰命法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์วิชา: 龟息诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>📖 ⛰ เคล็ดลับสืบทอดบันทึกสมบัติหนานกงข้ามเคราะห์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Gong_2" Parent="BaseFillingStory">
+<DisplayName>⚔ วิชาบ่มเพาะ หน้า 2/3</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong11_Esoterica_8</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong11_Esoterica_7</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Other_Esoterica_DanXia2</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong1_Esoterica_8</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong1_Esoterica_9</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong1_Esoterica_7</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong1_Esoterica_1</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Other_Esoterica_LongHu2</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong1_Esoterica_5</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong9_Esoterica_2</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Gong9_Esoterica_14</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Gong9_Esoterica_7</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong9_Esoterica_11</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong9_Esoterica_10</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong9_Esoterica_1</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Gong2_Esoterica_6</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Gong10_Esoterica_6</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Gong10_Esoterica_10</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Gong10_Esoterica_11</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Gong6_Esoterica_14</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 ⛰ เทพธาตุวิชา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 ⛰ แปดขั้วหลอมรูปเคล็ด</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🌊 คัมภีร์วิชา: 紫霞丹霄</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🌊 รูปแท้วารีปราณ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🌊 รูปแท้เทพวารี</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🌊 รูปแท้แก่นวารี</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🌊 วิชาชำระใจห้าธารา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🌊 วิชาใจธารบิน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🌊 เคล็ดธารเชี่ยว</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🌳 คัมภีร์วิชา: 三世洞真法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🌳 คัมภีร์วิชา: 修罗之体·一阶</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🌳 คัมภีร์วิชา: 养身法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🌳 คัมภีร์วิชา: 神截经</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🌳 คัมภีร์วิชา: 胎化易形</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🌳 คัมภีร์วิชา: 轮回心眼</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🌳 ปราณแท้ซ่างชิง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์วิชา: 五内蕴火</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์วิชา: 净火灼心</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์วิชา: 天火同人</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์วิชา: 太上内经</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_Gong_1");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_Gong_3");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Gong_3" Parent="BaseFillingStory">
+<DisplayName>⚔ วิชาบ่มเพาะ หน้า 3/3</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong7_Esoterica_4</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong7_Esoterica_2</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong7_Esoterica_1</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong6_Esoterica_7</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong6_Esoterica_2</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong7_Esoterica_5</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong6_Esoterica_12</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong6_Esoterica_3</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong7_Esoterica_8</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Other_Esoterica_XuanKong</ThingDef><Rate>100</Rate></li></ItemCache11>
+<Selections>
+<li><Display>📖 🔥 คัมภีร์วิชา: 太上忘情</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Gong_3");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์วิชา: 寄情之术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Gong_3");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์วิชา: 心斋</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Gong_3");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์วิชา: 明目诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Gong_3");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์วิชา: 洗心咒</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Gong_3");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์วิชา: 脱胎换骨</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Gong_3");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์วิชา: 菁华诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Gong_3");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์วิชา: 道德清净法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Gong_3");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์วิชา: 长生诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Gong_3");</OKResult></li>
+<li><Display>📖 🔥 วิชาแปรชะตากลสวรรค์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Gong_3");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_Gong_2");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_GongLvUp_1" Parent="BaseFillingStory">
+<DisplayName>⬆ ตำราเลื่อนวิชา หน้า 1/6</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong1_LvUpEsoterica_9</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong8_LvUpEsoterica_9</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong4_LvUpEsoterica_3</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong4_LvUpEsoterica_4</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong4_LvUpEsoterica_5</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong12_LvUpEsoterica_5</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong12_LvUpEsoterica_6</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong12_LvUpEsoterica_7</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong11_LvUpEsoterica_4</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong9_LvUpEsoterica_3</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Gong9_LvUpEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Gong12_LvUpEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong7_LvUpEsoterica_3</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong5_LvUpEsoterica_8</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong8_LvUpEsoterica_15</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Gong8_LvUpEsoterica_12</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Gong8_LvUpEsoterica_14</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Gong8_LvUpEsoterica_13</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Gong8_LvUpEsoterica_17</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Gong4_LvUpEsoterica_11</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 กลั่นฮวงจุ้ย</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ดาวเหนือแดนกระบี่</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 万法归藏</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 万法归藏</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 万法归藏</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 东木分神书</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 东木分神书</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 东木分神书</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 九幽炼神</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 元央归息法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 六道轮回丹</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 天甲符</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 如意幻境</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 秘宝：偷天七绝针</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 秘宝：天权剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 秘宝：天枢剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 秘宝：天玑剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 秘宝：天璇剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 秘宝：开阳剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 秘宝：戊己杏黄旗</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_GongLvUp_2" Parent="BaseFillingStory">
+<DisplayName>⬆ ตำราเลื่อนวิชา หน้า 2/6</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong8_LvUpEsoterica_18</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong7_LvUpEsoterica_7</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong8_LvUpEsoterica_16</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong3_LvUpEsoterica_10</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong6_LvUpEsoterica_7</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong6_LvUpEsoterica_8</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong12_LvUpEsoterica_4</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong11_LvUpEsoterica_13</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong10_LvUpEsoterica_4</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong12_LvUpEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Gong12_LvUpEsoterica_3</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Gong1_LvUpEsoterica_6</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong4_LvUpEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong3_LvUpEsoterica_5</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong3_LvUpEsoterica_6</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Gong3_LvUpEsoterica_8</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Gong3_LvUpEsoterica_3</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Gong3_LvUpEsoterica_4</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Gong8_LvUpEsoterica_4</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Gong8_LvUpEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 ตำราเลื่อนวิชา: 秘宝：摇光剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 秘宝：清宁飞羽</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 秘宝：玉衡剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 秘宝：百灵斩仙剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 秘宝：神农鼎</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 秘宝：离地焰光旗</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 ตำราเลื่อนวิชา: 遮天符</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 ลับสมบัติ：หนึ่งกระบี่</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 เก้าหยางเทพอัคคีแดน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 เทพกระบี่ยันต์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 เทพมนต์ยันต์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 แดนวารีแท้เก้าหยิน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 แสงเทพแม่เหล็กทำลายล้าง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 ⚙ กระบี่วิญญาณ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 ⚙ ขั้วกระบี่·สอง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 ⚙ ขั้วกระบี่·สาม</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 ⚙ ควบคุมกระบี่วิชา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 ⚙ ควบคุมกระบี่วิชา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 ⚙ ตำราเลื่อนวิชา: 天权剑意</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>📖 ⚙ ตำราเลื่อนวิชา: 天枢剑意</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_GongLvUp_1");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_GongLvUp_3" Parent="BaseFillingStory">
+<DisplayName>⬆ ตำราเลื่อนวิชา หน้า 3/6</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong8_LvUpEsoterica_3</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong8_LvUpEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong4_LvUpEsoterica_6</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong8_LvUpEsoterica_6</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong3_LvUpEsoterica_9</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong3_LvUpEsoterica_7</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong8_LvUpEsoterica_7</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong3_LvUpEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong3_LvUpEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong8_LvUpEsoterica_5</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Gong8_LvUpEsoterica_8</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Gong8_LvUpEsoterica_10</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong8_LvUpEsoterica_11</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong11_LvUpEsoterica_10</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong11_LvUpEsoterica_11</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Gong11_LvUpEsoterica_9</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Gong5_LvUpEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Gong5_LvUpEsoterica_6</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Gong11_LvUpEsoterica_5</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Gong11_LvUpEsoterica_6</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 ⚙ ตำราเลื่อนวิชา: 天玑剑意</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⚙ ตำราเลื่อนวิชา: 天璇剑意</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⚙ ตำราเลื่อนวิชา: 庚金元神·圆满</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⚙ ตำราเลื่อนวิชา: 开阳剑意</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⚙ ตำราเลื่อนวิชา: 我剑·三</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⚙ ตำราเลื่อนวิชา: 我剑·二</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⚙ ตำราเลื่อนวิชา: 摇光剑意</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⚙ ตำราเลื่อนวิชา: 杀意</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⚙ ตำราเลื่อนวิชา: 杀意</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⚙ ตำราเลื่อนวิชา: 玉衡剑意</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⚙ ตำราเลื่อนวิชา: 赦心咒</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⚙ ท่าสุดยอดดาวเหนือ-กระบี่ขั้วเหนือ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⚙ ท่าสุดยอดดาวเหนือ-กระบี่คืนหนึ่ง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⛰ คุนต้นกำเนิดแท้ปราณ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⛰ คุนต้นกำเนิดแท้ปราณ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⛰ คุนต้นกำเนิดแท้ปราณ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⛰ ตำราเลื่อนวิชา: 五感返照</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⛰ ตำราเลื่อนวิชา: 凝血神盾</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⛰ ตำราเลื่อนวิชา: 太虚神盾</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>📖 ⛰ ตำราเลื่อนวิชา: 少阴诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_GongLvUp_2");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_GongLvUp_4" Parent="BaseFillingStory">
+<DisplayName>⬆ ตำราเลื่อนวิชา หน้า 4/6</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong11_LvUpEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong11_LvUpEsoterica_8</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong5_LvUpEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong4_LvUpEsoterica_10</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong5_LvUpEsoterica_7</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong5_LvUpEsoterica_4</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong5_LvUpEsoterica_5</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong11_LvUpEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong11_LvUpEsoterica_3</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong5_LvUpEsoterica_3</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Gong11_LvUpEsoterica_7</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Gong11_LvUpEsoterica_12</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong4_LvUpEsoterica_8</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong4_LvUpEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong1_LvUpEsoterica_7</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Gong1_LvUpEsoterica_8</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Gong1_LvUpEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Gong1_LvUpEsoterica_3</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Gong9_LvUpEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Gong1_LvUpEsoterica_5</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 ⛰ ตำราเลื่อนวิชา: 少阴锻体</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 ⛰ ตำราเลื่อนวิชา: 幽狱诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 ⛰ ตำราเลื่อนวิชา: 形容返照</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 ⛰ ตำราเลื่อนวิชา: 戊土元神·圆满</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 ⛰ ตำราเลื่อนวิชา: 换日</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 ⛰ ตำราเลื่อนวิชา: 气运返照</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 ⛰ ตำราเลื่อนวิชา: 浊之躯</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 ⛰ ตำราเลื่อนวิชา: 玄阴锻体</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 ⛰ ตำราเลื่อนวิชา: 瞬形法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 ⛰ ตำราเลื่อนวิชา: 神智返照</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 ⛰ ลี้ลับหยินเคล็ด</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 ⛰ หนึ่งกระบี่</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 🌊 ตำราเลื่อนวิชา: 壬水元神·圆满</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 🌊 ตำราเลื่อนวิชา: 玉清定境</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 🌊 รวมกระแสกังซา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 🌊 รวมกระแสกังซา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 🌊 วิชาแท้เอกสวรรค์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 🌊 สมาธิกระจกวารีมองใจ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 🌊 หมื่นพฤกษาคืนวสันต์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>📖 🌊 เคล็ดคืนทะเล</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_GongLvUp_3");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_GongLvUp_5" Parent="BaseFillingStory">
+<DisplayName>⬆ ตำราเลื่อนวิชา หน้า 5/6</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong1_LvUpEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong1_LvUpEsoterica_4</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong9_LvUpEsoterica_4</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong9_LvUpEsoterica_11</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong9_LvUpEsoterica_8</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong9_LvUpEsoterica_9</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong9_LvUpEsoterica_6</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong4_LvUpEsoterica_7</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong9_LvUpEsoterica_10</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong9_LvUpEsoterica_7</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Gong2_LvUpEsoterica_7</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Gong2_LvUpEsoterica_8</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong2_LvUpEsoterica_5</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong9_LvUpEsoterica_5</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong2_LvUpEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Gong2_LvUpEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Gong2_LvUpEsoterica_4</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Gong4_LvUpEsoterica_9</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Gong10_LvUpEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Gong10_LvUpEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 🌊 เคล็ดฝนสวรรค์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌊 เคล็ดร่วมวายุ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 ตำราเลื่อนวิชา: 不昧真灵</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 ตำราเลื่อนวิชา: 修罗之体·三阶</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 ตำราเลื่อนวิชา: 修罗之体·二阶</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 ตำราเลื่อนวิชา: 天人之体·三阶</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 ตำราเลื่อนวิชา: 天人之体·二阶</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 ตำราเลื่อนวิชา: 甲木元神·圆满</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 ตำราเลื่อนวิชา: 真吾之体·三阶</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 ตำราเลื่อนวิชา: 真吾之体·二阶</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 ตำราเลื่อนวิชา: 神火合一·上清</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 ตำราเลื่อนวิชา: 神火合一·心焰</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 ปราณแท้ซ่างชิง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 ย้อนวัฏสงสาร·ลับ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 เคล็ดร้อยหลอม</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 เคล็ดร้อยหลอม</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🌳 เคล็ดร้อยหลอม</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 丙火元神·圆满</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 五内蕴火</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 五内蕴火</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_GongLvUp_4");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_GongLvUp_6" Parent="BaseFillingStory">
+<DisplayName>⬆ ตำราเลื่อนวิชา หน้า 6/6</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong10_LvUpEsoterica_7</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong7_LvUpEsoterica_5</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong7_LvUpEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong7_LvUpEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong10_LvUpEsoterica_5</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong7_LvUpEsoterica_6</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong6_LvUpEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong10_LvUpEsoterica_6</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong6_LvUpEsoterica_6</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong6_LvUpEsoterica_5</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Gong6_LvUpEsoterica_4</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Gong10_LvUpEsoterica_3</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong2_LvUpEsoterica_6</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong7_LvUpEsoterica_4</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong6_LvUpEsoterica_3</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Gong6_LvUpEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache17>
+<Selections>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 天火同人</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 太上忘情</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 心斋</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 心斋</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 心炎</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 斩念剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 无漏之身</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 火真之体</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 炼身法-神</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 炼身法-精</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 炼身法-速</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 焚日真法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 神火合一·雷泽</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 ตำราเลื่อนวิชา: 长生诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 เต๋าใจ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>📖 🔥 ใหม่กายเคล็ด</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_GongLvUp_6");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_GongLvUp_5");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_WuDang_1" Parent="BaseFillingStory">
+<DisplayName>☯ DLC บู๊ตึ้ง หน้า 1/2</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong13_Esoterica_23</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong13_Esoterica_30</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong13_Esoterica_31</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong13_Esoterica_29</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong13_Esoterica_13</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong13_Esoterica_20</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong13_Esoterica_10</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong13_Esoterica_Fabao1</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong13_Esoterica_Fabao2</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong13_Esoterica_6</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Gong13_Esoterica_Dan</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Gong13_Esoterica_9</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong13_Esoterica_17</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong13_Esoterica_16</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong13_Esoterica_3</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Gong13_Esoterica_26</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Gong13_Esoterica_15</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Gong13_Esoterica_22</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Gong13_Esoterica_19</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Gong13_Esoterica_25</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 คัมภีร์บู๊ตึ้ง: 为道</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 คัมภีร์บู๊ตึ้ง: 纯阳无极功-正</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 คัมภีร์บู๊ตึ้ง: 纯阳无极功-逆</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 คัมภีร์บู๊ตึ้ง: 阴阳化御神遁</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 คัมภีร์เสวียนจี๋</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 คืนเต๋ากระบี่</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 จิตต้นกำเนิดหยินหยางเสวียนเทียน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 ตำรากระบี่เจินอู่</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 ตำราหมื่นเต๋าจื่อเซียว</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 บันทึกลี้ลับไร้ขอบเขต</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 สูตรโอสถแท้ดาวเหนือ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 หกเก้ากายเซียนสองลักษณ์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 หนึ่งสัจธรรมหมื่นพิสดาร</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 เคล็ดควบคุมปราณหมุนเวียน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 เบิกทัศน์ภายใน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 ไร้หลีแท้วิชา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 🌊 กระแสใจจันทรายิ่งใหญ่</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 🌊 คัมภีร์บู๊ตึ้ง: 为法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 🌊 คัมภีร์บู๊ตึ้ง: 帝象剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>📖 🌊 คัมภีร์บู๊ตึ้ง: 抱一法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_WuDang_2" Parent="BaseFillingStory">
+<DisplayName>☯ DLC บู๊ตึ้ง หน้า 2/2</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong13_Esoterica_28</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong13_Esoterica_5</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong13_Esoterica_2</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong13_Esoterica_12</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong13_Esoterica_8</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong13_Esoterica_21</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong13_Esoterica_27</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong13_Esoterica_18</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong13_Esoterica_24</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong13_Esoterica_14</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Gong13_Esoterica_7</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Gong13_Esoterica_1</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong13_Esoterica_11</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong13_Esoterica_4</ThingDef><Rate>100</Rate></li></ItemCache15>
+<Selections>
+<li><Display>📖 🌊 คัมภีร์บู๊ตึ้ง: 潜云无形流</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>📖 🌊 ตำรายันต์หยิน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>📖 🌊 วิชากลั่นความขุ่น</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>📖 🌊 วิชาลมหายใจครรภ์ต้นกำเนิด</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>📖 🌊 เส้นลมปราณเก้าหยิน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์บู๊ตึ้ง: 为剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์บู๊ตึ้ง: 登霄六步</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์บู๊ตึ้ง: 虚极剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์บู๊ตึ้ง: 观复诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>📖 🔥 ปราณแท้หยางบริสุทธิ์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>📖 🔥 รูปแท้หกหยาง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>📖 🔥 วิชามองความบริสุทธิ์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>📖 🔥 วิชาหายใจฟ้าเวหา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>📖 🔥 เคล็ดอัคคีหยาง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_WuDang_2");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_WuDang_1");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Skill_1" Parent="BaseFillingStory">
+<DisplayName>🌀 ทักษะ/เคล็ดวิชา หน้า 1/2</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong4_Esoterica_3</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>FightSkillEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>FightSkillEsoterica_Gong4_1</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong4_Esoterica_7</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>FightSkillEsoterica_4</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>FightSkillEsoterica_Gong3_1</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>FightSkillEsoterica_3</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>FightSkillEsoterica_Gong4_2</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>FightSkillEsoterica_Gong1_1</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong1_Esoterica_2</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>FightSkillEsoterica_Gong9_1</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>FightSkillEsoterica_Gong4_3</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong9_Esoterica_12</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Other_Esoterica_DanXia1</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong9_Esoterica_3</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Gong9_Esoterica_4</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Gong9_Esoterica_5</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Gong10_Esoterica_2</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Gong10_Esoterica_1</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Gong10_Esoterica_4</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 คืนแสงเคล็ด</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 ปราณกังแต่กำเนิด</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 อัสนีเทพไท่ซวีหยู่ชิง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 เคล็ดวิชา: 元始之胎</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 แสงเทพแม่เหล็กทำลายล้าง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 ⚙ กระบี่เทพสะท้อนเสียง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 ⚙ อัสนีเทพทองเกิง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 ⛰ โล่ปฐพีหนา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 🌊 วิชาวารีสวรรค์สลายบาดแผล</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 🌊 เคล็ดควบคุมปราณไท่เหอ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 🌳 ย้อนวัฏสงสาร</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 🌳 เคล็ดคืนวสันต์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 🌳 เคล็ดวิชา: 天人之体·一阶</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 🌳 เคล็ดวิชา: 松影千霞</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 🌳 เคล็ดวิชา: 生死录</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 🌳 เคล็ดวิชา: 轮回之体</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 🌳 เคล็ดวิชา: 轮回之心</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 🔥 เคล็ดวิชา: 三阳赤心咒</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 🔥 เคล็ดวิชา: 御真秘典</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>📖 🔥 เคล็ดวิชา: 真火炼身</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_Skill_2");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Skill_2" Parent="BaseFillingStory">
+<DisplayName>🌀 ทักษะ/เคล็ดวิชา หน้า 2/2</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong10_Esoterica_9</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>FightSkillEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong10_Esoterica_3</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong10_Esoterica_8</ThingDef><Rate>100</Rate></li></ItemCache5>
+<Selections>
+<li><Display>📖 🔥 เคล็ดวิชา: 通天神火咒</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Skill_2");</OKResult></li>
+<li><Display>📖 🔥 เคล็ดเปลวเพลิง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Skill_2");</OKResult></li>
+<li><Display>📖 🔥 เริ่มตะวันแท้เคล็ด</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Skill_2");</OKResult></li>
+<li><Display>📖 🔥 ใจอัคคี</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Skill_2");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_Skill_1");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Magic_1" Parent="BaseFillingStory">
+<DisplayName>✨ วิชาเวท หน้า 1/3</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Magic_PlantGrowUp_1</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Magic_AbsorbGong_8_1</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Magic_FengshuiItemOpen</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Magic_KongZhi1</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>SeachSoul</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Magic_KongZhi3</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Magic_MakePuppet</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Magic_BuidPuppet</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Magic_GanLingShu</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Magic_SoulCrystalLingPowerUp</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Magic_SoulCrystalYouPowerUp</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Magic_JieHuiDaoPowerUp</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Magic_RebornSelf</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Magic_ClosedDoor_1</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Magic_AbsorbGong_5_1</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Magic_Healing_Physique_1</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Magic_LiuRenShensuan</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Magic_Healing_Charisma_1</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Magic_BuildBody_1</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Magic_AbsorbLing_Live_1</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 ควบคุมพฤกษาเคล็ด</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 ชิงใจมนต์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 ตรวจฮวงจุ้ย</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 มนต์ใจประสาน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 มหาวิชาค้นวิญญาณ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 ระบำมารสวรรค์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 วิชาควบคุมวิญญาณ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 วิชาประทานวิญญาณ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 วิชาฝนทิพย์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 วิชาหลอมจิต</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 วิชาหลอมอสูร</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 วิชาหลอมเต๋า</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 วิชาเกิดใหม่เสวียนพิน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 วิชาเข้าสมาธิ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 วิชาเวท: 他化自在大法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 วิชาเวท: 伐毛洗髓之术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 วิชาเวท: 六壬神算</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 วิชาเวท: 再造形神之术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 วิชาเวท: 再造术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>📖 วิชาเวท: 冥灵真法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Magic_2" Parent="BaseFillingStory">
+<DisplayName>✨ วิชาเวท หน้า 2/3</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Magic_Healing_Damage_1</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Magic_AbsorbLing_Item_1</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Magic_Prophesy_1</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Magic_Prophesy_MapStory_1</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Magic_AbsorbLing_Body_1</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Magic_AbsorbGong_9_1</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Magic_AbsorbGong_4_1</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Magic_AbsorbGong_9_2</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Magic_PrayForDustStorm</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Magic_Healing_Perception_1</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Magic_AbsorbGong_10_1</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Magic_AbsorbLing_Thing_1</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Magic_AbsorbGong_3_1</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Magic_PrayForRainstorm</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Magic_PrayForMiasma</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Magic_PrayForRain_1</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Magic_LingCrystalMake_1</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Magic_LingStoneMake_1</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Magic_PrayForFohn</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Magic_AbsorbGong_7_1</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 วิชาเวท: 化伤术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 吸星掌</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 周天神算</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 大衍神算</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 天妖化血术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 天心正法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 天魔化身术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 天魔解体大法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 尘暴术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 开天眼之术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 慧剑斩念</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 托体同山诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 摄神御鬼大法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 暴雨术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 毒瘴术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 求雨术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 炼制灵晶之术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 炼制灵石之术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 焚风术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>📖 วิชาเวท: 献祭</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_Magic_1");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Magic_3" Parent="BaseFillingStory">
+<DisplayName>✨ วิชาเวท หน้า 3/3</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Magic_PrayForWeather</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Magic_Healing_Intelligence_1</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Magic_RobBodyHigh_1</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Magic_RobBodyLow_1</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Magic_PrayForLightningStorm</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Magic_AbsorbGong_2_1</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Magic_PrayForSun_1</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Magic_AbsorbGong_6_1</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Magic_AbsorbGong_1_1</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Magic_FenShenZhiShu</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Magic_FenShenZhiShu_1</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Magic_KongZhi4</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Magic_MakeSoulCrystal</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Magic_KongZhi2</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Magic_AbsorbLing_Aoe_1</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Magic_BuildMine</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Magic_BuildMine_ZaoLu</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Magic_BuildMine_KaiHu</ThingDef><Rate>100</Rate></li></ItemCache19>
+<Selections>
+<li><Display>📖 วิชาเวท: 祈天经</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 วิชาเวท: 醍醐灌顶之术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 วิชาเวท: 阳神夺舍</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 วิชาเวท: 阴神夺舍</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 วิชาเวท: 雷暴术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 วิชาเวท: 风月幻境</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 วิชาเวท: 驱云诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 วิชาเวท: 魂体寄生</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 วิชาเวท: 鼎炉吸真术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 วิชาแยกจิต</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 วิชาแยกจิต</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 ห้าตราประทับเทพ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 เคล็ดกลั่นอำพัน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 เคล็ดประทับใจ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 เคล็ดลมหายใจวิญญาณ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 ⛰ วิชาพิสดารหยวนคุน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 ⛰ วิชาสร้างแผ่นดิน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>📖 🌊 วิชาเปิดทะเลสาบ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_Magic_3");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_Magic_2");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Magic2_1" Parent="BaseFillingStory">
+<DisplayName>✨ วิชาเวทพิเศษ หน้า 1/1</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Magic_YuanLing</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Magic_WanWuTongLing2</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Magic_MakeHorse_1</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Magic_WanWuTongLing1</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Magic_ZaoHuaSuTi</ThingDef><Rate>100</Rate></li></ItemCache6>
+<Selections>
+<li><Display>📖 วิชาเวทพิเศษ: 元灵补天诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Magic2_1");</OKResult></li>
+<li><Display>📖 วิชาเวทพิเศษ: 命火筑灵</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Magic2_1");</OKResult></li>
+<li><Display>📖 วิชาเวทพิเศษ: 封灵术</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Magic2_1");</OKResult></li>
+<li><Display>📖 วิชาเวทพิเศษ: 玄魂造命</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Magic2_1");</OKResult></li>
+<li><Display>📖 วิชาเวทพิเศษ: 造化塑体</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Magic2_1");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Zhen_1" Parent="BaseFillingStory">
+<DisplayName>🧿 ค่ายกล หน้า 1/2</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Esoterica_ZhenFa_4</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Esoterica_ZhenFa_15</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Esoterica_ZhenFa_8</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Esoterica_ZhenFa_14</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Esoterica_ZhenFa_7</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Esoterica_ZhenFa_6</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Esoterica_ZhenFa_13</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Esoterica_ZhenFa_10</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Esoterica_ZhenFa_11</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Esoterica_ZhenFa_12</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Esoterica_ZhenFa_9</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Esoterica_ZhenFa_18</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Esoterica_ZhenFa_16</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Esoterica_ZhenFa_17</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Esoterica_ZhenFa_20</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Esoterica_ZhenFa_19</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Esoterica_ZhenFa_Suit5</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Esoterica_ZhenFa_Suit11</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Esoterica_ZhenFa_Suit10</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Esoterica_ZhenFa_Suit9</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 กลางต้นกำเนิดภูเขาบริสุทธิ์ขั้วค่ายกลแผนภาพ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลเทพเหอหลัวก่อนกำเนิด：คำอธิบายแท้จักรพรรดิมาร</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลเทพเหอหลัวก่อนกำเนิด：บทดินคุน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลเทพเหอหลัวก่อนกำเนิด：บทบึงตุ้ย</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลเทพเหอหลัวก่อนกำเนิด：บทฟ้าเฉียน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลเทพเหอหลัวก่อนกำเนิด：บทภาพรวม</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลเทพเหอหลัวก่อนกำเนิด：บทภูเขาเกิ้น</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลเทพเหอหลัวก่อนกำเนิด：บทวายุซวิ่น</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลเทพเหอหลัวก่อนกำเนิด：บทวารีข่าน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลเทพเหอหลัวก่อนกำเนิด：บทอัคคีหลี</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลเทพเหอหลัวก่อนกำเนิด：บทอัสนีเจิ้น</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลแปลงเต๋าสวรรค์：วิถีจักรวาล</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลแปลงเต๋าสวรรค์：วิถีสุริยันจันทรา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลแปลงเต๋าสวรรค์：วิถีหยินหยาง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลแปลงเต๋าสวรรค์：วิถีเกิดดับ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ค่ายกลแปลงเต๋าสวรรค์：วิถีเริ่มและจบ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 九御赋龙形阵</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 五峰镇归墟</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 先天甲乙木神阵</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 八门玄金天劫剑阵</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Zhen_2" Parent="BaseFillingStory">
+<DisplayName>🧿 ค่ายกล หน้า 2/2</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Esoterica_ZhenFa_Suit2</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Esoterica_ZhenFa_Suit3</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Esoterica_ZhenFa_21</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Esoterica_ZhenFa_5</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Esoterica_ZhenFa_Suit6</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Esoterica_ZhenFa_Suit1</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Esoterica_ZhenFa_Suit4</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Esoterica_ZhenFa_24</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Esoterica_ZhenFa_27</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Esoterica_ZhenFa_22</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Esoterica_ZhenFa_25</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Esoterica_ZhenFa_26</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Esoterica_ZhenFa_23</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Esoterica_ZhenFa_3</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Esoterica_ZhenFa_1</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Esoterica_ZhenFa_Suit8</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Esoterica_ZhenFa_Suit7</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Esoterica_ZhenFa_2</ThingDef><Rate>100</Rate></li></ItemCache19>
+<Selections>
+<li><Display>📖 ตำราค่ายกล: 北斗真武戮魔大阵</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 天地五方不灭阵</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 天道化阵：造化之道</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 法天效地归元阵法秘录</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 真凰羽剑阵</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 诛仙剑阵</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 诸天六御行法仪轨</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 鸿蒙之阵：万灵生发</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 鸿蒙之阵：万物陨灭</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 鸿蒙之阵：天地开辟</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 鸿蒙之阵：天地归寂</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 鸿蒙之阵：时空尽衰</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 ตำราค่ายกล: 鸿蒙之阵：时空衍生</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 ตำราค่ายกลหมื่นอสูรคืนวิญญาณ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 บันทึกค่ายกลไท้อี้</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 สามหยินสามสุดยอดค่ายกล</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 หยินหยางสองธาตุเทพค่ายกล</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>📖 แผนค่ายกลสี่พิทักษ์ไท้อี้</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_Zhen_2");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_Zhen_1");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Fabao_1" Parent="BaseFillingStory">
+<DisplayName>🗡 อาวุธวิเศษ หน้า 1/3</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>God2_Fabao</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong3_Esoterica_9</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong3_Esoterica_4</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Other_Esoterica_DengXian1</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong3_Esoterica_11</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong3_Esoterica_19</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong3_Esoterica_12</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong3_Esoterica_5</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong3_Esoterica_16</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong3_Esoterica_18</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Gong8_Esoterica_6</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Gong8_Esoterica_3</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong8_Esoterica_5</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong8_Esoterica_4</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong3_Esoterica_14</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Gong8_Esoterica_8</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Gong3_Esoterica_17</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Gong3_Esoterica_6</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Gong3_Esoterica_10</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Gong8_Esoterica_9</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 ศาสตราเทพเต๋าสวรรค์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ขั้วกระบี่·หนึ่ง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ควบคุมกระบี่วิชา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราลับตงหัว-กระบี่จื่อเวย</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 击字诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 分字诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 刺字诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 剑心通明</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 劈字诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 化字诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 天权诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 天枢诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 天玑诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 天璇诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 崩字诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 开阳诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 御字诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 心剑交感</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 我剑·一</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 摇光诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Fabao_2" Parent="BaseFillingStory">
+<DisplayName>🗡 อาวุธวิเศษ หน้า 2/3</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong3_Esoterica_1</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong3_Esoterica_13</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong3_Esoterica_15</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong8_Esoterica_7</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong8_Esoterica_1</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong3_Esoterica_8</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong8_Esoterica_10</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong3_Esoterica_3</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong3_Esoterica_7</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong11_Esoterica_14</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Gong11_Esoterica_10</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Gong11_Esoterica_13</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong11_Esoterica_11</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong11_Esoterica_2</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong11_Esoterica_12</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Other_Esoterica_LongHu1</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Gong1_Esoterica_3</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Gong9_Esoterica_8</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Gong7_Esoterica_12</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Gong7_Esoterica_7</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 杀意</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 洗字诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 点字诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 玉衡诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 真武录</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 ⚙ ตำราอาวุธวิเศษ: 神合剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 ⚙ ท่าสุดยอดดาวเหนือ-เจ็ดดาราเคล็ด</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 ⚙ มารไหลจิตกระบี่</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 ⚙ เทพควบคุมกระบี่</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 ⛰ ตำราอาวุธวิเศษ: 坏灭诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 ⛰ ตำราอาวุธวิเศษ: 幽剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 ⛰ ตำราอาวุธวิเศษ: 渊狱诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 ⛰ ตำราอาวุธวิเศษ: 瞬霎诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 ⛰ ตำราอาวุธวิเศษ: 辟邪真法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 ⛰ ไท่หยินเคล็ด</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 🌊 จิตกระบี่ธารเชี่ยว</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 🌊 เคล็ดขี่วายุ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 🌳 ตำราอาวุธวิเศษ: 合物志</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 🔥 ตำราอาวุธวิเศษ: 七情剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>📖 🔥 ตำราอาวุธวิเศษ: 坐忘论</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_Fabao_1");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_Fabao_3");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Fabao_3" Parent="BaseFillingStory">
+<DisplayName>🗡 อาวุธวิเศษ หน้า 3/3</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong7_Esoterica_10</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong7_Esoterica_13</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong7_Esoterica_11</ThingDef><Rate>100</Rate></li></ItemCache4>
+<Selections>
+<li><Display>📖 🔥 ตำราอาวุธวิเศษ: 斩道见我</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Fabao_3");</OKResult></li>
+<li><Display>📖 🔥 ตำราอาวุธวิเศษ: 极情剑</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Fabao_3");</OKResult></li>
+<li><Display>📖 🔥 ใจกระบี่</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Fabao_3");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_Fabao_2");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_MiBao_1" Parent="BaseFillingStory">
+<DisplayName>💎 สมบัติลับ หน้า 1/1</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Esoterica_MiBao_2</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Esoterica_MiBao_3</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Esoterica_MiBao_4</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Esoterica_MiBao_1</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Esoterica_MiBao_7</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Esoterica_MiBao_8</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Esoterica_MiBao_6</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Esoterica_MiBao_9</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Esoterica_MiBao_10</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Esoterica_MiBao_5</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Esoterica_MiBao_11</ThingDef><Rate>100</Rate></li></ItemCache12>
+<Selections>
+<li><Display>📖 ตำรากระบี่สังหารเซียน：ฉบับขาดสอง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_MiBao_1");</OKResult></li>
+<li><Display>📖 ตำรากระบี่สังหารเซียน：ฉบับขาดสาม</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_MiBao_1");</OKResult></li>
+<li><Display>📖 ตำรากระบี่สังหารเซียน：ฉบับขาดสี่</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_MiBao_1");</OKResult></li>
+<li><Display>📖 ตำรากระบี่สังหารเซียน：ฉบับขาดหนึ่ง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_MiBao_1");</OKResult></li>
+<li><Display>📖 ตำราสมบัติลับ: 两界十方大藏宝录残卷</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_MiBao_1");</OKResult></li>
+<li><Display>📖 ตำราสมบัติลับ: 修罗血河宝录残卷</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_MiBao_1");</OKResult></li>
+<li><Display>📖 ตำราสมบัติลับ: 广成天书残卷</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_MiBao_1");</OKResult></li>
+<li><Display>📖 ตำราสมบัติลับ: 星河遗录</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_MiBao_1");</OKResult></li>
+<li><Display>📖 ตำราสมบัติลับ: 瑶池玉书</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_MiBao_1");</OKResult></li>
+<li><Display>📖 ตำราสมบัติลับ: 百毒真经残卷</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_MiBao_1");</OKResult></li>
+<li><Display>📖 ตำราสมบัติลับ: 真武荡魔秘宝录</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_MiBao_1");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Barrier_1" Parent="BaseFillingStory">
+<DisplayName>🛡 การป้องกัน หน้า 1/1</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong11_Esoterica_3</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong5_Esoterica_7</ThingDef><Rate>100</Rate></li></ItemCache3>
+<Selections>
+<li><Display>📖 ⛰ ตำราป้องกัน: 太虚元罡</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Barrier_1");</OKResult></li>
+<li><Display>📖 ⛰ ตำราป้องกัน: 护体血罡</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Barrier_1");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Refining_1" Parent="BaseFillingStory">
+<DisplayName>🔥 หลอมสร้าง หน้า 1/1</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Other_Esoterica_ChiLianYuan</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong2_Esoterica_9</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong2_Esoterica_10</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong2_Esoterica_3</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong2_Esoterica_4</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong2_Esoterica_7</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong2_Esoterica_2</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong2_Esoterica_8</ThingDef><Rate>100</Rate></li></ItemCache9>
+<Selections>
+<li><Display>📖 ⛰ วิชาหลอมสมบัติคุนหลี</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Refining_1");</OKResult></li>
+<li><Display>📖 🌳 ตำราขัดหยก</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Refining_1");</OKResult></li>
+<li><Display>📖 🌳 ตำราหลอมสร้าง: 上清秘传造化真解</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Refining_1");</OKResult></li>
+<li><Display>📖 🌳 ตำราหลอมสร้าง: 丙丁雷泽火</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Refining_1");</OKResult></li>
+<li><Display>📖 🌳 บนชิงเปลวแท้ก่อนกำเนิด</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Refining_1");</OKResult></li>
+<li><Display>📖 🌳 บันทึกสารพัดสิ่ง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Refining_1");</OKResult></li>
+<li><Display>📖 🌳 วิชาหลอมจิต</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Refining_1");</OKResult></li>
+<li><Display>📖 🌳 สิบหลักหลอมศาสตรา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Refining_1");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Spell_1" Parent="BaseFillingStory">
+<DisplayName>📜 ยันต์/อาคม หน้า 1/1</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>SpellEsoterica_1</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>SpellEsoterica_2</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>SpellEsoterica_5</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>SpellEsoterica_3</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>SpellEsoterica_4</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>SpellEsoterica_6</ThingDef><Rate>100</Rate></li></ItemCache7>
+<Selections>
+<li><Display>📖 กล่องหยกสามถ้ำ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Spell_1");</OKResult></li>
+<li><Display>📖 คัมภีร์ยันต์เทพห้าปราณ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Spell_1");</OKResult></li>
+<li><Display>📖 คู่มือยันต์ไท่ผิง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Spell_1");</OKResult></li>
+<li><Display>📖 ตำราทองยันต์เทพห้าทิศหกบัญชา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Spell_1");</OKResult></li>
+<li><Display>📖 ตำรายันต์: 与帝符文书</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Spell_1");</OKResult></li>
+<li><Display>📖 สมุดภาพรับวสันต์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Spell_1");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_LingZhi_1" Parent="BaseFillingStory">
+<DisplayName>🌿 วิชาหลิงจือ หน้า 1/1</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Esoterica_LingZhi_MiFa_Ling_Jin</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Esoterica_LingZhi_MiFa_Sha_Jin</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Esoterica_LingZhi_MiFa_Ling_Tu</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Esoterica_LingZhi_MiFa_Sha_Tu</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Esoterica_LingZhi_MiFa_Ling_Shui</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Esoterica_LingZhi_MiFa_Sha_Shui</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Esoterica_LingZhi_MiFa_Ling_Mu</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Esoterica_LingZhi_MiFa_Sha_Mu</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Esoterica_LingZhi_MiFa_Ling_Huo</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Esoterica_LingZhi_MiFa_Sha_Huo</ThingDef><Rate>100</Rate></li></ItemCache11>
+<Selections>
+<li><Display>📖 ⚙ คัมภีร์หลิงจือ: 本源真法-琅琊典</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_LingZhi_1");</OKResult></li>
+<li><Display>📖 ⚙ คัมภีร์หลิงจือ: 逆源真法-无妄心魔咒</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_LingZhi_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์หลิงจือ: 本源真法-蕴龙诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_LingZhi_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์หลิงจือ: 逆源真法-否极无咎书</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_LingZhi_1");</OKResult></li>
+<li><Display>📖 🌊 คัมภีร์หลิงจือ: 本源真法-青莲书</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_LingZhi_1");</OKResult></li>
+<li><Display>📖 🌊 คัมภีร์หลิงจือ: 逆源真法-未济七绝体</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_LingZhi_1");</OKResult></li>
+<li><Display>📖 🌳 คัมภีร์หลิงจือ: 本源真法-枯荣经</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_LingZhi_1");</OKResult></li>
+<li><Display>📖 🌳 คัมภีร์หลิงจือ: 逆源真法-大过经</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_LingZhi_1");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์หลิงจือ: 本源真法-明夷录</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_LingZhi_1");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์หลิงจือ: 逆源真法-革天录</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_LingZhi_1");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Book_1" Parent="BaseFillingStory">
+<DisplayName>📖 หนังสือ/บันทึก หน้า 1/2</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>ShangGuYiWen_1</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>ShangGuYiWen_2</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>YouJi_6_4</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>YouJi_6_1</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>YouJi_6_3</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>YouJi_3</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>YouJi_2_1</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>YouJi_2_7</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>YouJi_2_3</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>YouJi_2_2</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>YouJi_2_5</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>YouJi_2_6</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>YouJi_2_4</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>YouJi_4_1</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>YouJi_4_3</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>YouJi_4_2</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>YouJi_5</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>YouJi_1_2</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>YouJi_1_3</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>NanGongYiCe</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 หนังสือ: 上古秘闻：卷一</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 上古秘闻：卷二</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 云笈秘录：大漠篇</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 云笈秘录：边荒篇</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 云笈秘录：雪原篇</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 山图海志</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 御风子游记：卷一</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 御风子游记：卷七</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 御风子游记：卷三</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 御风子游记：卷二</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 御风子游记：卷五</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 御风子游记：卷六</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 御风子游记：卷四</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 拾遗录：上册</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 拾遗录：下册</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 拾遗录：中册</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 游仙录</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 神州志：中原篇</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 神州志：江岸篇</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>📖 หนังสือ: 群仙录：卷一</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_Book_2");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Book_2" Parent="BaseFillingStory">
+<DisplayName>📖 หนังสือ/บันทึก หน้า 2/2</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>QunXianLu_3</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>QunXianLu_2</ThingDef><Rate>100</Rate></li></ItemCache3>
+<Selections>
+<li><Display>📖 หนังสือ: 群仙录：卷三</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Book_2");</OKResult></li>
+<li><Display>📖 หนังสือ: 群仙录：卷二</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Book_2");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_Book_1");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Other_1" Parent="BaseFillingStory">
+<DisplayName>📚 คัมภีร์อื่น ๆ หน้า 1/1</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Other_Esoterica_FenShen2</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Other_Esoterica_FenShen3</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Other_Esoterica_FenShen4</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Other_Esoterica_QuQiJue</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Other_Esoterica_YanHuangTongShi</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Esoterica_LunHui3</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Esoterica_LunHui5</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Esoterica_LunHui2</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Esoterica_LunHui4</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Other_Esoterica_ZhuLongDan</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Other_Esoterica_FenShen1</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Esoterica_LunHui1</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Other_Esoterica_ShanHeJue</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Other_Esoterica_LongDan</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Other_Esoterica_FengDan</ThingDef><Rate>100</Rate></li></ItemCache16>
+<Selections>
+<li><Display>📖 คัมภีร์พิเศษ: 三尸分神法：善我之斩</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📖 คัมภีร์พิเศษ: 三尸分神法：恶我之斩</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📖 คัมภีร์พิเศษ: 三尸分神法：本我之斩</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📖 คัมภีร์พิเศษ: 五炁破霞</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📖 คัมภีร์พิเศษ: 炎黄通史</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📖 พลังปะทุ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📖 ยันต์เซินเซิน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📖 วสันต์คืนผืนดิน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📖 วิชาเซียนคุนหลุน</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📖 วิชาแท้วิญญาณหยินหยาง</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📖 หนึ่งปราณแปรสามพิสุทธิ์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📖 หมัดลูกบอลป่า</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📖 ⛰ เคล็ดขุนเขาแม่น้ำ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📖 🌊 วิชาแท้วิญญาณมังกร</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>📖 🔥 วิชาแท้วิญญาณหงส์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Other_1");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Other2_1" Parent="BaseFillingStory">
+<DisplayName>📦 อื่น ๆ หน้า 1/3</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong12_Esoterica_3</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong12_Esoterica_12</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong12_Esoterica_9</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong4_Esoterica_4</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong12_Esoterica_6</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong12_Esoterica_11</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong4_Esoterica_1</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong12_Esoterica_10</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong4_Esoterica_6</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong12_Esoterica_5</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Gong12_Esoterica_1</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Gong12_Esoterica_4</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Esoterica_SYS_LOST</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong12_Esoterica_2</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong12_Esoterica_8</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Gong12_Esoterica_7</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Gong3_Esoterica_2</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Gong8_Esoterica_2</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Gong4_Esoterica_8</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Gong11_Esoterica_5</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 กระบี่ยันต์บันทึก</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 คัมภีร์: 东木分神书</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 คัมภีร์: 云气汇流</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 คัมภีร์: 五气归源</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 คัมภีร์: 借天符</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 คัมภีร์: 天真论</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 คัมภีร์: 玉京飞流法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 คัมภีร์: 结云经</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 คัมภีร์: 谷神大法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 คัมภีร์: 通天符法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 คัมภีร์: 通符书</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 มนต์ยันต์บันทึก</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 ม็อดสูญหาย</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 ลี้ลับยันต์บันทึก</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 เมฆธาตุวิชา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 ไร้บนเทพยันต์</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 ⚙ คัมภีร์: 七杀魔体</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 ⚙ คัมภีร์: 司南经</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 ⚙ คัมภีร์: 庚金元神</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์: 九州大法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Other2_2" Parent="BaseFillingStory">
+<DisplayName>📦 อื่น ๆ หน้า 2/3</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong11_Esoterica_1</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong4_Esoterica_12</ThingDef><Rate>100</Rate></li></ItemCache3>
+<ItemCache4><li><ThingDef>Gong11_Esoterica_4</ThingDef><Rate>100</Rate></li></ItemCache4>
+<ItemCache5><li><ThingDef>Gong5_Esoterica_6</ThingDef><Rate>100</Rate></li></ItemCache5>
+<ItemCache6><li><ThingDef>Gong11_Esoterica_16</ThingDef><Rate>100</Rate></li></ItemCache6>
+<ItemCache7><li><ThingDef>Gong4_Esoterica_10</ThingDef><Rate>100</Rate></li></ItemCache7>
+<ItemCache8><li><ThingDef>Gong1_Esoterica_4</ThingDef><Rate>100</Rate></li></ItemCache8>
+<ItemCache9><li><ThingDef>Gong1_Esoterica_6</ThingDef><Rate>100</Rate></li></ItemCache9>
+<ItemCache10><li><ThingDef>Gong4_Esoterica_9</ThingDef><Rate>100</Rate></li></ItemCache10>
+<ItemCache11><li><ThingDef>Gong9_Esoterica_13</ThingDef><Rate>100</Rate></li></ItemCache11>
+<ItemCache12><li><ThingDef>Gong9_Esoterica_6</ThingDef><Rate>100</Rate></li></ItemCache12>
+<ItemCache13><li><ThingDef>Gong9_Esoterica_9</ThingDef><Rate>100</Rate></li></ItemCache13>
+<ItemCache14><li><ThingDef>Gong2_Esoterica_1</ThingDef><Rate>100</Rate></li></ItemCache14>
+<ItemCache15><li><ThingDef>Gong2_Esoterica_5</ThingDef><Rate>100</Rate></li></ItemCache15>
+<ItemCache16><li><ThingDef>Gong10_Esoterica_7</ThingDef><Rate>100</Rate></li></ItemCache16>
+<ItemCache17><li><ThingDef>Gong4_Esoterica_11</ThingDef><Rate>100</Rate></li></ItemCache17>
+<ItemCache18><li><ThingDef>Gong7_Esoterica_6</ThingDef><Rate>100</Rate></li></ItemCache18>
+<ItemCache19><li><ThingDef>Gong6_Esoterica_1</ThingDef><Rate>100</Rate></li></ItemCache19>
+<ItemCache20><li><ThingDef>Gong10_Esoterica_5</ThingDef><Rate>100</Rate></li></ItemCache20>
+<ItemCache21><li><ThingDef>Gong6_Esoterica_13</ThingDef><Rate>100</Rate></li></ItemCache21>
+<Selections>
+<li><Display>📖 ⛰ คัมภีร์: 太阴锻体</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์: 戊土元神</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์: 虚空谒神法</Display><OKResult>me:DropEsotericFromCache(story.ItemCache4,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 ⛰ คัมภีร์: 血骨炼形</Display><OKResult>me:DropEsotericFromCache(story.ItemCache5,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 ⛰ คุนต้นกำเนิดแท้ปราณ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache6,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🌊 คัมภีร์: 壬水元神</Display><OKResult>me:DropEsotericFromCache(story.ItemCache7,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🌊 รวมกระแสกังซา</Display><OKResult>me:DropEsotericFromCache(story.ItemCache8,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🌊 เคล็ดเก็บวารี</Display><OKResult>me:DropEsotericFromCache(story.ItemCache9,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🌳 คัมภีร์: 甲木元神</Display><OKResult>me:DropEsotericFromCache(story.ItemCache10,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🌳 คัมภีร์: 真吾之体·一阶</Display><OKResult>me:DropEsotericFromCache(story.ItemCache11,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🌳 คัมภีร์: 轮回经</Display><OKResult>me:DropEsotericFromCache(story.ItemCache12,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🌳 คัมภีร์: 通息诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache13,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🌳 เคล็ดร้อยหลอม</Display><OKResult>me:DropEsotericFromCache(story.ItemCache14,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🌳 เปลวใจ</Display><OKResult>me:DropEsotericFromCache(story.ItemCache15,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์: 三阳真脉</Display><OKResult>me:DropEsotericFromCache(story.ItemCache16,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์: 丙火元神</Display><OKResult>me:DropEsotericFromCache(story.ItemCache17,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์: 养吾经</Display><OKResult>me:DropEsotericFromCache(story.ItemCache18,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์: 玉液炼形诀</Display><OKResult>me:DropEsotericFromCache(story.ItemCache19,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🔥 คัมภีร์: 金乌观</Display><OKResult>me:DropEsotericFromCache(story.ItemCache20,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>📖 🔥 คืนต้นกำเนิดเคล็ด</Display><OKResult>me:DropEsotericFromCache(story.ItemCache21,1);me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_Other2_1");</OKResult></li>
+<li><Display>▶ หน้าถัดไป</Display><OKResult>me:TriggerStory("BookShop_Other2_3");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+<Story Name="BookShop_Other2_3" Parent="BaseFillingStory">
+<DisplayName>📦 อื่น ๆ หน้า 3/3</DisplayName>
+<Desc>กดชื่อคัมภีร์เพื่อรับ 1 เล่ม</Desc>
+<Kind>None</Kind>
+<ItemCache2><li><ThingDef>Gong7_Esoterica_3</ThingDef><Rate>100</Rate></li></ItemCache2>
+<ItemCache3><li><ThingDef>Gong7_Esoterica_9</ThingDef><Rate>100</Rate></li></ItemCache3>
+<Selections>
+<li><Display>📖 🔥 ร่วมใจเคล็ด</Display><OKResult>me:DropEsotericFromCache(story.ItemCache2,1);me:TriggerStory("BookShop_Other2_3");</OKResult></li>
+<li><Display>📖 🔥 วายุเทพเมฆกาย</Display><OKResult>me:DropEsotericFromCache(story.ItemCache3,1);me:TriggerStory("BookShop_Other2_3");</OKResult></li>
+<li><Display>◀ หน้าก่อนหน้า</Display><OKResult>me:TriggerStory("BookShop_Other2_2");</OKResult></li>
+<li><Display>🏠 กลับหมวดคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+<li><Display>ปิดเมนู</Display><OKResult></OKResult></li>
+</Selections>
+</Story>
+
+</List></Stories>

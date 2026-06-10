@@ -1,0 +1,72 @@
+<Stories><List>
+	<Story Name="asstasst5"  Parent="BaseFillingStory">
+		<DisplayName>เมนูฟังก์ชั่นเสริม</DisplayName>
+		<Desc>เลือกรายการที่ต้องการ</Desc>
+		<Selections>
+		    <li>
+                <Display> จักรวาลย่อส่วน</Display>
+                <OKResult>me:TriggerStory("Xaou_Menu_QianKun");</OKResult>
+            </li>
+            <li>
+                <Display> เวลา / ฤดูกาล / อากาศ</Display>
+                <OKResult>me:TriggerStory("TQSJJJXG");</OKResult>
+            </li>
+            <li>
+                <Display> เปลี่ยนเป็นปีเก็บเกี่ยวอุดมสมบูรณ์</Display>
+                <OKResult>me:AddModifier("asstasst5");</OKResult>
+            </li>
+            <li>
+                <Display>ปลดล็อกวิชาบ่มเพาะสายหลักทั้งหมด</Display>
+                <OKResult>me:TriggerStory("asstasst5");</OKResult>
+            </li>
+            <li>
+                <Display> ปลดล็อควิชาบ่มเพาะ (ระดับสวรรค์)</Display>
+                <OKResult>me:TriggerStory("xaou1000");</OKResult>
+            </li>
+            <li>
+                <Display></Display>
+            </li>
+                
+</Selections></Story>
+
+    <Story Name="xaou1000" Parent="BaseFillingStory">
+        <DisplayName>ปลดล็อควิชาบ่มเพาะ (ระดับสวรรค์)</DisplayName>
+        <Desc>รวมคำสั่งพิเศษและเครื่องมือช่วยเล่น</Desc>
+        <Selections>
+            <li>
+                <Display>◀ ย้อนกลับ</Display>
+                <OKResult>me:TriggerStory("asstasst5");</OKResult>
+            </li>
+            <li>
+                <Display> สุ่ม20 เล่มต่อครั้ง</Display>
+                <OKResult>
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    world:UnlockRandomGong(4);
+                    me:AddMsg("ปลดล็อกคัมภีร์ระดับสวรรค์ 20 เล่มแล้ว");
+                    me:TriggerStory("xaou1000");
+                </OKResult>
+            </li>
+        </Selections>
+    </Story>
+
+
+
+</List></Stories>
