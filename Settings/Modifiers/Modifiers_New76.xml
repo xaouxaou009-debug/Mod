@@ -151,7 +151,7 @@
     <LuaClassName>modifier_haha</LuaClassName>
 	</Modifier>
   <Modifier Name="Dan_CaiXuKun76" Type="Normal">
-		<DisplayName>鸡你太美丹</DisplayName>
+		<DisplayName>ฟื้นฟูทุกสำนักบนโลก</DisplayName>
 		<Desc></Desc>
 		<MaxStack>1</MaxStack>
 		<Duration>1</Duration>
