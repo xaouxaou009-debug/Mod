@@ -22,12 +22,11 @@
 <li><Display>📖 หนังสือ/บันทึก (22 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Book_1");</OKResult></li>
 <li><Display>📚 คัมภีร์อื่น ๆ (15 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Other_1");</OKResult></li>
 <li><Display>📦 อื่น ๆ (42 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Other2_1");</OKResult></li>
-<li><Display>ปลดล็อกวิชาบ่มเพาะสายหลักทั้งหมด</Display><OKResult>me:TriggerStory("GongShop76");</OKResult></li>
 
 </Selections>
 </Story>
 
-<Story Name="GongShop76" Parent="BaseFillingStory">
+<Story Name="xaou2000" Parent="BaseFillingStory">
 <DisplayName>ปลดล็อกวิชาบ่มเพาะ</DisplayName>
 <Desc>เลือกวิชาที่ต้องการ </Desc>
 <Selections>

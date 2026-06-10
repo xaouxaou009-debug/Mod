@@ -17,7 +17,7 @@
             </li>
             <li>
                 <Display>ปลดล็อกวิชาบ่มเพาะสายหลักทั้งหมด</Display>
-                <OKResult>me:TriggerStory("asstasst5");</OKResult>
+                <OKResult>me:TriggerStory("xaou2000");</OKResult>
             </li>
             <li>
                 <Display> ปลดล็อควิชาบ่มเพาะ (ระดับสวรรค์)</Display>

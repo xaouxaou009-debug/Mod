@@ -26,7 +26,7 @@
 </Selections>
 </Story>
 
-<Story Name="GongShop76" Parent="BaseFillingStory">
+<Story Name="xaou2000" Parent="BaseFillingStory">
 <DisplayName>ปลดล็อกวิชาบ่มเพาะ</DisplayName>
 <Desc>เลือกวิชาที่ต้องการ </Desc>
 <Selections>
@@ -57,7 +57,7 @@ me:UnLockGong("Body_Gong_1");
 me:UnLockGong("Body_Gong_2");
 me:UnLockGong("Body_Gong_3");
 me:UnLockGong("Body_Gong_5");
-me:TriggerStory("BookShop_Auto_Main");
+me:TriggerStory("asstasst5");
 </OKResult>
 </li>
 </Selections>
