@@ -4,17 +4,20 @@
             <DisplayName>🧰 เมนูปรับแต่งเกม</DisplayName>
             <Desc>เลือกหมวดที่ต้องการใช้งาน</Desc>
             <Selections>
-                
                 <li>
-                    <Display>👤 ปรับแต่งตัวละครด่วน</Display>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]เพิ่มค่าสเตตัสทั้ง 5ของตัวละคร</Display>
+                    <OKResult>me:AddModifier("QuanBu76");</OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]ปรับแต่งตัวละครด่วน</Display>
                     <OKResult>me:TriggerStory("xaou_xaou1");</OKResult>
                 </li>
                 <li>
-                    <Display>♻️ ยกเลิกเอฟเฟกต์ตัวละคร</Display>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]ยกเลิกเอฟเฟกต์ตัวละคร</Display>
                     <OKResult>me:TriggerStory("xaou_xaou2");</OKResult>
                 </li>
                 <li>
-                    <Display>⚔ แก้ไขค่าสถานะ</Display>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]แก้ไขค่าสถานะ</Display>
                     <OKResult>me:TriggerStory("Property");</OKResult>
                 </li>
             </Selections>
@@ -25,19 +28,19 @@
             <Selections>
                
                 <li>
-                    <Display>🔎 ตรวจสอบจักรวาลย่อส่วน</Display>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]ตรวจสอบจักรวาลย่อส่วน</Display>
                     <OKResult>me:TriggerStory("System_EnterQianKunJie");</OKResult>
                 </li>
                 <li>
-                    <Display>🌌 เข้าจักรวาลย่อส่วน</Display>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]เข้าจักรวาลย่อส่วน</Display>
                     <OKResult>RPGMapMgr:EnterRPGWorld({me.npcObj}, "RpgQianKun");</OKResult>
                 </li>
                 <li>
-                    <Display>🏠 กลับเมนูหลัก</Display>
-                    <OKResult>me:TriggerStory("asstasst2");</OKResult>
+                    <Display>[size=19][align=center][b][color=#4E8B57]กลับเมนูหลัก</Display>
+                    <OKResult>me:TriggerStory("asstasst5");</OKResult>
                 </li>
                 <li>
-                    <Display>❌ ปิดเมนู</Display>
+                    <Display>[size=19][align=center][b][color=#D9534F]✕ ปิดเมนู ✕</Display>
                     <OKResult />
                 </li>
             </Selections>
@@ -382,10 +385,7 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("xaou_xaou2");</OKResu
 						
 				</OKResult>
                 </li>
-                <li>
-                    <Display>สามเซียนล้างไขกระดูกโอสถ</Display>
-                    <OKResult>me:AddModifier("Dan_SkillLvMax76");</OKResult>
-                </li>
+                
                 <li>
                     <Display>📚 สุ่มคัมภีร์ระดับสูง x1</Display>
                     <OKResult>
@@ -432,14 +432,8 @@ me:TriggerStory("LBQDZLZMNQ");
                     <OKResult>me:AddModifier("Dan_YiLing76");</OKResult>
                 </li>
 
-                <li>
-                    <Display>🦹 ขโมยของ NPC</Display>
-                    <OKResult>me:AddModifier("Dan_BaiYanLang76");</OKResult>
-                </li>
-                <li>
-                    <Display>👻 ชุบชีวิต NPC</Display>
-                    <OKResult>me:AddModifier("Modifier_YinYangShuangYu76");</OKResult>
-                </li>
+                
+                
             </Selections>
         </Story>
         <Story Name="Property" Parent="BaseFillingStory">

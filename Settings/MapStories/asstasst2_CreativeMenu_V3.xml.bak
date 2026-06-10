@@ -4,7 +4,10 @@
             <DisplayName>🧰 เมนูปรับแต่งเกม</DisplayName>
             <Desc>เลือกหมวดที่ต้องการใช้งาน</Desc>
             <Selections>
-                
+                <li>
+                    <Display>เพิ่มค่าสเตตัสทั้ง 5ของตัวละคร</Display>
+                    <OKResult>me:AddModifier("QuanBu76");</OKResult>
+                </li>
                 <li>
                     <Display>👤 ปรับแต่งตัวละครด่วน</Display>
                     <OKResult>me:TriggerStory("xaou_xaou1");</OKResult>
@@ -25,19 +28,19 @@
             <Selections>
                
                 <li>
-                    <Display>🔎 ตรวจสอบจักรวาลย่อส่วน</Display>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]ตรวจสอบจักรวาลย่อส่วน</Display>
                     <OKResult>me:TriggerStory("System_EnterQianKunJie");</OKResult>
                 </li>
                 <li>
-                    <Display>🌌 เข้าจักรวาลย่อส่วน</Display>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]เข้าจักรวาลย่อส่วน</Display>
                     <OKResult>RPGMapMgr:EnterRPGWorld({me.npcObj}, "RpgQianKun");</OKResult>
                 </li>
                 <li>
-                    <Display>🏠 กลับเมนูหลัก</Display>
-                    <OKResult>me:TriggerStory("asstasst2");</OKResult>
+                    <Display>[size=19][align=center][b][color=#4E8B57]กลับเมนูหลัก</Display>
+                    <OKResult>me:TriggerStory("asstasst5");</OKResult>
                 </li>
                 <li>
-                    <Display>❌ ปิดเมนู</Display>
+                    <Display>[size=19][align=center][b][color=#D9534F]✕ ปิดเมนู ✕</Display>
                     <OKResult />
                 </li>
             </Selections>
@@ -382,10 +385,7 @@ me:ModifierProperty("BaseWorkSpeed",-999);me:TriggerStory("xaou_xaou2");</OKResu
 						
 				</OKResult>
                 </li>
-                <li>
-                    <Display>สามเซียนล้างไขกระดูกโอสถ</Display>
-                    <OKResult>me:AddModifier("Dan_SkillLvMax76");</OKResult>
-                </li>
+                
                 <li>
                     <Display>📚 สุ่มคัมภีร์ระดับสูง x1</Display>
                     <OKResult>
@@ -393,20 +393,7 @@ world:UnlockRandomGong(4);
 me:AddMsg("ปลดล็อกคัมภีร์ระดับสูง 1 เล่มแล้ว");
 me:TriggerStory("LBQDZLZMNQ");
 </OKResult>
-                </li>
-                <li>
-                    <Display>📚 สุ่มคัมภีร์ระดับสูง x5</Display>
-                    <OKResult>
-world:UnlockRandomGong(4);
-world:UnlockRandomGong(4);
-world:UnlockRandomGong(4);
-world:UnlockRandomGong(4);
-world:UnlockRandomGong(4);
-me:AddMsg("ปลดล็อกคัมภีร์ระดับสูง 5 เล่มแล้ว");
-me:TriggerStory("LBQDZLZMNQ");
-</OKResult>
-                </li>
-
+                </li>                            
                 <li>
                     <Display>📖 ปลดล็อกคัมภีร์หลักชุดที่ 1</Display>
                     <OKResult>
@@ -441,36 +428,12 @@ me:TriggerStory("LBQDZLZMNQ");
 </OKResult>
                 </li>
                 <li>
-                    <Display>🛡 เสกผังค่ายกล x1</Display>
-                    <OKResult>
-me:DropEsotericFromCache(story.ItemCache4, 1);
-me:TriggerStory("LBQDZLZMNQ");
-</OKResult>
-                </li>
-                <li>
                     <Display>โอสถวิญญาณมหาศาล</Display>
                     <OKResult>me:AddModifier("Dan_YiLing76");</OKResult>
                 </li>
-                <li>
-                    <Display>ทดสอบ</Display>
-                    <OKResult>me:AddModifier("Dan_BrokenNeck76");</OKResult>
-                </li>
-                <li>
-                    <Display>🧵 เสกฝ้าย x1000</Display>
-                    <OKResult>me:DropAwardItem("Item_Cotton",1000);</OKResult>
-                </li>
-                <li>
-                    <Display>🌸 เปลี่ยนเป็นปีเก็บเกี่ยวอุดมสมบูรณ์</Display>
-                    <OKResult>me:AddModifier("Dan_HaHa76");</OKResult>
-                </li>
-                <li>
-                    <Display>🦹 ขโมยของ NPC</Display>
-                    <OKResult>me:AddModifier("Dan_BaiYanLang76");</OKResult>
-                </li>
-                <li>
-                    <Display>👻 ชุบชีวิต NPC</Display>
-                    <OKResult>me:AddModifier("Modifier_YinYangShuangYu76");</OKResult>
-                </li>
+
+                
+                
             </Selections>
         </Story>
         <Story Name="Property" Parent="BaseFillingStory">
