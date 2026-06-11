@@ -8,16 +8,48 @@
 <li><Display>[size=19][align=center][color=#6B4A1E]วัสดุ / แร่ / ไม้ / ผ้า (125)</Display><OKResult>me:TriggerStory("ItemShop_Auto_Material_1");</OKResult></li>
 <li><Display>[size=19][align=center][color=#6B4A1E]อาหาร / เนื้อ / ไข่ (35)</Display><OKResult>me:TriggerStory("ItemShop_Auto_Food_1");</OKResult></li>
 <li><Display>[size=19][align=center][color=#6B4A1E]ปลา / กุ้ง (68)</Display><OKResult>me:TriggerStory("ItemShop_Auto_Fish_1");</OKResult></li>
+<li><Display>[size=19][align=center][b][color=#4E8B57]▶ หน้าถัดไป ▶</Display><OKResult>me:TriggerStory("qwer1");</OKResult></li>
+<li><Display>[size=19][align=center][color=#D9534F]✕ ปิดเมนู ✕</Display><OKResult></OKResult></li>
+
+</Selections>
+</Story>
+
+<Story Name="qwer1" Parent="BaseFillingStory">
+<DisplayName>โอสถ / ยา (1/2)</DisplayName>
+<Desc>รายการ โอสถ / ยา หน้า 1/2 แตะเพื่อเสก 1 ชิ้น</Desc>
+<Selections>
 <li><Display>[size=19][align=center][color=#6B4A1E]อาวุธ / ชุด / อุปกรณ์ (61)</Display><OKResult>me:TriggerStory("ItemShop_Auto_Equip_1");</OKResult></li>
 <li><Display>[size=19][align=center][color=#6B4A1E]สมบัติ / ค่ายกล / ฮวงจุ้ย (77)</Display><OKResult>me:TriggerStory("ItemShop_Auto_Treasure_1");</OKResult></li>
 <li><Display>[size=19][align=center][color=#6B4A1E]แก่นฝึกร่าง / บอส (76)</Display><OKResult>me:TriggerStory("ItemShop_Auto_Body_1");</OKResult></li>
 <li><Display>[size=19][align=center][color=#6B4A1E]คัมภีร์ / หนังสือ / กล่อง (34)</Display><OKResult>me:TriggerStory("ItemShop_Auto_Book_1");</OKResult></li>
 <li><Display>[size=19][align=center][color=#6B4A1E]สัญญาสัตว์อสูร (23)</Display><OKResult>me:TriggerStory("ItemShop_Auto_Animal_1");</OKResult></li>
-<li><Display>[size=19][align=center][color=#6B4A1E]อื่น ๆ (120)</Display><OKResult>me:TriggerStory("ItemShop_Auto_Other_1");</OKResult></li>
-<li><Display>[size=19][align=center][color=#6B4A1E]คลังคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
-<li><Display>[size=19][align=center][color=#6B4A1E]ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop_Auto_Main");</OKResult></li>
+<li><Display>[size=19][align=center][b][color=#4E8B57]▶ หน้าถัดไป ▶</Display><OKResult>me:TriggerStory("qwer2");</OKResult></li>
+<li><Display>[size=19][align=center][b][color=#4E8B57]◀ ย้อนกลับ ◀</Display><OKResult>me:TriggerStory("ItemShop_Auto_Main");</OKResult></li>
 </Selections>
 </Story>
+
+<Story Name="qwer2" Parent="BaseFillingStory">
+<DisplayName>โอสถ / ยา (1/2)</DisplayName>
+<Desc>รายการ โอสถ / ยา หน้า 1/2 แตะเพื่อเสก 1 ชิ้น</Desc>
+<Selections>
+<li><Display>[size=19][align=center][color=#6B4A1E]อื่น ๆ (120)</Display><OKResult>me:TriggerStory("ItemShop_Auto_Other_1");</OKResult></li>
+<li><Display>[size=19][align=center][color=#6B4A1E]คลังคัมภีร์</Display><OKResult>me:TriggerStory("BookShop_Auto_Main");</OKResult></li>
+
+<li><Display>[size=19][align=center][b][color=#4E8B57]▶ หน้าถัดไป ▶</Display><OKResult>me:TriggerStory("ItemShop_Auto_Main");</OKResult></li>
+<li><Display>[size=19][align=center][b][color=#4E8B57]◀ ย้อนกลับ ◀</Display><OKResult>me:TriggerStory("qwer2s");</OKResult></li>
+</Selections>
+</Story>
+
+
+
+
+
+
+
+
+
+
+
 <Story Name="ItemShop_Auto_Dan_1" Parent="BaseFillingStory">
 <DisplayName>โอสถ / ยา (1/2)</DisplayName>
 <Desc>รายการ โอสถ / ยา หน้า 1/2 แตะเพื่อเสก 1 ชิ้น</Desc>

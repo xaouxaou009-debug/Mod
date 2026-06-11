@@ -22,7 +22,7 @@
 <li><Display>[size=19][align=center][color=#6B4A1E]📖 หนังสือ/บันทึก (22 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Book_1");</OKResult></li>
 <li><Display>[size=19][align=center][color=#6B4A1E]📚 คัมภีร์อื่น ๆ (15 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Other_1");</OKResult></li>
 <li><Display>[size=19][align=center][color=#6B4A1E]📦 อื่น ๆ (42 เล่ม)</Display><OKResult>me:TriggerStory("BookShop_Other2_1");</OKResult></li>
-
+<li><Display>[size=19][align=center][color=#D9534F]✕ ปิดเมนู ✕</Display><OKResult></OKResult></li>
 </Selections>
 </Story>
 

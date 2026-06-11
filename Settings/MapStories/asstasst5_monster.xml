@@ -3,7 +3,6 @@
 		<DisplayName>เมนูฟังก์ชั่นเสริม</DisplayName>
 		<Desc>เลือกรายการที่ต้องการ</Desc>
 		<Selections>
-	
 		    <li>
                 <Display>[size=19][align=center][b][color=#6B4A1E]จักรวาลย่อส่วน</Display> 
                 <OKResult>me:TriggerStory("Xaou_Menu_QianKun");</OKResult>
@@ -74,11 +73,8 @@
                 <Display>[size=19][align=center][b][color=#4E8B57]◀ ย้อนกลับ ◀</Display>
                 <OKResult>me:TriggerStory("asstasst5");</OKResult>
             </li>
-        
-        
         </Selections>
     </Story>
-    
     <Story Name="xaou1001" Parent="BaseFillingStory">
         <DisplayName>เมนูหน้า 2</DisplayName>
         <Desc>เลือกรายการที่ต้องการ</Desc>
@@ -112,12 +108,8 @@
                 <Display>[size=19][align=center][b][color=#4E8B57]◀ ย้อนกลับ ◀</Display>
                 <OKResult>me:TriggerStory("asstasst5");</OKResult>
             </li>
-            
-        
-        
         </Selections>
     </Story>
-    
     <Story Name="xaou1002" Parent="BaseFillingStory">
         <DisplayName>เมนูหน้า 3</DisplayName>
         <Desc>เลือกรายการที่ต้องการ</Desc>
@@ -127,8 +119,16 @@
                 <OKResult>me:TriggerStory("asstasst10");</OKResult>
             </li>
             <li>
-                <Display>[size=19][align=center][b][color=#6B4A1E]เกราะมังกรครามดาวหนาว(บัฟตัวละคร : ระดับตำนาน)</Display>
+                <Display>[size=19][align=center][b][color=#6B4A1E]เปลวเพลิงหงส์แท้(บัฟตัวละคร : ระดับตำนาน)</Display>
                 <OKResult>me:TriggerStory("asstasst11");</OKResult>
+            </li>
+            <li>
+                <Display>[size=19][align=center][b][color=#6B4A1E]⚡ สร้างด่วน [ON/OFF]</Display>
+                <OKResult>GameMain:GetMod("Xiu_Gai_Qi_761152306"):ToggleQuickBuild();</OKResult>
+            </li>
+            <li>
+                <Display>[size=19][align=center][b][color=#6B4A1E]🧱 สร้างฟรี [ON/OFF]</Display>
+                <OKResult>GameMain:GetMod("Xiu_Gai_Qi_761152306"):ToggleFreeBuild();</OKResult>
             </li>
             
             <li>
@@ -139,7 +139,6 @@
         
         </Selections>
     </Story>
-    
     <Story Name="asstasst10" Parent="BaseFillingStory">
         <DisplayName>เกราะมังกรครามดาวหนาว</DisplayName>
         <Desc>รายละเอียด: ทำให้ผู้ได้รับบัฟอยู่ในสถานะคงกระพัน/โหมดอมตะ ช่วยป้องกันอันตรายรุนแรงจาก\n\nการต่อสูเหมาะสำหรับใช้เป็นบัฟป้องกันตัวถาวร
@@ -152,7 +151,7 @@
         </Selections>
     </Story>
     <Story Name="asstasst11" Parent="BaseFillingStory">
-        <DisplayName>เกราะมังกรครามดาวหนาว</DisplayName>
+        <DisplayName>เปลวเพลิงหงส์แท้</DisplayName>
         <Desc>รายละเอียด: เพิ่มความเร็วโจมตีของอาวุธเป็นระดับสูงมาก และเมื่อโจมตีจะเผาผลาญพลังวิญญาณ\n\nของศัตรู เหมาะกับสายต่อสู้/ล่าบอส
         </Desc>
         <Selections>
@@ -162,7 +161,6 @@
             </li>
         </Selections>
     </Story>
-    
     <Story Name="xaou2000" Parent="BaseFillingStory">
         <DisplayName>ปลดล็อกวิชาบ่มเพาะ</DisplayName>
         <Desc>เลือกวิชาที่ต้องการ </Desc>
@@ -202,10 +200,7 @@
                 </OKResult>
             </li>
         </Selections>
-    </Story>
-
-    
-                    
+    </Story>                 
     <Story Name="xaou1000" Parent="BaseFillingStory">
         <DisplayName>ปลดล็อควิชาบ่มเพาะ (ระดับสวรรค์)</DisplayName>
         <Desc>รวมคำสั่งพิเศษและเครื่องมือช่วยเล่น</Desc>
@@ -247,9 +242,6 @@
             </li>
         </Selections>
     </Story>
-
-    
-    <!-- ===== น่าอธิบายรายละเอียด ===== -->
 
 
 
