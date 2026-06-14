@@ -1,0 +1,19 @@
+<li><Display>อาหาร / วัตถุดิบ</Display><OKResult>me:TriggerStory("ItemShop_Food");</OKResult></li>
+<li><Display>วัสดุ</Display><OKResult>me:TriggerStory("ItemShop_Material");</OKResult></li>
+<li><Display>โอสถ</Display><OKResult>me:TriggerStory("ItemShop_Dan");</OKResult></li>
+
+<!-- ===== ทดสอบ ===== -->
+
+<Story Name="ItemShop_Material" Parent="BaseFillingStory">
+<DisplayName>วัสดุ</DisplayName>
+<Desc>เลือกไอเทมที่ต้องการเสก</Desc>
+<Selections>
+
+<li><Display>แก่นดารา</Display><OKResult>me:DropAwardItem("Item_StarEssence",1);me:TriggerStory("ItemShop_Material");</OKResult></li>
+<li><Display>ก้อนหินฟ้า</Display><OKResult>me:DropAwardItem("Item_SkyStoneBlock",1);me:TriggerStory("ItemShop_Material");</OKResult></li>
+<li><Display>ก้อนทองแดง</Display><OKResult>me:DropAwardItem("Item_CopperBlock1",1);me:TriggerStory("ItemShop_Material");</OKResult></li>
+
+<li><Display>ย้อนกลับ</Display><OKResult>me:TriggerStory("ItemShop_Main");</OKResult></li>
+
+</Selections>
+</Story>
