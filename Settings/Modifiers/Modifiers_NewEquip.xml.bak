@@ -1,0 +1,22 @@
+<ModifierDefs><List>
+
+  <Modifier Name="Modifier_CangLongHanXing" Type="Normal">
+		<DisplayName>苍龙寒星</DisplayName>
+		<Desc>着此衫之凡人拥有刀枪不入之力。</Desc>
+    <Sync>1</Sync>
+		<MaxStack>1</MaxStack>
+		<Duration>-1</Duration>
+		<Display>1</Display>
+    <LuaClassName>Modifier_CangLongHanXing</LuaClassName>
+	</Modifier>
+  <Modifier Name="Modifier_ZhenHuangChiYan" Type="Normal">
+		<DisplayName>真凰炽焰</DisplayName>
+		<Desc>用此弓之凡人可以无坚不摧。</Desc>
+    <Sync>1</Sync>
+		<MaxStack>1</MaxStack>
+		<Duration>-1</Duration>
+		<Display>1</Display>
+    <LuaClassName>Modifier_ZhenHuangChiYan</LuaClassName>
+	</Modifier>
+
+</List></ModifierDefs>
