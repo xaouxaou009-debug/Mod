@@ -1,0 +1,222 @@
+<Stories>
+    <List>
+        <Story Name="asstasst5" Parent="BaseFillingStory">
+            <DisplayName>เมนูฟังก์ชั่นเสริม</DisplayName>
+            <Desc>เลือกรายการที่ต้องการ</Desc>
+            <Selections>
+                
+                <li>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]วาร์ป</Display>
+                    <OKResult>me:TriggerStory("วาร์ป1");</OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]บัพของตัวละคร</Display>
+                    <OKResult>me:TriggerStory("บัพ");</OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#D9534F]✕ ปิดเมนู ✕</Display>
+                    <OKResult></OKResult>
+                </li>
+            </Selections>
+        </Story>
+
+        <Story Name="Xaou_Unlock_AllGong" Parent="BaseFillingStory">
+            <DisplayName>ปลดล็อกวิชา</DisplayName>
+            <Desc>เลือกรายการที่ต้องการ</Desc>
+            <Selections>
+                <li>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]วิชาสายหลักทั้งหมด</Display>
+                    <OKResult>
+                        me:UnLockGong("Gong_1_Shui");
+                        me:UnLockGong("Gong_2_Mu");
+                        me:UnLockGong("Gong_3_Jin");
+                        me:UnLockGong("Gong_4_None");
+                        me:UnLockGong("Gong_5_Tu");
+                        me:UnLockGong("Gong_6_Huo");
+                        me:UnLockGong("Gong_7_Huo");
+                        me:UnLockGong("Gong_8_Jin");
+                        me:UnLockGong("Gong_9_Mu");
+                        me:UnLockGong("Gong_10_Huo");
+                        me:UnLockGong("Gong_11_Tu");
+                        me:UnLockGong("Gong_12_None");
+                        me:UnLockGong("Gong_13_None");
+                        me:UnLockGong("Gong_DaNeng");
+                        me:UnLockGong("Gong_LingShou");
+                        me:UnLockGong("Gong_LOST");
+                        me:UnLockGong("Gong_YaoShou");
+                        me:UnLockGong("God_Gong_1");
+                        me:UnLockGong("God_Gong_2");
+                        me:UnLockGong("God_Gong_3");
+                        me:UnLockGong("Body_Gong_1");
+                        me:UnLockGong("Body_Gong_2");
+                        me:UnLockGong("Body_Gong_3");
+                        me:UnLockGong("Body_Gong_5");
+                        me:TriggerStory("asstasst5");
+                    </OKResult>
+                </li>
+            </Selections>
+        </Story>
+
+
+
+        <!-- เมนูบัพ -->
+        <Story Name="บัพ" Parent="BaseFillingStory">
+            <DisplayName>บัพตัวละคร</DisplayName>
+            <Desc>เลือกรายการที่ต้องการ</Desc>
+            <Selections>
+                <li>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]เกราะมังกรครามดาวหนาว</Display>
+                    <OKResult>me:TriggerStory("บัพ1");</OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]เปลวเพลิงหงส์แท้</Display>
+                    <OKResult>me:TriggerStory("บัพ2");</OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#5CB85C]◀ ย้อนกลับ ◀</Display>
+                    <OKResult>me:TriggerStory("asstasst5");</OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#D9534F]✕ ปิดเมนู ✕</Display>
+                    <OKResult></OKResult>
+                </li>
+            </Selections>
+        </Story>
+
+        <Story Name="บัพ1" Parent="BaseFillingStory">
+            <DisplayName>เกราะมังกรครามดาวหนาว</DisplayName>
+            <Desc>รายละเอียด: ทำให้ผู้ได้รับบัฟอยู่ในสถานะคงกระพัน/โหมดอมตะ ช่วยป้องกันอันตรายรุนแรงจาก\n\nการต่อสู้ เหมาะสำหรับใช้เป็นบัฟป้องกันตัวถาวร</Desc>
+            <Selections>
+                <li>
+                    <Display>[size=19][align=center][color=#6B4A1E]รับบัพเกราะมังกรครามดาวหนาว</Display>
+                    <OKResult>me:AddModifier("Modifier_CangLongHanXing"); me:TriggerStory("บัพ");</OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#5CB85C]◀ ย้อนกลับ ◀</Display>
+                    <OKResult>me:TriggerStory("บัพ");</OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#D9534F]✕ ปิดเมนู ✕</Display>
+                    <OKResult></OKResult>
+                </li>
+            </Selections>
+        </Story>
+
+        <Story Name="บัพ2" Parent="BaseFillingStory">
+            <DisplayName>เปลวเพลิงหงส์แท้</DisplayName>
+            <Desc>รายละเอียด: เพิ่มความเร็วโจมตีของอาวุธเป็นระดับสูงมาก และเมื่อโจมตีจะเผาผลาญพลังวิญญาณ\n\nของศัตรู เหมาะกับสายต่อสู้/ล่าบอส</Desc>
+            <Selections>
+                <li>
+                    <Display>[size=19][align=center][color=#6B4A1E]รับบัพเปลวเพลิงหงส์แท้</Display>
+                    <OKResult>me:AddModifier("Modifier_ZhenHuangChiYan"); me:TriggerStory("บัพ");</OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#5CB85C]◀ ย้อนกลับ ◀</Display>
+                    <OKResult>me:TriggerStory("บัพ");</OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#D9534F]✕ ปิดเมนู ✕</Display>
+                    <OKResult></OKResult>
+                </li>
+            </Selections>
+        </Story>
+
+        <!-- เมนูปลดล็อกวิชา -->
+        <Story Name="ปลด1" Parent="BaseFillingStory">
+            <DisplayName>ปลดล็อกวิชา</DisplayName>
+            <Desc>เลือกรายการที่ต้องการ</Desc>
+            <Selections>
+                <li>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]วิชาสายหลักทั้งหมด</Display>
+                    <OKResult>
+                        me:UnLockGong("Gong_1_Shui");
+                        me:UnLockGong("Gong_2_Mu");
+                        me:UnLockGong("Gong_3_Jin");
+                        me:UnLockGong("Gong_4_None");
+                        me:UnLockGong("Gong_5_Tu");
+                        me:UnLockGong("Gong_6_Huo");
+                        me:UnLockGong("Gong_7_Huo");
+                        me:UnLockGong("Gong_8_Jin");
+                        me:UnLockGong("Gong_9_Mu");
+                        me:UnLockGong("Gong_10_Huo");
+                        me:UnLockGong("Gong_11_Tu");
+                        me:UnLockGong("Gong_12_None");
+                        me:UnLockGong("Gong_13_None");
+                        me:UnLockGong("Gong_DaNeng");
+                        me:UnLockGong("Gong_LingShou");
+                        me:UnLockGong("Gong_LOST");
+                        me:UnLockGong("Gong_YaoShou");
+                        me:UnLockGong("God_Gong_1");
+                        me:UnLockGong("God_Gong_2");
+                        me:UnLockGong("God_Gong_3");
+                        me:UnLockGong("Body_Gong_1");
+                        me:UnLockGong("Body_Gong_2");
+                        me:UnLockGong("Body_Gong_3");
+                        me:UnLockGong("Body_Gong_5");
+                        me:TriggerStory("ปลด1");
+                    </OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]วิชาระดับสวรรค์ สุ่ม 20 ต่อครั้ง</Display>
+                    <OKResult>
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        world:UnlockRandomGong(4);
+                        me:AddMsg("ปลดล็อกคัมภีร์ระดับสวรรค์ 20 เล่มแล้ว");
+                        me:TriggerStory("ปลด1");
+                    </OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#5CB85C]◀ ย้อนกลับ ◀</Display>
+                    <OKResult>me:TriggerStory("asstasst5");</OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#D9534F]✕ ปิดเมนู ✕</Display>
+                    <OKResult></OKResult>
+                </li>
+            </Selections>
+        </Story>
+
+        <!-- เมนูวาร์ป -->
+        <Story Name="วาร์ป1" Parent="BaseFillingStory">
+            <DisplayName>วาร์ป</DisplayName>
+            <Desc>เลือกรายการที่ต้องการ</Desc>
+            <Selections>
+                <li>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]จักรวาลย่อส่วน</Display>
+                    <OKResult>RPGMapMgr:EnterRPGWorld({me.npcObj}, "RpgQianKun");</OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]สนามประลอง</Display>
+                    <OKResult>RPGMapMgr:EnterRPGWorld({me.npcObj}, "RpgArena");</OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]สนามประลองหยางเทียน</Display>
+                    <OKResult>RPGMapMgr:EnterRPGWorld({me.npcObj}, "RpgArena_YingTian");</OKResult>
+                </li>
+                <li>
+                    <Display>[size=19][align=center][b][color=#6B4A1E]หอคอย</Display>
+                    <OKResult>RPGMapMgr:EnterRPGWorld({me.npcObj}, "RpgTower");</OKResult>
+                </li>
+                
+            </Selections>
+        </Story>
+    </List>
+</Stories>
