@@ -1,0 +1,29 @@
+{
+  "Name": "Xaou009_ACS_Mod",
+  "DisplayName": "Xaou009 ACS Mod : เครื่องมือเสริม",
+  "GameVersion": 1.268,
+  "Version": 2.1,
+  "Desc": "[ม็อดมือถือ / Mobile Mod]\r\nผู้พัฒนา: Xaou009",
+  "Author": "Xaou009",
+  "UIPackage": "UI/Sample",
+  "ID": "900009009",
+  "Flag": -443513471,
+  "Tags": [
+    "Gong",
+    "Esoterica",
+    "Elixir",
+    "Item",
+    "Equipment",
+    "Building",
+    "Function",
+    "Usability",
+    "Integrated",
+    "ExcludeRealmsHeaven"
+  ],
+  "IncreasedDesc": "เพิ่มฟังก์ชันเสริมสำหรับจัดการไอเทม คัมภีร์ NPC ระบบสร้าง เวลา และเมนูช่วยเล่นของ Xaou009",
+  "IsInsideCreat": false,
+  "Previews": [
+    "Xaou009_ACS_Mod.png"
+  ],
+  "ParentModInfo": null
+}
