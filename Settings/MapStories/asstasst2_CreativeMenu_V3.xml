@@ -1,0 +1,266 @@
+<Stories>
+    <List>
+        
+        
+        
+        
+                
+                    
+                
+        
+        <Story Name="LBQDZLZMNQ" Parent="BaseFillingStory">
+            <DisplayName>🎁 ฟังก์ชันเสริม</DisplayName>
+            <Desc>รวมคำสั่งพิเศษและเครื่องมือช่วยเล่น</Desc>
+            <Selections>
+                <li>
+                    <Display>◀ ย้อนกลับ</Display>
+                    <OKResult>me:TriggerStory("Game_Modifier");</OKResult>
+                </li>
+                <li>
+                    <Display>“หีบสมบัติคัมภีร์เซียน(สุ่ม)</Display>
+                    <OKResult>
+					
+				story:RemoveBindItem();
+				local nR = me:RandomInt(1, 10);
+				if nR &lt;= 5 then
+					me:AddMsg("หีบลับของ [NAME] เปล่งแสงสลัวออกมา ก่อนจะหลอมรวมเป็นคัมภีร์วิชาคุณภาพต่ำสุดแสนหยาบห่วย");world:UnlockRandomGong(1);
+				elseif nR &lt;= 7 then
+					me:AddMsg("หีบลับของ [NAME] เปล่งแสงธรรมดาออกมา ก่อนจะหลอมรวมเป็นคัมภีร์วิชาที่แสนธรรมดาไร้ความโดดเด่น");world:UnlockRandomGong(2);
+        elseif nR &lt;= 9 then
+					me:AddMsg("หีบลับของ [NAME] เปล่งแสงเจิดจ้าออกมา ก่อนจะหลอมรวมเป็นคัมภีร์วิชาที่แฝงไว้ด้วยความลึกล้ำ");world:UnlockRandomGong(3);
+        else
+          me:AddMsg("หีบลับของ [NAME] เปล่งแสงเจิดจ้าราวดวงอาทิตย์ ก่อนจะหลอมรวมเป็นคัมภีร์วิชาอันล้ำลึกเหนือหยั่ง");world:UnlockRandomGong(4);
+				end
+						
+				</OKResult>
+                </li>
+                <li>
+                    <Display>🎁 เปิดหีบหินโบราณ (สุ่ม)</Display>
+                    <OKResult>
+					
+				story:RemoveBindItem();
+				local nR = me:RandomInt(1, 51); 
+				local tIL = {"Wood","Rock","Metal","Weapon"};
+				if nR &lt;= 4 then
+					me:AddMsg("“[NAME] เปิดหีบหินออก และพบเข้ากับผังค่ายกลที่สูญหายไปนานเล่มหนึ่งอยู่ด้านใน”");me:DropEsotericFromCache(story.ItemCache4, 1);
+				elseif nR &lt;= 8 then
+					me:AddMsg("“[NAME] เปิดหีบหินออก และพบว่าด้านในซ่อนวัสดุล้ำค่าจำนวนหนึ่งเอาไว้”");me:DropAwardItemFromCache(story.ItemCache3, 1);
+				elseif nR &lt;= 12 then
+					me:AddMsg("“[NAME] เปิดหีบหินออก และพบว่าด้านในซ่อนสมบัติล้ำค่าโบราณชิ้นหนึ่งไว้ ซึ่งสามารถกดข่มฮวงจุ้ยได้”");me:DropRandomItem(tIL[world:RandomInt(1,#tIL+1)], 7, 11, true);
+				elseif nR &lt;= 15 then
+					me:AddMsg("“[NAME] เปิดหีบหินออก และพบหนังสือเล่มหนึ่งอยู่ด้านในอย่างคาดไม่ถึง”");me:DropEsotericFromCache(story.ItemCache, 1);
+				elseif nR &lt;= 18 then
+					me:AddMsg("“[NAME] เปิดหีบหินออก และพบวิชาอภินิหารบทหนึ่งอยู่ภายในอย่างไม่น่าเชื่อ”");me:DropEsotericFromCache(story.ItemCache2, 1);
+				elseif nR &lt;= 21 then
+					me:AddMsg("“[NAME] เปิดหีบหินออก และพบคัมภีร์ลับเล่มหนึ่งอยู่ภายในอย่างไม่น่าเชื่อ”");me:DropRandomItem("Esoterica");
+        elseif nR &lt;= 24 then  
+          if world:IsGongUnLocked("Gong_2_Mu") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีพุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้ความพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนาน”");me:UnLockGong("Gong_2_Mu");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบหนังสือเล่มหนึ่งอยู่ภายในอย่างคาดไม่ถึง”");me:DropEsotericFromCache(story.ItemCache, 1);
+					end
+        elseif nR &lt;= 27 then  
+          if world:IsGongUnLocked("Gong_3_Jin") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("Gong_3_Jin");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบวิชาอภินิหารบทหนึ่งอยู่ภายในอย่างไม่น่าเชื่อ”");me:DropEsotericFromCache(story.ItemCache2, 1);
+					end
+        elseif nR &lt;= 30 then  
+          if world:IsGongUnLocked("Gong_4_None") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("Gong_4_None");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบวัตถุดิบล้ำค่าจำนวนหนึ่งซ่อนอยู่ภายใน”");me:DropAwardItemFromCache(story.ItemCache3, 1);
+					end
+        elseif nR &lt;= 33 then  
+          if world:IsGongUnLocked("Gong_6_Huo") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("Gong_6_Huo");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบสมบัติล้ำค่าสมัยโบราณชิ้นหนึ่งอยู่ภายใน ซึ่งสามารถกดข่มฮวงจุ้ยได้”");me:DropRandomItem(tIL[world:RandomInt(1,#tIL+1)], 7, 11, true);
+					end
+        elseif nR &lt;= 36 then  
+          if world:IsGongUnLocked("Gong_7_Huo") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("Gong_7_Huo");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบผังค่ายกลที่สูญหายไปนานเล่มหนึ่งอยู่ภายใน”");me:DropEsotericFromCache(story.ItemCache4, 1);
+					end
+        elseif nR &lt;= 39 then
+					if world:IsGongUnLocked("Gong_5_Tu") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("Gong_5_Tu");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบผังค่ายกลที่สูญหายไปนานเล่มหนึ่งอยู่ภายใน”");me:DropEsotericFromCache(story.ItemCache4, 1);
+					end
+        elseif nR &lt;= 42 then  
+          if world:IsGongUnLocked("Gong_12_None") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("Gong_12_None");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบหนังสือเล่มหนึ่งอยู่ภายในอย่างคาดไม่ถึง”");me:DropEsotericFromCache(story.ItemCache, 1);
+					end
+        elseif nR &lt;= 45 then  
+          if world:IsGongUnLocked("God_Gong_1") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("God_Gong_1");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบวิชาอภินิหารบทหนึ่งอยู่ภายในอย่างไม่น่าเชื่อ”");me:DropEsotericFromCache(story.ItemCache2, 1);
+					end
+        elseif nR &lt;= 48 then  
+          if world:IsGongUnLocked("God_Gong_2") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("God_Gong_2");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบวัตถุดิบล้ำค่าจำนวนหนึ่งซ่อนอยู่ภายใน”");me:DropAwardItemFromCache(story.ItemCache3, 1);
+					end
+        elseif nR &lt;= 51 then  
+          if world:IsGongUnLocked("God_Gong_3") == false then
+						me:AddMsg("“[NAME] เปิดหีบหินออก ทันใดนั้นแสงเจ็ดสีก็พุ่งทะยานขึ้นสู่ท้องฟ้า ภายในหีบหินธรรมดาไร้สิ่งพิเศษนี้ กลับซ่อนการสืบทอดวิชาบำเพ็ญโบราณที่สูญหายไปนานเล่มหนึ่งเอาไว้”");me:UnLockGong("God_Gong_3");   
+					else
+						me:AddMsg("“[NAME] เปิดหีบหินออก และพบสมบัติล้ำค่าสมัยโบราณชิ้นหนึ่งอยู่ภายใน ซึ่งสามารถกดข่มฮวงจุ้ยได้”");me:DropRandomItem(tIL[world:RandomInt(1,#tIL+1)], 7, 11, true);
+					end
+				end
+						
+				</OKResult>
+                </li>
+                
+                <li>
+                    <Display>📚 สุ่มคัมภีร์ระดับสูง x1</Display>
+                    <OKResult>
+world:UnlockRandomGong(4);
+me:AddMsg("ปลดล็อกคัมภีร์ระดับสูง 1 เล่มแล้ว");
+me:TriggerStory("LBQDZLZMNQ");
+</OKResult>
+                </li>                            
+                <li>
+                    <Display>📖 ปลดล็อกคัมภีร์หลักชุดที่ 1</Display>
+                    <OKResult>
+me:UnLockGong("Gong_2_Mu");
+me:UnLockGong("Gong_3_Jin");
+me:UnLockGong("Gong_4_None");
+me:UnLockGong("Gong_5_Tu");
+me:TriggerStory("LBQDZLZMNQ");
+</OKResult>
+                </li>
+                <li>
+                    <Display>✨ ปลดล็อกคัมภีร์เทพ</Display>
+                    <OKResult>
+me:UnLockGong("God_Gong_1");
+me:UnLockGong("God_Gong_2");
+me:UnLockGong("God_Gong_3");
+me:TriggerStory("LBQDZLZMNQ");
+</OKResult>
+                </li>
+                <li>
+                    <Display>📖 เสกหนังสือทั่วไป x1</Display>
+                    <OKResult>
+me:DropEsotericFromCache(story.ItemCache, 1);
+me:TriggerStory("LBQDZLZMNQ");
+</OKResult>
+                </li>
+                <li>
+                    <Display>✨ เสกวิชาอภินิหาร x1</Display>
+                    <OKResult>
+me:DropEsotericFromCache(story.ItemCache2, 1);
+me:TriggerStory("LBQDZLZMNQ");
+</OKResult>
+                </li>
+                <li>
+                    <Display>โอสถวิญญาณมหาศาล</Display>
+                    <OKResult>me:AddModifier("Dan_YiLing76");</OKResult>
+                </li>
+
+                
+                
+            </Selections>
+        </Story>
+       
+       
+       
+        
+        
+       
+       
+      
+      
+       
+        
+       
+        
+        
+       
+   
+  
+        
+       
+        
+      
+        
+        
+    
+     
+      
+     
+    
+       
+     
+        
+
+        
+        <Story Name="BuildMode_ChangeSeason">
+            <DisplayName>แก้ไขฤดูกาล</DisplayName>
+            <Desc>ต้องการพลิกเปลี่ยนกาลฤดูเป็นช่วงใด</Desc>
+            <Kind>None</Kind>
+            <Selections>
+                <li>
+                    <Display>◀ ย้อนกลับ</Display>
+                    <OKResult>me:TriggerStory("TQSJJJXG");</OKResult>
+                </li>
+                <li>
+                    <Display>ฤดูใบไม้ผลิ</Display>
+                    <OKResult> GameMain:GetMod("BuildModeHelper"):ChangeDay(14)</OKResult>
+                </li>
+                <li>
+                    <Display>ฤดูร้อน</Display>
+                    <OKResult> GameMain:GetMod("BuildModeHelper"):ChangeDay(42)</OKResult>
+                </li>
+                <li>
+                    <Display>ฤดูใบไม้ร่วง</Display>
+                    <OKResult>GameMain:GetMod("BuildModeHelper"):ChangeDay(75)</OKResult>
+                </li>
+                <li>
+                    <Display>ฤดูหนาว</Display>
+                    <OKResult>GameMain:GetMod("BuildModeHelper"):ChangeDay(98)</OKResult>
+                </li>
+            </Selections>
+        </Story>
+        <Story Name="BuildMode_ChangeWeather">
+            <DisplayName>แก้ไขสภาพอากาศ</DisplayName>
+            <Desc>ต้องการแก้ไขสภาพอากาศแบบไหนเหรอ</Desc>
+            <Selections>
+                <li>
+                    <Display>◀ ย้อนกลับ</Display>
+                    <OKResult>me:TriggerStory("TQSJJJXG");</OKResult>
+                </li>
+                <li>
+                    <Display>ฝนตกเบาๆหิมะตกเบาๆ</Display>
+                    <OKResult> GameMain:GetMod("BuildModeHelper"):ChangeWeather("LightRain")</OKResult>
+                </li>
+                <li>
+                    <Display>ฝนตกหนัก / หิมะตกหนัก</Display>
+                    <OKResult> GameMain:GetMod("BuildModeHelper"):ChangeWeather("HeavyRain")</OKResult>
+                </li>
+                <li>
+                    <Display>พายุธุลี</Display>
+                    <OKResult>GameMain:GetMod("BuildModeHelper"):ChangeWeather("DustStorm")</OKResult>
+                </li>
+                <li>
+                    <Display>กลางคืน</Display>
+                    <OKResult>GameMain:GetMod("BuildModeHelper"):ChangeWeather("PermanentNight")</OKResult>
+                </li>
+                <li>
+                    <Display>พายุสายฟ้า</Display>
+                    <OKResult>GameMain:GetMod("BuildModeHelper"):ChangeWeather("LightningStorm")</OKResult>
+                </li>
+                <li>
+                    <Display>ล้างสภาพอากาศทั้งหมด</Display>
+                    <OKResult>World.Weather:ClearAllWeather();  </OKResult>
+                </li>
+            </Selections>
+        </Story>
+    </List>
+</Stories>

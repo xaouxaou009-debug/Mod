@@ -1,0 +1,52 @@
+<ModifierDefs><List>  
+
+  <Modifier Name="Boss_Qianghua" Type="Normal"> <!--使用丹药召唤的BOSS可以根据幽淬次数强化属性-->
+		<DisplayName>强化</DisplayName>
+		<MaxStack>1</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<Properties>
+			<li Name="NpcLingMaxValue" AddP="500"/>
+			
+			<li Name="NpcFight_FabaoPowerAddP" AddP="20"/>
+			<li Name="NpcFight_FabaoPowerAddP" BAddP="5"/>
+			<li Name="NpcFight_FabaoMaxLingAddP" AddP="40"/>
+			<li Name="NpcFight_FabaoLingRecoverAddP" AddP="50"/>
+			
+			<li Name="NpcFight_SpellPowerAddP" AddP="20"/>
+			<li Name="NpcFight_SpellPowerAddP" BAddP="5"/>
+			
+			<li Name="NpcFight_ShieldConversionRate" AddV="0.1"/>
+		</Properties>
+	</Modifier>
+  
+  <Modifier Name="Boss_Qianghua_Part" Type="Normal"> <!--BOSS部位的强化-->
+		<DisplayName>部位强化</DisplayName>
+		<MaxStack>1</MaxStack>
+		<Duration>-1</Duration>
+		<Display>0</Display>
+		<Properties>
+			<li Name="NpcLingMaxValue" AddP="100"/>
+			
+			<li Name="NpcFight_ShieldConversionRate" AddV="0.1"/>
+		</Properties>
+	</Modifier>
+  
+  <Modifier Name="Boss_Barrier" Type="Normal"> <!--强化倍数超过一定值就会增加屏障-->
+		<DisplayName>灵气屏障</DisplayName>
+		<Desc>拥有灵气屏障，可以无效化过大的伤害。</Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>-1</Duration>
+		<Display>1</Display>
+    <LuaClassName>modifier_boss_barrier</LuaClassName>
+	</Modifier>
+  <Modifier Name="Boss_Immunity" Type="Normal"> <!--强化倍数超过一定值就会增加物免-->
+		<DisplayName>物理免疫</DisplayName>
+		<Desc>拥有物理免疫能力，在灵气归零以前不会受到物理伤害。</Desc>
+		<MaxStack>1</MaxStack>
+		<Duration>-1</Duration>
+		<Display>1</Display>
+    <LuaClassName>modifier_boss_immunity</LuaClassName>
+	</Modifier>
+
+</List></ModifierDefs>
