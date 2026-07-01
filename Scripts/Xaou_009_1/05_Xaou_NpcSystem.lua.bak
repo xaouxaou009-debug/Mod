@@ -1,0 +1,382 @@
+-- ============================================================
+-- XAOU NPC SYSTEM / UI
+-- ============================================================
+pcall(require, 'Scripts/Xaou_009_1/00_Xaou_Lang.lua')
+local function XL(key, fallback)
+    if Xaou_T ~= nil then return Xaou_T(key, fallback) end
+    return tostring(fallback or key or '')
+end
+local function XA(text)
+    if Xaou_AutoText ~= nil then return Xaou_AutoText(text) end
+    return tostring(text or '')
+end
+
+
+-- ============================================================
+-- External NPC Selector Bridge
+-- เรียกหน้าต่าง NPC Selector จากม็อดแยก
+-- ============================================================
+function Xaou_OpenExternalNpcSelector()
+    local ok = false
+
+    if Xaou_NpcSelector ~= nil and type(Xaou_NpcSelector.Open) == "function" then
+        ok = pcall(function()
+            Xaou_NpcSelector.Open()
+        end)
+    end
+
+    if ok then return true end
+
+    if WorldLua ~= nil and WorldLua.ShowMsg ~= nil then
+        pcall(function()
+            WorldLua:ShowMsg("ยังไม่ได้ติดตั้งม็อด NPC Selector")
+        end)
+    elseif Xaou_Show ~= nil then
+        pcall(function()
+            Xaou_Show("ยังไม่ได้ติดตั้งม็อด NPC Selector", "NPC Selector")
+        end)
+    end
+
+    return false
+end
+
+
+
+if XaouItemWindow == nil and _G ~= nil then
+    XaouItemWindow = _G.XaouItemWindow
+end
+
+function XaouItemWindow:SetNpcTarget(npc)
+    Xaou_CurrentNpcTarget = npc
+    self.npcTarget = npc
+end
+
+
+function Xaou_NpcActionSummary(cmd)
+    if cmd == nil then return "" end
+    if cmd.page ~= nil then return XA("เปิดหน้า") end
+    if cmd.note ~= nil then return tostring(cmd.note) end
+    if type(cmd.actions) ~= "table" then return "" end
+    if #cmd.actions == 1 then
+        local a = cmd.actions[1]
+        local k = tostring(a.kind or "")
+        if k == "modifier" then
+            return tostring(a.prop or "") .. " " .. tostring(a.value or "")
+        elseif k == "addmodifier" then
+            return XA("บัฟ") .. " " .. tostring(a.id or a.modifier or "")
+        elseif k == "story" then
+            return "Story: " .. tostring(a.story or a.name or "")
+        elseif k == "raw" or k == "lua" then
+            return XA("คำสั่ง Lua")
+        elseif k == "message" then
+            return XA("ข้อความ")
+        elseif k == "url" then
+            return XA("เปิดลิงก์")
+        elseif k == "randomgong" then
+            return "สุ่มคัมภีร์ x" .. tostring(a.times or 1)
+        elseif k == "unlockgong" then
+            return XA("ปลดล็อก") .. " " .. tostring(a.gong or a.id or "")
+        elseif k == "enter_qiankun" then
+            return "เข้า RpgQianKun"
+        elseif k == "modfunc" then
+            return "ModFunc: " .. tostring(a.func or "")
+        end
+    end
+    return XA("หลายคำสั่ง") .. " x" .. tostring(#cmd.actions)
+end
+
+function Xaou_NpcKindText(cmd)
+    if cmd == nil then return "" end
+    if cmd.page ~= nil then return XA("เมนู") end
+    if cmd.actions ~= nil then return XA("ปรับค่า") end
+    return XA("ข้อมูล")
+end
+
+function Xaou_MatchNpcCommand(cmd, keyword)
+    keyword = tostring(keyword or "")
+    if keyword == "" or keyword == XL("search.placeholder", "ค้นหา ID/ชื่อ") then return true end
+    keyword = string.lower(keyword)
+    local text = tostring(cmd and cmd.text or "")
+    local note = tostring(cmd and cmd.note or "")
+    local value = Xaou_NpcActionSummary(cmd)
+    if string.find(string.lower(text), keyword, 1, true) then return true end
+    if string.find(string.lower(note), keyword, 1, true) then return true end
+    if string.find(string.lower(tostring(value)), keyword, 1, true) then return true end
+    if cmd ~= nil and type(cmd.actions) == "table" then
+        for _, a in ipairs(cmd.actions) do
+            if string.find(string.lower(tostring(a.prop or a.id or "")), keyword, 1, true) then return true end
+        end
+    end
+    return false
+end
+
+function XaouItemWindow:RefreshNpcPage()
+    self:ClearItemButtons()
+    self.itemButtons = {}
+    self.buttonData = {}
+    self.favButtonData = {}
+    self.npcButtonData = {}
+
+    self.npcPage = self.npcPage or "quick"
+    if tostring(self.npcPage) == "main" then
+        self.npcPage = "quick"
+    end
+
+    local npcName = Xaou_SafeNpcName(self.npcTarget or Xaou_CurrentNpcTarget)
+    local pageName = Xaou_GetNpcPageTitle(self.npcPage)
+
+    if self.statusLine1 ~= nil then
+        self.statusLine1.m_title.text = string.format(XL("status.npc.line1", "โหมด : NPC | หมวด : %s | เป้าหมาย : %s"), tostring(XA(pageName)), tostring(npcName))
+    end
+    if self.statusLine2 ~= nil then
+        if self.npcTarget == nil and Xaou_CurrentNpcTarget == nil then
+            self.statusLine2.m_title.text = XL("status.npc.no_target", "ยังไม่ได้เลือก NPC : ให้เปิดจากปุ่มบนตัวละคร/NPC")
+        else
+            self.statusLine2.m_title.text = XL("status.npc.help", "เลือกหมวดซ้าย แล้วกดปุ่มคำสั่งด้านขวาได้ทันที")
+        end
+    end
+
+    -- ===========================
+    -- NPC Grid Layout
+    -- ซ้าย = หมวด NPC / ขวา = คำสั่งแบบปุ่ม Grid
+    -- ===========================
+    local menuX = -90
+    local menuY = 185
+    local menuW = 150
+    local menuH = 45
+    local menuGap = 8
+    local menus = {
+        {text=XA("การตั่งค่าแบบด่วน"), page="quick"},
+        {text=XA("ตัวละคร"), page="character"},
+            -- {text="ต่อสู้", page="combat"},
+            -- {text="งาน", page="work"},
+        {text=XA("ยกเลิกการบัพ"), page="cancel"},
+        {text=XA("เพิ่มเติม"), page="more"},
+        {text=XA("NPC สำนักอื่น"), page="jianghu"},
+        {text=XA("NPC จากม็อด"), func="OpenNpcSelector"},
+       
+        
+    }
+
+
+    -- ระบบแบ่งหน้าหมวด NPC ด้านซ้าย
+    -- ทำให้ปุ่มเปลี่ยนหน้าเป็นรูปแบบเดียวกับระบบคัมภีร์
+    table.insert(self.itemButtons, menuTitle)
+
+    local maxMenu = 5 -- จำนวนหมวดที่แสดงต่อหน้า ปรับเพิ่ม/ลดได้
+    self.npcMenuPage = self.npcMenuPage or 1
+    local maxMenuPage = math.ceil(#menus / maxMenu)
+    if maxMenuPage < 1 then maxMenuPage = 1 end
+    if self.npcMenuPage < 1 then self.npcMenuPage = 1 end
+    if self.npcMenuPage > maxMenuPage then self.npcMenuPage = maxMenuPage end
+
+    local startMenu = (self.npcMenuPage - 1) * maxMenu + 1
+    local endMenu = startMenu + maxMenu - 1
+    local showMenuIndex = 0
+
+    for i = startMenu, endMenu do
+        local m = menus[i]
+        if m ~= nil then
+            showMenuIndex = showMenuIndex + 1
+            local n = "btnNpcMenu" .. tostring(showMenuIndex)
+            local label = tostring(m.text or "")
+            local curPage = tostring(self.npcPage)
+            local menuPage = tostring(m.page)
+            if curPage == menuPage or (menuPage == "jianghu" and string.find(curPage, "jianghu_p", 1, true) == 1) or (menuPage == "jianghu" and string.sub(curPage, 1, 6) == "jhnpc_") then
+                label = "▶ " .. label
+            end
+            local clickFunc = nil
+            if m.func ~= nil and tostring(m.func) == "OpenNpcSelector" then
+                clickFunc = function()
+                    Xaou_OpenExternalNpcSelector()
+                end
+            end
+
+            local b = self:AddButton(n, label, menuX, menuY + (showMenuIndex-1)*(menuH+menuGap), menuW, menuH, clickFunc)
+            b.tooltips = XA("เปิดหมวด") .. " " .. tostring(m.text) .. "\n" .. XA("หน้าหมวด") .. ": " .. tostring(self.npcMenuPage) .. "/" .. tostring(maxMenuPage)
+            self.npcButtonData[n] = {page=m.page, func=m.func}
+            table.insert(self.itemButtons, b)
+        end
+    end
+
+    -- ปุ่มเปลี่ยนหน้าหมวด NPC ด้านซ้าย แบบเดียวกับคัมภีร์
+    local menuPageY = menuY + maxMenu * (menuH + menuGap)
+    local btnMenuPrev = self:AddButton("btnNpcMenuPrev", "◀", menuX, menuPageY, 50, menuH,
+    function()
+    
+        self.npcMenuPage = math.max(1, (self.npcMenuPage or 1) - 1)
+        self:RefreshNpcPage()
+    
+    end)
+    
+    local btnMenuPage = self:AddButton("btnNpcMenuPage", tostring(self.npcMenuPage) .. "/" .. tostring(maxMenuPage), menuX + 54, menuPageY, 52, menuH, nil)
+    btnMenuPage.tooltips = XA("หน้าหมวด NPC")
+    table.insert(self.itemButtons, btnMenuPage)
+
+    local btnMenuNext = self:AddButton("btnNpcMenuNext", "▶", menuX + 110, menuPageY, 50, menuH,
+    function()
+    
+        local maxMenuPage = math.ceil(#menus / maxMenu)
+    
+        self.npcMenuPage = math.min(maxMenuPage, (self.npcMenuPage or 1) + 1)
+        self:RefreshNpcPage()
+    
+    end)
+
+    -- กล่องข้อมูลเป้าหมายด้านขวาบน
+    local infoX = 700
+    local infoY = 105
+    local infoW = 200
+    local targetText = XA("เป้าหมาย NPC") .. "\n" .. tostring(npcName)
+    local realNpc = Xaou_GetRealNpcObject(self.npcTarget or Xaou_CurrentNpcTarget)
+    if realNpc ~= nil then
+        local hasPM = false
+        local hasAdd = false
+        pcall(function() hasPM = realNpc.PropertyMgr ~= nil end)
+        pcall(function() hasAdd = realNpc.AddModifier ~= nil end)
+        targetText = targetText .. "\nPM:" .. tostring(hasPM) .. " | Add:" .. tostring(hasAdd)
+    end
+    local infoBtn = self:AddButton("npcTargetInfo", targetText, infoX, infoY, infoW, 78, nil)
+    infoBtn.tooltips = XA("NPC ที่เลือกจากปุ่มบนตัวละคร")
+    table.insert(self.itemButtons, infoBtn)
+
+    -- หัวรายการคำสั่งด้านขวา
+    local gridX = 150
+    local gridY = 185
+    local gridW = 745
+    local header = self:AddButton("npcGridHeader", XA("รายการคำสั่ง NPC") .. " : " .. tostring(XA(pageName)), gridX, gridY - 350, gridW, 30, nil)
+    table.insert(self.itemButtons, header)
+
+    -- ค้นหา/กรองคำสั่ง
+    local keyword = tostring(self.searchKeyword or "")
+    local rawList = {}
+
+    if keyword ~= "" then
+        local pages = {"quick", "character", "combat", "work", "cancel", "more", "sect", "world", "beast", "qianKun", "system", "debug", "jianghu_all"}
+
+        for _, p in ipairs(pages) do
+            local cmds = Xaou_GetNpcCommands(p)
+            for _, cmd in ipairs(cmds) do
+                table.insert(rawList, cmd)
+            end
+        end
+    else
+        rawList = Xaou_GetNpcCommands(self.npcPage)
+    end
+
+    local list = {}
+    for _, cmd in ipairs(rawList) do
+        if Xaou_MatchNpcCommand(cmd, keyword) then
+            table.insert(list, cmd)
+        end
+    end
+
+    -- Grid ปุ่มคำสั่งตรงกลาง: 2 คอลัมน์ + แบ่งหน้าแบบหน้าคัมภีร์
+    -- แตะเฉพาะคำสั่งตรงกลาง ไม่ยุ่งหมวดซ้าย/เมนูขวา
+    local cols = 2
+    local cellW = 360
+    local cellH = 38
+    local gapX = 12
+    local gapY = 7
+    local maxButtons = 8 -- 2 คอลัมน์ x 4 แถว ต่อหน้า
+
+    local cmdPageKey = tostring(self.npcPage or "") .. "|" .. tostring(keyword or "")
+    if self.npcCmdPageKey ~= cmdPageKey then
+        self.npcCmdPage = 1
+        self.npcCmdPageKey = cmdPageKey
+    end
+
+    local maxCmdPage = math.ceil(#list / maxButtons)
+    if maxCmdPage < 1 then maxCmdPage = 1 end
+
+    self.npcCmdPage = self.npcCmdPage or 1
+    if self.npcCmdPage < 1 then self.npcCmdPage = 1 end
+    if self.npcCmdPage > maxCmdPage then self.npcCmdPage = maxCmdPage end
+    self.npcCmdMaxPage = maxCmdPage
+
+    local startCmd = (self.npcCmdPage - 1) * maxButtons + 1
+    local endCmd = startCmd + maxButtons - 1
+    local showCmdIndex = 0
+
+    for i = startCmd, endCmd do
+        local cmd = list[i]
+        if cmd ~= nil then
+            showCmdIndex = showCmdIndex + 1
+            local idx = showCmdIndex - 1
+            local col = idx % cols
+            local row = math.floor(idx / cols)
+            local x = gridX + col * (cellW + gapX)
+            local y = gridY + row * (cellH + gapY)
+            local btnName = "btnNpcCmd" .. tostring(showCmdIndex)
+
+            local text = XA(tostring(cmd.text or ""))
+            text = string.gsub(text, "^%d+%.%s*", "")
+            if cmd.page ~= nil then
+                if tostring(cmd.page) == "main" then
+                    text = XA("◀ กลับ")
+                elseif string.find(text, "กลับ", 1, true) == nil and string.find(text, "Back", 1, true) == nil then
+                    text = text
+                end
+            end
+
+            local b = self:AddButton(btnName, text, x, y, cellW, cellH, nil)
+            local tip = "NPC : " .. npcName .. "\n" .. XA(tostring(cmd.text or ""))
+            local summary = Xaou_NpcActionSummary(cmd)
+            if summary ~= "" then
+                tip = tip .. "\n" .. tostring(summary)
+            end
+            b.tooltips = tip
+            self.npcButtonData[btnName] = cmd
+            table.insert(self.itemButtons, b)
+        end
+    end
+
+    -- ปุ่มเปลี่ยนหน้าคำสั่งตรงกลาง
+    local cmdPagerY = gridY + 4 * (cellH + gapY) + 8
+    local btnCmdPrev = self:AddButton("btnNpcCmdPrev", XA("◀ ย้อนกลับ"), gridX + 120, cmdPagerY, 180, cellH, nil)
+    btnCmdPrev.tooltips = XA("หน้าคำสั่ง NPC ก่อนหน้า")
+    table.insert(self.itemButtons, btnCmdPrev)
+
+    local btnCmdPage = self:AddButton("btnNpcCmdPage", tostring(self.npcCmdPage) .. "/" .. tostring(maxCmdPage), gridX + 310, cmdPagerY, 110, cellH, nil)
+    btnCmdPage.tooltips = XA("หน้าคำสั่ง NPC")
+    table.insert(self.itemButtons, btnCmdPage)
+
+    local btnCmdNext = self:AddButton("btnNpcCmdNext", XA("ถัดไป ▶"), gridX + 430, cmdPagerY, 180, cellH, nil)
+    btnCmdNext.tooltips = XA("หน้าคำสั่ง NPC ถัดไป")
+    table.insert(self.itemButtons, btnCmdNext)
+
+    if self.pageText ~= nil then
+        self.pageText.m_title.text = "NPC " .. pageName
+    end
+end
+
+-- ===========================
+-- Developer Page
+-- ===========================
+
+
+
+function Xaou_OpenNpcControl(npc)
+    Xaou_CurrentNpcTarget = npc
+    if XaouItemWindow ~= nil then
+        XaouItemWindow:SetNpcTarget(npc)
+        XaouItemWindow.mainMode = "npc"
+        XaouItemWindow.npcPage = "main"
+        XaouItemWindow.amountOpen = false
+        XaouItemWindow.sx = 980
+        XaouItemWindow.sy = 650
+        if Xaou_ApplyWindowSizeTo ~= nil then
+            pcall(function() Xaou_ApplyWindowSizeTo(XaouItemWindow, 980, 620) end)
+        else
+            pcall(function() XaouItemWindow:SetSize(XaouItemWindow.sx, XaouItemWindow.sy) end)
+        end
+        pcall(function() XaouItemWindow:SetTitle(XL("window.title.npc", "เมนูจัดการ NPC")) end)
+        XaouItemWindow:Show()
+        pcall(function() XaouItemWindow:SetTopCategoryVisible(false) end)
+        pcall(function() XaouItemWindow:ForceMainPosition() end)
+        pcall(function() XaouItemWindow:UpdateBottomLayout() end)
+        pcall(function() XaouItemWindow:RefreshList() end)
+    else
+        Xaou_Show(XA("ไม่พบหน้าต่าง XaouItemWindow"), "NPC")
+    end
+end
