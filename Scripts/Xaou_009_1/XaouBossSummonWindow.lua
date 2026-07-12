@@ -107,6 +107,34 @@ local function Xaou_Boss_SetVisible(obj, flag)
     pcall(function() obj.visible = flag end)
 end
 
+local function Xaou_Boss_GetIcon(data)
+    if data == nil then return "" end
+    if data.icon ~= nil and tostring(data.icon) ~= "" then
+        return tostring(data.icon)
+    end
+
+    local icon = ""
+    pcall(function()
+        local mgr = NpcMgr
+        if mgr == nil and CS ~= nil and CS.XiaWorld ~= nil then
+            mgr = CS.XiaWorld.NpcMgr.Instance
+        end
+        if mgr ~= nil then
+            local def = mgr:GetRaceDef(tostring(data.bossId or ""))
+            if def ~= nil and def.TexPath ~= nil then icon = tostring(def.TexPath) end
+        end
+    end)
+    return icon
+end
+
+local function Xaou_Boss_SetIcon(loader, data)
+    if loader == nil then return end
+    local icon = Xaou_Boss_GetIcon(data)
+    pcall(function() loader.url = icon end)
+    pcall(function() loader.icon = icon end)
+    Xaou_Boss_SetVisible(loader, icon ~= "")
+end
+
 local function Xaou_Boss_SetTouchable(obj, flag)
     if obj == nil then return end
     pcall(function() obj.touchable = flag end)
@@ -202,18 +230,21 @@ local function Xaou_Boss_Refresh(view)
     local slots = {
         {
             card = Xaou_Boss_GetChild(view, "card1"),
+            icon = Xaou_Boss_GetChild(view, "card1_icon"),
             name = Xaou_Boss_GetChild(view, "card1_name"),
             desc = Xaou_Boss_GetChild(view, "card1_Desc", "card1_desc"),
             btn  = Xaou_Boss_GetChild(view, "card_btn1", "card1_btn"),
         },
         {
             card = Xaou_Boss_GetChild(view, "card2"),
+            icon = Xaou_Boss_GetChild(view, "card2_icon"),
             name = Xaou_Boss_GetChild(view, "card2_name"),
             desc = Xaou_Boss_GetChild(view, "card2_Desc", "card2_desc"),
             btn  = Xaou_Boss_GetChild(view, "card_btn2", "card2_btn"),
         },
         {
             card = Xaou_Boss_GetChild(view, "card3"),
+            icon = Xaou_Boss_GetChild(view, "card3_icon"),
             name = Xaou_Boss_GetChild(view, "card3_name"),
             desc = Xaou_Boss_GetChild(view, "card3_Desc", "card3_desc"),
             -- ตอนนี้ใน FGUI เห็นชื่อเป็น card_btn13 เลยใส่ไว้ก่อน
@@ -228,6 +259,7 @@ local function Xaou_Boss_Refresh(view)
 
         if data ~= nil then
             Xaou_Boss_SetVisible(slot.card, true)
+            Xaou_Boss_SetIcon(slot.icon, data)
             Xaou_Boss_SetText(slot.name, data.name)
             Xaou_Boss_SetText(slot.desc, data.desc)
             Xaou_Boss_SetText(slot.btn, "เรียกบอส")
@@ -238,6 +270,7 @@ local function Xaou_Boss_Refresh(view)
             end
         else
             Xaou_Boss_SetVisible(slot.card, false)
+            Xaou_Boss_SetIcon(slot.icon, nil)
             Xaou_Boss_SetText(slot.name, "")
             Xaou_Boss_SetText(slot.desc, "")
             Xaou_Boss_SetText(slot.btn, "")
