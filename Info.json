@@ -1,0 +1,14 @@
+{
+  "Name": "Xaou_ModCenter_Standalone",
+  "DisplayName": "ACS_Mod",
+  "GameVersion": 1.268,
+  "Version": 1.6,
+  "Desc": "ศูนย์รวมเครื่องมือ Mod Xaou ",
+  "Author": "xaou",
+  "UIPackage": "UI/XaoCtr",
+  "ID": "970131731",
+  "Tags": ["NPC", "Function", "Usability", "Mobile"],
+  "IncreasedDesc": "",
+  "IsInsideCreat": true,
+  "Previews": []
+}
