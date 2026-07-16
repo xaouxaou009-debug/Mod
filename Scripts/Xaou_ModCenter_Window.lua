@@ -5,38 +5,53 @@ local XMC_CompatShell = false
 local XMC_Page, XMC_PageSize = 1, 6
 local XMC_FeatureData = {}
 local XMC_WindowTitle = "Xaou ACS Mod"
+Xaou_ModCenter_Language = Xaou_ModCenter_Language or "th"
+
+local function xmc_is_english()
+    if Xaou_IsEnglish then return Xaou_IsEnglish() end
+    return Xaou_ModCenter_Language == "en"
+end
+
+local function xmc_t(thai, english)
+    if xmc_is_english() then return english or thai end
+    return thai
+end
 
 local XMC_Sections = {
-    quick = {title="เมนู ฟังก์ชั่น", desc="ฟังก์ชันที่ ACS_Mod มีอยู่ตอนนี้", features={
-        {text="เสกไอเทม", action="item"}, {text="เปิดใจ+เพิ่มความสัมพันธ์", action="jianghu"},
-        {text="เปิดคลังจักรวาล", action="space"}, {text="ไอเทมคูณ2", action="world_tools"},
-        {text="เปิด-ปิด ก่อสร้าง", action="tools"}, 
-        {text="เวลา / ฤดูกาล / อากาศ", action="time_weather"}, {text="เรียกบอส", action="boss"}, 
-        {text="เตาควบคุมอุณหภูมิ", action="building_temp"},
+    quick = {title="เมนู ฟังก์ชั่น", titleEn="Function Menu", desc="ฟังก์ชันที่ ACS_Mod มีอยู่ตอนนี้", descEn="Available ACS_Mod features", features={
+        {text="เสกไอเทม", textEn="Spawn Items", action="item"}, {text="เปิดใจ+เพิ่มความสัมพันธ์", textEn="Open Heart + Max Favor", action="jianghu"},
+        {text="เปิดคลังจักรวาล", textEn="Open Mini Universe", action="space"}, {text="ไอเทมคูณ2", textEn="Double Selected Item", action="world_tools"},
+        {text="เปิด-ปิด ก่อสร้าง", textEn="Construction Tools", action="tools"},
+        {text="เวลา / ฤดูกาล / อากาศ", textEn="Time / Season / Weather", action="time_weather"}, {text="เรียกบอส", textEn="Summon Boss", action="boss"},
+        {text="เตาควบคุมอุณหภูมิ", textEn="Temperature Furnace", action="building_temp"},
+        {text="ตั้งค่า FPS", textEn="Frame Rate Settings", action="fps"},
+        {text="เปิดกล่องไท่อี้ทั้งหมด", textEn="Open All Taiyi Boxes", action="open_taiyi_boxes"},
          
          
     }},
-    npc = {title="ระบบ NPC", desc="จัดการตัวละครและดึงคนเข้าสำนัก", features={
-        {text="แก้ไขค่า NPC ", action="legacy_npc"}, {text="ดึง NPC เข้าสำนัก", action="selector"},
-        {text="เพิ่มค่าสถานะทั้ง 5", action="boost_five_stats"}, {text="ทะลวงขั้นทันที", action="breakthrough_now"},
-        {text="ชุบชีวิต NPC", action="revive_npc"}, {text="ขโมยของ NPC", action="steal_npc_item"},
-        {text="ยืดเวลาทัณฑ์สวรรค์", action="extend_heavenly_tribulation"},
+    npc = {title="ระบบ NPC", titleEn="NPC System", desc="จัดการตัวละครและดึงคนเข้าสำนัก", descEn="Manage characters and recruit NPCs", features={
+        {text="แก้ไขค่า NPC ", textEn="Edit NPC", action="legacy_npc"}, {text="ดึง NPC เข้าสำนัก", textEn="Recruit NPC", action="selector"},
+        {text="เพิ่มค่าสถานะทั้ง 5", textEn="Increase Five Attributes", action="boost_five_stats"}, {text="ทะลวงขั้นทันที", textEn="Break Through Now", action="breakthrough_now"},
+        {text="ชุบชีวิต NPC", textEn="Revive NPC", action="revive_npc"}, {text="ขโมยของ NPC", textEn="Claim Secret Treasure", action="steal_npc_item"},
+        {text="ยืดเวลาทัณฑ์สวรรค์", textEn="Delay Heavenly Tribulation", action="extend_heavenly_tribulation"},
 
 
         
     }},
-    book = {title="คัมภีร์และวิชา", desc="ระบบหอคัมภีร์และการเรียนวิชา", features={
-        {text="เก็บคัมภีร์เข้าหอ", action="bulk_book"}, {text="เรียนวิชา", action="learn"},
-        {text="หนังสือคัมภีร์", action="book_menu"}, 
+    book = {title="คัมภีร์และวิชา", titleEn="Manuals and Arts", desc="ระบบหอคัมภีร์และการเรียนวิชา", descEn="Library and cultivation art tools", features={
+        {text="เก็บคัมภีร์เข้าหอ", textEn="Store Manuals in Library", action="bulk_book"}, {text="เรียนวิชา", textEn="Learn Cultivation Arts", action="learn"},
+        {text="หนังสือคัมภีร์", textEn="Manual Book Tools", action="book_menu"},
         
     }},
-    world = {title="กำลังพัฒนา", desc="กำลังพัฒนา", features={
+    world = {title="กำลังพัฒนา", titleEn="In Development", desc="กำลังพัฒนา", descEn="Features under development", features={
         
        -- {text="เปิดแผนที่วาร์ป", action="warp_map"}, {text="วาร์ป NPC กลับสำนัก", action="warp_home"}, --
        -- {text="เครื่องมือสร้าง", action="tools"}, --
         
     }},
-    developer = {title="ผู้พัฒนา", desc="เครื่องมือเดิมและหน้าทดสอบของ Xaou", features={
+    developer = {title="แจ้งปัญหา", titleEn="Report an Issue", desc="แจ้งปัญหาถึงผู้จัดทำม็อด", descEn="Contact the mod developer", features={
+        {text="Facebook ผู้พัฒนา", textEn="Developer Facebook", action="developer_github"},
+        {text="GitHub ผู้พัฒนา", textEn="Developer GitHub", action="developer_github"},
         -- {text="เปิด Mod Center เดิม", action="legacy_npc"},
         
     }},
@@ -61,7 +76,7 @@ local function xmc_enabled(obj, value)
 end
 local function xmc_name(npc)
     if Xaou_SafeNpcName then return Xaou_SafeNpcName(npc) end
-    local name="NPC เป้าหมาย"; pcall(function() name=tostring(npc.Name or npc:GetName()) end); return name
+    local name=xmc_t("NPC เป้าหมาย", "Target NPC"); pcall(function() name=tostring(npc.Name or npc:GetName()) end); return name
 end
 local function xmc_real_npc(npc)
     if Xaou_GetRealNpcObject then return Xaou_GetRealNpcObject(npc) end
@@ -70,16 +85,16 @@ end
 local function xmc_update_target(view)
     local name=xmc_name(XMC_Target)
     if XMC_CompatShell then
-        xmc_text(xmc_child(view,"subtitle"),"NPC เป้าหมาย: "..name.." | ผู้พัฒนา: Xaou009")
+        xmc_text(xmc_child(view,"subtitle"),xmc_t("NPC เป้าหมาย: ", "Target NPC: ")..name..xmc_t(" | ผู้พัฒนา: Xaou009", " | Developer: Xaou009"))
     else
         xmc_text(xmc_child(view,"npcName"),name)
     end
-    local status="พร้อมใช้งาน"
+    local status=xmc_t("พร้อมใช้งาน", "Ready")
     local real=xmc_real_npc(XMC_Target)
     pcall(function()
         local school=real.SchoolID or 0
         local stage=real.Practice and real.Practice.GongStage or "-"
-        status="สำนัก: "..tostring(school).." | ขั้นฝึกฝน: "..tostring(stage)
+        status=xmc_t("สำนัก: ", "Sect: ")..tostring(school)..xmc_t(" | ขั้นฝึกฝน: ", " | Stage: ")..tostring(stage)
     end)
     if not XMC_CompatShell then xmc_text(xmc_child(view,"npcStatus"),status) end
     local icon=""; pcall(function() icon=tostring(real.Race.TexPath or real.Race.Rolepaint or "") end)
@@ -92,30 +107,42 @@ local function xmc_refresh(view)
     local maxPage=math.max(1,math.ceil(total/XMC_PageSize))
     XMC_Page=math.max(1,math.min(XMC_Page,maxPage))
     local first=(XMC_Page-1)*XMC_PageSize+1
-    xmc_text(xmc_child(view,XMC_CompatShell and "npcName" or "sectionTitle"),section.title)
-    xmc_text(xmc_child(view,XMC_CompatShell and "npcStatus" or "description"),section.desc.."  |  หน้า "..tostring(XMC_Page).."/"..tostring(maxPage))
+    xmc_text(xmc_child(view,XMC_CompatShell and "npcName" or "sectionTitle"),xmc_is_english() and section.titleEn or section.title)
+    local sectionDesc=xmc_is_english() and section.descEn or section.desc
+    xmc_text(xmc_child(view,XMC_CompatShell and "npcStatus" or "description"),sectionDesc..xmc_t("  |  หน้า ", "  |  Page ")..tostring(XMC_Page).."/"..tostring(maxPage))
     XMC_FeatureData={}
     for i=1,XMC_PageSize do
         local btn=xmc_child(view,XMC_CompatShell and (i<=3 and ({"btnOpenHeart","btnMaxFavor","btnRefresh"})[i] or "") or ("feature"..i)); local data=section.features[first+i-1]
-        if data then xmc_text(btn,data.text); XMC_FeatureData[i]=data; xmc_visible(btn,true)
+        if data then xmc_text(btn,xmc_is_english() and data.textEn or data.text); XMC_FeatureData[i]=data; xmc_visible(btn,true)
         else xmc_visible(btn,false) end
     end
     if not XMC_CompatShell then
         local prev,nextb=xmc_child(view,"feature7"),xmc_child(view,"feature8")
-        xmc_text(prev,"◀ ย้อนกลับ");xmc_text(nextb,"ถัดไป ▶")
+        xmc_text(prev,xmc_t("◀ ย้อนกลับ", "◀ Previous"));xmc_text(nextb,xmc_t("ถัดไป ▶", "Next ▶"))
         xmc_visible(prev,true);xmc_visible(nextb,true)
         xmc_enabled(prev,XMC_Page>1);xmc_enabled(nextb,XMC_Page<maxPage)
     end
-    local menus={{"menuQuick","quick","เมนูฟังก์ชั่น"},{"menuNpc","npc","NPC"},{"menuBook","book","คัมภีร์"},{"menuWorld","world","โลก"},{"menuDeveloper","developer","ผู้พัฒนา"}}
+    local menus={{"menuQuick","quick","เมนูฟังก์ชั่น","Functions"},{"menuNpc","npc","NPC","NPC"},{"menuBook","book","คัมภีร์","Manuals"},{"menuWorld","world","โลก","World"},{"menuDeveloper","developer","ผู้พัฒนา","Developer"}}
     for index,m in ipairs(menus) do
         local menuName=XMC_CompatShell and ("npcBtn"..tostring(index)) or m[1]
-        xmc_text(xmc_child(view,menuName),(XMC_Section==m[2] and "▶ " or "")..m[3])
+        xmc_text(xmc_child(view,menuName),(XMC_Section==m[2] and "▶ " or "")..(xmc_is_english() and m[4] or m[3]))
     end
     if XMC_CompatShell then
-        xmc_text(xmc_child(view,"npcBtn6"),"ปิดหน้าต่าง")
+        xmc_text(xmc_child(view,"npcBtn6"),xmc_t("ปิดหน้าต่าง", "Close Window"))
         xmc_visible(xmc_child(view,"btnPrev"),false);xmc_visible(xmc_child(view,"btnNext"),false);xmc_visible(xmc_child(view,"txtPage"),false)
-        xmc_text(xmc_child(view,"hint"),"เลือกหมวดด้านซ้าย แล้วเลือกเครื่องมือด้านขวา")
+        xmc_text(xmc_child(view,"hint"),xmc_t("เลือกหมวดด้านซ้าย แล้วเลือกเครื่องมือด้านขวา", "Choose a category on the left, then select a tool on the right"))
     end
+    xmc_text(xmc_child(view,"btnLanguage"),xmc_t("ภาษา: TH", "Language: EN"))
+end
+
+function Xaou_ToggleModCenterLanguage()
+    local language = xmc_is_english() and "th" or "en"
+    if Xaou_SetLanguage then Xaou_SetLanguage(language) else Xaou_ModCenter_Language = language end
+    if XMC_View then
+        xmc_update_target(XMC_View)
+        xmc_refresh(XMC_View)
+    end
+    return Xaou_ModCenter_Language
 end
 
 function Xaou_CloseStandaloneModCenter()
@@ -130,13 +157,25 @@ local function xmc_open_legacy()
     end
 end
 local function xmc_action(action)
+    if action=="open_taiyi_boxes" then
+        if Xaou_ConfirmOpenAllTaiyiBoxes==nil then pcall(require,'Scripts/Xaou_TaiyiBox_Core.lua') end
+        if Xaou_ConfirmOpenAllTaiyiBoxes then
+            return Xaou_ConfirmOpenAllTaiyiBoxes(XMC_Target)
+        end
+        if world then world:ShowMsgBox(xmc_t("ไม่พบระบบเปิดกล่องไท่อี้", "Taiyi box system was not found")) end
+        return false
+    end
+    if action=="fps" and Xaou_OpenFpsWindow then
+        Xaou_CloseStandaloneModCenter()
+        return Xaou_OpenFpsWindow()
+    end
     if action=="item" and Xaou_OpenItemSpawnerWindow then
         local ok, result = pcall(Xaou_OpenItemSpawnerWindow)
         if ok and result ~= false then
             Xaou_CloseStandaloneModCenter()
             return result
         end
-        if world then world:ShowMsgBox("เปิดหน้าต่างเสกไอเทมไม่สำเร็จ\n"..tostring(result)) end
+        if world then world:ShowMsgBox(xmc_t("เปิดหน้าต่างเสกไอเทมไม่สำเร็จ\n", "Failed to open Item Spawner\n")..tostring(result)) end
         return false
     end
     if action=="jianghu" and Xaou_OpenJianghuRelationsWindow then return Xaou_OpenJianghuRelationsWindow() end
@@ -162,7 +201,7 @@ local function xmc_action(action)
     
         if world then
             world:ShowMsgBox(
-                "เปิดหน้าหนังสือคัมภีร์ไม่สำเร็จ\n"..
+                xmc_t("เปิดหน้าหนังสือคัมภีร์ไม่สำเร็จ\n", "Failed to open Manual Books\n")..
                 tostring(result)
             )
         end
@@ -172,7 +211,7 @@ local function xmc_action(action)
         local target=XMC_Target
         local ok,result=pcall(function() return Xaou_OpenLearnWindow(target) end)
         if ok and result~=false then Xaou_CloseStandaloneModCenter();return result end
-        if world then world:ShowMsgBox("เปิดหน้าเรียนวิชาไม่สำเร็จ\n"..tostring(result)) end
+        if world then world:ShowMsgBox(xmc_t("เปิดหน้าเรียนวิชาไม่สำเร็จ\n", "Failed to open Cultivation Learning\n")..tostring(result)) end
         return false
     end
     if action=="time_weather" then
@@ -186,15 +225,15 @@ local function xmc_action(action)
                 return Xaou_OpenWorldToolsWindow(nil, "climate")
             end)
             if ok and result ~= false then return true end
-            if world then world:ShowMsgBox("เปิดเมนูเวลา / ฤดูกาล / อากาศไม่สำเร็จ\n" .. tostring(result)) end
+            if world then world:ShowMsgBox(xmc_t("เปิดเมนูเวลา / ฤดูกาล / อากาศไม่สำเร็จ\n", "Failed to open Time / Season / Weather\n") .. tostring(result)) end
             return false
         end
-        if world then world:ShowMsgBox("ไม่พบหน้าต่างเครื่องมือเวลา") end
+        if world then world:ShowMsgBox(xmc_t("ไม่พบหน้าต่างเครื่องมือเวลา", "Time tools window was not found")) end
         return false
     end
     if action=="boost_five_stats" then
         if XMC_Target == nil then
-            if world then world:ShowMsgBox("กรุณาเลือก NPC ก่อน") end
+            if world then world:ShowMsgBox(xmc_t("กรุณาเลือก NPC ก่อน", "Please select an NPC first")) end
             return false
         end
 
@@ -204,7 +243,7 @@ local function xmc_action(action)
         end
 
         if Xaou_ApplyNpcActions == nil then
-            if world then world:ShowMsgBox("ไม่พบระบบเพิ่มค่าสถานะ NPC") end
+            if world then world:ShowMsgBox(xmc_t("ไม่พบระบบเพิ่มค่าสถานะ NPC", "NPC attribute system was not found")) end
             return false
         end
 
@@ -215,18 +254,18 @@ local function xmc_action(action)
         end)
 
         if ok and success == true then
-            if world then world:ShowMsgBox("เพิ่มค่าสถานะทั้ง 5 สำเร็จแล้ว") end
+            if world then world:ShowMsgBox(xmc_t("เพิ่มค่าสถานะทั้ง 5 สำเร็จแล้ว", "All five attributes were increased")) end
             return true
         end
 
         if world then
-            world:ShowMsgBox("เพิ่มค่าสถานะไม่สำเร็จ\n" .. tostring(detail or success))
+            world:ShowMsgBox(xmc_t("เพิ่มค่าสถานะไม่สำเร็จ\n", "Failed to increase attributes\n") .. tostring(detail or success))
         end
         return false
     end
     if action=="breakthrough_now" then
         if XMC_Target == nil then
-            if world then world:ShowMsgBox("กรุณาเลือก NPC ก่อน") end
+            if world then world:ShowMsgBox(xmc_t("กรุณาเลือก NPC ก่อน", "Please select an NPC first")) end
             return false
         end
 
@@ -236,7 +275,7 @@ local function xmc_action(action)
         end
 
         if Xaou_ApplyNpcActions == nil then
-            if world then world:ShowMsgBox("ไม่พบระบบจัดการ NPC") end
+            if world then world:ShowMsgBox(xmc_t("ไม่พบระบบจัดการ NPC", "NPC management system was not found")) end
             return false
         end
 
@@ -247,18 +286,18 @@ local function xmc_action(action)
         end)
 
         if ok and success == true then
-            if world then world:ShowMsgBox("ใช้คำสั่งทะลวงขั้นสำเร็จแล้ว") end
+            if world then world:ShowMsgBox(xmc_t("ใช้คำสั่งทะลวงขั้นสำเร็จแล้ว", "Breakthrough command completed")) end
             return true
         end
 
         if world then
-            world:ShowMsgBox("ทะลวงขั้นไม่สำเร็จ\n" .. tostring(detail or success))
+            world:ShowMsgBox(xmc_t("ทะลวงขั้นไม่สำเร็จ\n", "Breakthrough failed\n") .. tostring(detail or success))
         end
         return false
     end
     if action=="revive_npc" or action=="steal_npc_item" then
         if XMC_Target == nil then
-            if world then world:ShowMsgBox("กรุณาเลือก NPC ก่อน") end
+            if world then world:ShowMsgBox(xmc_t("กรุณาเลือก NPC ก่อน", "Please select an NPC first")) end
             return false
         end
 
@@ -268,7 +307,7 @@ local function xmc_action(action)
         end
 
         if Xaou_ApplyNpcActions == nil then
-            if world then world:ShowMsgBox("ไม่พบระบบจัดการ NPC") end
+            if world then world:ShowMsgBox(xmc_t("ไม่พบระบบจัดการ NPC", "NPC management system was not found")) end
             return false
         end
 
@@ -285,13 +324,13 @@ local function xmc_action(action)
 
         if ok and success == true then return true end
         if world then
-            world:ShowMsgBox("เปิดโหมดเลือกเป้าหมายไม่สำเร็จ\n" .. tostring(detail or success))
+            world:ShowMsgBox(xmc_t("เปิดโหมดเลือกเป้าหมายไม่สำเร็จ\n", "Failed to start target selection\n") .. tostring(detail or success))
         end
         return false
     end
     if action=="extend_heavenly_tribulation" then
         if XMC_Target == nil then
-            if world then world:ShowMsgBox("กรุณาเลือก NPC ก่อน") end
+            if world then world:ShowMsgBox(xmc_t("กรุณาเลือก NPC ก่อน", "Please select an NPC first")) end
             return false
         end
 
@@ -301,7 +340,7 @@ local function xmc_action(action)
         end
 
         if Xaou_ApplyNpcActions == nil then
-            if world then world:ShowMsgBox("ไม่พบระบบจัดการ NPC") end
+            if world then world:ShowMsgBox(xmc_t("ไม่พบระบบจัดการ NPC", "NPC management system was not found")) end
             return false
         end
 
@@ -312,12 +351,12 @@ local function xmc_action(action)
         end)
 
         if ok and success == true then
-            if world then world:ShowMsgBox("ยืดเวลาทัณฑ์สวรรค์แล้ว 100 วัน") end
+            if world then world:ShowMsgBox(xmc_t("ยืดเวลาทัณฑ์สวรรค์แล้ว 100 วัน", "Heavenly Tribulation delayed by 100 days")) end
             return true
         end
 
         if world then
-            world:ShowMsgBox("ยืดเวลาทัณฑ์สวรรค์ไม่สำเร็จ\n" .. tostring(detail or success))
+            world:ShowMsgBox(xmc_t("ยืดเวลาทัณฑ์สวรรค์ไม่สำเร็จ\n", "Failed to delay Heavenly Tribulation\n") .. tostring(detail or success))
         end
         return false
     end
@@ -325,7 +364,7 @@ local function xmc_action(action)
         local target=XMC_Target
         local ok,result=pcall(function() return Xaou_OpenBulkEsotericaWindow(target) end)
         if ok and result~=false then Xaou_CloseStandaloneModCenter();return result end
-        if world then world:ShowMsgBox("เปิดหน้าเก็บคัมภีร์ไม่สำเร็จ\n"..tostring(result)) end
+        if world then world:ShowMsgBox(xmc_t("เปิดหน้าเก็บคัมภีร์ไม่สำเร็จ\n", "Failed to open Manual Storage\n")..tostring(result)) end
         return false
     end
     if action=="unlock_all_gong" then
@@ -336,7 +375,7 @@ local function xmc_action(action)
         if Xaou_RunNewBookCommand then
             local ok, success, detail=pcall(function()
                 return Xaou_RunNewBookCommand(XMC_Target, {
-                    text="วิชาสายหลักทั้งหมด",
+                    text=xmc_t("วิชาสายหลักทั้งหมด", "All Main Cultivation Arts"),
                     category="unlock",
                     story="Xaou_Unlock_AllGong",
                 })
@@ -344,14 +383,14 @@ local function xmc_action(action)
     
             if ok and success==true then
                 if world then
-                    world:ShowMsgBox("ปลดล็อกวิชาสายหลักทั้งหมดแล้ว")
+                    world:ShowMsgBox(xmc_t("ปลดล็อกวิชาสายหลักทั้งหมดแล้ว", "All main cultivation arts were unlocked"))
                 end
                 return true
             end
     
             if world then
                 world:ShowMsgBox(
-                    "ปลดล็อกวิชาไม่สำเร็จ\n"..
+                    xmc_t("ปลดล็อกวิชาไม่สำเร็จ\n", "Failed to unlock cultivation arts\n")..
                     tostring(detail or success)
                 )
             end
@@ -362,19 +401,19 @@ local function xmc_action(action)
         local target=XMC_Target
         local ok,result=pcall(function() return Xaou_OpenBookMenuWindow(target) end)
         if ok and result~=false then Xaou_CloseStandaloneModCenter();return result end
-        if world then world:ShowMsgBox("เปิดเมนูคัมภีร์ไม่สำเร็จ\n"..tostring(result)) end
+        if world then world:ShowMsgBox(xmc_t("เปิดเมนูคัมภีร์ไม่สำเร็จ\n", "Failed to open Manual Menu\n")..tostring(result)) end
         return false
     end
     if action=="world_tools" and Xaou_OpenWorldToolsWindow then
         local ok,result=pcall(function() return Xaou_OpenWorldToolsWindow(nil,"world") end)
         if ok and result~=false then Xaou_CloseStandaloneModCenter();return result end
-        if world then world:ShowMsgBox("เปิดเครื่องมือโลกไม่สำเร็จ\n"..tostring(result)) end
+        if world then world:ShowMsgBox(xmc_t("เปิดเครื่องมือโลกไม่สำเร็จ\n", "Failed to open World Tools\n")..tostring(result)) end
         return false
     end
     if action=="space" then
         local opener = Xaou_SpaceRing_OpenOriginalStorageUI
         if opener == nil then
-            if world then world:ShowMsgBox("ไม่พบฟังก์ชันเปิดคลังจักรวาลเดิมของเกม") end
+            if world then world:ShowMsgBox(xmc_t("ไม่พบฟังก์ชันเปิดคลังจักรวาลเดิมของเกม", "The original Mini Universe function was not found")) end
             return false
         end
 
@@ -387,7 +426,30 @@ local function xmc_action(action)
         end
 
         if world then
-            world:ShowMsgBox("เปิดคลังจักรวาลไม่สำเร็จ\n" .. tostring(result))
+            world:ShowMsgBox(xmc_t("เปิดคลังจักรวาลไม่สำเร็จ\n", "Failed to open Mini Universe\n") .. tostring(result))
+        end
+        return false
+    end
+    if action=="developer_github" then
+        local url = "https://github.com/xaouxaou009-debug/Mod"
+        if Xaou_OpenUrl == nil then
+            pcall(require, "Scripts/Xaou_NpcHelper.lua")
+        end
+
+        local ok, success, detail = pcall(function()
+            if Xaou_OpenUrl ~= nil then
+                return Xaou_OpenUrl(url)
+            end
+            if CS and CS.UnityEngine and CS.UnityEngine.Application then
+                CS.UnityEngine.Application.OpenURL(url)
+                return true
+            end
+            error("Application.OpenURL not found")
+        end)
+
+        if ok and success == true then return true end
+        if world then
+            world:ShowMsgBox(xmc_t("เปิด GitHub ไม่สำเร็จ\n", "Failed to open GitHub\n") .. tostring(detail or success))
         end
         return false
     end
@@ -398,7 +460,7 @@ local function xmc_action(action)
     if action=="warp_home" and Xaou_WarpSystem and Xaou_WarpSystem.WarpSelectedNpcHome then return Xaou_WarpSystem.WarpSelectedNpcHome(XMC_Target) end
     if action=="map_info" and Xaou_WarpSystem and Xaou_WarpSystem.DebugMapInfo then return Xaou_WarpSystem.DebugMapInfo() end
     if action=="legacy_npc" then return xmc_open_legacy() end
-    if world then world:ShowMsgBox("ฟังก์ชันนี้ยังไม่พร้อมใช้งาน") end
+    if world then world:ShowMsgBox(xmc_t("ฟังก์ชันนี้ยังไม่พร้อมใช้งาน", "This feature is not available yet")) end
 end
 
 function Xaou_OpenStandaloneModCenter(npc)
@@ -429,7 +491,7 @@ function Xaou_OpenStandaloneModCenter(npc)
     end
     if not view then return false,table.concat(errors,"\n") end
     XMC_View=view;root:AddChild(view);view.x=(root.width-view.width)/2;view.y=(root.height-view.height)/2
-    xmc_text(xmc_child(view,"btnClose"),"×");xmc_text(xmc_child(view,"btnLanguage"),"ภาษา: TH")
+    xmc_text(xmc_child(view,"btnClose"),"×");xmc_text(xmc_child(view,"btnLanguage"),xmc_t("ภาษา: TH", "Language: EN"))
     local menus={{"menuQuick","quick"},{"menuNpc","npc"},{"menuBook","book"},{"menuWorld","world"},{"menuDeveloper","developer"}}
     for index,m in ipairs(menus) do
         local buttonName, sectionName=XMC_CompatShell and ("npcBtn"..tostring(index)) or m[1],m[2]
@@ -453,6 +515,6 @@ function Xaou_OpenStandaloneModCenter(npc)
     end
     local close=xmc_child(view,"btnClose");if close then close.onClick:Add(Xaou_CloseStandaloneModCenter) end
     if XMC_CompatShell then local close2=xmc_child(view,"npcBtn6");if close2 then close2.onClick:Add(Xaou_CloseStandaloneModCenter) end end
-    local lang=xmc_child(view,"btnLanguage");if lang then lang.onClick:Add(function() if Xaou_ToggleLanguage then Xaou_ToggleLanguage() end end) end
+    local lang=xmc_child(view,"btnLanguage");if lang then lang.onClick:Add(Xaou_ToggleModCenterLanguage) end
     xmc_update_target(view);xmc_refresh(view);return true
 end
