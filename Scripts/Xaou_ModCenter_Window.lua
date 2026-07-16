@@ -35,6 +35,7 @@ local XMC_Sections = {
         {text="เพิ่มค่าสถานะทั้ง 5", textEn="Increase Five Attributes", action="boost_five_stats"}, {text="ทะลวงขั้นทันที", textEn="Break Through Now", action="breakthrough_now"},
         {text="ชุบชีวิต NPC", textEn="Revive NPC", action="revive_npc"}, {text="ขโมยของ NPC", textEn="Claim Secret Treasure", action="steal_npc_item"},
         {text="ยืดเวลาทัณฑ์สวรรค์", textEn="Delay Heavenly Tribulation", action="extend_heavenly_tribulation"},
+        {text="สัตว์เลี้ยงโตทันที", textEn="Instant Pet Growth", action="instant_pet_growth"},
 
 
         
@@ -239,6 +240,16 @@ local function xmc_action(action)
         end
         if world then world:ShowMsgBox(xmc_t("ไม่พบหน้าต่างเครื่องมือเวลา", "Time tools window was not found")) end
         return false
+    end
+    if action=="instant_pet_growth" then
+        if Xaou_InstantGrowPet == nil then
+            pcall(require, "Scripts/Xaou_PetGrowth_Core.lua")
+        end
+        if Xaou_InstantGrowPet == nil then
+            if world then world:ShowMsgBox(xmc_t("ไม่พบระบบเร่งการเติบโตของสัตว์เลี้ยง", "Pet growth system was not found")) end
+            return false
+        end
+        return Xaou_InstantGrowPet(XMC_Target)
     end
     if action=="boost_five_stats" then
         if XMC_Target == nil then
