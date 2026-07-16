@@ -51,7 +51,7 @@ local XMC_Sections = {
         
     }},
     developer = {title="แจ้งปัญหา", titleEn="Report an Issue", desc="แจ้งปัญหาถึงผู้จัดทำม็อด", descEn="Contact the mod developer", features={
-        {text="Facebook ผู้พัฒนา", textEn="Developer Facebook", action="developer_github"},
+        {text="Facebook ผู้พัฒนา", textEn="Developer Facebook", action="developer_facebook"},
         {text="GitHub ผู้พัฒนา", textEn="Developer GitHub", action="developer_github"},
         -- {text="เปิด Mod Center เดิม", action="legacy_npc"},
         
@@ -437,6 +437,29 @@ local function xmc_action(action)
         if world then
             world:ShowMsgBox(xmc_t("เปิดคลังจักรวาลไม่สำเร็จ\n", "Failed to open Mini Universe\n") .. tostring(result))
         end
+        return false
+    end
+    if action=="developer_facebook" then
+        local url = "https://web.facebook.com/asstasst2/?locale=th_TH"
+
+        local ok, result = pcall(function()
+            CS.UnityEngine.Application.OpenURL(url)
+            return true
+        end)
+
+        if ok and result == true then
+            return true
+        end
+
+        if world then
+            world:ShowMsgBox(
+                xmc_t(
+                    "เปิด Facebook ไม่สำเร็จ",
+                    "Failed to open Facebook"
+                )
+            )
+        end
+
         return false
     end
     if action=="developer_github" then
