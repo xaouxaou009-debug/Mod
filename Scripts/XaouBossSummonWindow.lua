@@ -73,6 +73,7 @@ local Xaou_Boss_List = {
     },
 }
 local function Xaou_Boss_ShowMsg(msg)
+    if Xaou_LocalizeText then msg = Xaou_LocalizeText(msg) end
     pcall(function()
         if world ~= nil then world:ShowMsgBox(tostring(msg)) end
     end)
@@ -99,6 +100,7 @@ end
 
 local function Xaou_Boss_SetText(obj, text)
     if obj == nil then return end
+    if Xaou_LocalizeText then text = Xaou_LocalizeText(text) end
     pcall(function() obj.text = tostring(text or "") end)
     pcall(function() obj.title = tostring(text or "") end)
 end
@@ -220,6 +222,8 @@ end
 
 local function Xaou_Boss_Refresh(view)
     if view == nil then return end
+
+    Xaou_Boss_SetText(Xaou_Boss_GetChild(view, "title", "txtTitle"), "เรียกบอส")
 
     local pageSize = 3
     local total = #Xaou_Boss_List

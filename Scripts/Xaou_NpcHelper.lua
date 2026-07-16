@@ -3,6 +3,10 @@
 -- ============================================================
 
 function Xaou_Show(msg, title)
+    if Xaou_LocalizeText then
+        msg = Xaou_LocalizeText(msg)
+        if title ~= nil then title = Xaou_LocalizeText(title) end
+    end
     if world ~= nil and world.ShowMsgBox ~= nil then
         world:ShowMsgBox(tostring(msg), title or "Xaou")
     else
@@ -221,4 +225,3 @@ function Xaou_OpenUrl(url)
     end)
     return ok, ok and nil or "เปิด URL ไม่สำเร็จ"
 end
-

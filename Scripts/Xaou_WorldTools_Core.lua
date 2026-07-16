@@ -9,6 +9,7 @@ Xaou_WorldToolsState = Xaou_WorldToolsState or {
 local XaouWorldTools = GameMain:NewMod("Xaou_WorldTools")
 
 local function show(text)
+    if Xaou_LocalizeText then text = Xaou_LocalizeText(text) end
     pcall(function() world:ShowMsgBox(tostring(text or "")) end)
 end
 
@@ -216,9 +217,9 @@ function XaouWorldTools:AddItemButton(item)
     local is_item = false
     pcall(function() is_item = item.ThingType == g_emThingType.Item end)
     if not is_item then return end
-    pcall(function() item:RemoveBtnData("เครื่องมือ Xaou") end)
+    pcall(function() item:RemoveBtnData("คูณ2") end)
     item:AddBtnData(
-        "เครื่องมือ Xaou",
+        "คูณ2",
         "res/Sprs/ui/icon_hand",
         "Xaou_WorldTools_OpenForItem(bind)",
         "คูณ หลอม เติมพลัง และเพิ่มทัณฑ์สวรรค์ให้ไอเทมที่เลือก",

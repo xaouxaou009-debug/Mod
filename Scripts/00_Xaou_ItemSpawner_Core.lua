@@ -4,6 +4,10 @@ local mod = GameMain:GetMod("Xaou_ItemSpawner_Standalone")
 local itemList, itemMap = nil, nil
 
 local function show(text, title)
+    if Xaou_LocalizeText then
+        text = Xaou_LocalizeText(text)
+        if title ~= nil then title = Xaou_LocalizeText(title) end
+    end
     local shown = false
     pcall(function()
         CS.Wnd_Message.Show(tostring(text), 1, nil, true, tostring(title or "Xaou"), 0, 0, "")

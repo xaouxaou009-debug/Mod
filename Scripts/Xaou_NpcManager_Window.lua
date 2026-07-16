@@ -17,6 +17,7 @@ local function child(view,name)
 end
 local function set_text(obj,value)
     if not obj then return end
+    if Xaou_LocalizeText then value=Xaou_LocalizeText(value) end
     pcall(function() obj.text=tostring(value or "") end)
     pcall(function() obj.title=tostring(value or "") end)
 end

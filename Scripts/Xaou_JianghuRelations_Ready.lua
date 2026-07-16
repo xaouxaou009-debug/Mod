@@ -4,6 +4,7 @@
 pcall(require, 'Scripts/Xaou_JianghuRelations_Window.lua')
 
 local function xjr_message(text)
+    if Xaou_LocalizeText then text = Xaou_LocalizeText(text) end
     local shown=false
     pcall(function()
         CS.Wnd_Message.Show(tostring(text),1,nil,true,"Xaou NPC สำนักอื่น",0,0,"")

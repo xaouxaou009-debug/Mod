@@ -13,6 +13,7 @@ local function child(view,name)
 end
 local function set_text(obj,value)
     if not obj then return end
+    if Xaou_LocalizeText then value=Xaou_LocalizeText(value) end
     pcall(function() obj.text=tostring(value or "") end)
     pcall(function() obj.title=tostring(value or "") end)
 end
@@ -22,6 +23,7 @@ local function set_visible(obj,value)
     pcall(function() obj.touchable=value==true end)
 end
 local function show_message(value)
+    if Xaou_LocalizeText then value=Xaou_LocalizeText(value) end
     pcall(function() world:ShowMsgBox(tostring(value)) end)
 end
 local function building_defs()

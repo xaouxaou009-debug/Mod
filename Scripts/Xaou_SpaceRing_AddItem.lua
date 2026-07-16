@@ -13,6 +13,10 @@ end
 
 local function xs_show(text, title)
     title = title or "Xaou SpaceRing"
+    if Xaou_LocalizeText then
+        text = Xaou_LocalizeText(text)
+        title = Xaou_LocalizeText(title)
+    end
     if world ~= nil and world.ShowMsgBox ~= nil then
         local ok = pcall(function() world:ShowMsgBox(tostring(text), title) end)
         if ok then return true end

@@ -14,6 +14,7 @@ end
 
 local function jh_text(obj, value)
     if obj == nil then return end
+    if Xaou_LocalizeText then value = Xaou_LocalizeText(value) end
     pcall(function() obj.text = tostring(value or "") end)
     pcall(function() obj.title = tostring(value or "") end)
 end
@@ -94,6 +95,8 @@ local function jh_refresh_detail(view)
 end
 
 local function jh_refresh(view, rebuild)
+    jh_text(jh_child(view, "title"), "NPC สำนักอื่น")
+    jh_text(jh_child(view, "subtitle"), "เลือกตัวละครเพื่อเปิดใจหรือเพิ่มความสัมพันธ์")
     if rebuild == true then Xaou_JH_Rows = jh_build_rows() end
     local maxPage = math.max(1, math.ceil(#Xaou_JH_Rows / Xaou_JH_PageSize))
     Xaou_JH_Page = math.max(1, math.min(Xaou_JH_Page, maxPage))

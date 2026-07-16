@@ -18,6 +18,14 @@ end
 
 local function xis_text(obj, value)
     if obj == nil then return end
+    if Xaou_LocalizeText then value = Xaou_LocalizeText(value) end
+    pcall(function() obj.text = tostring(value or "") end)
+    pcall(function() obj.title = tostring(value or "") end)
+end
+
+-- ThingName/Desc already follow the game's active language.
+local function xis_game_text(obj, value)
+    if obj == nil then return end
     pcall(function() obj.text = tostring(value or "") end)
     pcall(function() obj.title = tostring(value or "") end)
 end
@@ -54,8 +62,8 @@ local function xis_refresh_detail(view)
     local icon = def and xis_icon(def) or ""
     local desc = XIS_Selected and ("หมวด: " .. tostring(XIS_Selected.cat or "อื่น")) or "แตะไอเทมเพื่อดูรายละเอียด"
     pcall(function() if def and def.Desc then desc = tostring(def.Desc) end end)
-    xis_text(xis_child(view, "detailName"), name)
-    xis_text(xis_child(view, "detailDesc"), desc)
+    xis_game_text(xis_child(view, "detailName"), name)
+    xis_game_text(xis_child(view, "detailDesc"), desc)
     xis_text(xis_child(view, "amountLabel"), "จำนวน: " .. tostring(XIS_Amount))
     local loader = xis_child(view, "detailIcon")
     pcall(function() loader.url = icon end)
@@ -63,6 +71,8 @@ local function xis_refresh_detail(view)
 end
 
 local function xis_refresh(view, rebuild)
+    xis_text(xis_child(view, "title"), "เสกไอเทม")
+    xis_text(xis_child(view, "subtitle"), "เลือกหมวดและไอเทมที่ต้องการ")
     if rebuild == true and Xaou_GetSpawnerItems ~= nil then
         local ok, value = pcall(function() return Xaou_GetSpawnerItems(XIS_Category, XIS_Search) end)
         XIS_Items = ok and type(value) == "table" and value or {}
@@ -78,7 +88,7 @@ local function xis_refresh(view, rebuild)
             local name, icon = xis_name(data, def), xis_icon(def)
             local title = nil
             pcall(function() title = button:GetChild("title") end)
-            xis_text(title or button, name)
+            xis_game_text(title or button, name)
             local loader = xis_child(button, "icon")
             pcall(function() loader.url = icon end)
             if button then button.data = data end

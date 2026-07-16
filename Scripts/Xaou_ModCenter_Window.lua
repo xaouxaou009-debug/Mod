@@ -26,6 +26,7 @@ local XMC_Sections = {
         {text="เตาควบคุมอุณหภูมิ", textEn="Temperature Furnace", action="building_temp"},
         {text="ตั้งค่า FPS", textEn="Frame Rate Settings", action="fps"},
         {text="เปิดกล่องไท่อี้ทั้งหมด", textEn="Open All Taiyi Boxes", action="open_taiyi_boxes"},
+        {text="เปิดกล่องอื่นทั้งหมด", textEn="Open All Other Boxes", action="open_other_boxes"},
          
          
     }},
@@ -157,6 +158,14 @@ local function xmc_open_legacy()
     end
 end
 local function xmc_action(action)
+    if action=="open_other_boxes" then
+        if Xaou_ConfirmOpenAllOtherBoxes==nil then pcall(require,'Scripts/Xaou_TaiyiBox_Core.lua') end
+        if Xaou_ConfirmOpenAllOtherBoxes then
+            return Xaou_ConfirmOpenAllOtherBoxes(XMC_Target)
+        end
+        if world then world:ShowMsgBox(xmc_t("ไม่พบระบบเปิดกล่องชนิดอื่น", "Other box system was not found")) end
+        return false
+    end
     if action=="open_taiyi_boxes" then
         if Xaou_ConfirmOpenAllTaiyiBoxes==nil then pcall(require,'Scripts/Xaou_TaiyiBox_Core.lua') end
         if Xaou_ConfirmOpenAllTaiyiBoxes then

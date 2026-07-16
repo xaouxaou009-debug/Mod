@@ -9,6 +9,7 @@ local function child(view, name)
 end
 local function set_text(obj, value)
     if obj == nil then return end
+    if Xaou_LocalizeText then value = Xaou_LocalizeText(value) end
     pcall(function() obj.text = tostring(value or "") end)
     pcall(function() obj.title = tostring(value or "") end)
 end
@@ -17,7 +18,10 @@ local function set_visible(obj, value)
     pcall(function() obj.visible = value == true end)
     pcall(function() obj.touchable = value == true end)
 end
-local function show(text) pcall(function() world:ShowMsgBox(tostring(text)) end) end
+local function show(text)
+    if Xaou_LocalizeText then text = Xaou_LocalizeText(text) end
+    pcall(function() world:ShowMsgBox(tostring(text)) end)
+end
 
 function Xaou_CloseTemperatureWindow()
     if XTW_View ~= nil then

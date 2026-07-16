@@ -49,6 +49,7 @@ local function xui_hide(obj)
 end
 
 function XaouSpaceRingWindow:AddLabel(name, text, x, y, w, h, size)
+    if Xaou_LocalizeText then text = Xaou_LocalizeText(text) end
     local obj = self:AddObjectFromUrl("ui://0xrxw6g7hdhl1b", x, y)
     obj.name = name
     obj:SetSize(w or 200, h or 28, false)
@@ -68,6 +69,7 @@ function XaouSpaceRingWindow:AddLabel(name, text, x, y, w, h, size)
 end
 
 function XaouSpaceRingWindow:AddButton(name, text, x, y, w, h)
+    if Xaou_LocalizeText then text = Xaou_LocalizeText(text) end
     local obj = self:AddObjectFromUrl("ui://0xrxw6g7hdhl18", x, y)
     obj.name = name
     obj:SetSize(w or 120, h or 38, false)
@@ -197,7 +199,9 @@ function XaouSpaceRingWindow:RefreshView(reload)
         end
     end
     self.pageLabel.m_title.text = tostring(self.page) .. "/" .. tostring(maxPage)
-    self.statusLabel.m_title.text = "หมวด: " .. tostring(self.category) .. " | " .. tostring(#rows) .. " รายการ"
+    local status = "หมวด: " .. tostring(self.category) .. " | " .. tostring(#rows) .. " รายการ"
+    if Xaou_LocalizeText then status = Xaou_LocalizeText(status) end
+    self.statusLabel.m_title.text = status
 end
 
 function XaouSpaceRingWindow:ChooseAmount(row)
