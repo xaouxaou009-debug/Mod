@@ -31,11 +31,13 @@ local XMC_Sections = {
          
     }},
     npc = {title="ระบบ NPC", titleEn="NPC System", desc="จัดการตัวละครและดึงคนเข้าสำนัก", descEn="Manage characters and recruit NPCs", features={
+        {text="ปรับแต่งวิชาเทพ", textEn="Divine Cultivation Stats", action="god_practice_stats"},
         {text="แก้ไขค่า NPC ", textEn="Edit NPC", action="legacy_npc"}, {text="ดึง NPC เข้าสำนัก", textEn="Recruit NPC", action="selector"},
         {text="เพิ่มค่าสถานะทั้ง 5", textEn="Increase Five Attributes", action="boost_five_stats"}, {text="ทะลวงขั้นทันที", textEn="Break Through Now", action="breakthrough_now"},
         {text="ชุบชีวิต NPC", textEn="Revive NPC", action="revive_npc"}, {text="ขโมยของ NPC", textEn="Claim Secret Treasure", action="steal_npc_item"},
         {text="ยืดเวลาทัณฑ์สวรรค์", textEn="Delay Heavenly Tribulation", action="extend_heavenly_tribulation"},
         {text="สัตว์เลี้ยงโตทันที", textEn="Instant Pet Growth", action="instant_pet_growth"},
+        {text="ปลุกสติปัญญาเต็มทันที", textEn="Full Pet Awakening", action="awaken_pet_intelligence"},
 
 
         
@@ -159,6 +161,25 @@ local function xmc_open_legacy()
     end
 end
 local function xmc_action(action)
+    if action=="god_practice_stats" then
+        if XMC_Target==nil then
+            if world then world:ShowMsgBox(xmc_t("กรุณาเลือก NPC ก่อน", "Please select an NPC first")) end
+            return false
+        end
+        if Xaou_OpenGodPracticeWindow==nil then
+            pcall(require, 'Scripts/Xaou_GodPractice_Window.lua')
+        end
+        if Xaou_OpenGodPracticeWindow then
+            local target=XMC_Target
+            Xaou_CloseStandaloneModCenter()
+            local ok,result=pcall(function() return Xaou_OpenGodPracticeWindow(target) end)
+            if ok and result~=false then return true end
+            if world then world:ShowMsgBox(xmc_t("เปิดหน้าปรับแต่งวิชาเทพไม่สำเร็จ\n", "Failed to open Divine Cultivation Stats\n")..tostring(result)) end
+            return false
+        end
+        if world then world:ShowMsgBox(xmc_t("ไม่พบระบบปรับแต่งวิชาเทพ", "Divine cultivation stat system was not found")) end
+        return false
+    end
     if action=="open_other_boxes" then
         if Xaou_ConfirmOpenAllOtherBoxes==nil then pcall(require,'Scripts/Xaou_TaiyiBox_Core.lua') end
         if Xaou_ConfirmOpenAllOtherBoxes then
@@ -250,6 +271,16 @@ local function xmc_action(action)
             return false
         end
         return Xaou_InstantGrowPet(XMC_Target)
+    end
+    if action=="awaken_pet_intelligence" then
+        if Xaou_AwakenPetIntelligence == nil then
+            pcall(require, "Scripts/Xaou_PetGrowth_Core.lua")
+        end
+        if Xaou_AwakenPetIntelligence == nil then
+            if world then world:ShowMsgBox(xmc_t("ไม่พบระบบปลุกสติปัญญาสัตว์เลี้ยง", "Pet intelligence system was not found")) end
+            return false
+        end
+        return Xaou_AwakenPetIntelligence(XMC_Target)
     end
     if action=="boost_five_stats" then
         if XMC_Target == nil then
