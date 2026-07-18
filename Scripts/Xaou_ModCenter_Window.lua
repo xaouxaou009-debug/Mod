@@ -32,6 +32,7 @@ local XMC_Sections = {
     }},
     npc = {title="ระบบ NPC", titleEn="NPC System", desc="จัดการตัวละครและดึงคนเข้าสำนัก", descEn="Manage characters and recruit NPCs", features={
         {text="ปรับแต่งวิชาเทพ", textEn="Divine Cultivation Stats", action="god_practice_stats"},
+        {text="ปรับแต่งวิชากายา", textEn="Body Cultivation Tools", action="body_practice_tools"},
         {text="แก้ไขค่า NPC ", textEn="Edit NPC", action="legacy_npc"}, {text="ดึง NPC เข้าสำนัก", textEn="Recruit NPC", action="selector"},
         {text="เพิ่มค่าสถานะทั้ง 5", textEn="Increase Five Attributes", action="boost_five_stats"}, {text="ทะลวงขั้นทันที", textEn="Break Through Now", action="breakthrough_now"},
         {text="ชุบชีวิต NPC", textEn="Revive NPC", action="revive_npc"}, {text="ขโมยของ NPC", textEn="Claim Secret Treasure", action="steal_npc_item"},
@@ -161,6 +162,19 @@ local function xmc_open_legacy()
     end
 end
 local function xmc_action(action)
+    if action=="body_practice_tools" then
+        if Xaou_OpenBodyPracticeWindow==nil then
+            pcall(require,"Scripts/Xaou_BodyPractice_Window.lua")
+        end
+        if Xaou_OpenBodyPracticeWindow then
+            local ok,result,detail=pcall(function() return Xaou_OpenBodyPracticeWindow(XMC_Target) end)
+            if ok and result~=false then Xaou_CloseStandaloneModCenter();return result end
+            if world then world:ShowMsgBox(xmc_t("เปิดหน้าปรับแต่งวิชากายาไม่สำเร็จ\n","Failed to open Body Cultivation Tools\n")..tostring(detail or result)) end
+            return false
+        end
+        if world then world:ShowMsgBox(xmc_t("ไม่พบระบบปรับแต่งวิชากายา","Body cultivation tool was not found")) end
+        return false
+    end
     if action=="god_practice_stats" then
         if XMC_Target==nil then
             if world then world:ShowMsgBox(xmc_t("กรุณาเลือก NPC ก่อน", "Please select an NPC first")) end
