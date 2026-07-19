@@ -33,25 +33,84 @@ local function jh_get_name(def, seed)
     return name
 end
 
+local function jh_add_seed_keys(dict, seeds, seen)
+    if dict == nil then return end
+    local function add(value)
+        value = tonumber(value) or value
+        if value == nil then return end
+        local key = tostring(value)
+        if not seen[key] then
+            seen[key] = true
+            seeds[#seeds + 1] = value
+        end
+    end
+    pcall(function()
+        for seed, _ in pairs(dict) do add(seed) end
+    end)
+    pcall(function()
+        local e = dict:GetEnumerator()
+        while e:MoveNext() do add(e.Current.Key) end
+        pcall(function() e:Dispose() end)
+    end)
+    pcall(function()
+        local e = dict.Keys:GetEnumerator()
+        while e:MoveNext() do add(e.Current) end
+        pcall(function() e:Dispose() end)
+    end)
+end
+
+local function jh_resolve_def(mgr, school, seed)
+    local def = nil
+    pcall(function() def = mgr:GetJHNpcDataByRandomSeed(seed) end)
+    if def == nil then
+        pcall(function() def = mgr:GetJHNpcDataBySeed(seed) end)
+    end
+    if def == nil and school ~= nil then
+        pcall(function()
+            local template = school.JianghuNpcs[seed]
+            if template ~= nil then def = mgr:GetJianghuNpcDef(template) end
+        end)
+    end
+    return def
+end
+
+local function jh_resolve_name(mgr, def, seed)
+    local name = jh_get_name(def, seed)
+    pcall(function()
+        local gameName = mgr:GetJHNpcName(seed, true, false)
+        if gameName ~= nil and tostring(gameName) ~= "" then name = tostring(gameName) end
+    end)
+    return name
+end
+
 local function jh_build_rows()
-    local rows, seeds = {}, {}
+    local rows, seeds, seen = {}, {}, {}
     local ok = pcall(function()
         local school = CS.XiaWorld.SchoolGlobleMgr.Instance
-        local dict = school and school.JianghuNpcs or nil
-        if dict == nil then return end
-        for seed, _ in pairs(dict) do
-            if seed ~= nil then seeds[#seeds + 1] = seed end
-        end
+        local mgr = JianghuMgr
+        if mgr == nil then mgr = CS.XiaWorld.JianghuMgr.Instance end
+
+        -- World registry contains generated Jianghu NPCs, while KnowNpcData is
+        -- the authoritative list of NPCs the player has actually met.
+        jh_add_seed_keys(school and school.JianghuNpcs or nil, seeds, seen)
+        jh_add_seed_keys(mgr and mgr.KnowNpcData or nil, seeds, seen)
         table.sort(seeds, function(a, b) return tonumber(a) < tonumber(b) end)
         for _, seed in ipairs(seeds) do
-            local def = JianghuMgr:GetJHNpcDataByRandomSeed(seed)
-            if def ~= nil then
+            local know = nil
+            pcall(function() know = mgr:GetKnowNpcData(seed) end)
+            if know ~= nil then
+                local def = jh_resolve_def(mgr, school, seed)
                 local status = "อยู่"
                 pcall(function()
                     if school:IsJianghuNpcDie(seed) then status = "เสียชีวิต"
                     elseif school:IsJianghuNpcLeave(seed) then status = "ออกไปแล้ว" end
                 end)
-                rows[#rows + 1] = {seed=seed, def=def, name=jh_get_name(def, seed), status=status}
+                rows[#rows + 1] = {
+                    seed=seed,
+                    def=def,
+                    name=jh_resolve_name(mgr, def, seed),
+                    status=status
+                }
             end
         end
     end)

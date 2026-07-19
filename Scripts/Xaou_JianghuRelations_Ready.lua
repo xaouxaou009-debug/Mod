@@ -25,20 +25,26 @@ function Xaou_OpenHeartBySeed(seed,addFavor)
         if seed==nil then error("ไม่พบรหัส NPC") end
         seed=tonumber(seed) or seed
         local mgr=xjr_manager();if not mgr then error("ไม่พบ JianghuMgr") end
+
+        -- Follow Magic_BrokeHeartLock: create the persistent relationship record
+        -- first, then let JHNpcData perform the real heart unlock.
+        mgr:AddKnowNpcData(seed)
         local data=mgr:GetKnowNpcData(seed)
-        if not data then
-            mgr:UnLockJiangHuNpc(seed)
-            data=mgr:GetKnowNpcData(seed)
-            if not data then data=mgr:GetJHNpcDataByRandomSeed(seed) end
-            if not data then data=mgr:GetJHNpcDataBySeed(seed) end
-        end
         if not data then error("ไม่สามารถสร้างข้อมูลความสัมพันธ์ของ NPC ได้") end
-        pcall(function() data.Vigilance=0 end)
-        pcall(function() data.hlock=1 end)
+
+        data:UnlockHeart()
         if addFavor==true then
-            pcall(function() data.favour=100 end)
-            pcall(function() data.Favour=100 end)
-            pcall(function() data.Favor=100 end)
+            local current=tonumber(data.favour) or 0
+            local delta=100-current
+            if delta>0 then
+                local added=false
+                pcall(function()
+                    mgr:AddKnowNpcData(seed,CS.XiaWorld.g_emJHNpcDataType.None,delta,nil)
+                    added=true
+                end)
+                -- Compatibility fallback for a Mobile build that hides the enum.
+                if not added then data.favour=100 end
+            end
         end
     end)
     if ok then

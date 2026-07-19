@@ -152,41 +152,33 @@ end
 
 -- ============================================================
 -- Jianghu NPC / ระบบเปิดใจ NPC สำนักอื่น
--- อ้างอิงต้นฉบับ JHNpcManager: favour=100, Vigilance=0, hlock=1
+-- ใช้ flow เดียวกับ Magic_BrokeHeartLock เพื่อให้ KnowNpcData และ event ของเกมครบ
 -- ============================================================
 function Xaou_OpenHeartBySeed(seed, addFavor)
     local ok, err = pcall(function()
         if seed == nil then error("seed ว่าง") end
         seed = tonumber(seed) or seed
 
+        JianghuMgr:AddKnowNpcData(seed)
         local JHData = JianghuMgr:GetKnowNpcData(seed)
-
-        if JHData == nil then
-            JianghuMgr:UnLockJiangHuNpc(seed)
-            
-
-            JHData = JianghuMgr:GetKnowNpcData(seed)
-
-            if JHData == nil then
-                JHData = JianghuMgr:GetJHNpcDataByRandomSeed(seed)
-            end
-
-            if JHData == nil then
-                JHData = JianghuMgr:GetJHNpcDataBySeed(seed)
-            end
-        end
 
         if JHData == nil then
             error("หา/สร้าง KnowNpcData ไม่สำเร็จ")
         end
 
-        pcall(function() JHData.Vigilance = 0 end)
-        pcall(function() JHData.hlock = 1 end)
+        JHData:UnlockHeart()
 
         if addFavor == true then
-            pcall(function() JHData.favour = 100 end)
-            pcall(function() JHData.Favour = 100 end)
-            pcall(function() JHData.Favor = 100 end)
+            local current = tonumber(JHData.favour) or 0
+            local delta = 100 - current
+            if delta > 0 then
+                local added = false
+                pcall(function()
+                    JianghuMgr:AddKnowNpcData(seed, CS.XiaWorld.g_emJHNpcDataType.None, delta, nil)
+                    added = true
+                end)
+                if not added then JHData.favour = 100 end
+            end
         end
     end)
 

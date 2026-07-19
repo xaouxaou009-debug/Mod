@@ -30,51 +30,96 @@ function Xaou_GetNpcPageTitle(page)
 end
 
 
--- สร้างรายชื่อ NPC สำนักอื่นจาก SchoolGlobleMgr.Instance.JianghuNpcs
+local function Xaou_AddJianghuSeedKeys(dict, seeds, seen)
+    if dict == nil then return end
+    local function add(value)
+        value = tonumber(value) or value
+        if value == nil then return end
+        local key = tostring(value)
+        if not seen[key] then
+            seen[key] = true
+            table.insert(seeds, value)
+        end
+    end
+    pcall(function()
+        for seed, _ in pairs(dict) do add(seed) end
+    end)
+    pcall(function()
+        local e = dict:GetEnumerator()
+        while e:MoveNext() do add(e.Current.Key) end
+        pcall(function() e:Dispose() end)
+    end)
+    pcall(function()
+        local e = dict.Keys:GetEnumerator()
+        while e:MoveNext() do add(e.Current) end
+        pcall(function() e:Dispose() end)
+    end)
+end
+
+local function Xaou_ResolveJianghuDef(mgr, school, seed)
+    local def = nil
+    pcall(function() def = mgr:GetJHNpcDataByRandomSeed(seed) end)
+    if def == nil then
+        pcall(function() def = mgr:GetJHNpcDataBySeed(seed) end)
+    end
+    if def == nil and school ~= nil then
+        pcall(function()
+            local template = school.JianghuNpcs[seed]
+            if template ~= nil then def = mgr:GetJianghuNpcDef(template) end
+        end)
+    end
+    return def
+end
+
+local function Xaou_ResolveJianghuName(mgr, def, seed)
+    local name = "NPC seed " .. tostring(seed)
+    if def ~= nil then
+        name = tostring(def.LastName or "") .. tostring(def.FristName or def.FirstName or "")
+        if name == "" then name = "NPC seed " .. tostring(seed) end
+    end
+    pcall(function()
+        local gameName = mgr:GetJHNpcName(seed, true, false)
+        if gameName ~= nil and tostring(gameName) ~= "" then name = tostring(gameName) end
+    end)
+    return name
+end
+
+-- รวมทะเบียน NPC โลกกับ KnowNpcData เพื่อไม่ให้คนที่เพิ่งรู้จักหายจากรายการ
 -- แก้แบบปลอดภัย: แยก "ดึงข้อมูลทั้งหมด" กับ "แสดงเป็นหน้า"
 function Xaou_BuildJianghuNpcRawList(limit)
     local list = {}
     local seeds = {}
+    local seen = {}
     local maxCount = tonumber(limit or 9999) or 9999
 
     local ok, err = pcall(function()
         local GSchool = CS.XiaWorld.SchoolGlobleMgr.Instance
-        local NpcLists = nil
-        if GSchool ~= nil then NpcLists = GSchool.JianghuNpcs end
-        if NpcLists == nil then error("ไม่พบ GSchool.JianghuNpcs") end
+        local mgr = JianghuMgr
+        if mgr == nil then mgr = CS.XiaWorld.JianghuMgr.Instance end
+        if GSchool == nil and mgr == nil then error("ไม่พบระบบ NPC สำนักอื่น") end
 
-        for seed, _ in pairs(NpcLists) do
-            if seed ~= nil then
-                table.insert(seeds, seed)
-            end
-        end
+        Xaou_AddJianghuSeedKeys(GSchool and GSchool.JianghuNpcs or nil, seeds, seen)
+        Xaou_AddJianghuSeedKeys(mgr and mgr.KnowNpcData or nil, seeds, seen)
 
         table.sort(seeds, function(a, b)
             return tonumber(a) < tonumber(b)
         end)
 
         for _, seed in ipairs(seeds) do
-            local def = JianghuMgr:GetJHNpcDataByRandomSeed(seed)
-            if def ~= nil then
-                local name = tostring(def.LastName or "") .. tostring(def.FristName or def.FirstName or "")
-                if name == "" then name = "NPC seed " .. tostring(seed) end
-
+            local know = nil
+            pcall(function() know = mgr:GetKnowNpcData(seed) end)
+            if know ~= nil then
+                local def = Xaou_ResolveJianghuDef(mgr, GSchool, seed)
+                local name = Xaou_ResolveJianghuName(mgr, def, seed)
                 local status = "อยู่"
                 pcall(function()
                     if GSchool:IsJianghuNpcDie(seed) then status = "ตาย"
                     elseif GSchool:IsJianghuNpcLeave(seed) then status = "ออกไปแล้ว" end
                 end)
 
-                local fav = "?"
-                local open = "?"
-                local know = JianghuMgr:GetKnowNpcData(seed)
-                if know ~= nil then
-                    fav = tostring(know.favour or "?")
-                    if tonumber(know.hlock or 0) == 1 then open = "เปิด" else open = "ปิด" end
-                else
-                    fav = "ยังไม่รู้จัก"
-                    open = "-"
-                end
+                local fav = tostring(know.favour or "?")
+                local open = "ปิด"
+                if tonumber(know.hlock or 0) == 1 then open = "เปิด" else open = "ปิด" end
 
                 table.insert(list, {
                     text = name .. "【" .. status .. " | ❤" .. fav .. " | ใจ:" .. open .. "】",
@@ -489,4 +534,3 @@ function Xaou_GetNpcCommands(page)
 
     return {}
 end
-
