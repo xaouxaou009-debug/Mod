@@ -133,9 +133,24 @@ local function jh_read_state(row)
 end
 
 local function jh_portrait(row)
-    if row == nil or row.def == nil then return "" end
+    if row == nil then return "" end
     local value = ""
-    pcall(function() value = tostring(row.def.Rolepaint or row.def.TexPath or row.def.Icon or "") end)
+    pcall(function()
+        local mgr = JianghuMgr or CS.XiaWorld.JianghuMgr.Instance
+        local npc = mgr and mgr:GetNpc(row.seed) or nil
+        if npc ~= nil and npc.Race ~= nil then
+            value = tostring(npc.Race.TexPath or npc.Race.Rolepaint or "")
+        end
+    end)
+    if value == "" and row.def ~= nil then
+        pcall(function()
+            local npcMgr = NpcMgr or CS.XiaWorld.NpcMgr.Instance
+            local race = npcMgr and npcMgr:GetRaceDef(tostring(row.def.Race or "")) or nil
+            if race ~= nil then
+                value = tostring(race.TexPath or race.Rolepaint or "")
+            end
+        end)
+    end
     return value
 end
 
@@ -150,6 +165,7 @@ local function jh_refresh_detail(view)
     local portrait = jh_child(view, "portrait")
     local url = jh_portrait(row)
     pcall(function() portrait.url = url end)
+    pcall(function() portrait.icon = url end)
     jh_visible(portrait, url ~= "")
 end
 

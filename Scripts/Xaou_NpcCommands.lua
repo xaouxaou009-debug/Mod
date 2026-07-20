@@ -446,7 +446,7 @@ function Xaou_GetNpcCommands(page)
     elseif page == "more" then
         return {
             
-            { text="1. ทะลวงขั้นทันที", actions={{kind="addmodifier", id="Dan_BrokenNeck76"}} },
+            { text="1. ทะลวงขั้นทันที", actions={{kind="breakthrough"}} },
             { text="2. ชุบชีวิต NPC", actions={{kind="addmodifier", id="Modifier_YinYangShuangYu76"}} },
             { text="3. สัตว์อสูร / ศัตรู", page="beast" },
             { text="4. ขโมยของ NPC", actions={{kind="addmodifier", id="Dan_BaiYanLang76"}} },

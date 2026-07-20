@@ -22,6 +22,10 @@ function Xaou_ApplyNpcActions(npc, actions)
                 local ok2, err2 = Xaou_TryAddModifier(npc, a.id or a.modifier)
                 if not ok2 then error(err2) end
 
+            elseif kind == "breakthrough" then
+                local ok2, err2 = Xaou_TryBreakthroughNow(npc)
+                if not ok2 then error(err2) end
+
             elseif kind == "story" then
                 local realNpc = Xaou_GetRealNpcObject(npc)
                 local ok2, err2 = pcall(function()

@@ -128,6 +128,48 @@ function Xaou_TryAddModifier(npc, id)
     return false, "ไม่พบ/เรียก AddModifier ไม่สำเร็จ: " .. tostring(id)
 end
 
+function Xaou_TryBreakthroughNow(npc)
+    local realNpc = Xaou_GetRealNpcObject(npc)
+    if realNpc == nil then return false, "หา NPC ตัวจริงไม่เจอ" end
+
+    local practice = nil
+    local okPractice = pcall(function() practice = realNpc.PropertyMgr.Practice end)
+    if not okPractice or practice == nil then
+        return false, "NPC นี้ไม่มีระบบฝึกตน"
+    end
+
+    local neck = nil
+    pcall(function() neck = practice.CurNeck end)
+    if neck == nil then return false, "NPC ไม่มีขั้นถัดไปให้ทะลวง" end
+
+    local kind = nil
+    pcall(function() kind = neck.Kind end)
+    if kind == CS.XiaWorld.g_emGongBottleNeckType.Die then
+        return false, "คอขวดความตายไม่สามารถบังคับทะลวงได้"
+    end
+
+    local beforeStage, beforeTouch, beforeGod = nil, nil, nil
+    pcall(function() beforeStage = practice.LogicStage end)
+    pcall(function() beforeTouch = practice.TouchNeck == true end)
+    pcall(function() beforeGod = practice.GodCount end)
+
+    local result = false
+    local okBreak, breakErr = pcall(function()
+        result = practice:BrokenNeck(false) == true
+    end)
+    if not okBreak then return false, tostring(breakErr) end
+    if not result then return false, "ระบบเกมปฏิเสธการทะลวงขั้น" end
+
+    local afterStage, afterTouch, afterGod = nil, nil, nil
+    pcall(function() afterStage = practice.LogicStage end)
+    pcall(function() afterTouch = practice.TouchNeck == true end)
+    pcall(function() afterGod = practice.GodCount end)
+    if afterStage ~= beforeStage or afterTouch ~= beforeTouch or afterGod ~= beforeGod then
+        return true, "ทะลวงขั้นสำเร็จ"
+    end
+    return false, "เกมตอบว่าสำเร็จแต่ไม่พบการเปลี่ยนขั้น"
+end
+
 function Xaou_BuildNpcDebugLines(npc)
     local lines = {}
     table.insert(lines, "NPC Debug")

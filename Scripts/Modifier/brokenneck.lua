@@ -3,19 +3,9 @@ local modifierClass = modifierScript:GetModifier("modifier_brokenneck")
 
 function modifierClass:Enter(modifier, npc)
     local practice = npc.PropertyMgr.Practice
-
-    if practice and practice.GodPracticeData then
-        practice.GodPracticeData:MindStateLevelLevelUp()
-    end
-
-    if practice and practice.CurNeck then
-        local neck = practice.CurNeck
-        if neck.Kind ~= CS.XiaWorld.g_emGongBottleNeckType.Gold
-            and neck.Kind ~= CS.XiaWorld.g_emGongBottleNeckType.Thunder
-            and neck.Kind ~= CS.XiaWorld.g_emGongBottleNeckType.God then
-            practice:AddResource(CS.XiaWorld.g_emPracticeResourceType.Understand, 500)
-            npc.LuaHelper:NeckBroken()
-        end
+    if practice and practice.CurNeck
+        and practice.CurNeck.Kind ~= CS.XiaWorld.g_emGongBottleNeckType.Die then
+        practice:BrokenNeck(false)
     end
 end
 

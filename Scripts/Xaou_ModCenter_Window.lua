@@ -62,6 +62,18 @@ local XMC_Sections = {
     }},
 }
 
+table.insert(XMC_Sections.quick.features, 1, {
+    text="ตัวเลขความเสียหาย",
+    textEn="Damage Numbers",
+    action="damage_numbers"
+})
+
+table.insert(XMC_Sections.npc.features, 1, {
+    text="กำหนดจำนวนศิษย์สูงสุด",
+    textEn="Set Disciple Capacity",
+    action="school_capacity"
+})
+
 local function xmc_child(view, name)
     local value=nil; pcall(function() value=view:GetChild(name) end); return value
 end
@@ -162,6 +174,28 @@ local function xmc_open_legacy()
     end
 end
 local function xmc_action(action)
+    if action=="school_capacity" then
+        if Xaou_OpenSchoolCapacitySelector==nil then
+            pcall(require, 'Scripts/Xaou_SchoolCapacity.lua')
+        end
+        if Xaou_OpenSchoolCapacitySelector then
+            return Xaou_OpenSchoolCapacitySelector()
+        end
+        if world then world:ShowMsgBox(xmc_t("ไม่พบระบบกำหนดจำนวนศิษย์", "Disciple capacity system was not found")) end
+        return false
+    end
+    if action=="damage_numbers" then
+        local damageMod=GameMain:GetMod("Xaou_DamageNumbers",true)
+        if damageMod==nil then
+            pcall(require,'Scripts/Xaou_DamageNumbers.lua')
+            damageMod=GameMain:GetMod("Xaou_DamageNumbers",true)
+        end
+        if damageMod~=nil and damageMod.Toggle~=nil then
+            return damageMod:Toggle()
+        end
+        if world then world:ShowMsgBox(xmc_t("ไม่พบระบบตัวเลขความเสียหาย", "Damage Numbers system was not found")) end
+        return false
+    end
     if action=="body_practice_tools" then
         if Xaou_OpenBodyPracticeWindow==nil then
             pcall(require,"Scripts/Xaou_BodyPractice_Window.lua")
@@ -346,7 +380,7 @@ local function xmc_action(action)
 
         local ok, success, detail = pcall(function()
             return Xaou_ApplyNpcActions(XMC_Target, {
-                {kind="addmodifier", id="Dan_BrokenNeck76"},
+                {kind="breakthrough"},
             })
         end)
 
