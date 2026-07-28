@@ -20,11 +20,12 @@ end
 local XMC_Sections = {
     quick = {title="เมนู ฟังก์ชั่น", titleEn="Function Menu", desc="ฟังก์ชันที่ ACS_Mod มีอยู่ตอนนี้", descEn="Available ACS_Mod features", features={
         {text="เสกไอเทม", textEn="Spawn Items", action="item"}, {text="เปิดใจ+เพิ่มความสัมพันธ์", textEn="Open Heart + Max Favor", action="jianghu"},
-        {text="เปิดคลังจักรวาล", textEn="Open Mini Universe", action="space"}, {text="ไอเทมคูณ2", textEn="Double Selected Item", action="world_tools"},
-        {text="เปิด-ปิด ก่อสร้าง", textEn="Construction Tools", action="tools"},
-        {text="เวลา / ฤดูกาล / อากาศ", textEn="Time / Season / Weather", action="time_weather"}, {text="เรียกบอส", textEn="Summon Boss", action="boss"},
-        {text="เตาควบคุมอุณหภูมิ", textEn="Temperature Furnace", action="building_temp"},
-        {text="ตั้งค่า FPS", textEn="Frame Rate Settings", action="fps"},
+        {text="เปิดคลังจักรวาล", textEn="Open Mini Universe", action="space"}, {text="เครื่องมือไอเทม", textEn="Item Tools", action="world_item"},
+        {text="เปิด-ปิด ก่อสร้าง", textEn="Construction Tools", action="tools"}, {text="เวลา / ฤดูกาล / อากาศ", textEn="Time / Season / Weather", action="time_weather"},
+        {text="เรียกบอส", textEn="Summon Boss", action="boss"}, {text="เปิด-ปิดคลังอัตโนมัต", textEn="World Tools", action="world_world"},
+
+        {text="ตั้งค่า FPS", textEn="Frame Rate Settings", action="fps"}, {text="จัดการแผนที่", textEn="Map Management", action="map_tools"},
+        {text="ตัวเลขความเสียหาย", textEn="Damage Numbers", action="damage_numbers"},
         {text="เปิดกล่องไท่อี้ทั้งหมด", textEn="Open All Taiyi Boxes", action="open_taiyi_boxes"},
         {text="เปิดกล่องอื่นทั้งหมด", textEn="Open All Other Boxes", action="open_other_boxes"},
          
@@ -62,11 +63,7 @@ local XMC_Sections = {
     }},
 }
 
-table.insert(XMC_Sections.quick.features, 1, {
-    text="ตัวเลขความเสียหาย",
-    textEn="Damage Numbers",
-    action="damage_numbers"
-})
+
 
 table.insert(XMC_Sections.npc.features, 1, {
     text="กำหนดจำนวนศิษย์สูงสุด",
@@ -174,6 +171,33 @@ local function xmc_open_legacy()
     end
 end
 local function xmc_action(action)
+    local worldToolSections = {
+        world_item = "item",
+        world_world = "world",
+        world_season = "season",
+        world_weather = "weather",
+        world_building = "building",
+    }
+    if worldToolSections[action] then
+        if Xaou_OpenWorldToolsWindow == nil then
+            pcall(require, "Scripts/Xaou_WorldTools_Core.lua")
+            pcall(require, "Scripts/Xaou_WorldTools_Window.lua")
+        end
+        if Xaou_OpenWorldToolsWindow then
+            local section = worldToolSections[action]
+            Xaou_CloseStandaloneModCenter()
+            local ok, result, detail = pcall(function()
+                return Xaou_OpenWorldToolsWindow(nil, section)
+            end)
+            if ok and result ~= false then return true end
+            if world then
+                world:ShowMsgBox(xmc_t("เปิดเครื่องมือไม่สำเร็จ\n", "Failed to open tool window\n") .. tostring(detail or result))
+            end
+            return false
+        end
+        if world then world:ShowMsgBox(xmc_t("ไม่พบระบบเครื่องมือโลก", "World Tools system was not found")) end
+        return false
+    end
     if action=="school_capacity" then
         if Xaou_OpenSchoolCapacitySelector==nil then
             pcall(require, 'Scripts/Xaou_SchoolCapacity.lua')
@@ -507,6 +531,21 @@ local function xmc_action(action)
         local ok,result=pcall(function() return Xaou_OpenWorldToolsWindow(nil,"world") end)
         if ok and result~=false then Xaou_CloseStandaloneModCenter();return result end
         if world then world:ShowMsgBox(xmc_t("เปิดเครื่องมือโลกไม่สำเร็จ\n", "Failed to open World Tools\n")..tostring(result)) end
+        return false
+    end
+    if action=="map_tools" then
+        if Xaou_OpenMapToolsWindow==nil then
+            pcall(require, "Scripts/Xaou_MapTools_Window.lua")
+        end
+        if Xaou_OpenMapToolsWindow then
+            local ok,result,detail=pcall(function() return Xaou_OpenMapToolsWindow() end)
+            if ok and result~=false then Xaou_CloseStandaloneModCenter();return result end
+            if world then
+                world:ShowMsgBox(xmc_t("เปิดหน้าจัดการแผนที่ไม่สำเร็จ\n", "Failed to open Map Management\n")..tostring(detail or result))
+            end
+            return false
+        end
+        if world then world:ShowMsgBox(xmc_t("ไม่พบระบบจัดการแผนที่", "Map Management system was not found")) end
         return false
     end
     if action=="space" then

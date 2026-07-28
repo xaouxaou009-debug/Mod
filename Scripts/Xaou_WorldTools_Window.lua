@@ -29,8 +29,6 @@ local sections = {
         title = "เครื่องมือโลก",
         description = "ควบคุมแผนที่ หมอก และการเก็บของอัตโนมัติ",
         actions = {
-            {"เปิดสถานที่ทั้งหมดบนแผนที่", "unlock_map"},
-            {"เปิด / ปิดหมอกแผนที่", "toggle_fog"},
             {"เปิด / ปิดเก็บเข้าคลังอัตโนมัติ", "toggle_auto"},
             {"สั่งเก็บเข้าคลังตอนนี้", "collect_now"},
         },
@@ -125,11 +123,12 @@ local function refresh(view)
     set_text(child(view, "npcStatus"), "หมอก: " .. (Xaou_WorldToolsState.NoFog and "ปิด" or "เปิด") .. "  |  คลังอัตโนมัติ: " .. (Xaou_WorldToolsState.AutoStorage and "เปิด" or "ปิด"))
     set_text(child(view, "brand"), "ผู้พัฒนา: Xaou009")
     set_visible(child(view, "npcPortrait"), false)
-    set_text(child(view, "menuQuick"), "ไอเทม")
-    set_text(child(view, "menuNpc"), "โลก")
-    set_text(child(view, "menuBook"), "ฤดูกาล")
-    set_text(child(view, "menuWorld"), "อากาศ")
-    set_text(child(view, "menuDeveloper"), "อาคารพิเศษ")
+    set_visible(child(view, "menuPanel"), false)
+    set_visible(child(view, "menuQuick"), false)
+    set_visible(child(view, "menuNpc"), false)
+    set_visible(child(view, "menuBook"), false)
+    set_visible(child(view, "menuWorld"), false)
+    set_visible(child(view, "menuDeveloper"), false)
     set_text(child(view, "sectionTitle"), section.title)
     set_text(child(view, "description"), section.description)
     for i = 1, 8 do
